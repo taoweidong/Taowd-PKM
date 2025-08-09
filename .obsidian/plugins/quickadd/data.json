@@ -5,7 +5,7 @@
       "name": "创建今日日记",
       "type": "Template",
       "command": false,
-      "templatePath": "模版/每日笔记模板.md",
+      "templatePath": "模板/每日笔记模板.md",
       "fileNameFormat": {
         "enabled": true,
         "format": "日记本/{{DATE:YYYY-MM-DD}}"
@@ -33,7 +33,7 @@
       "name": "创建笔记",
       "type": "Template",
       "command": false,
-      "templatePath": "模版/笔记模板.md",
+      "templatePath": "模板/笔记模板.md",
       "fileNameFormat": {
         "enabled": true,
         "format": "笔记/学习笔记-{{DATE:}}"

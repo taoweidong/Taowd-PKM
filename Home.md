@@ -1,5 +1,6 @@
 
 
+
 >陶伟东的知识库
 
 - [[Python/Home|Python-Home]]
@@ -13,7 +14,7 @@
 ```dataview
 task where !completed
 sort file.ctime desc
-limit 10
+limit 5
 ```
 
 

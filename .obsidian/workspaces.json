@@ -2,21 +2,21 @@
   "workspaces": {
     "默认布局": {
       "main": {
-        "id": "74e667ce342db693",
+        "id": "5324373015726ba8",
         "type": "split",
         "children": [
           {
-            "id": "7eb13cc76fb0bb32",
+            "id": "f582c804958cc836",
             "type": "tabs",
             "children": [
               {
-                "id": "6bd0a6248d03802d",
+                "id": "53b34c982808ae20",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
                     "file": "Home.md",
-                    "mode": "preview",
+                    "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
@@ -56,7 +56,7 @@
                 "state": {
                   "type": "search",
                   "state": {
-                    "query": "tag:#笔记",
+                    "query": "",
                     "matchingCase": false,
                     "explainSearch": false,
                     "collapseAll": false,
@@ -149,18 +149,37 @@
               {
                 "id": "76ee3f21a028c5d1",
                 "type": "leaf",
+                "pinned": true,
                 "state": {
                   "type": "outline",
                   "state": {
                     "file": "Home.md",
-                    "followCursor": true,
-                    "showSearch": true,
+                    "followCursor": false,
+                    "showSearch": false,
                     "searchQuery": ""
                   },
+                  "pinned": true,
                   "icon": "lucide-list",
                   "title": "Home 的大纲"
                 }
               },
+              {
+                "id": "10d18bca577defa4",
+                "type": "leaf",
+                "state": {
+                  "type": "side-panel-control-view",
+                  "state": {},
+                  "icon": "viewIcon",
+                  "title": "Markdown-Autocomplete"
+                }
+              }
+            ],
+            "currentTab": 2
+          },
+          {
+            "id": "562f0487dfb636b1",
+            "type": "tabs",
+            "children": [
               {
                 "id": "a34f0a501959b201",
                 "type": "leaf",
@@ -173,8 +192,7 @@
                   "title": "Calendar"
                 }
               }
-            ],
-            "currentTab": 4
+            ]
           }
         ],
         "direction": "horizontal",
@@ -189,11 +207,15 @@
           "templates:插入模板": false,
           "command-palette:打开命令面板": false,
           "workspaces:管理工作区布局": false,
-          "obsidian-markdown-formatting-assistant-plugin:Open Markdown Formatting Assistant": false
+          "obsidian-markdown-formatting-assistant-plugin:Open Markdown Formatting Assistant": false,
+          "homepage:Open homepage": false,
+          "github-sync:Sync with Remote": false,
+          "html-server:Turn Http Server On": false,
+          "html-server:Turn Http Server Off": false
         }
       },
-      "active": "6bd0a6248d03802d",
-      "mtime": "2025-08-09T13:20:22+08:00"
+      "active": "53b34c982808ae20",
+      "mtime": "2025-08-09T17:53:16+08:00"
     }
   },
   "active": "默认布局"
