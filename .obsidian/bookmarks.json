@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 1754659755392,
+      "path": "test.md",
+      "subpath": "#sdadas",
+      "title": "测试书签功能"
+    },
+    {
+      "type": "file",
+      "ctime": 1754716046026,
+      "path": "Python/常用库/Python常用库-Pandas学习.md",
+      "subpath": "#1. 安装 Pandas"
+    },
+    {
+      "type": "group",
+      "ctime": 1754716493000,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1754716479302,
+          "path": "笔记/未命名 5.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1754716479302,
+          "path": "笔记/未命名 1.md"
+        }
+      ],
+      "title": "随便记录"
+    },
+    {
+      "type": "file",
+      "ctime": 1754720259169,
+      "path": "Obsidian/Obsidian QuickAdd 插件使用指南.md"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"fa40d4f8c71b4b4e","type":"text","text":"我的笔记","x":-820,"y":-660,"width":250,"height":60,"color":"2"},
+		{"id":"0911d2b783fcfe3a","x":-820,"y":-340,"width":400,"height":180,"type":"file","file":"test/我的第三篇笔记.md"},
+		{"id":"b40e6b7b7be8eae6","x":-420,"y":-800,"width":250,"height":60,"type":"text","text":"关系"},
+		{"id":"573e57759cbbdd65","x":-280,"y":-630,"width":400,"height":130,"type":"file","file":"test/我的第二篇笔记.md"}
+	],
+	"edges":[
+		{"id":"9d16f7cac46e52ce","fromNode":"fa40d4f8c71b4b4e","fromSide":"bottom","toNode":"0911d2b783fcfe3a","toSide":"top"},
+		{"id":"11d16b9d2c562880","fromNode":"fa40d4f8c71b4b4e","fromSide":"top","toNode":"b40e6b7b7be8eae6","toSide":"left"},
+		{"id":"f4becd756c512fd2","fromNode":"0911d2b783fcfe3a","fromSide":"right","toNode":"573e57759cbbdd65","toSide":"left"}
+	]
+}
