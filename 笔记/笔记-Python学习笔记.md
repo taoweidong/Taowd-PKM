@@ -8,9 +8,9 @@ aliases:
 
 ## 🎯 今日目标
 
-- [ ] xxxxxxx
-- [ ] asdadsad
-- [ ] asdadsad
+- [x] xxxxxxx
+- [x] asdadsad
+- [x] asdadsad ✅ 2025-08-09
 
 
 ## 📝 日志记录
