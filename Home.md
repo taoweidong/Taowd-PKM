@@ -10,8 +10,6 @@
 
 
 
-
-
 ```dataview
 table file.mtime
 from ""
