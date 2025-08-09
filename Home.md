@@ -3,8 +3,8 @@
 
 >陶伟东的知识库
 
-- [[Python/Home|Python-Home]]
-- [[Obsidian/Home|Obsidian-Home]]
+- [[4Python/Home|Python-Home]]
+- [[7Obsidian/Home|Obsidian-Home]]
 
 
 

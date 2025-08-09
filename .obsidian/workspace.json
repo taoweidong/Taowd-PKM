@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "19f9bc80198b2d6f",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "9b7bfee164d3eebe",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Home.md",
-                "mode": "source",
-                "source": false
+                "file": "我的白板.canvas",
+                "viewState": {
+                  "x": -350,
+                  "y": -573,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "Home"
+              "icon": "lucide-layout-dashboard",
+              "title": "我的白板"
             }
           }
         ]
@@ -212,45 +215,45 @@
       "html-server:Turn Http Server Off": false
     }
   },
-  "active": "9b7bfee164d3eebe",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "笔记/笔记-2025-08-11.md",
-    "Home.md",
-    "日记本/2025-08-10.md",
-    "笔记/学习笔记-2025-08-11.md",
-    "笔记/笔记-Python学习笔记.md",
-    "笔记/笔记-xxx.md",
-    "笔记/学习笔记-2025-08-10.md",
-    "test/我的第二篇笔记.md",
-    "模板/笔记模板.md",
-    "Obsidian/Obsidian Homepage插件使用指南.md",
-    "裁缝学习相关/裁缝笔记汇总.md",
-    "Obsidian/Home.md",
-    "Python/Home.md",
-    "Obsidian/Obsidian Dataview 插件操作指南.md",
-    "Obsidian/Obsidian Dataview插件使用指南.md",
-    "笔记/笔记-2025-08-09.md",
-    "日记本/2025-08-09.md",
     "lklklklklkl.md",
-    "Obsidian/Obsidian QuickAdd 插件使用指南.md",
-    "笔记/笔记-2025-08-10.md",
-    "笔记/学习笔记-2025-08-09.md",
-    "笔记/测试随笔.md",
-    "模板/每日笔记模板.md",
-    "模板/通用模版.md",
-    "日记本/2025-08-07.md",
-    "日记本/2025-08-08.md",
-    "Java",
-    "笔记",
     "我的白板.canvas",
-    "Python/常用库",
-    "Obsidian",
-    "裁缝学习相关",
-    "Python",
-    "模板",
+    "Home.md",
+    "未命名.md",
+    "测试.md",
     "未命名.canvas",
+    "9模板/笔记模板.md",
+    "8附件",
+    "1笔记本/笔记-2025-08-11.md",
+    "2日记本/2025-08-10.md",
+    "1笔记本/学习笔记-2025-08-11.md",
+    "1笔记本/笔记-Python学习笔记.md",
+    "1笔记本/笔记-xxx.md",
+    "1笔记本/学习笔记-2025-08-10.md",
+    "test/我的第二篇笔记.md",
+    "7Obsidian/Obsidian Homepage插件使用指南.md",
+    "2裁缝学习相关/裁缝笔记汇总.md",
+    "7Obsidian/Home.md",
+    "4Python/Home.md",
+    "7Obsidian/Obsidian Dataview 插件操作指南.md",
+    "7Obsidian/Obsidian Dataview插件使用指南.md",
+    "1笔记本/笔记-2025-08-09.md",
+    "2日记本/2025-08-09.md",
+    "7Obsidian/Obsidian QuickAdd 插件使用指南.md",
+    "1笔记本/笔记-2025-08-10.md",
+    "1笔记本/学习笔记-2025-08-09.md",
+    "1笔记本/测试随笔.md",
+    "9模板/每日笔记模板.md",
+    "3Java",
+    "1笔记本",
+    "4Python/常用库",
+    "7Obsidian",
+    "2裁缝学习相关",
+    "4Python",
+    "9模板",
     "test",
-    "日记本",
+    "2日记本",
     "未命名 1.canvas"
   ]
 }

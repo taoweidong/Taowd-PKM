@@ -1,0 +1,51 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "twemoji",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "FasHatCowboySide",
+      "FabPython",
+      "FabJava",
+      "FasBlog",
+      "FabDiscourse"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [
+      {
+        "rule": "*.md",
+        "icon": "FabMarkdown",
+        "for": "everything",
+        "order": 0
+      }
+    ],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "custom",
+    "debugMode": false,
+    "useInternalPlugins": true
+  },
+  "2日记本": "FasBlog",
+  "1笔记本": "FabAccusoft",
+  "9模板": "FabDiscourse",
+  "8附件": "LiLayoutTemplate",
+  "3Java": "FabJava",
+  "4Python": "FabPython",
+  "7Obsidian": "FasHatCowboySide"
+}

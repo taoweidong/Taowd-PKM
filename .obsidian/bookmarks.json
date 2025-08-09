@@ -10,7 +10,7 @@
     {
       "type": "file",
       "ctime": 1754716046026,
-      "path": "Python/常用库/Python常用库-Pandas学习.md",
+      "path": "4Python/常用库/Python常用库-Pandas学习.md",
       "subpath": "#1. 安装 Pandas"
     },
     {
@@ -25,7 +25,7 @@
         {
           "type": "file",
           "ctime": 1754716479302,
-          "path": "笔记/未命名 1.md"
+          "path": "1笔记本/未命名 1.md"
         }
       ],
       "title": "随便记录"
@@ -33,7 +33,7 @@
     {
       "type": "file",
       "ctime": 1754720259169,
-      "path": "Obsidian/Obsidian QuickAdd 插件使用指南.md"
+      "path": "7Obsidian/Obsidian QuickAdd 插件使用指南.md"
     }
   ]
 }
