@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"10ccfbb2d41e42a6","type":"text","text":"测试任务","x":-560,"y":-150,"width":250,"height":50,"color":"1"},
+		{"id":"adff983a91efc6ee","type":"text","text":"xxx","x":-620,"y":-7,"width":250,"height":60},
+		{"id":"c903e4cbe3ec7188","type":"file","file":"80-日记记录/2025/11/2025-11-08日记.md","x":-160,"y":-147,"width":400,"height":400},
+		{"id":"186700f00219fecd","x":-485,"y":-380,"width":250,"height":60,"type":"text","text":""},
+		{"id":"9fdac5c70984a0a1","x":-60,"y":-680,"width":400,"height":80,"type":"file","file":"10-个人知识管理/Obsidian/Obsidian Dataview插件使用指南.md"}
+	],
+	"edges":[
+		{"id":"7ca0127798cfdd8a","fromNode":"10ccfbb2d41e42a6","fromSide":"bottom","toNode":"adff983a91efc6ee","toSide":"top"},
+		{"id":"e8fb0e832eb2254d","fromNode":"10ccfbb2d41e42a6","fromSide":"bottom","toNode":"c903e4cbe3ec7188","toSide":"top"},
+		{"id":"3ebf95512c59d466","fromNode":"10ccfbb2d41e42a6","fromSide":"top","toNode":"186700f00219fecd","toSide":"bottom"},
+		{"id":"3eae5ff34232c36c","fromNode":"10ccfbb2d41e42a6","fromSide":"top","toNode":"9fdac5c70984a0a1","toSide":"bottom"}
+	]
+}

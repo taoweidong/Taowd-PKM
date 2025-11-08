@@ -1,6 +1,5 @@
 {
-  "format": "YYYY-MM-DD",
-  "folder": "日记本",
-  "template": "",
-  "autorun": false
+  "format": "YYYY/MM/YYYY-MM-DD日记",
+  "folder": "80-日记记录",
+  "template": "95-模板/每日笔记模板"
 }

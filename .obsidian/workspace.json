@@ -1,27 +1,20 @@
 {
   "main": {
-    "id": "5324373015726ba8",
+    "id": "0109ac138e0ef10f",
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "83fd26a64641503c",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "4a3d6b36681368e1",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "我的白板.canvas",
-                "viewState": {
-                  "x": -350,
-                  "y": -573,
-                  "zoom": 0
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "我的白板"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -30,29 +23,28 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "0879c5e3ce8520e4",
+    "id": "8bb1814dd53d7fc3",
     "type": "split",
     "children": [
       {
-        "id": "9a2e11a9593f7448",
+        "id": "30ce58c8e1c4b7c1",
         "type": "tabs",
-        "dimension": 76.905311778291,
         "children": [
           {
-            "id": "5e8415b4ade65cc8",
+            "id": "3af1964ff7e62804",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
             }
           },
           {
-            "id": "52b4976afb2c6c98",
+            "id": "bbbe751ba72dfbc2",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -67,16 +59,9 @@
               "icon": "lucide-search",
               "title": "搜索"
             }
-          }
-        ]
-      },
-      {
-        "id": "4925aad5072ccabf",
-        "type": "tabs",
-        "dimension": 23.094688221709006,
-        "children": [
+          },
           {
-            "id": "226939c133300852",
+            "id": "4f27df6921956ab6",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -92,20 +77,20 @@
     "width": 300
   },
   "right": {
-    "id": "35f4d2fed24718e2",
+    "id": "bf3b6102ff6d4eb5",
     "type": "split",
     "children": [
       {
-        "id": "094b4ec38f0cc0b5",
+        "id": "ceb4c235b4881aab",
         "type": "tabs",
         "children": [
           {
-            "id": "59cdc4e7de4e1480",
+            "id": "874e6be357e861fb",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.md",
+                "file": "95-模板/95-模板.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,25 +100,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Home 的反向链接列表"
+              "title": "95-模板 的反向链接列表"
             }
           },
           {
-            "id": "1732882b18632e48",
+            "id": "c3c36213a27406eb",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.md",
+                "file": "95-模板/95-模板.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Home 的出链列表"
+              "title": "95-模板 的出链列表"
             }
           },
           {
-            "id": "c397e70ad916b331",
+            "id": "0cfd90407ef4367a",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -148,56 +133,26 @@
             }
           },
           {
-            "id": "76ee3f21a028c5d1",
+            "id": "b8fe2ee82f486496",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.md",
+                "file": "95-模板/95-模板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "pinned": true,
               "icon": "lucide-list",
-              "title": "Home 的大纲"
-            }
-          },
-          {
-            "id": "10d18bca577defa4",
-            "type": "leaf",
-            "state": {
-              "type": "side-panel-control-view",
-              "state": {},
-              "icon": "viewIcon",
-              "title": "Markdown-Autocomplete"
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "562f0487dfb636b1",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a34f0a501959b201",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "calendar",
-              "state": {},
-              "pinned": true,
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "title": "95-模板 的大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,53 +162,25 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "workspaces:管理工作区布局": false,
-      "obsidian-markdown-formatting-assistant-plugin:Open Markdown Formatting Assistant": false,
-      "homepage:Open homepage": false,
-      "github-sync:Sync with Remote": false,
-      "html-server:Turn Http Server On": false,
-      "html-server:Turn Http Server Off": false
+      "bases:创建新数据库": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "3af1964ff7e62804",
   "lastOpenFiles": [
-    "lklklklklkl.md",
-    "我的白板.canvas",
-    "Home.md",
-    "未命名.md",
-    "测试.md",
+    "知识库总览.md",
+    "80-日记记录/80-日记记录.md",
+    "90-待整理与临时笔记/80-代码片段.md",
+    "90-待整理与临时笔记/白板/测试白板创建后归档到指定目录.canvas",
+    "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
+    "10-个人知识管理/Obsidian/Obsidian Dataview插件使用指南.md",
+    "10-个人知识管理/Obsidian/Homepage插件使用指南.md",
+    "80-日记记录/2025/11/2025-11-08日记.md",
+    "80-日记记录/80-代码片段.md",
+    "80-日记记录/2025/11",
+    "80-日记记录/2025",
+    "2025-11-08.md",
+    "90-待整理与临时笔记/白板",
     "未命名.canvas",
-    "9模板/笔记模板.md",
-    "8附件",
-    "1笔记本/笔记-2025-08-11.md",
-    "2日记本/2025-08-10.md",
-    "1笔记本/学习笔记-2025-08-11.md",
-    "1笔记本/笔记-Python学习笔记.md",
-    "1笔记本/笔记-xxx.md",
-    "1笔记本/学习笔记-2025-08-10.md",
-    "test/我的第二篇笔记.md",
-    "7Obsidian/Obsidian Homepage插件使用指南.md",
-    "2裁缝学习相关/裁缝笔记汇总.md",
-    "7Obsidian/Home.md",
-    "4Python/Home.md",
-    "7Obsidian/Obsidian Dataview 插件操作指南.md",
-    "7Obsidian/Obsidian Dataview插件使用指南.md",
-    "1笔记本/笔记-2025-08-09.md",
-    "2日记本/2025-08-09.md",
-    "7Obsidian/Obsidian QuickAdd 插件使用指南.md",
-    "1笔记本/笔记-2025-08-10.md",
-    "1笔记本/学习笔记-2025-08-09.md",
-    "1笔记本/测试随笔.md",
-    "9模板/每日笔记模板.md",
-    "3Java",
-    "1笔记本",
-    "4Python/常用库",
-    "7Obsidian",
-    "2裁缝学习相关",
-    "4Python",
-    "9模板",
-    "test",
-    "2日记本",
-    "未命名 1.canvas"
+    "99-附件/白板"
   ]
 }

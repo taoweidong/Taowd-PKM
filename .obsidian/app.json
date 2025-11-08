@@ -1,12 +1,6 @@
 {
-  "promptDelete": false,
-  "alwaysUpdateLinks": true,
-  "newFileLocation": "current",
-  "attachmentFolderPath": "/附件",
-  "pdfExportSettings": {
-    "pageSize": "Letter",
-    "landscape": false,
-    "margin": "0",
-    "downscalePercent": 100
-  }
+  "newFileLocation": "folder",
+  "newFileFolderPath": "90-待整理与临时笔记",
+  "attachmentFolderPath": "99-附件",
+  "alwaysUpdateLinks": true
 }
