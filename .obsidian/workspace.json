@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "195b7795a677c007",
+        "id": "28d4288880005368",
         "type": "tabs",
         "children": [
           {
-            "id": "25f5d927e2c6e0c8",
+            "id": "935c4f1f9ade0489",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -162,7 +162,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,8 +177,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "25f5d927e2c6e0c8",
+  "active": "935c4f1f9ade0489",
   "lastOpenFiles": [
+    "40-AI技术/论文阅读笔记模板.md",
     "知识库总览.md",
     "40-AI技术/40-AI技术.md",
     "40-AI技术/机器学习-机器学习基础入门总结.md",
