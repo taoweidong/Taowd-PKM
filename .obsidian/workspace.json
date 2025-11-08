@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "83fd26a64641503c",
+        "id": "195b7795a677c007",
         "type": "tabs",
         "children": [
           {
-            "id": "4a3d6b36681368e1",
+            "id": "25f5d927e2c6e0c8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "10-个人知识管理/Obsidian/常用插件.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "常用插件"
+              "title": "新标签页"
             }
           }
         ]
@@ -150,13 +146,23 @@
               "icon": "lucide-list",
               "title": "常用插件 的大纲"
             }
+          },
+          {
+            "id": "5f90f8b294507ff9",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,11 +176,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3af1964ff7e62804",
+  "active": "25f5d927e2c6e0c8",
   "lastOpenFiles": [
+    "知识库总览.md",
+    "40-AI技术/40-AI技术.md",
+    "40-AI技术/机器学习-机器学习基础入门总结.md",
+    "40-AI技术/机器学习-线性回归.md",
+    "10-个人知识管理/Obsidian/常用插件.md",
     "99-附件/Pasted image 20251108171816.png",
     "95-模板/95-模板.md",
-    "知识库总览.md",
     "80-日记记录/80-日记记录.md",
     "90-待整理与临时笔记/80-代码片段.md",
     "90-待整理与临时笔记/白板/测试白板创建后归档到指定目录.canvas",
