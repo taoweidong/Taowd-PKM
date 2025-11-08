@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "28d4288880005368",
+        "id": "7464866cee2b422c",
         "type": "tabs",
         "children": [
           {
-            "id": "935c4f1f9ade0489",
+            "id": "bcc423a58ab86bec",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 406.5
   },
   "right": {
     "id": "bf3b6102ff6d4eb5",
@@ -162,8 +162,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -174,32 +173,59 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-importer:Open Importer": false
     }
   },
-  "active": "935c4f1f9ade0489",
+  "active": "bcc423a58ab86bec",
   "lastOpenFiles": [
-    "40-AI技术/论文阅读笔记模板.md",
-    "知识库总览.md",
-    "40-AI技术/40-AI技术.md",
-    "40-AI技术/机器学习-机器学习基础入门总结.md",
-    "40-AI技术/机器学习-线性回归.md",
-    "10-个人知识管理/Obsidian/常用插件.md",
-    "99-附件/Pasted image 20251108171816.png",
-    "95-模板/95-模板.md",
-    "80-日记记录/80-日记记录.md",
-    "90-待整理与临时笔记/80-代码片段.md",
+    "98-印象笔记/Evernote/阿里云服务器 mysql远程连接时，出现连接不上的解决办法 - CSDN博客.md",
+    "98-印象笔记/Evernote/20200513每日工作总结.md",
+    "98-印象笔记/Evernote/27道高频Spring面试题，你能答对几个？.md",
+    "98-印象笔记/Evernote/👋再见2019，你好2020👋.md",
+    "98-印象笔记/Evernote/【05】拦截器的使用.md",
+    "98-印象笔记/Evernote/【微信公众号开发相关配置】.md",
+    "98-印象笔记/Evernote/工资条密码.md",
+    "98-印象笔记/Evernote/【02】获取oracle数据库时间.md",
+    "98-印象笔记/Evernote/【01】Hibernate各种主键生成策略与配置详解.md",
+    "98-印象笔记/Evernote/【01】C读取txt文件最简单的方法.md",
+    "98-印象笔记/Evernote/【01-03】Maven安装完毕.md",
+    "98-印象笔记/Evernote/【01-01】Jdk安装以及环境配置.md",
+    "98-印象笔记/Evernote/(69条消息) miniconda如何使用 - CSDN.md",
+    "98-印象笔记/Evernote/【01】druid配置数据库连接使用密文密码.md",
+    "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.png",
+    "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.3.png",
+    "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.2.png",
+    "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.1.png",
+    "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources",
+    "98-印象笔记/Evernote/_resources/struts2中struts.xml配置文件详解.resources/wechat.png",
+    "98-印象笔记/Evernote/_resources/struts2中struts.xml配置文件详解.resources/icon_weibo_24.png",
+    "98-印象笔记/Evernote/_resources/struts2中struts.xml配置文件详解.resources/copycode.gif",
+    "98-印象笔记/Evernote/_resources/struts2中struts.xml配置文件详解.resources/20170126022522.png.jpg",
+    "98-印象笔记/Evernote/_resources/struts2中struts.xml配置文件详解.resources",
+    "98-印象笔记/Evernote/_resources/【01】Struts2的运行流程及其工作原理.resources/Center.png",
+    "98-印象笔记/Evernote/_resources/【01】Struts2的运行流程及其工作原理.resources/Center.9.png",
+    "98-印象笔记/Evernote/_resources/【01】Struts2的运行流程及其工作原理.resources",
+    "98-印象笔记/Evernote/maven 编译时报错：编码 UTF-8 的不可映射字符 - CSDN博客.md",
+    "98-印象笔记/Evernote/java.lang.NoSuchFieldException DEFAULT_PARAM doesn't have a default param DEFAULT_PARAM defined! - CSDN博客.md",
+    "98-印象笔记/Evernote/Java高效读取大文件 - CSDN博客.md",
+    "98-印象笔记/Evernote/_resources/WPF_RichTextBox相关总结_-_GavinJun_-_博客园.resources",
+    "98-印象笔记/Evernote/shell脚本学习笔记（shell脚本实现文件的创建） - CSDN博客.1.md",
+    "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.1.resources",
+    "98-印象笔记/Evernote/shell脚本学习笔记（shell脚本实现文件的创建） - CSDN博客.md",
+    "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.resources",
+    "98-印象笔记/Evernote/【02】java代码，运行时可调用浏览器打开一个网页，网页地址在代码中即可.md",
+    "98-印象笔记/Evernote/【01】导出指定表中符合条件的数据.md",
+    "98-印象笔记/Evernote/【03】服务端配置问题.md",
+    "98-印象笔记/Evernote/_resources/【03】服务端配置问题.resources",
+    "98-印象笔记/Evernote/【04】databox反显数据勾选.md",
+    "98-印象笔记/Evernote/【05】RichTextBox数据清空.md",
+    "98-印象笔记/Evernote/【06】发布项目时需要注意，将某些不必要的.md",
+    "98-印象笔记/Evernote/_resources/【06】发布项目时需要注意，将某些不必要的.resources",
+    "98-印象笔记/Evernote/【07】前端生产发布文件.md",
+    "98-印象笔记/Evernote/_resources/【08】通讯规则-主要涉及附件的发送.resources",
+    "98-印象笔记/Evernote/_resources/ArrayList和LinkedList的区别.resources",
     "90-待整理与临时笔记/白板/测试白板创建后归档到指定目录.canvas",
-    "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
-    "10-个人知识管理/Obsidian/Obsidian Dataview插件使用指南.md",
-    "10-个人知识管理/Obsidian/Homepage插件使用指南.md",
-    "80-日记记录/2025/11/2025-11-08日记.md",
-    "80-日记记录/80-代码片段.md",
-    "80-日记记录/2025/11",
-    "80-日记记录/2025",
-    "2025-11-08.md",
-    "90-待整理与临时笔记/白板",
-    "未命名.canvas",
-    "99-附件/白板"
+    "未命名.canvas"
   ]
 }
