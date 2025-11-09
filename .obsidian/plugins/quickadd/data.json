@@ -27,6 +27,45 @@
       },
       "fileExistsMode": "Increment the file name",
       "setFileExistsBehavior": false
+    },
+    {
+      "id": "3cd6926f-bd5a-46a8-bca4-2128c7b76e31",
+      "name": "添加任务",
+      "type": "Capture",
+      "command": true,
+      "appendLink": false,
+      "captureTo": "50-项目记录/2025我的主要任务.md",
+      "captureToActiveFile": false,
+      "createFileIfItDoesntExist": {
+        "enabled": false,
+        "createWithTemplate": false,
+        "template": ""
+      },
+      "format": {
+        "enabled": true,
+        "format": "{{value}} 截止 {{DATE}} 完成"
+      },
+      "insertAfter": {
+        "enabled": false,
+        "after": "",
+        "insertAtEnd": false,
+        "considerSubsections": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top"
+      },
+      "newLineCapture": {
+        "enabled": false,
+        "direction": "below"
+      },
+      "prepend": false,
+      "task": true,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      }
     }
   ],
   "inputPrompt": "single-line",

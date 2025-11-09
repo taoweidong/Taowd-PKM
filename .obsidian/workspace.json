@@ -22,31 +22,31 @@
             }
           },
           {
-            "id": "15140ce77303f96e",
+            "id": "71fc87e81dc45bb2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
+                "file": "90-待整理与临时笔记/设置.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Obsidian QuickAdd 插件使用指南"
+              "title": "设置"
             }
           },
           {
-            "id": "7e201be482da0b56",
+            "id": "00d11ce7ff62c8fd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90-待整理与临时笔记/xxx.md",
+                "file": "50-项目记录/2025我的主要任务.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "xxx"
+              "title": "2025我的主要任务"
             }
           },
           {
@@ -69,16 +69,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90-待整理与临时笔记/2025-11-09-随手记1.md",
+                "file": "95-模板/笔记模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-11-09-随手记1"
+              "title": "笔记模板"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -237,13 +236,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "da5535494f00475d",
+  "active": "20e1af0677b0c819",
   "lastOpenFiles": [
-    "90-待整理与临时笔记/2025-11-09-随手记.md",
-    "90-待整理与临时笔记/2025-11-09-随手记1.md",
-    "90-待整理与临时笔记/xxx.md",
-    "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
+    "50-项目记录/2025我的主要任务.md",
+    "90-待整理与临时笔记/设置.md",
     "10-个人知识管理/Obsidian/常用插件.md",
+    "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
+    "90-待整理与临时笔记/xxx.md",
+    "95-模板/笔记模板.md",
+    "90-待整理与临时笔记/2025-11-09-随手记1.md",
+    "90-待整理与临时笔记/2025-11-09-随手记.md",
     "98-印象笔记/Evernote/阿里云服务器 mysql远程连接时，出现连接不上的解决办法 - CSDN博客.md",
     "98-印象笔记/Evernote/20200513每日工作总结.md",
     "98-印象笔记/Evernote/27道高频Spring面试题，你能答对几个？.md",
@@ -277,10 +279,7 @@
     "98-印象笔记/Evernote/_resources/WPF_RichTextBox相关总结_-_GavinJun_-_博客园.resources",
     "98-印象笔记/Evernote/shell脚本学习笔记（shell脚本实现文件的创建） - CSDN博客.1.md",
     "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.1.resources",
-    "98-印象笔记/Evernote/shell脚本学习笔记（shell脚本实现文件的创建） - CSDN博客.md",
     "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.resources",
-    "98-印象笔记/Evernote/【02】java代码，运行时可调用浏览器打开一个网页，网页地址在代码中即可.md",
-    "98-印象笔记/Evernote/【01】导出指定表中符合条件的数据.md",
     "98-印象笔记/Evernote/_resources/【03】服务端配置问题.resources",
     "98-印象笔记/Evernote/_resources/【06】发布项目时需要注意，将某些不必要的.resources",
     "98-印象笔记/Evernote/_resources/【08】通讯规则-主要涉及附件的发送.resources",
