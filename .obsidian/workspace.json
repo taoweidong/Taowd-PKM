@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20-技术积累/2025-11-09-随手记.md",
+                "file": "20-技术积累/Python学习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-11-09-随手记"
+              "title": "Python学习"
             }
           }
         ]
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "20-技术积累/2025-11-09-随手记.md",
+                "file": "20-技术积累/Python学习.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "2025-11-09-随手记 的出链列表"
+              "title": "Python学习 的出链列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20-技术积累/2025-11-09-随手记.md",
+                "file": "20-技术积累/Python学习.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-11-09-随手记 的大纲"
+              "title": "Python学习 的大纲"
             }
           },
           {
@@ -191,10 +191,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "20-技术积累/2025-11-09-随手记.md"
+                "file": "20-技术积累/Python学习.md"
               },
               "icon": "lucide-info",
-              "title": "2025-11-09-随手记的笔记属性"
+              "title": "Python学习的笔记属性"
             }
           }
         ],
@@ -223,7 +223,7 @@
   },
   "active": "512abc5d2f349337",
   "lastOpenFiles": [
-    "20-技术积累/2025-11-09-随手记.md",
+    "20-技术积累/Python学习.md",
     "90-待整理与临时笔记/90-待整理与临时笔记.md",
     "90-待整理与临时笔记/测试.md",
     "90-待整理与临时笔记/未命名 1.base",
