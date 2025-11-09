@@ -4,21 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "631e5ca72a412529",
+        "id": "f3733a9bdc016b17",
         "type": "tabs",
         "children": [
           {
-            "id": "94bc2bd182525112",
+            "id": "b08e4348918c8971",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80-日记记录/2025/11/2025-11-09日记.md",
+                "file": "90-待整理与临时笔记/2025-11-09-随手记2.md",
                 "mode": "source",
-                "source": false
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "2025-11-09日记"
+              "title": "2025-11-09-随手记2"
             }
           }
         ]
@@ -113,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "10-个人知识管理/Obsidian/常用插件.md",
+                "file": "90-待整理与临时笔记/2025-11-09-随手记2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "常用插件 的出链列表"
+              "title": "2025-11-09-随手记2 的出链列表"
             }
           },
           {
@@ -142,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80-日记记录/2025/11/2025-11-09日记.md",
+                "file": "90-待整理与临时笔记/2025-11-09-随手记2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-11-09日记 的大纲"
+              "title": "2025-11-09-随手记2 的大纲"
             }
           },
           {
@@ -159,6 +169,20 @@
               "state": {},
               "icon": "git-pull-request",
               "title": "Source Control"
+            }
+          },
+          {
+            "id": "418493c12da1e4dc",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
             }
           }
         ],
@@ -181,21 +205,28 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "94bc2bd182525112",
+  "active": "b08e4348918c8971",
   "lastOpenFiles": [
+    "90-待整理与临时笔记/白板/未命名.canvas",
+    "90-待整理与临时笔记/2025-11-09-随手记2.md",
+    "90-待整理与临时笔记/Drawing 2025-11-09 13.08.12.excalidraw.md",
+    "10-个人知识管理/Obsidian/常用插件.md",
+    "95-模板/每日笔记模板.md",
+    "95-模板/笔记模板.md",
+    "95-模板/模板.md",
+    "95-模板/95-模板.md",
+    "95-模板/通用模版.md",
+    "80-日记记录/2025/11/2025-11-09日记.md",
+    "00-索引与导航/学习路线图.md",
     "Excalidraw/Drawing 2025-11-09 12.42.19.excalidraw.md",
     "Excalidraw/Drawing 2025-11-09 12.42.22.excalidraw.md",
-    "80-日记记录/2025/11/2025-11-09日记.md",
     "Excalidraw",
     "50-项目记录/2025我的主要任务.md",
     "90-待整理与临时笔记/未命名.md",
-    "95-模板/每日笔记模板.md",
     "10-个人知识管理/Obsidian/Obsidian Dataview插件使用指南.md",
     "90-待整理与临时笔记/设置.md",
-    "10-个人知识管理/Obsidian/常用插件.md",
     "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
     "90-待整理与临时笔记/xxx.md",
-    "95-模板/笔记模板.md",
     "90-待整理与临时笔记/2025-11-09-随手记1.md",
     "90-待整理与临时笔记/2025-11-09-随手记.md",
     "98-印象笔记/Evernote/阿里云服务器 mysql远程连接时，出现连接不上的解决办法 - CSDN博客.md",
@@ -203,13 +234,6 @@
     "98-印象笔记/Evernote/27道高频Spring面试题，你能答对几个？.md",
     "98-印象笔记/Evernote/👋再见2019，你好2020👋.md",
     "98-印象笔记/Evernote/【05】拦截器的使用.md",
-    "98-印象笔记/Evernote/【微信公众号开发相关配置】.md",
-    "98-印象笔记/Evernote/工资条密码.md",
-    "98-印象笔记/Evernote/【02】获取oracle数据库时间.md",
-    "98-印象笔记/Evernote/【01】Hibernate各种主键生成策略与配置详解.md",
-    "98-印象笔记/Evernote/【01】C读取txt文件最简单的方法.md",
-    "98-印象笔记/Evernote/【01-03】Maven安装完毕.md",
-    "98-印象笔记/Evernote/【01-01】Jdk安装以及环境配置.md",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.png",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.3.png",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.2.png",
