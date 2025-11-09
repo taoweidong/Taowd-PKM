@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10-个人知识管理/Obsidian/常用插件.md",
+                "file": "80-日记记录/2025/11/2025-11-09日记.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "常用插件 的大纲"
+              "title": "2025-11-09日记 的大纲"
             }
           },
           {
@@ -177,13 +177,17 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
   "active": "94bc2bd182525112",
   "lastOpenFiles": [
-    "50-项目记录/2025我的主要任务.md",
+    "Excalidraw/Drawing 2025-11-09 12.42.19.excalidraw.md",
+    "Excalidraw/Drawing 2025-11-09 12.42.22.excalidraw.md",
     "80-日记记录/2025/11/2025-11-09日记.md",
+    "Excalidraw",
+    "50-项目记录/2025我的主要任务.md",
     "90-待整理与临时笔记/未命名.md",
     "95-模板/每日笔记模板.md",
     "10-个人知识管理/Obsidian/Obsidian Dataview插件使用指南.md",
@@ -206,8 +210,6 @@
     "98-印象笔记/Evernote/【01】C读取txt文件最简单的方法.md",
     "98-印象笔记/Evernote/【01-03】Maven安装完毕.md",
     "98-印象笔记/Evernote/【01-01】Jdk安装以及环境配置.md",
-    "98-印象笔记/Evernote/(69条消息) miniconda如何使用 - CSDN.md",
-    "98-印象笔记/Evernote/【01】druid配置数据库连接使用密文密码.md",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.png",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.3.png",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.2.png",
@@ -227,7 +229,6 @@
     "98-印象笔记/Evernote/_resources/【03】服务端配置问题.resources",
     "98-印象笔记/Evernote/_resources/【06】发布项目时需要注意，将某些不必要的.resources",
     "98-印象笔记/Evernote/_resources/【08】通讯规则-主要涉及附件的发送.resources",
-    "98-印象笔记/Evernote/_resources/ArrayList和LinkedList的区别.resources",
     "90-待整理与临时笔记/白板/测试白板创建后归档到指定目录.canvas",
     "未命名.canvas"
   ]
