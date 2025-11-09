@@ -11,10 +11,14 @@
             "id": "512abc5d2f349337",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "90-待整理与临时笔记/2025-11-09-随手记.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "2025-11-09-随手记"
             }
           }
         ]
@@ -109,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "90-待整理与临时笔记/2025-11-09-随手记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "2025-11-09-随手记 的出链列表"
             }
           },
           {
@@ -137,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "90-待整理与临时笔记/2025-11-09-随手记.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "2025-11-09-随手记 的大纲"
             }
           },
           {
@@ -184,9 +190,11 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {},
+              "state": {
+                "file": "90-待整理与临时笔记/2025-11-09-随手记.md"
+              },
               "icon": "lucide-info",
-              "title": "笔记属性"
+              "title": "2025-11-09-随手记的笔记属性"
             }
           }
         ],
@@ -215,6 +223,7 @@
   },
   "active": "512abc5d2f349337",
   "lastOpenFiles": [
+    "90-待整理与临时笔记/2025-11-09-随手记.md",
     "90-待整理与临时笔记/90-待整理与临时笔记.md",
     "90-待整理与临时笔记/测试.md",
     "90-待整理与临时笔记/未命名 1.base",
@@ -246,7 +255,6 @@
     "10-个人知识管理/Obsidian/常用插件.md",
     "00-索引与导航/学习路线图.md",
     "Excalidraw/Drawing 2025-11-09 12.42.19.excalidraw.md",
-    "Excalidraw/Drawing 2025-11-09 12.42.22.excalidraw.md",
     "Excalidraw",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.png",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.3.png",

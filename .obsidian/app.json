@@ -2,5 +2,10 @@
   "newFileLocation": "folder",
   "newFileFolderPath": "90-待整理与临时笔记",
   "attachmentFolderPath": "99-附件",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "readableLineLength": false,
+  "strictLineBreaks": true,
+  "foldHeading": false,
+  "showIndentGuide": true,
+  "showLineNumber": false
 }
