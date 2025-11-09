@@ -66,6 +66,31 @@
         "mode": "default",
         "focus": true
       }
+    },
+    {
+      "id": "04580fca-bf07-4c7e-a5f8-299facb4f12e",
+      "name": "打开/创建今日笔记",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "打开/创建今日笔记",
+        "id": "993808d2-3647-4107-bf0c-8fcc1e03124d",
+        "commands": [
+          {
+            "name": "日记: 打开/创建今天的日记",
+            "type": "Obsidian",
+            "id": "5c47932e-6e93-4b63-8399-67ac865770f8",
+            "commandId": "daily-notes"
+          },
+          {
+            "name": "转到标签 #2",
+            "type": "Obsidian",
+            "id": "cd96d7b9-65d6-4b6a-8e2e-f029f6609727",
+            "commandId": "workspace:goto-tab-2"
+          }
+        ]
+      }
     }
   ],
   "inputPrompt": "single-line",

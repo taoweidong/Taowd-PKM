@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0f0dcbaee87a8c79",
+        "id": "631e5ca72a412529",
         "type": "tabs",
         "children": [
           {
-            "id": "8c7ccc78b8e7df3b",
+            "id": "94bc2bd182525112",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -37,7 +37,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -176,12 +176,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8c7ccc78b8e7df3b",
+  "active": "94bc2bd182525112",
   "lastOpenFiles": [
-    "90-待整理与临时笔记/设置.md",
-    "10-个人知识管理/Obsidian/Obsidian Dataview插件使用指南.md",
-    "10-个人知识管理/Obsidian/常用插件.md",
     "50-项目记录/2025我的主要任务.md",
+    "80-日记记录/2025/11/2025-11-09日记.md",
+    "90-待整理与临时笔记/未命名.md",
+    "95-模板/每日笔记模板.md",
+    "10-个人知识管理/Obsidian/Obsidian Dataview插件使用指南.md",
+    "90-待整理与临时笔记/设置.md",
+    "10-个人知识管理/Obsidian/常用插件.md",
     "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
     "90-待整理与临时笔记/xxx.md",
     "95-模板/笔记模板.md",
@@ -214,9 +217,6 @@
     "98-印象笔记/Evernote/_resources/【01】Struts2的运行流程及其工作原理.resources/Center.png",
     "98-印象笔记/Evernote/_resources/【01】Struts2的运行流程及其工作原理.resources/Center.9.png",
     "98-印象笔记/Evernote/_resources/【01】Struts2的运行流程及其工作原理.resources",
-    "98-印象笔记/Evernote/maven 编译时报错：编码 UTF-8 的不可映射字符 - CSDN博客.md",
-    "98-印象笔记/Evernote/java.lang.NoSuchFieldException DEFAULT_PARAM doesn't have a default param DEFAULT_PARAM defined! - CSDN博客.md",
-    "98-印象笔记/Evernote/Java高效读取大文件 - CSDN博客.md",
     "98-印象笔记/Evernote/_resources/WPF_RichTextBox相关总结_-_GavinJun_-_博客园.resources",
     "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.1.resources",
     "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.resources",
