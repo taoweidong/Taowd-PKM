@@ -4,5 +4,6 @@
   "dataview",
   "obsidian-tasks-plugin",
   "obsidian-excalidraw-plugin",
-  "templater-obsidian"
+  "templater-obsidian",
+  "calendar"
 ]
