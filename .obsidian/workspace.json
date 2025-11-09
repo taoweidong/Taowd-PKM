@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "daed5cce925f511e",
+        "id": "d7e92442927a344c",
         "type": "tabs",
         "children": [
           {
-            "id": "52f45b5d5756716b",
+            "id": "512abc5d2f349337",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "80-日记记录/2025/2025-45周报.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-45周报"
+              "title": "新标签页"
             }
           }
         ]
@@ -113,12 +109,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "80-日记记录/2025/2025-45周报.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "2025-45周报 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -142,13 +137,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80-日记记录/2025/2025-45周报.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-45周报 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -190,11 +184,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "80-日记记录/2025/2025-45周报.md"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "2025-45周报的笔记属性"
+              "title": "笔记属性"
             }
           }
         ],
@@ -217,13 +209,20 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "periodic-notes:Open this week": false,
       "periodic-notes:Open today": true,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "omnisearch:Omnisearch": false
     }
   },
-  "active": "52f45b5d5756716b",
+  "active": "512abc5d2f349337",
   "lastOpenFiles": [
-    "80-日记记录/2025/11/2025-11-09日记.md",
+    "90-待整理与临时笔记/测试.md",
+    "90-待整理与临时笔记/未命名 1.base",
+    "90-待整理与临时笔记/未命名.base",
+    "90-待整理与临时笔记/白板/未命名 1.canvas",
+    "Excalidraw/Drawing 2025-11-09 16.32.31.excalidraw.md",
+    "50-项目记录/50-项目记录.md",
     "80-日记记录/2025/2025-45周报.md",
+    "80-日记记录/2025/11/2025-11-09日记.md",
     "95-模板/周报笔记模板.md",
     "80-日记记录/2025/2025-44周报.md",
     "95-模板/每日笔记模板.md",
@@ -249,9 +248,6 @@
     "Excalidraw/Drawing 2025-11-09 12.42.22.excalidraw.md",
     "Excalidraw",
     "50-项目记录/2025我的主要任务.md",
-    "90-待整理与临时笔记/未命名.md",
-    "10-个人知识管理/Obsidian/Obsidian Dataview插件使用指南.md",
-    "90-待整理与临时笔记/设置.md",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.png",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.3.png",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.2.png",
@@ -267,8 +263,6 @@
     "98-印象笔记/Evernote/_resources/【01】Struts2的运行流程及其工作原理.resources",
     "98-印象笔记/Evernote/_resources/WPF_RichTextBox相关总结_-_GavinJun_-_博客园.resources",
     "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.1.resources",
-    "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.resources",
-    "98-印象笔记/Evernote/_resources/【03】服务端配置问题.resources",
     "90-待整理与临时笔记/白板/测试白板创建后归档到指定目录.canvas",
     "未命名.canvas"
   ]
