@@ -7,5 +7,6 @@
   "templater-obsidian",
   "calendar",
   "periodic-notes",
-  "markdown-prettifier"
+  "markdown-prettifier",
+  "auto-note-mover"
 ]
