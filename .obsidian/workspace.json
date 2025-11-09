@@ -185,9 +185,21 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "05b99137b77e883b",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "80-日记记录/2025/11/2025-11-06日记.md"
+              },
+              "icon": "lucide-info",
+              "title": "2025-11-06日记的笔记属性"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -207,7 +219,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ab33df1d526e61a1",
+  "active": "b8fe2ee82f486496",
   "lastOpenFiles": [
     "80-日记记录/2025/11/2025-11-08日记.md",
     "80-日记记录/2025/11/2025-11-06日记.md",
