@@ -4,20 +4,81 @@
     "type": "split",
     "children": [
       {
-        "id": "7464866cee2b422c",
+        "id": "427de4f4ea1d67d7",
         "type": "tabs",
         "children": [
           {
-            "id": "bcc423a58ab86bec",
+            "id": "20e1af0677b0c819",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "10-个人知识管理/Obsidian/常用插件.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "常用插件"
+            }
+          },
+          {
+            "id": "15140ce77303f96e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Obsidian QuickAdd 插件使用指南"
+            }
+          },
+          {
+            "id": "7e201be482da0b56",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90-待整理与临时笔记/xxx.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "xxx"
+            }
+          },
+          {
+            "id": "7301801f89cdaecb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90-待整理与临时笔记/2025-11-09-随手记.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-11-09-随手记"
+            }
+          },
+          {
+            "id": "da5535494f00475d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90-待整理与临时笔记/2025-11-09-随手记1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-11-09-随手记1"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -176,8 +237,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bcc423a58ab86bec",
+  "active": "da5535494f00475d",
   "lastOpenFiles": [
+    "90-待整理与临时笔记/2025-11-09-随手记.md",
+    "90-待整理与临时笔记/2025-11-09-随手记1.md",
+    "90-待整理与临时笔记/xxx.md",
+    "10-个人知识管理/Obsidian/Obsidian QuickAdd 插件使用指南.md",
+    "10-个人知识管理/Obsidian/常用插件.md",
     "98-印象笔记/Evernote/阿里云服务器 mysql远程连接时，出现连接不上的解决办法 - CSDN博客.md",
     "98-印象笔记/Evernote/20200513每日工作总结.md",
     "98-印象笔记/Evernote/27道高频Spring面试题，你能答对几个？.md",
@@ -215,13 +281,8 @@
     "98-印象笔记/Evernote/_resources/shell脚本学习笔记（shell脚本实现文件的创建）_-_CSDN博客.resources",
     "98-印象笔记/Evernote/【02】java代码，运行时可调用浏览器打开一个网页，网页地址在代码中即可.md",
     "98-印象笔记/Evernote/【01】导出指定表中符合条件的数据.md",
-    "98-印象笔记/Evernote/【03】服务端配置问题.md",
     "98-印象笔记/Evernote/_resources/【03】服务端配置问题.resources",
-    "98-印象笔记/Evernote/【04】databox反显数据勾选.md",
-    "98-印象笔记/Evernote/【05】RichTextBox数据清空.md",
-    "98-印象笔记/Evernote/【06】发布项目时需要注意，将某些不必要的.md",
     "98-印象笔记/Evernote/_resources/【06】发布项目时需要注意，将某些不必要的.resources",
-    "98-印象笔记/Evernote/【07】前端生产发布文件.md",
     "98-印象笔记/Evernote/_resources/【08】通讯规则-主要涉及附件的发送.resources",
     "98-印象笔记/Evernote/_resources/ArrayList和LinkedList的区别.resources",
     "90-待整理与临时笔记/白板/测试白板创建后归档到指定目录.canvas",
