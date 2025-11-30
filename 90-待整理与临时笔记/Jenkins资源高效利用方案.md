@@ -17,6 +17,7 @@ aliases:
 6、当前方案在公司内网部署，内网中部署了DockerHub私库，有相关需要的基础镜像
 7、考虑高并发情况下master的压力情况，降低master卡顿的问题
 
+[# Docker动态Agent的Jenkins Python任务优化方案](https://www.qianwen.com/share?shareId=ae8f7fc8-c741-4184-a0ea-3da51c9af1dc&type=deepResearchCode)
 
 ---
 
