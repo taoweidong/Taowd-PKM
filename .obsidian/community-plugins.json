@@ -10,5 +10,7 @@
   "markdown-prettifier",
   "auto-note-mover",
   "auto-file-organizer",
-  "editing-toolbar"
+  "editing-toolbar",
+  "omnisearch",
+  "tag-wrangler"
 ]
