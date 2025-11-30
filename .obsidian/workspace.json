@@ -141,12 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "90-待整理与临时笔记/Jenkins资源高效利用方案.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Jenkins资源高效利用方案 的大纲"
             }
           },
           {
