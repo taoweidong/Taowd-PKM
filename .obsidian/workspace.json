@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "hello",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -75,7 +75,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -214,11 +214,11 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-git:Open Git source control": false,
       "workspaces:管理工作区布局": false,
-      "periodic-notes:Open this week": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "periodic-notes:Open this week": false
     }
   },
-  "active": "bbbe751ba72dfbc2",
+  "active": "98aba2e7f4b9f696",
   "lastOpenFiles": [
     "20-技术积累/Jenkins资源高效利用方案.md",
     "80-日记记录/2025/11/2025-11-30日记.md",
