@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Jenkins资源高效利用方案"
             }
+          },
+          {
+            "id": "9b97a8d68f479a48",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.10.6"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -212,11 +225,10 @@
       "bases:创建新数据库": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-git:Open Git source control": false,
-      "workspaces:管理工作区布局": false,
-      "periodic-notes:Open this week": false
+      "workspaces:管理工作区布局": false
     }
   },
-  "active": "98aba2e7f4b9f696",
+  "active": "9b97a8d68f479a48",
   "lastOpenFiles": [
     "80-日记记录/2025/11/2025-11-06日记.md",
     "90-待整理与临时笔记/Jenkins资源高效利用方案.md",
