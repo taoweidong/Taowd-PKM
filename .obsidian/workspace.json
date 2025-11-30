@@ -11,13 +11,32 @@
             "id": "98aba2e7f4b9f696",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "80-日记记录/2025/11/2025-11-06日记.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "2025-11-06日记"
+            }
+          },
+          {
+            "id": "e2b910b112327b4a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90-待整理与临时笔记/2025-11-30-随手记.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-11-30-随手记"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -211,10 +230,13 @@
       "periodic-notes:Open this week": false
     }
   },
-  "active": "98aba2e7f4b9f696",
+  "active": "e2b910b112327b4a",
   "lastOpenFiles": [
-    "50-项目记录/2025我的主要任务.md",
+    "80-日记记录/2025/11/2025-11-06日记.md",
+    "90-待整理与临时笔记/2025-11-30-随手记.md",
     "80-日记记录/2025/11/2025-11-09日记.md",
+    "10-个人知识管理/核心插件配置.md",
+    "50-项目记录/2025我的主要任务.md",
     "20-技术积累/Python学习.md",
     "90-待整理与临时笔记/90-待整理与临时笔记.md",
     "90-待整理与临时笔记/测试.md",
@@ -229,7 +251,6 @@
     "95-模板/每日笔记模板.md",
     "80-日记记录/2025/11/2025-W周报.md",
     "80-日记记录/{YYYY}/2025-W47.md",
-    "80-日记记录/2025/11/2025-11-06日记.md",
     "80-日记记录/{YYYY}",
     "2025-W45.md",
     "80-日记记录/2025/11/2025-11-08日记.md",
@@ -243,8 +264,6 @@
     "90-待整理与临时笔记/Content Creation.base",
     "90-待整理与临时笔记/白板/未命名.canvas",
     "90-待整理与临时笔记/Drawing 2025-11-09 13.08.12.excalidraw.md",
-    "10-个人知识管理/Obsidian/常用插件.md",
-    "00-索引与导航/学习路线图.md",
     "Excalidraw",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.png",
     "98-印象笔记/Evernote/_resources/【01】druid配置数据库连接使用密文密码.resources/unknown_filename.3.png",
