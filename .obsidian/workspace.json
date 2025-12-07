@@ -214,8 +214,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-git:Open Git source control": false,
       "workspaces:管理工作区布局": false,
-      "omnisearch:Omnisearch": false,
-      "periodic-notes:Open this week": false
+      "omnisearch:Omnisearch": false
     }
   },
   "active": "98aba2e7f4b9f696",
