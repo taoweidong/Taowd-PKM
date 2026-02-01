@@ -4,17 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "eb306c27ac620329",
+        "id": "3c9ee5f7bcca1550",
         "type": "tabs",
         "children": [
           {
-            "id": "bd6ec15dae3fcffe",
+            "id": "0e7aa4a4116033ca",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2026-02-01 12.07.05.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-02-01 12.07.05.excalidraw"
             }
           }
         ]
@@ -176,8 +178,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -199,22 +201,23 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
-      "templater-obsidian:Templater": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "obsidian-git:Open Git source control": false,
       "workspaces:管理工作区布局": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "templater-obsidian:Templater": false,
       "omnisearch:Omnisearch": false,
       "periodic-notes:Open this week": false
     }
   },
-  "active": "bd6ec15dae3fcffe",
+  "active": "0e7aa4a4116033ca",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2026-02-01 12.07.05.excalidraw.md",
     "20-技术积累/Python学习.md",
     "20-技术积累/后端开发/douban_movie_scraper.py",
     "20-技术积累/编程语言/Python-高级特性.md",
