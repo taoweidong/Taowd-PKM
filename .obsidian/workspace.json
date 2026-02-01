@@ -11,10 +11,12 @@
             "id": "4f5eb7dfb1e73ed6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.11.5"
             }
           }
         ]
@@ -209,8 +211,7 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "templater-obsidian:Templater": false,
-      "omnisearch:Omnisearch": false,
-      "periodic-notes:Open this week": false
+      "omnisearch:Omnisearch": false
     }
   },
   "active": "4f5eb7dfb1e73ed6",
