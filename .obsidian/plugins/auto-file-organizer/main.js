@@ -27,10 +27,10 @@ __export(main_exports, {
   default: () => AutoFileOrganizer
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian17 = require("obsidian");
+var import_obsidian19 = require("obsidian");
 
 // src/setting.ts
-var import_obsidian16 = require("obsidian");
+var import_obsidian18 = require("obsidian");
 
 // src/setting/priority.ts
 var import_obsidian = require("obsidian");
@@ -1896,11 +1896,69 @@ function GetExtensionMapping(containerEl, plugin, renderCallback) {
   });
 }
 
-// src/setting/aem/set-ext-blacklist.ts
+// src/setting/aem/set-ext-folder-blacklist.ts
 var import_obsidian8 = require("obsidian");
+function SetExtFolderBlacklist(containerEl, plugin, app, display) {
+  let eblackList = null;
+  new import_obsidian8.Setting(containerEl).setName("Set Folder Blacklist").setDesc(
+    "Indicate what folder is excluded for automatically get extension mapping"
+  ).addSearch((search) => {
+    new FolderSuggest(app, search.inputEl);
+    search.setPlaceholder("Search folder...").onChange((folder) => {
+      eblackList = folder;
+    });
+  }).addButton((btn) => {
+    btn.setButtonText("Add").setCta().onClick(async () => {
+      if (eblackList) {
+        plugin.settings.extensionFolderBlackList = plugin.settings.extensionFolderBlackList || {};
+        plugin.settings.extensionFolderBlackList[eblackList] = eblackList;
+        if (typeof plugin.saveSettings === "function") {
+          await plugin.saveSettings();
+        }
+        if (display)
+          display();
+      } else {
+        new import_obsidian8.Notice("The input is invalid.");
+      }
+    });
+  });
+}
+
+// src/setting/aem/excl-ext-folder-list.ts
+var import_obsidian9 = require("obsidian");
+function ExcludedExtensionFolderList(containerEl, plugin, display) {
+  const collapsibleSection3 = containerEl.createEl("details", {
+    attr: { open: "true" }
+  });
+  const summary3 = collapsibleSection3.createEl("summary", {
+    text: "Excluded Folder list"
+  });
+  summary3.style.fontSize = "1.2em";
+  summary3.style.margin = "8px";
+  summary3.style.cursor = "pointer";
+  for (const [folder1] of Object.entries(
+    plugin.settings.extensionFolderBlackList || {}
+  )) {
+    new import_obsidian9.Setting(collapsibleSection3).setName(`Exclude "${folder1}"`).setDesc(
+      "This folder is excluded when pushing get extension button"
+    ).addButton(
+      (btn) => btn.setButtonText("Delete").setCta().onClick(async () => {
+        delete plugin.settings.extensionFolderBlackList[folder1];
+        if (typeof plugin.saveSettings === "function") {
+          await plugin.saveSettings();
+        }
+        if (display)
+          display == null ? void 0 : display();
+      })
+    );
+  }
+}
+
+// src/setting/aem/set-ext-blacklist.ts
+var import_obsidian10 = require("obsidian");
 function SetExtensionBlacklist(containerEl, plugin, display) {
   let eblackList = null;
-  new import_obsidian8.Setting(containerEl).setName("Set Extension Blacklist").setDesc(
+  new import_obsidian10.Setting(containerEl).setName("Set Extension Blacklist").setDesc(
     "Indicate what file extension is excluded for automatically get extension mapping"
   ).addText(
     (text) => text.setPlaceholder("Enter extension (e.g., md)").onChange((value) => {
@@ -1917,14 +1975,14 @@ function SetExtensionBlacklist(containerEl, plugin, display) {
         if (display)
           display();
       } else {
-        new import_obsidian8.Notice("The input is invalid.");
+        new import_obsidian10.Notice("The input is invalid.");
       }
     });
   });
 }
 
 // src/setting/aem/excl-ext-list.ts
-var import_obsidian9 = require("obsidian");
+var import_obsidian11 = require("obsidian");
 function ExcludedExtensionList(containerEl, plugin, display) {
   const collapsibleSection5 = containerEl.createEl("details", {
     attr: { open: "true" }
@@ -1938,7 +1996,7 @@ function ExcludedExtensionList(containerEl, plugin, display) {
   for (const [extension] of Object.entries(
     plugin.settings.extensionBlackList || {}
   )) {
-    new import_obsidian9.Setting(collapsibleSection5).setName(`Extension: ${extension}`).setDesc(
+    new import_obsidian11.Setting(collapsibleSection5).setName(`Extension: ${extension}`).setDesc(
       "This extension is excluded when pushing get extension button"
     ).addButton(
       (btn) => btn.setButtonText("Delete").setCta().onClick(async () => {
@@ -1954,9 +2012,9 @@ function ExcludedExtensionList(containerEl, plugin, display) {
 }
 
 // src/setting/ttfm/enable-tag-map.ts
-var import_obsidian10 = require("obsidian");
+var import_obsidian12 = require("obsidian");
 function EnableTagMapping(containerEl, plugin, refresh) {
-  new import_obsidian10.Setting(containerEl).setName("Enable Tag Mapping").setDesc("Enable or disable tag-to-folder mapping.").addToggle((toggle) => {
+  new import_obsidian12.Setting(containerEl).setName("Enable Tag Mapping").setDesc("Enable or disable tag-to-folder mapping.").addToggle((toggle) => {
     var _a;
     toggle.setValue((_a = plugin.settings.tagEnabled) != null ? _a : true);
     toggle.onChange(async (value) => {
@@ -1968,11 +2026,11 @@ function EnableTagMapping(containerEl, plugin, refresh) {
 }
 
 // src/setting/ttfm/add-new-tag-map.ts
-var import_obsidian11 = require("obsidian");
+var import_obsidian13 = require("obsidian");
 function AddNewTagMapping(containerEl, plugin, app, refresh) {
   let newTag = "";
   let tagFolder = "";
-  new import_obsidian11.Setting(containerEl).setName("Add new tag mapping").setDesc("Add a new tag and target folder").addSearch((search) => {
+  new import_obsidian13.Setting(containerEl).setName("Add new tag mapping").setDesc("Add a new tag and target folder").addSearch((search) => {
     new TagSuggest(app, search.inputEl);
     search.setPlaceholder("Search tag...").onChange((tag) => {
       newTag = getSanitizedTag(tag);
@@ -1989,14 +2047,14 @@ function AddNewTagMapping(containerEl, plugin, app, refresh) {
         await plugin.saveSettings();
         refresh();
       } else {
-        new import_obsidian11.Notice("The input is invalid.");
+        new import_obsidian13.Notice("The input is invalid.");
       }
     });
   });
 }
 
 // src/setting/ttfm/tag-map-list.ts
-var import_obsidian12 = require("obsidian");
+var import_obsidian14 = require("obsidian");
 function TagMappingList(containerEl, plugin, allFolders, refresh) {
   const collapsibleSection2 = containerEl.createEl("details", {
     attr: { open: "true" }
@@ -2008,7 +2066,7 @@ function TagMappingList(containerEl, plugin, allFolders, refresh) {
   summary2.style.margin = "8px";
   summary2.style.cursor = "pointer";
   for (const [tag, folder] of Object.entries(plugin.settings.tagMapping)) {
-    new import_obsidian12.Setting(collapsibleSection2).setName(`Tag: ${tag}`).setDesc("Change the folder for this tag").addDropdown((dropdown) => {
+    new import_obsidian14.Setting(collapsibleSection2).setName(`Tag: ${tag}`).setDesc("Change the folder for this tag").addDropdown((dropdown) => {
       dropdown.addOption("", "Select folder...");
       allFolders.forEach((f) => dropdown.addOption(f.path, f.path));
       dropdown.setValue(folder);
@@ -2016,7 +2074,7 @@ function TagMappingList(containerEl, plugin, allFolders, refresh) {
         if (value) {
           plugin.settings.tagMapping[tag] = value;
           await plugin.saveSettings();
-          new import_obsidian12.Notice(`Folder for ${tag} files updated to: ${value}`);
+          new import_obsidian14.Notice(`Folder for ${tag} files updated to: ${value}`);
         }
       });
     }).addButton(
@@ -2030,9 +2088,9 @@ function TagMappingList(containerEl, plugin, allFolders, refresh) {
 }
 
 // src/setting/atm/get-tag-map.ts
-var import_obsidian13 = require("obsidian");
+var import_obsidian15 = require("obsidian");
 function GetTagMapping(containerEl, plugin, refresh) {
-  new import_obsidian13.Setting(containerEl).setName("Get tag mapping").setDesc(
+  new import_obsidian15.Setting(containerEl).setName("Get tag mapping").setDesc(
     "Scan the tag in the file and make mapping tag to folder automatically"
   ).addButton((btn) => {
     btn.setButtonText("Start scan").setCta().onClick(async () => {
@@ -2043,10 +2101,10 @@ function GetTagMapping(containerEl, plugin, refresh) {
 }
 
 // src/setting/atm/set-tag-folder-blacklist.ts
-var import_obsidian14 = require("obsidian");
+var import_obsidian16 = require("obsidian");
 function SetTagFolderBlacklist(containerEl, plugin, app, refresh) {
   let blackList = "";
-  new import_obsidian14.Setting(containerEl).setName("Set Folder Blacklist").setDesc(
+  new import_obsidian16.Setting(containerEl).setName("Set Folder Blacklist").setDesc(
     "Indicate what folder is excluded for automatically get tag mapping"
   ).addSearch((search) => {
     new FolderSuggest(app, search.inputEl);
@@ -2060,14 +2118,14 @@ function SetTagFolderBlacklist(containerEl, plugin, app, refresh) {
         await plugin.saveSettings();
         refresh();
       } else {
-        new import_obsidian14.Notice("The input is invalid.");
+        new import_obsidian16.Notice("The input is invalid.");
       }
     });
   });
 }
 
 // src/setting/atm/excl-tag-folder-list.ts
-var import_obsidian15 = require("obsidian");
+var import_obsidian17 = require("obsidian");
 function ExcludedTagFolderList(containerEl, plugin, refresh) {
   const collapsibleSection4 = containerEl.createEl("details", {
     attr: { open: "true" }
@@ -2079,7 +2137,7 @@ function ExcludedTagFolderList(containerEl, plugin, refresh) {
   summary4.style.margin = "8px";
   summary4.style.cursor = "pointer";
   for (const [folder1] of Object.entries(plugin.settings.tagBlackList)) {
-    new import_obsidian15.Setting(collapsibleSection4).setName(`Exclude "${folder1}"`).setDesc(
+    new import_obsidian17.Setting(collapsibleSection4).setName(`Exclude "${folder1}"`).setDesc(
       "This folder is excluded when pushing get tag mapping button"
     ).addButton(
       (btn) => btn.setButtonText("Delete").setCta().onClick(async () => {
@@ -2092,7 +2150,7 @@ function ExcludedTagFolderList(containerEl, plugin, refresh) {
 }
 
 // src/setting.ts
-var AutoFileOrganizerSettingTab = class extends import_obsidian16.PluginSettingTab {
+var AutoFileOrganizerSettingTab = class extends import_obsidian18.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     this.plugin = plugin;
@@ -2120,6 +2178,17 @@ var AutoFileOrganizerSettingTab = class extends import_obsidian16.PluginSettingT
     GetExtensionMapping(containerEl, this.plugin, () => this.display());
     SetExtensionBlacklist(containerEl, this.plugin, () => this.display());
     ExcludedExtensionList(containerEl, this.plugin, () => this.display());
+    SetExtFolderBlacklist(
+      containerEl,
+      this.plugin,
+      this.app,
+      () => this.display()
+    );
+    ExcludedExtensionFolderList(
+      containerEl,
+      this.plugin,
+      () => this.display()
+    );
     containerEl.createEl("h3", { text: "Tag-to-Folder Mapping" });
     EnableTagMapping(containerEl, this.plugin, () => this.display());
     AddNewTagMapping(
@@ -2157,14 +2226,14 @@ var DEFAULT_SETTINGS = {
   extensionFolderBlackList: {},
   tagBlackList: {}
 };
-var AutoFileOrganizer = class extends import_obsidian17.Plugin {
+var AutoFileOrganizer = class extends import_obsidian19.Plugin {
   async onload() {
     console.log("Auto File Organizer loaded!");
     await this.loadSettings();
     this.addSettingTab(new AutoFileOrganizerSettingTab(this.app, this));
     this.registerEvent(
       this.app.vault.on("create", async (file) => {
-        if (Object.keys(this.settings.extensionMapping).length > 0) {
+        if (Object.keys(this.settings.extensionMapping).length > 0 || Object.keys(this.settings.tagMapping).length > 0) {
           await this.handleFile(file);
         } else {
           console.log(
@@ -2175,7 +2244,7 @@ var AutoFileOrganizer = class extends import_obsidian17.Plugin {
     );
     this.registerEvent(
       this.app.vault.on("rename", async (file, oldPath) => {
-        if (!(file instanceof import_obsidian17.TFile))
+        if (!(file instanceof import_obsidian19.TFile))
           return;
         const isInRoot = !file.path.includes("/");
         if (!isInRoot)
@@ -2193,14 +2262,27 @@ var AutoFileOrganizer = class extends import_obsidian17.Plugin {
       name: "Organize Files",
       callback: async () => {
         await this.organizeVault();
-        new import_obsidian17.Notice("Files organized");
+        new import_obsidian19.Notice("Files organized");
       }
     });
   }
   async handleFile(file) {
-    if (!(file instanceof import_obsidian17.TFile))
+    if (!(file instanceof import_obsidian19.TFile))
       return null;
     const originalPath = file.path;
+    const isInBlacklistedFolder = (filePath) => {
+      const pathParts = filePath.split("/");
+      for (let i = 0; i < pathParts.length - 1; i++) {
+        const folderName = pathParts[i];
+        if (this.settings.extensionFolderBlackList && this.settings.extensionFolderBlackList[folderName] || this.settings.tagBlackList && this.settings.tagBlackList[folderName]) {
+          return true;
+        }
+      }
+      return false;
+    };
+    if (isInBlacklistedFolder(file.path)) {
+      return null;
+    }
     const moveByTag = async () => {
       if (!this.settings.tagEnabled)
         return false;
@@ -2209,7 +2291,7 @@ var AutoFileOrganizer = class extends import_obsidian17.Plugin {
         console.log(`No metadata found for file: ${file.path}`);
         return false;
       }
-      const tags = (0, import_obsidian17.getAllTags)(metadata);
+      const tags = (0, import_obsidian19.getAllTags)(metadata);
       if (tags && tags.length > 0) {
         for (const tag of tags) {
           const targetFolder = this.settings.tagMapping[tag];
@@ -2226,6 +2308,10 @@ var AutoFileOrganizer = class extends import_obsidian17.Plugin {
                   err
                 );
               }
+            } else {
+              console.log(
+                `File ${file.name} already in correct folder for tag ${tag}`
+              );
             }
           }
         }
@@ -2250,6 +2336,10 @@ var AutoFileOrganizer = class extends import_obsidian17.Plugin {
               err
             );
           }
+        } else {
+          console.log(
+            `File ${file.name} already in correct folder for extension ${extension}`
+          );
         }
       }
       return false;
@@ -2284,9 +2374,6 @@ var AutoFileOrganizer = class extends import_obsidian17.Plugin {
   }
   async saveSettings() {
     await this.saveData(this.settings);
-    if (Object.keys(this.settings.extensionMapping).length > 0) {
-      await this.organizeVault();
-    }
   }
   async organizeVault() {
     const files = this.app.vault.getFiles();
@@ -2299,12 +2386,12 @@ var AutoFileOrganizer = class extends import_obsidian17.Plugin {
     });
     await Promise.all(promises);
     if (movedFiles.length > 0) {
-      new import_obsidian17.Notice(
+      new import_obsidian19.Notice(
         `Moved ${movedFiles.length} files:
 ${movedFiles.join(", ")}`
       );
     } else {
-      new import_obsidian17.Notice("No files were moved.");
+      new import_obsidian19.Notice("No files were moved.");
     }
   }
   //* New: build extension -> folder mapping but skip extensions present in extensionBlackList
@@ -2320,7 +2407,15 @@ ${movedFiles.join(", ")}`
         continue;
       }
       const folderName = ((_b = (_a = this.app.vault.getAbstractFileByPath(file.path)) == null ? void 0 : _a.parent) == null ? void 0 : _b.name) || "DefaultFolder";
-      if (!extensionToFolderMap[extension] && !this.settings.extensionFolderBlackList[folderName]) {
+      const pathParts = file.path.split("/");
+      let isBlacklisted = false;
+      for (let i = 0; i < pathParts.length - 1; i++) {
+        if (this.settings.extensionFolderBlackList[pathParts[i]]) {
+          isBlacklisted = true;
+          break;
+        }
+      }
+      if (!extensionToFolderMap[extension] && !isBlacklisted) {
         extensionToFolderMap[extension] = folderName;
       }
     }
@@ -2329,12 +2424,13 @@ ${movedFiles.join(", ")}`
       ...extensionToFolderMap
     };
     await this.saveSettings();
-    new import_obsidian17.Notice(
+    new import_obsidian19.Notice(
       `update extension mapping (excluding blacklisted extensions)`
     );
   }
-  //? Old: still can't figure out to fix
-  //? Problem: The files on Blacklisted folder still moved on DefaultFolder
+  // Fixed: files inside blacklisted folders are NOT moved
+  // Guard is applied at the beginning of handleFile() using
+  // extensionFolderBlackList and tagBlackList.
   async updateExtensionFolderMappingFromExistingFiles() {
     var _a, _b;
     const allFiles = this.app.vault.getFiles();
@@ -2344,7 +2440,15 @@ ${movedFiles.join(", ")}`
       if (!extension)
         continue;
       const folderName = ((_b = (_a = this.app.vault.getAbstractFileByPath(file.path)) == null ? void 0 : _a.parent) == null ? void 0 : _b.name) || "DefaultFolder";
-      if (!extensionToFolderMap[extension] && !this.settings.extensionFolderBlackList[folderName]) {
+      const pathParts = file.path.split("/");
+      let isBlacklisted = false;
+      for (let i = 0; i < pathParts.length - 1; i++) {
+        if (this.settings.extensionFolderBlackList[pathParts[i]]) {
+          isBlacklisted = true;
+          break;
+        }
+      }
+      if (!extensionToFolderMap[extension] && !isBlacklisted) {
         extensionToFolderMap[extension] = folderName;
       }
     }
@@ -2353,7 +2457,7 @@ ${movedFiles.join(", ")}`
       ...extensionToFolderMap
     };
     await this.saveSettings();
-    new import_obsidian17.Notice(`update extension-to-folder mapping`);
+    new import_obsidian19.Notice(`update extension-to-folder mapping`);
   }
   async updateTagMappingFromExistingFiles() {
     var _a, _b;
@@ -2363,11 +2467,19 @@ ${movedFiles.join(", ")}`
       const metadata = this.app.metadataCache.getFileCache(file);
       if (!metadata)
         continue;
-      const tags = (0, import_obsidian17.getAllTags)(metadata);
+      const tags = (0, import_obsidian19.getAllTags)(metadata);
       if (tags && tags.length > 0) {
         for (const tag of tags) {
           const folderName = ((_b = (_a = this.app.vault.getAbstractFileByPath(file.path)) == null ? void 0 : _a.parent) == null ? void 0 : _b.name) || "DefaultFolder";
-          if (!tagToFolderMap[tag] && !this.settings.tagBlackList[folderName]) {
+          const pathParts = file.path.split("/");
+          let isBlacklisted = false;
+          for (let i = 0; i < pathParts.length - 1; i++) {
+            if (this.settings.tagBlackList[pathParts[i]]) {
+              isBlacklisted = true;
+              break;
+            }
+          }
+          if (!tagToFolderMap[tag] && !isBlacklisted) {
             tagToFolderMap[tag] = folderName;
           }
         }
@@ -2378,7 +2490,7 @@ ${movedFiles.join(", ")}`
       ...tagToFolderMap
     };
     await this.saveSettings();
-    new import_obsidian17.Notice(`update tag-to-folder mapping.`);
+    new import_obsidian19.Notice(`update tag-to-folder mapping.`);
   }
 };
 //! === Priority: Priority Toggle ===
@@ -2386,6 +2498,8 @@ ${movedFiles.join(", ")}`
 //! === ETFM: Add New Extension Mapping ===
 //! === ETFM: Extension Mapping List ===
 //! === AEM: Get Extension Mapping ===
+//! AEM: Set Folder Blacklist (extension)
+//! AEM: Excluded Folder (List)
 //! === TTFM: Enable Tag Mapping ===
 //! === TTFM: Add New Tag Mapping ===
 //! === TTFM: Tag Mapping List ===
