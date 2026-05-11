@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Python学习"
             }
+          },
+          {
+            "id": "99fc14eccd422d85",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.7"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -213,10 +226,11 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-git:Open Git source control": false,
       "workspaces:管理工作区布局": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "periodic-notes:Open this week": false
     }
   },
-  "active": "3af1964ff7e62804",
+  "active": "99fc14eccd422d85",
   "lastOpenFiles": [
     "20-技术积累/Jenkins资源高效利用方案.md",
     "30-软件设计/主页.md",
