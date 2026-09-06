@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f400cb2a9c84ec3a",
+        "id": "3fa176ba80feade2",
         "type": "tabs",
         "children": [
           {
-            "id": "1f7f3f93e806ec2e",
+            "id": "6164e83265189a5e",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.13.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.13.7"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -217,7 +215,7 @@
       "periodic-notes:Open this week": false
     }
   },
-  "active": "1f7f3f93e806ec2e",
+  "active": "6164e83265189a5e",
   "lastOpenFiles": [
     "20-技术积累/Python学习.md",
     "Clippings/Karpathy 式 AI 知识库搭建指南：让 Claude Code + Obsidian 成为你的第二大脑.md",
