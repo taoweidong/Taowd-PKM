@@ -1,0 +1,79 @@
+filters:
+  and:
+    - 'type == "项目"'
+    - 'file.ext == "md"'
+
+formulas:
+  health_icon: 'if(health == "阻塞", "🔴", if(health == "有风险", "🟡", "🟢"))'
+  days_running: 'if(started, (today() - date(started)).days, "")'
+  ports: 'if(backend_port && frontend_port, backend_port + " / " + frontend_port, if(backend_port, backend_port, ""))'
+
+properties:
+  status:
+    displayName: "状态"
+  formula.health_icon:
+    displayName: ""
+  health:
+    displayName: "健康度"
+  stack:
+    displayName: "技术栈"
+  formula.ports:
+    displayName: "端口(后/前)"
+  started:
+    displayName: "启动日期"
+  formula.days_running:
+    displayName: "已运行(天)"
+  repo:
+    displayName: "仓库路径"
+
+views:
+  - type: table
+    name: "全部项目"
+    order:
+      - file.name
+      - status
+      - formula.health_icon
+      - health
+      - stack
+      - formula.ports
+      - started
+      - formula.days_running
+    groupBy:
+      property: status
+      direction: ASC
+
+  - type: cards
+    name: "项目卡片"
+    order:
+      - file.name
+      - status
+      - formula.health_icon
+      - stack
+
+  - type: table
+    name: "进行中"
+    filters:
+      and:
+        - 'status != "已上线"'
+        - 'status != "已归档"'
+    order:
+      - file.name
+      - status
+      - formula.health_icon
+      - health
+      - stack
+      - formula.ports
+    groupBy:
+      property: status
+      direction: ASC
+
+  - type: table
+    name: "已交付"
+    filters:
+      and:
+        - 'status == "已上线"'
+    order:
+      - file.name
+      - stack
+      - started
+      - formula.days_running

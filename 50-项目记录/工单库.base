@@ -1,0 +1,103 @@
+filters:
+  and:
+    - 'type == "工单"'
+    - 'file.ext == "md"'
+
+formulas:
+  days_left: 'if(due, (date(due) - today()).days, "")'
+  overdue_flag: 'if(due && status != "已完成" && status != "已取消" && date(due) < today(), "⚠️ 逾期", "")'
+  priority_label: 'if(priority == "P0", "🔴 P0", if(priority == "P1", "🟠 P1", if(priority == "P2", "🟡 P2", "⚪ P3")))'
+
+properties:
+  formula.priority_label:
+    displayName: ""
+  status:
+    displayName: "状态"
+  project:
+    displayName: "所属项目"
+  category:
+    displayName: "类型"
+  due:
+    displayName: "截止日期"
+  formula.days_left:
+    displayName: "剩余(天)"
+  formula.overdue_flag:
+    displayName: "提醒"
+
+views:
+  - type: table
+    name: "活跃工单"
+    filters:
+      and:
+        - 'status != "已完成"'
+        - 'status != "已取消"'
+    order:
+      - file.name
+      - status
+      - formula.priority_label
+      - project
+      - category
+      - due
+      - formula.days_left
+      - formula.overdue_flag
+    groupBy:
+      property: status
+      direction: ASC
+
+  - type: table
+    name: "按项目"
+    filters:
+      and:
+        - 'status != "已完成"'
+        - 'status != "已取消"'
+    order:
+      - file.name
+      - status
+      - formula.priority_label
+      - due
+      - formula.days_left
+    groupBy:
+      property: project
+      direction: ASC
+
+  - type: table
+    name: "逾期"
+    filters:
+      and:
+        - 'status != "已完成"'
+        - 'status != "已取消"'
+        - 'due'
+        - 'date(due) < today()'
+    order:
+      - file.name
+      - formula.priority_label
+      - project
+      - due
+      - formula.days_left
+
+  - type: table
+    name: "本周到期"
+    filters:
+      and:
+        - 'status != "已完成"'
+        - 'status != "已取消"'
+        - 'due'
+        - 'date(due) >= today()'
+        - 'date(due) <= today() + "7d"'
+    order:
+      - file.name
+      - formula.priority_label
+      - project
+      - due
+      - formula.days_left
+
+  - type: table
+    name: "已完成"
+    filters:
+      and:
+        - 'status == "已完成"'
+    order:
+      - file.name
+      - project
+      - category
+      - due
