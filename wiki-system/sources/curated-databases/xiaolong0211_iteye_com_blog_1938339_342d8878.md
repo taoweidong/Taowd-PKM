@@ -10,7 +10,7 @@ fetched_at: "2026-10-05 15:27:54"
 
 [您还未登录!](/login "登录") [登录](/login)
 
-` 
+`
 
 [![xiaolong0211的博客](https://www.iteye.com/upload/logo/user/274598/15e924c1-6362-3760-a2fe-e94f96145561.jpg?1717537757)](https://www.iteye.com/blog/user/xiaolong0211)
 
@@ -18,10 +18,8 @@ xiaolong0211
 
   * 浏览: 378048 次
   * 性别: ![Icon_minigender_1](https://www.iteye.com/images/icon_minigender_1.gif?1652290086)
-  * 来自: 青岛 
+  * 来自: 青岛
   * ![](/images/status/offline.gif)
-
-
 
 ##### 最近访客  [更多访客>>](/blog/user_visits)
 
@@ -97,15 +95,11 @@ xiaolong0211
   * [AIX相关 (2)](/category/292965)
   * [Cognos相关 (1)](/category/292968)
 
-
-
 ##### 社区版块
 
   * [我的资讯](/blog/news) ( 0)
-  * [我的论坛](/blog/post) ( 19) 
+  * [我的论坛](/blog/post) ( 19)
   * [我的问答](/blog/answered_problems) ( 2)
-
-
 
 ##### 存档分类
 
@@ -114,22 +108,18 @@ xiaolong0211
   * [2013-12](/blog/monthblog/2013-12) ( 1)
   * [更多存档...](/blog/monthblog_more)
 
-
-
 ##### 最新评论
 
-  * [jiaqian0118](https://www.iteye.com/blog/user/jiaqian0118 "jiaqian0118")： 特别感谢，找了好处都没处理好的问题。   
+  * [jiaqian0118](https://www.iteye.com/blog/user/jiaqian0118 "jiaqian0118")： 特别感谢，找了好处都没处理好的问题。
 [RHEL5.9安装Oracle11.2问题汇总](/blog/1938339#bc2372824)
-  * [wxhwdmxl](https://www.iteye.com/blog/user/wxhwdmxl "wxhwdmxl")： 果然如楼主所说啊，弄了好久，终于搞定了！我的主要问题就是在于u ...  
+  * [wxhwdmxl](https://www.iteye.com/blog/user/wxhwdmxl "wxhwdmxl")： 果然如楼主所说啊，弄了好久，终于搞定了！我的主要问题就是在于u ...
 [RHEL5.9安装Oracle11.2问题汇总](/blog/1938339#bc2349958)
-  * [xiaolong0211](https://www.iteye.com/blog/user/xiaolong0211 "xiaolong0211")： zhaoling129 写道xiaolong0211 写道zh ...  
+  * [xiaolong0211](https://www.iteye.com/blog/user/xiaolong0211 "xiaolong0211")： zhaoling129 写道xiaolong0211 写道zh ...
 [RedHat Enterprise Linux 5 下使用rpm安装gcc](/blog/758269#bc2347672)
-  * [zhaoling129](https://www.iteye.com/blog/user/zhaoling129 "zhaoling129")： xiaolong0211 写道zhaopeihehe 写道er ...  
+  * [zhaoling129](https://www.iteye.com/blog/user/zhaoling129 "zhaoling129")： xiaolong0211 写道zhaopeihehe 写道er ...
 [RedHat Enterprise Linux 5 下使用rpm安装gcc](/blog/758269#bc2346604)
-  * [xiaolong0211](https://www.iteye.com/blog/user/xiaolong0211 "xiaolong0211")： woaimingde 写道 必须顶。不过要是还没有装上，要请楼 ...  
+  * [xiaolong0211](https://www.iteye.com/blog/user/xiaolong0211 "xiaolong0211")： woaimingde 写道 必须顶。不过要是还没有装上，要请楼 ...
 [RedHat Enterprise Linux 5 下使用rpm安装gcc](/blog/758269#bc2308256)
-
-
 
 [xiaolong0211](https://www.iteye.com/blog/user/xiaolong0211)
 
@@ -138,42 +128,68 @@ xiaolong0211
 **博客分类：**
   * [Oracle](/category/133891)
 
-
-
 阅读更多
 
 1、安装oracle11.2需要unixODBC和unixODBC-devel两个rpm，于是想手动安装，但发现依赖关系太多了。
-    
-    
-    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-2.2.11-10.el5.i386.rpm 
-    warning: unixODBC-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
-    error: Failed dependencies:
-            libodbc.so.1 is needed by unixODBC-2.2.11-10.el5.i386
-            libodbcinst.so.1 is needed by unixODBC-2.2.11-10.el5.i386
-            unixODBC-libs = 2.2.11-10.el5 is needed by unixODBC-2.2.11-10.el5.i386
-    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-devel-2.2.11-10.el5.i386.rpm 
-    warning: unixODBC-devel-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
-    error: Failed dependencies:
-            libboundparam.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libesoobS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libgtrtst.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libmimerS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libnn.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libodbccr.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libodbcdrvcfg1S.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libodbcdrvcfg2S.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libodbcinst.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libodbcminiS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libodbcnnS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libodbctxtS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            liboplodbcS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            liboraodbcS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libsapdbS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libtdsS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            libtemplate.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            unixODBC = 2.2.11-10.el5 is needed by unixODBC-devel-2.2.11-10.el5.i386
-            unixODBC-libs = 2.2.11-10.el5 is needed by unixODBC-devel-2.2.11-10.el5.i386
-    [root@zhaozy-oracle oracle11g]# 
+
+
+    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-2.2.11-10.el5.i386.rpm
+
+    warning: unixODBC-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
+
+    error: Failed dependencies:
+
+            libodbc.so.1 is needed by unixODBC-2.2.11-10.el5.i386
+
+            libodbcinst.so.1 is needed by unixODBC-2.2.11-10.el5.i386
+
+            unixODBC-libs = 2.2.11-10.el5 is needed by unixODBC-2.2.11-10.el5.i386
+
+    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-devel-2.2.11-10.el5.i386.rpm
+
+    warning: unixODBC-devel-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
+
+    error: Failed dependencies:
+
+            libboundparam.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libesoobS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libgtrtst.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libmimerS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libnn.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libodbccr.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libodbcdrvcfg1S.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libodbcdrvcfg2S.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libodbcinst.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libodbcminiS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libodbcnnS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libodbctxtS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            liboplodbcS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            liboraodbcS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libsapdbS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libtdsS.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            libtemplate.so.1 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            unixODBC = 2.2.11-10.el5 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+            unixODBC-libs = 2.2.11-10.el5 is needed by unixODBC-devel-2.2.11-10.el5.i386
+
+    [root@zhaozy-oracle oracle11g]#
 
 如果按照依赖一个个来装，不太现实，因为可能在安装过程中出现环依赖。
 
@@ -182,36 +198,44 @@ xiaolong0211
 接着想使用yum命令，于是把redhat的yum源镜像改成centos的，执行yum install unixODBC-devel后，可以正常安装。于是又在centos5.9下测试安装unixODBC和unixODBC-devel，发现在安装unixODBC时，同时下载了unixODBC-libs。
 
 最后，重新安装一个不含这两个包的redhat5.9，首先安装unixODBC-libs，然后安装unixODBC，最后安装unixODBC-devel，顺序不能错，成功。
-    
-    
-    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-libs-2.2.11-10.el5.i386.rpm 
-    warning: unixODBC-libs-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
-    Preparing...                ########################################### [100%]
-       1:unixODBC-libs          ########################################### [100%]
-    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-2.2.11-10.el5.i386.rpm 
-    warning: unixODBC-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
-    Preparing...                ########################################### [100%]
-       1:unixODBC               ########################################### [100%]
-    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-devel-2.2.11-10.el5.i386.rpm 
-    warning: unixODBC-devel-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
-    Preparing...                ########################################### [100%]
-       1:unixODBC-devel         ########################################### [100%]
-    [root@zhaozy-oracle oracle11g]# 
+
+
+    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-libs-2.2.11-10.el5.i386.rpm
+
+    warning: unixODBC-libs-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
+
+    Preparing...                ########################################### [100%]
+
+       1:unixODBC-libs          ########################################### [100%]
+
+    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-2.2.11-10.el5.i386.rpm
+
+    warning: unixODBC-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
+
+    Preparing...                ########################################### [100%]
+
+       1:unixODBC               ########################################### [100%]
+
+    [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-devel-2.2.11-10.el5.i386.rpm
+
+    warning: unixODBC-devel-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
+
+    Preparing...                ########################################### [100%]
+
+       1:unixODBC-devel         ########################################### [100%]
+
+    [root@zhaozy-oracle oracle11g]#
 
 问题解决。
 
   * [unixODBC-libs-2.2.11-10.el5.i386.zip](http://dl.iteye.com/topics/download/9fd87750-1775-331a-bf95-a65d78186ce1) (536.5 KB)
   * 下载次数: 276
 
-
   * [unixODBC-2.2.11-10.el5.i386.zip](http://dl.iteye.com/topics/download/824670ca-0072-3ab8-8086-2060462ba116) (277.1 KB)
   * 下载次数: 217
 
-
   * [unixODBC-devel-2.2.11-10.el5.i386.zip](http://dl.iteye.com/topics/download/8e8ec919-7a7a-3f75-b2a4-a114c4c57f04) (723.8 KB)
   * 下载次数: 215
-
-
 
 分享到： [![](/images/sina.jpg)](javascript:; "分享到新浪微博") [![](/images/tec.jpg)](javascript:; "分享到腾讯微博")
 
@@ -221,6 +245,4 @@ xiaolong0211
   * 分类:[数据库](https://www.iteye.com/blogs/category/database)
   * [查看更多](https://www.iteye.com/wiki/blog/1938339)
 
-
-
-Global site tag (gtag.js) - Google Analytics 
+Global site tag (gtag.js) - Google Analytics

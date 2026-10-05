@@ -52,7 +52,7 @@ source: "[[topics/browser-bookmarks]]"
 - [Spring Cloud | 周立](http://www.itmuch.com/) — 周立（程序员 DD 同人）Spring Cloud 专家博客
 - [Spring For All](http://www.spring4all.com/) — Spring 民间技术组织
 - [Java 和微服务 第3部分：微服务通信](https://www.ibm.com/developerworks/cn/java/j-cn-java-and-microservice-3/index.html) — IBM 开发者works
-- [Eureka 简介](https://www.cnblogs.com/wangdaijun/p/6851027.html) — 服务注册发现
+-  — 服务注册发现
 - [mPaaS 简介](https://tech.antfin.com/docs/2/49549) — 蚂蚁金服移动开发平台
 - [Transwarp 产品列表](http://www.transwarp.cn/product/tdh) — 星环 TDH 大数据平台
 
@@ -99,14 +99,14 @@ source: "[[topics/browser-bookmarks]]"
 **同主题其余资源（描述）**
 - [廖雪峰官方网站](https://www.liaoxuefeng.com/) — Python/Java/Git/JS 国民级教程
 - [Scala 教程·菜鸟](http://www.runoob.com/scala/scala-tutorial.html) — 菜鸟教程
-- [Docker 部署 Django](https://pythondjango.cn/django/advanced/16-docker-deployment/) — 大江狗
+-  — 大江狗
 - [uni-app 官网](https://uniapp.dcloud.io/quickstart) — 跨端开发框架
 - [mpvue.com](http://mpvue.com/) — 美团 Vue 小程序框架
 - [Cordova 中文网](http://cordova.axuer.com/docs/zh-cn/latest/) — 混合开发
 - [Tencent/wepy](https://github.com/Tencent/wepy) — 小程序组件化框架
 - [Vue.js SSR 指南](https://ssr.vuejs.org/zh/) — 服务端渲染官方
 - [vue-element-admin 顶部菜单栏](https://blog.csdn.net/qq_36365860/article/details/120073481) — 后台菜单切换实践
-- [Java 软件工程师简历](https://zhousiwei.gitee.io/cv/) / [anires 动态简历](https://gitee.com/zhousiwei/anires) — 简历模板
+-  / [anires 动态简历](https://gitee.com/zhousiwei/anires) — 简历模板
 - [GitHub 2FA 中国认证及 TOTP](https://zhuanlan.zhihu.com/p/657035724) — 两步验证
 
 ### 四、技术文档 / 社区 / 个人博客

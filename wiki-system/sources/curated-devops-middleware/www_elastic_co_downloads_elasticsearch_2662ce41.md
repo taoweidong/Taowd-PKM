@@ -1,21 +1,18 @@
 ---
 source: "https://www.elastic.co/downloads/elasticsearch"
 title: "Download Elasticsearch | Elastic"
-fetched_at: "2026-10-05 15:29:48"
+fetched_at: "2026-10-05 15:30:27"
 ---
 
 ## Download Elasticsearch
 
   * ###### GA Release
 
-
-
-
 #### Copy to try locally in two minutes: start-local
 
 For local testing, use Docker to install and run Elasticsearch and Kibana on your local machine using start-local.
-    
-    
+
+
     curl -fsSL https://elastic.co/start-local | shCopy to clipboard
 
 For production installations, follow the steps below.
@@ -36,27 +33,27 @@ Containers:
 
 [Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 
-Elasticsearch can also be installed from our package repositories using apt or yum. See [_Repositories_ in the Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html). 
+Elasticsearch can also be installed from our package repositories using apt or yum. See [_Repositories_ in the Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html).
 
 2
 
 #### Start Elasticsearch
 
 Run the following command to [start Elasticsearch with security enabled](https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-stack-security.html):
-    
-    
+
+
     bin/elasticsearchCopy to clipboard
 
 Windows
-    
-    
+
+
     bin\elasticsearch.batCopy to clipboard
 
 3
 
 #### Dive in
 
-See our documentation for the latest up-to-date information. 
+See our documentation for the latest up-to-date information.
 
 ![](https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/blt65d89b94a9fd373c/68814b5110717cfbadcfe0b7/blog-elasticsearch-720x420.png)
 
@@ -110,20 +107,17 @@ View our getting started page to get acquainted with the Elastic Stack.
 
 [Get started](/downloads)
 
-
-
-
 ### Additional resources
 
 ### Docs
 
-Elastic's documentation helps you with all things implementation — from installation to solution components and workflow. 
+Elastic's documentation helps you with all things implementation — from installation to solution components and workflow.
 
 [![arrow-white](https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/blt5a7c7b570189ea07/5f2550947f3b7908db02fc89/arrow-white.svg)](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
 
 ### Forum
 
-Have a question? Our community has the answers. Connect with other users and Elastic employees. 
+Have a question? Our community has the answers. Connect with other users and Elastic employees.
 
 [![arrow-white](https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/blt5a7c7b570189ea07/5f2550947f3b7908db02fc89/arrow-white.svg)](https://discuss.elastic.co/c/elasticsearch)
 

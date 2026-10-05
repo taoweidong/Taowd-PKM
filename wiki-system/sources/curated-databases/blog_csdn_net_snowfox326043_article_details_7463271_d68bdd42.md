@@ -4,21 +4,17 @@ title: "AIX 6.1安装 Oracle11g_aix部署oracle 11g-CSDN博客"
 fetched_at: "2026-10-05 15:26:59"
 ---
 
-## 
+##
 
-##   
+##
 
+##
 
-##   
-
-
-## 作者 阿九【转载时请务必以超链接形式标明文章原始出处和作者信息】 
-
-  
+## 作者 阿九【转载时请务必以超链接形式标明文章原始出处和作者信息】
 
 
-##   
 
+##
 
 ## 目录
 
@@ -208,19 +204,19 @@ hd6 hdisk0 rootvg 16384MB 2 yes yes lv 0
 
 AIX 61系统需要如下软件包
 
-bos.adt.base  
-bos.adt.lib  
-bos.adt.libm  
-bos.perf.libperfstat 6.1.2.1 or later  
-bos.perf.perfstat  
-bos.perf.proctools  
+bos.adt.base
+bos.adt.lib
+bos.adt.libm
+bos.perf.libperfstat 6.1.2.1 or later
+bos.perf.perfstat
+bos.perf.proctools
 xlC.aix61.rte:10.1.0.0 or later
 
 执行命令 lslpp -l bos.adt.base bos.adt.lib bos.adt.libm bos.perf.libperfstatbos.perf.perfstat bos.perf.proctools xlC.aix61.rte 查看软件包安装情况
 
 # lslpp -l bos.adt.base bos.adt.lib bos.adt.libm bos.perf.libperfstatbos.perf.perfstat bos.perf.proctools xlC.aix61.rte
 
-Fileset Level State Description 
+Fileset Level State Description
 
 \----------------------------------------------------------------------------
 
@@ -228,37 +224,37 @@ Path: /usr/lib/objrepos
 
 bos.adt.base 6.1.6.1 COMMITTED Base Application Development
 
-Toolkit 
+Toolkit
 
 bos.adt.lib 6.1.2.0 COMMITTED Base Application Development
 
-Libraries 
+Libraries
 
 bos.adt.libm 6.1.6.0 COMMITTED Base Application Development
 
-Math Library 
+Math Library
 
 bos.perf.libperfstat 6.1.6.1 COMMITTED Performance StatisticsLibrary
 
-Interface 
+Interface
 
 bos.perf.perfstat 6.1.6.0 COMMITTED Performance Statistics
 
-Interface 
+Interface
 
-bos.perf.proctools 6.1.6.0 COMMITTED Proc Filesystem Tools 
+bos.perf.proctools 6.1.6.0 COMMITTED Proc Filesystem Tools
 
-xlC.aix61.rte 11.1.0.1 COMMITTED XL C/C++ Runtime forAIX 6.1 
+xlC.aix61.rte 11.1.0.1 COMMITTED XL C/C++ Runtime forAIX 6.1
 
 Path: /etc/objrepos
 
 bos.adt.base 6.1.6.1 COMMITTED Base Application Development
 
-Toolkit 
+Toolkit
 
 bos.perf.libperfstat 6.1.6.1 COMMITTED Performance StatisticsLibrary
 
-Interface 
+Interface
 
 bos.perf.perfstat 6.1.6.0 COMMITTED Performance Statistics
 
@@ -280,7 +276,7 @@ instfix -i | grep IZ52319
 
 mkgroup -'A' id='401' adms='root' oinstall
 
-mkgroup -'A' id='402' adms='root' dba 
+mkgroup -'A' id='402' adms='root' dba
 
 useradd -d /home/oracle -m -u 401 -g oinstall -G dba oracle
 
@@ -290,7 +286,7 @@ useradd -d /home/grid -m -u 402 -g oinstall -G dba grid
 
 Changing password for "oracle"
 
-oracle's New password: 
+oracle's New password:
 
 Enter the new password again:
 
@@ -298,7 +294,7 @@ Enter the new password again:
 
 Changing password for "grid"
 
-grid's New password: 
+grid's New password:
 
 Enter the new password again:
 
@@ -350,7 +346,7 @@ nofiles = -1
 
 #### 1.9.4、配置网络参数
 
-查看参数 
+查看参数
 
 # /usr/sbin/no -a | fgrepephemeral
 
@@ -482,13 +478,13 @@ hdisk3 00f69cfd62b90c28 testvg active
 
 hdisk4 00f69cfd62b9fa83 testvg active
 
-hdisk5 none None 
+hdisk5 none None
 
-hdisk6 none None 
+hdisk6 none None
 
-hdisk7 none None 
+hdisk7 none None
 
-hdisk8 none None 
+hdisk8 none None
 
 #
 
@@ -566,13 +562,13 @@ ORACLE_OWNER= grid
 
 ORACLE_HOME= /grid/product/11.2.0/grid
 
-Enterthe full pathname of the local bin directory: [/usr/local/bin]: 
+Enterthe full pathname of the local bin directory: [/usr/local/bin]:
 
-Thefile "dbhome" already exists in /usr/local/bin. Overwrite it? (y/n) [n]: 
+Thefile "dbhome" already exists in /usr/local/bin. Overwrite it? (y/n) [n]:
 
-Thefile "oraenv" already exists in /usr/local/bin. Overwrite it? (y/n) [n]: 
+Thefile "oraenv" already exists in /usr/local/bin. Overwrite it? (y/n) [n]:
 
-Thefile "coraenv" already exists in /usr/local/bin. Overwrite it? (y/n) [n]: 
+Thefile "coraenv" already exists in /usr/local/bin. Overwrite it? (y/n) [n]:
 
 Entrieswill be added to the /etc/oratab file as needed by
 
@@ -594,7 +590,7 @@ Creatingtrace directory
 
 .profile[2]:/grid: This is not an identifier.
 
-LOCALADD MODE 
+LOCALADD MODE
 
 CreatingOCR keys for user 'grid', privgrp 'oinstall'..
 
@@ -646,7 +642,7 @@ you proceed with Oracle installation. rootpre.sh can be found at the top level
 
 of the CD or the stage area.
 
-Answer 'y' if root has run 'rootpre.sh' so you can proceed with Oracle 
+Answer 'y' if root has run 'rootpre.sh' so you can proceed with Oracle
 
 installation.
 

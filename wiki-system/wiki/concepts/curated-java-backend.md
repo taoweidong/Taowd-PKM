@@ -43,8 +43,6 @@ source: "[[topics/browser-bookmarks]]"
 
 ### MyBatis / JPA / Hibernate（ORM）（3）
 
-- [mybatis – MyBatis 3 | 简介](http://www.mybatis.org/mybatis-3/zh/index.html)
-- [mybatis – MyBatis 3 | 配置](http://www.mybatis.org/mybatis-3/zh/configuration.html)
 - [mybatis/mybatis-3: MyBatis SQL mapper framework for Java](https://github.com/mybatis/mybatis-3/)
 
 ### Netty / NIO 通信框架（10）
@@ -53,7 +51,6 @@ source: "[[topics/browser-bookmarks]]"
 - [Java NIO原理 图文分析及代码实现 - 逸情公子 - ITeye技术网站](http://weixiaolu.iteye.com/blog/1479656)
 - [Java NIO框架Netty教程（一） – Hello Netty - kobejayandy的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/kobejayandy/article/details/11493717)
 - [Java NIO框架Netty教程（二） – 白话概念 - kobejayandy的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/kobejayandy/article/details/11493979)
-- [Netty_百度百科](http://baike.baidu.com/link?url=Nzhn3KgKP6DV439_NBwKMPyZvXgqPziytW8X2AJNGPyx8SH8IhfMAXdalnILSLIOinSMcyYVxwPFZGMu3QjMfq)
 - [Netty学习：搭建一个简单的Netty服务(JAVA NIO 类库的异步通信框架) - zzy7075的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/zzy7075/article/details/52095852)
 - [Netty实现简单网络通信 - beagreatprogrammer的专栏 - CSDN博客](http://blog.csdn.net/beagreatprogrammer/article/details/69947521)
 - [java netty之ServerBootstrap的启动 - fjs的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/fjslovejhl/article/details/9300937)

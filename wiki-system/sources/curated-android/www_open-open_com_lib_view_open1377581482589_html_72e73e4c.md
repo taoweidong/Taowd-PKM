@@ -12,35 +12,35 @@ _0_ __
 
 **框架简介：**
 
-相信大家对于mvc的三层架构已经灰常熟悉了，在这就不细讲了，个人感觉ssi的框架结构还是比较典型的mvc三层架构，还是比较容易上手的。关于这块的入门我想特别感谢下FrankHui童鞋，在他的帮助下，我才能比较快滴熟悉了这个架构，对我学习ssi的框架还是很有帮助滴。ssi的框架主要是由struts2，spring以及ibatis组成，他们负责各层之间的交互与协作，从而实现整个web端的功能实现与整合。Struts目前主要负责数据传递和控制方面，spring则依靠其强大的依赖注入技术实现了类似bean托管和整合等功能，当然这只是spring功能中的冰山一角，而ibatis作为一种轻量级的OR Mapping框架，提供了半自动化对象关系映射的实现，自由度相对于hibernate更高。 
+相信大家对于mvc的三层架构已经灰常熟悉了，在这就不细讲了，个人感觉ssi的框架结构还是比较典型的mvc三层架构，还是比较容易上手的。关于这块的入门我想特别感谢下FrankHui童鞋，在他的帮助下，我才能比较快滴熟悉了这个架构，对我学习ssi的框架还是很有帮助滴。ssi的框架主要是由struts2，spring以及ibatis组成，他们负责各层之间的交互与协作，从而实现整个web端的功能实现与整合。Struts目前主要负责数据传递和控制方面，spring则依靠其强大的依赖注入技术实现了类似bean托管和整合等功能，当然这只是spring功能中的冰山一角，而ibatis作为一种轻量级的OR Mapping框架，提供了半自动化对象关系映射的实现，自由度相对于hibernate更高。
 
 **框架结构：**
 
-这是我在网上找到的一张关于ssi框架的结构图，个人感觉画的还是蛮不错的，对于入门者来说，层次机构很清晰，比较实用（感谢这位大大的分享）： 
+这是我在网上找到的一张关于ssi框架的结构图，个人感觉画的还是蛮不错的，对于入门者来说，层次机构很清晰，比较实用（感谢这位大大的分享）：
 
 ![ssi框架学习总结](https://simg.open-open.com/show/0990fc1cf8b7a4a72ccb6c2fe9a4ba6f.jpg)
 
-在这里可以很明显的看出ssi框架的大体结构以及各层之间的交互情况，顶层表现层的话，就java而言主要是jsp，html等视图层技术的编写，其中涉及我们熟悉的javascript，jquery以及extjs等。在控制层来说的话，主要是利用strust2标签功能实现action与视图层的数据交互，当然也可以使用ajax的技术实现同样的功能，这个就按个人喜好而来了。在业务逻辑层。主要是利用spring的依赖注入实现对业务逻辑类和dao类的实例托管，当然各类的实例都可以托管在spring中进行统一管理和关联，包括事务，数据源等等。在持久层，利用ibatis提供的半自动化对象关系映射的实现，开发人员可以根据需要编写具体的sql语句，通过相应的xml的配置实现对数据库的操作。 
+在这里可以很明显的看出ssi框架的大体结构以及各层之间的交互情况，顶层表现层的话，就java而言主要是jsp，html等视图层技术的编写，其中涉及我们熟悉的javascript，jquery以及extjs等。在控制层来说的话，主要是利用strust2标签功能实现action与视图层的数据交互，当然也可以使用ajax的技术实现同样的功能，这个就按个人喜好而来了。在业务逻辑层。主要是利用spring的依赖注入实现对业务逻辑类和dao类的实例托管，当然各类的实例都可以托管在spring中进行统一管理和关联，包括事务，数据源等等。在持久层，利用ibatis提供的半自动化对象关系映射的实现，开发人员可以根据需要编写具体的sql语句，通过相应的xml的配置实现对数据库的操作。
 
-总之，SSI框架能够降低我们代码的耦合度，增强了代码的健壮性和可重用性，加快了开发速度，但是也有一些不足之处，比如由于三种框架的配置文件较多，也给我们带来了一些不便，特别是对于较小的应用来说更是如此。 
+总之，SSI框架能够降低我们代码的耦合度，增强了代码的健壮性和可重用性，加快了开发速度，但是也有一些不足之处，比如由于三种框架的配置文件较多，也给我们带来了一些不便，特别是对于较小的应用来说更是如此。
 
 **相关 demo****介绍：**
 
-基于之前对ssi框架的学习，我也不能免俗滴选择了做一个用户管理的web实现，项目的大致框架如下： 
+基于之前对ssi框架的学习，我也不能免俗滴选择了做一个用户管理的web实现，项目的大致框架如下：
 
 ![ssi框架学习总结](https://simg.open-open.com/show/92ed7721882572eb994e97d0181978ce.png)
 
-大体上还是按照三层的分层模型来是分的，具体就不详细说了，相信大家也应该很了解整个结构的。 
+大体上还是按照三层的分层模型来是分的，具体就不详细说了，相信大家也应该很了解整个结构的。
 
-Ø 开发环境简介： 
+Ø 开发环境简介：
 
 工具：eclipse3.6+tomcat7+mysql5.1
 
 框架：struts2，spring3.0.5，ibatis2.3.4.726
 
-开发步骤及配置简介： 
+开发步骤及配置简介：
 
-第一步，众所周知肯定是导入相关的lib库啦，由于我使用的前端是extjs，所以还需要导入extjs相关的js以及css依赖文件。由于lib库太多就不截图了，只截取extjs的相关依赖文件： 
+第一步，众所周知肯定是导入相关的lib库啦，由于我使用的前端是extjs，所以还需要导入extjs相关的js以及css依赖文件。由于lib库太多就不截图了，只截取extjs的相关依赖文件：
 
 ![ssi框架学习总结](https://simg.open-open.com/show/fa76d4f7692052d28375f93fd9986c0f.png)
 
@@ -48,71 +48,71 @@ _0_ __
 
 第二步，建立相关的model层,代码如下:
 
-User.java： 
-    
-    
+User.java：
+
+
     package com.broada.demo.entity;
     /**
-     * 
+     *
      * @author smm
      *
      */
     public class User {
-    
+
         private int id;          //用户id
         private String name;        //用户名称
         private String password;    //用户密码
         private String username;    //用户昵称
         private String address;     //地址
-    
-    
+
+
         public String getUsername() {
             return username;
         }
-    
+
         public void setUsername(String username) {
             this.username = username;
         }
-    
+
         public String getAddress() {
             return address;
         }
-    
+
         public void setAddress(String address) {
             this.address = address;
         }
-    
+
         public int getId() {
             return id;
         }
-    
+
         public void setId(int id) {
             this.id = id;
         }
-    
+
         public String getName() {
             return name;
         }
-    
+
         public void setName(String name) {
             this.name = name;
         }
-    
+
         public String getPassword() {
             return password;
         }
-    
+
         public void setPassword(String password) {
             this.password = password;
         }
-    
+
     }
 
-第三步，strust的相关配置，这里就不详细讲述strust的单独配置及原理了，直接上实例中的相关配置文件，主要是strust.xml以及web.xml的相关配置，部分主要配置如下： 
+第三步，strust的相关配置，这里就不详细讲述strust的单独配置及原理了，直接上实例中的相关配置文件，主要是strust.xml以及web.xml的相关配置，部分主要配置如下：
 
 Web.xml:
-    
-    
+
+
     <!-- struts2模块 -->
         <filter>
             <filter-name>struts2</filter-name>
@@ -120,16 +120,16 @@ Web.xml:
             <filter-class>
                org.apache.struts2.dispatcher.FilterDispatcher
             </filter-class>
-    
+
         </filter>
         <filter-mapping>
             <filter-name>struts2</filter-name>
             <url-pattern>/*</url-pattern>
         </filter-mapping>
 
-strust.xml: 
-    
-    
+strust.xml:
+
+
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
@@ -143,11 +143,11 @@ strust.xml:
         <!-- 资源文件 -->
         <constant name="struts.custom.i18n.resources"
             value="messageResource">
-        </constant> 
-    
+        </constant>
+
         <!-- 用户注册类 -->
         <!-- abstract属性就说明了该action继承自自己定义的基础action，而class采用的registerAction是由spring产生的 -->
-        <package name="register" extends="struts-default">
+
             <action name="register" class="registerAction" method="addUser">
                 <!-- 注册成功 -->
                 <result name="success">success.jsp</result>
@@ -158,18 +158,18 @@ strust.xml:
                 <!-- 注册成功 -->
                 <result name="success">success.jsp</result>
                 <!-- 注册失败 -->
-                <result name="error">error.jsp</result>         
+                <result name="error">error.jsp</result>
             </action>
-        </package> 
+
     </struts>
 
 这样strust的配置大致就完成了。
 
-第四步：配置ibatis的相关配置文件，主要是jdbc.properties，SqlMapConfig.xml以及User.xml的配置，jdbc.properties主要用于配置数据库的数据源参数，会在加载spring的时候自动初始化，ibatis数据源的配置到时可以托管给spring初始化，所以这里就不细讲了。SqlMapConfig.xml主要是配置ibatis的配置文件的位置，User.xml则用于编写相关的数据库语句等，配置大致如下： 
+第四步：配置ibatis的相关配置文件，主要是jdbc.properties，SqlMapConfig.xml以及User.xml的配置，jdbc.properties主要用于配置数据库的数据源参数，会在加载spring的时候自动初始化，ibatis数据源的配置到时可以托管给spring初始化，所以这里就不细讲了。SqlMapConfig.xml主要是配置ibatis的配置文件的位置，User.xml则用于编写相关的数据库语句等，配置大致如下：
 
-jdbc.properties： 
-    
-    
+jdbc.properties：
+
+
     jdbc.driverClass=com.mysql.jdbc.Driver
     jdbc.url=jdbc:mysql://localhost:3306/userinfo
     jdbc.user=root
@@ -183,11 +183,11 @@ jdbc.properties：
     jdbc.idleConnectionTestPeriod=1800
     jdbc.acquireRetryAttempts=30
 
-详细的参数含义在spring的配置文件会提及，就不细说了。 
+详细的参数含义在spring的配置文件会提及，就不细说了。
 
-SqlMapConfig.xml： 
-    
-    
+SqlMapConfig.xml：
+
+
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
     "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
@@ -196,11 +196,11 @@ SqlMapConfig.xml：
     <sqlMap resource="com/broada/demo/dao/ibaties/map/User.xml" />
     </sqlMapConfig>
 
-User.xml： 
-    
-    
+User.xml：
+
+
     <?xml version="1.0" encoding="UTF-8" ?>
-    <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
     "http://ibatis.apache.org/dtd/sql-map-2.dtd">
     <sqlMap>
         <typeAlias alias="User" type="com.broada.demo.entity.User" />
@@ -209,20 +209,20 @@ User.xml：
             insert into
             user (name,password,username,address)values(#name#,#password#,#username#,#address#)
         </insert>
-    
+
         <select id="selsectUser" parameterClass="java.lang.String" resultClass="User">
             select * from user
             where name = #name#;
         </select>
     </sqlMap>
 
-这样，ibatis的配置大致就完成。 
+这样，ibatis的配置大致就完成。
 
-第五步：配置spring的相关配置文件，主要是整合ibatis以及strust中用到的bean，需要配置web.xml以及applicationContext-web.xml两个配置文件： 
+第五步：配置spring的相关配置文件，主要是整合ibatis以及strust中用到的bean，需要配置web.xml以及applicationContext-web.xml两个配置文件：
 
-web.xml： 
-    
-    
+web.xml：
+
+
     <listener>
             <!-- 这个就是今后用到的WebApplicationUtilContent -->
             <listener-class>
@@ -231,16 +231,16 @@ web.xml：
         </listener>
         <!-- springframework config files -->
         <context-param>
-            <param-name>contextConfigLocation</param-name>
+             contextConfigLocation
             <!-- 把spring的配置文件放到了/WEB-INF/下的springframework包里，方便统一管理，命名规则是以applicationContent-开头的xml文件，初始化时会自动搜索所有符合规则的配置文件 -->
-            <param-value>
+
                 /WEB-INF/spring/applicationContext-*.xml
-            </param-value>
+
     </context-param>
 
-applicationContext-web.xml: 
-    
-    
+applicationContext-web.xml:
+
+
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -249,214 +249,210 @@ applicationContext-web.xml:
         <bean id="dataSource"
            class="com.mchange.v2.c3p0.ComboPooledDataSource"
             destroy-method="close">
-            <property name="driverClass" value="${jdbc.driverClass}" />
-            <property name="jdbcUrl" value="${jdbc.url}" />
-            <property name="user" value="${jdbc.user}" />
-            <property name="password" value="${jdbc.password}" />
-            <property name="minPoolSize" value="${jdbc.minPoolSize}" />
-            <property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
-            <property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
-            <property name="acquireIncrement"
-                value="${jdbc.acquireIncrement}" />
-            <property name="maxStatements" value="${jdbc.maxStatements}" />
-            <property name="initialPoolSize"
-                value="${jdbc.initialPoolSize}" />
-            <property name="idleConnectionTestPeriod"
-                value="${jdbc.idleConnectionTestPeriod}" />
-            <property name="acquireRetryAttempts"
-                value="${jdbc.acquireRetryAttempts}" />
+
+
+
+
+
+
+
+
+
+
+
+
         </bean>
-    
-    
+
+
        <!-- 上面的数据源的value值用的是表达式，原因就在这里，这将配置文件放到了iBatis目录下，也就是jdbc.properties，设置了c3p0的各项参数 -->
         <bean id="propertyConfig"
            class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-            <property name="location">
+
                 <value>/WEB-INF/ibatis/jdbc.properties</value>
-            </property>
-        </bean> 
-    
+
+        </bean>
+
         <!-- 配置iBatis的sqlMapClient，这里当然是交给了spring去处理,其中，将SqlMapConfig文件放到了WEB-INF的iBatis目录下，也是便于管理 -->
         <bean id="sqlMapClient"
            class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
-            <property name="configLocation">
+
                 <value>/WEB-INF/ibatis/SqlMapConfig.xml</value>
-            </property>
+
             <!-- 这里使用的数据源就是上面配置的数据源 -->
-            <property name="dataSource">
+
                 <ref bean="dataSource" />
-            </property>
-        </bean> 
-    
-        <bean id="userdaoId"  class="com.broada.demo.daoImpl.UserDaoImpl">
-            <property name="sqlMapClient" ref="sqlMapClient"></property>
+
         </bean>
-    
+
+        <bean id="userdaoId"  class="com.broada.demo.daoImpl.UserDaoImpl">
+
+        </bean>
+
         <bean id="userDaoServiceId" class="com.broada.demo.serviceImpl.UserDaoServiceImpl">
-          <property name="userdao" ref="userdaoId">
-        </property>
-        </bean> 
-         <!-- 用户注册action--> 
-        <bean id="registerAction" name="registerAction"  class="com.broada.demo.action.RegisterAction" scope="prototype">       
-          <property name="userdaoServiceInter" ref="userDaoServiceId"></property>
-        </bean> 
-    
-    
+
+
+        </bean>
+         <!-- 用户注册action-->
+        <bean id="registerAction" name="registerAction"  class="com.broada.demo.action.RegisterAction" scope="prototype">
+
+        </bean>
+
+
     </beans>
 
 这样，ssi框架的大致配置就完成了。
 
-最后编写相关的dao层，service层，action层以及jsp等等，我就不详细说明了，直接上相关代码： 
+最后编写相关的dao层，service层，action层以及jsp等等，我就不详细说明了，直接上相关代码：
 
-RegisterAction.java： 
-    
-    
+RegisterAction.java：
+
+
     package com.broada.demo.action;
-    
+
     /**
      * @author smm
      */
-    
+
     import com.broada.demo.entity.User;
     import com.broada.demo.service.UserDaoServiceInter;
     import com.opensymphony.xwork2.ActionSupport;
-    
+
     public class RegisterAction extends ActionSupport {
-    
+
         private static final long serialVersionUID = 1L;
-    
-    private UserDaoServiceInter userdaoServiceInter;    
-    
+
+    private UserDaoServiceInter userdaoServiceInter;
+
         public UserDaoServiceInter getUserdaoServiceInter() {
             return userdaoServiceInter;
         }
-    
+
         public void setUserdaoServiceInter(UserDaoServiceInter userdaoServiceInter) {
             this.userdaoServiceInter = userdaoServiceInter;
         }
-    
+
         private String name;    //用户名
         private String password;    //密码
         private String username;    //昵称
         private String address;     //地址
-    
+
         public String getUsername() {
             return username;
         }
-    
+
         public void setUsername(String username) {
             this.username = username;
         }
-    
+
         public String getAddress() {
             return address;
         }
-    
+
         public void setAddress(String address) {
             this.address = address;
         }
-    
+
         public String getName() {
             return name;
         }
-    
+
         public void setName(String name) {
             this.name = name;
         }
-    
+
         public String getPassword() {
             return password;
         }
-    
+
         public void setPassword(String password) {
             this.password = password;
         }
-    
+
         public String addUser() {
             System.out.println("添加成功！");
             User user = new User();
-    
+
             String name = this.name;
             String password = this.password;
             String username = this.username;
             String address = this.address;
-    
+
             user.setName(name);
             user.setPassword(password);
             user.setUsername(username);
             user.setAddress(address);
-    
+
             boolean b = userdaoServiceInter.insertUser(user);
-    
+
             if (b==true) {
                 return SUCCESS;
             } else
                 return INPUT;
         }
-    
+
         public String loginUser(){
             System.out.println("登陆=======");
-    
+
             String name = this.name;
             String password = this.password;
-    
+
             User user = userdaoServiceInter.querybyname(name);
-    
+
             if(user != null && password.equals(user.getPassword())){
                 return SUCCESS;
-            } else 
-                return ERROR; 
+            } else
+                return ERROR;
         }
     }
 
-UserDao.java： 
-    
-    
+UserDao.java：
+
+
     package com.broada.demo.dao;
-    
+
     /**
      * @author smm
      */
-    
+
     import java.util.List;
-    
+
     import com.broada.demo.entity.User;
-    
+
     public interface UserDao {
-    
+
         /**
          * 用户注册
          * @param user
          * @return
          */
-    
+
         public boolean insertUser(User user);
-    
+
         /**
          * 根据用户名获取用户信息
          * @param name
          * @return
          */
-    
-        public User queryByname(String name);   
+
+        public User queryByname(String name);
     }
 
-UserDaoImpl.java： 
-    
-    
+UserDaoImpl.java：
+
+
     package com.broada.demo.daoImpl;
     /**
      * @author smm
      */
     import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
-    
+
     import com.broada.demo.dao.UserDao;
     import com.broada.demo.entity.User;
-    
+
     public class UserDaoImpl extends SqlMapClientDaoSupport implements UserDao{
-    
-    
-    
+
+
+
         @Override
         public boolean insertUser(User user) {
             try {
@@ -465,9 +461,9 @@ UserDaoImpl.java：
             } catch (Exception e) {
                 e.printStackTrace();
                 return false;
-            }   
+            }
         }
-    
+
         @Override
         public User queryByname(String name) {
             // TODO Auto-generated method stub
@@ -477,56 +473,56 @@ UserDaoImpl.java：
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
-            }       
+            }
         }
-    
+
     }
 
-UserDaoServiceInter.java： 
-    
-    
+UserDaoServiceInter.java：
+
+
     package com.broada.demo.service;
-    
+
     /**
      * @author smm
      */
-    
+
     import com.broada.demo.entity.User;
-    
+
     public interface UserDaoServiceInter {
-    
+
         /**
          * 用户注册服务接口
          * @param user
          * @return
          */
-    
+
         public boolean insertUser(User user);
-    
+
         /**
          * 根据用户名获取用户信息接口
          * @param name
          * @return
          */
-    
+
         public User querybyname(String name);
     }
 
-UserDaoServiceImpl.java： 
-    
-    
+UserDaoServiceImpl.java：
+
+
     package com.broada.demo.serviceImpl;
-    
+
     /**
      * @author smm
      */
-    
+
     import com.broada.demo.dao.UserDao;
     import com.broada.demo.entity.User;
     import com.broada.demo.service.UserDaoServiceInter;
-    
+
     public class UserDaoServiceImpl implements UserDaoServiceInter {
-    
+
         private  UserDao userdao;
         public UserDao getUserdao() {
             return userdao;
@@ -543,12 +539,12 @@ UserDaoServiceImpl.java：
             // TODO Auto-generated method stub
             return userdao.queryByname(name);
         }
-    
+
     }
 
-Index.jsp： 
-    
-    
+Index.jsp：
+
+
     <%@ page language="java" contentType="text/html; charset=utf8"
         pageEncoding="utf8"%>
         <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -559,19 +555,19 @@ Index.jsp：
     <link rel="stylesheet" type="text/css" href="css/ext-all.css" />
     <link rel="stylesheet" type="text/css"
         href="css/ext-theme-classic-all.css" />
-    <script type="text/javascript" src="js/ext-all.js"></script>
-    
-    
+
+
+
     <title>用户登陆</title>
-    <script type="text/javascript">
+
     Ext.onReady(function(){
-            initPanel();     
+            initPanel();
         });
-    
+
         initPanel=function(){
              var formPanel = new Ext.FormPanel({
                     id: 'loginPanel',
-                    labelWidth: 75, 
+                    labelWidth: 75,
                     frame:true,
                     bodyStyle:'margin:0 auto',
                     width: 350,
@@ -580,8 +576,8 @@ Index.jsp：
                     items: [{id: 'username',fieldLabel: '用户名',name:'name',allowBlank: false,blankText: '账号不能为空'},
                    {id: 'password', fieldLabel: '密 码',name:'password',inputType: 'password',allowBlank: false,blankText: '密码不能为空'}]
                          });
-            var win = new Ext.Window({   
-                   title:'登陆界面', 
+            var win = new Ext.Window({
+                   title:'登陆界面',
                    width:380,
                    autoHeight: 'true',
                    resizable: false,
@@ -595,17 +591,17 @@ Index.jsp：
                                Ext.getCmp('password').setValue("");
                                }},{text: '注册',handler: function(){register();}}]
                       });
-    
+
             win.show();
         };
-    
+
         var win1;
-    
-        register = function(){  
-    
+
+        register = function(){
+
             var registerPanel = new Ext.FormPanel({
                 id: 'registerPanel',
-                labelWidth: 75, 
+                labelWidth: 75,
                 frame:true,
                 bodyStyle:'margin:0 auto',
                 width: 350,
@@ -617,9 +613,9 @@ Index.jsp：
                {id: 'nichen',fieldLabel: '昵称',name:'nichen1'},
                {id: 'address',fieldLabel: '地址',name:'address1'}]
                      });
-    
-            win1 = new Ext.Window({   
-                   title:'注册界面', 
+
+            win1 = new Ext.Window({
+                   title:'注册界面',
                    width:380,
                    autoHeight: 'true',
                    resizable: false,
@@ -629,17 +625,17 @@ Index.jsp：
                    buttons:[{text: '提交',handler: function(){login();}},
                             {text: '取消',handler: function(){win1.close();}}]
                       });
-    
+
             win1.show();
         };
-    
+
         login=function(){
-            var name = Ext.getCmp('registername').getValue(); 
+            var name = Ext.getCmp('registername').getValue();
             var password = Ext.getCmp('registerpassword').getValue();
             var password2 = Ext.getCmp('registerpassword2').getValue();
             var nichen = Ext.getCmp('nichen').getValue();
             var address = Ext.getCmp('address').getValue();
-    
+
             if(name==" "|| password==" " || password2==""){
                 Ext.MessageBox.alert('提示','账号或密码不能为空！');
             }
@@ -659,9 +655,9 @@ Index.jsp：
                     Ext.MessageBox.alert('提示','注册成功',function(e){
                         if(e == "ok"){
                             win1.close();
-                        } 
+                        }
                      });
-    
+
                  },
                  failure: function (response, options) {
                      Ext.MessageBox.alert('注册失败', '请检查您的注册信息！');
@@ -669,12 +665,12 @@ Index.jsp：
              });
             }
         };
-    
+
         land=function(){
-            var name = Ext.getCmp('username').getValue(); 
+            var name = Ext.getCmp('username').getValue();
             var password = Ext.getCmp('password').getValue();
-    
-    
+
+
             if(name == " " || password == ""){
                  Ext.MessageBox.alert('提示', '账号或密码不能为空！');
             }
@@ -684,11 +680,11 @@ Index.jsp：
                  method: 'post',
                 params:{
                     name:name,
-                    password:password               
+                    password:password
                 },
                  success: function (response, options) {
                     Ext.MessageBox.alert('提示','登陆成功!');
-    
+
                  },
                  failure: function (response, options) {
                      Ext.MessageBox.alert('登陆失败', '您输入的账号或密码错误!');
@@ -696,16 +692,16 @@ Index.jsp：
              });
             }
         };
-    
-    </script>
-    
+
+
+
     </head>
     <body>
-    
+
     </body>
     </html>
 
-大致的步骤就是这样，个人觉得ssi的框架还是蛮不错的，起码定制和自由度都比较好。 
+大致的步骤就是这样，个人觉得ssi的框架还是蛮不错的，起码定制和自由度都比较好。
 
 __本文由用户[ jopen ](https://user.open-open.com/u/37924 "  成siuibiiik ")自行上传分享，仅供网友学习交流。所有权归原作者，若您的权利被侵害，请联系管理员。
 
@@ -725,8 +721,6 @@ __本文地址：<https://www.open-open.com/lib/view/open1377581482589.html>
   * [git学习总结](/lib/view/open1405212820919.html)
   * [JavaScript学习总结](/lib/view/open1337302326307.html)
 
-
-
 ### 相关资讯
 
   * [我2年学习编程的经验总结](/news/view/f8cef0)
@@ -734,8 +728,6 @@ __本文地址：<https://www.open-open.com/lib/view/open1377581482589.html>
   * [深度学习框架的评估与比较](/news/view/106647b)
   * [Imperialism Remake 0.1.3 发布，Java实现的经典SSI帝国游戏](/news/view/e9ffeb)
   * [2016深度学习统治人工智能？深度学习十大框架](/news/view/c43a9a)
-
-
 
 ### 相关文档
 
@@ -748,7 +740,5 @@ __本文地址：<https://www.open-open.com/lib/view/open1377581482589.html>
   * [__Go 学习笔记](/pdf/fdaa0a147ea04b32b5f48080b43aae95.html)
   * [__Go 学习笔记 第四版](/pdf/2872a0dbd5ea4e928c601e650644e26e.html)
   * [__Go 学习笔记 第三版](/pdf/4058d7f7bc7b477d8d45f50ca022b403.html)
-
-
 
 ### 目录

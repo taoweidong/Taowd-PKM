@@ -61,7 +61,6 @@ source: "[[topics/browser-bookmarks]]"
 - [【重要】linux系统下oracle11gR2静默安装的经验](http://www.jb51.net/article/102523.htm)
 - [【重要】oracle 常用命令](http://blog.chinaunix.net/uid-25472509-id-2856046.html)
 - [尝试加载 Oracle 客户端库时引发 BadImageFormatException。如果在安装 32 位 Oracle 客户端组件的情况下以 64 位模式运行 - 一只小蜗牛 - 博客园](http://www.cnblogs.com/lovesnail/articles/2663555.html)
-- [数据库频道：SQLServer,MYSQL,ORACLE,DB2,Sybase,数据库工具 - 红黑联盟](https://www.2cto.com/database/)
 - [海量IT资料 + 各种平台下的Oracle安装文件 + 公开课录像 + 各种视频教程资料-lhrbest-ITPUB博客](http://blog.itpub.net/26736162/viewspace-1624453/)
 - [解决在Linux下安装Oracle时的中文乱码问题 - 邱明成 - 博客园](http://www.cnblogs.com/qiumingcheng/p/5797495.html)
 
@@ -83,7 +82,6 @@ source: "[[topics/browser-bookmarks]]"
 ### SQL Server（7）
 
 - [C# 连接SQL Server数据库的几种方式–server+data source等方式 | 学步园](http://www.xuebuyuan.com/2228657.html)
-- [Download Microsoft SQL Server JDBC 驱动程序 6.0 from Official Microsoft Download Center](https://www.microsoft.com/zh-cn/download/details.aspx?id=11774)
 - [Sql Server中判断表或者数据库是否存在 - 贺满 - 博客园](http://www.cnblogs.com/puresoul/archive/2010/03/21/1691004.html)
 - [VS2010自带SQL Server 2008 允许远程连接的解决方法 - 鹤啸九天 - 博客频道 - CSDN.NET](http://blog.csdn.net/lzghxjt/article/details/42366625)
 - [sql server2008安装时提示重启计算机失败怎么办_百度经验](http://jingyan.baidu.com/article/a24b33cd52a0b919fe002bae.html)
@@ -115,7 +113,6 @@ source: "[[topics/browser-bookmarks]]"
 ### PowerDesigner / 建模（2）
 
 - [PowerDesigner工具箱(palette)关了如何重新打开 - steveguoshao的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/steveguoshao/article/details/7652555)
-- [powerdesigner添加（设计）物理表，并设置外键 - 啤酒中的鱼的日志 - 网易博客](http://blog.163.com/daimiao_study/blog/static/2489231172015111113447754/)
 
 ### SQL 语法 / 优化 / 函数（11）
 
@@ -149,7 +146,6 @@ source: "[[topics/browser-bookmarks]]"
 - [MyCAT简易入门 - iVictor - 博客园](https://www.cnblogs.com/ivictor/p/5111495.html)
 - [ORA-28000: the account is locked-的解决办法 - 世道 - 博客园](http://www.cnblogs.com/jianqiang2010/archive/2011/09/01/2162574.html)
 - [blog.csdn.net/lbake/article/details/39076925](http://blog.csdn.net/lbake/article/details/39076925)
-- [www.toutiao.com/group/article/6359901770882760961](http://www.toutiao.com/group/article/6359901770882760961)
 
 ## 关联
 

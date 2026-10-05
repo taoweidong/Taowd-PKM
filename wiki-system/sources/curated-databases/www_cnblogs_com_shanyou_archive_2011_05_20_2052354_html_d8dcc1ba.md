@@ -38,7 +38,7 @@ fetched_at: "2026-10-05 15:29:19"
 
 当然上述只是介绍了下最基本的功能，还有更新，删除数据库，从mysql数据库导入数据等等功能，想了解更详细的内容请访问官方网站：<http://www.mongovue.com/>
 
-需要的同学到这里下吧  
+需要的同学到这里下吧
 <http://download.csdn.net/detail/shanyou/4129950>
 
 <http://blog.nosqlfan.com/tags/mongodb>

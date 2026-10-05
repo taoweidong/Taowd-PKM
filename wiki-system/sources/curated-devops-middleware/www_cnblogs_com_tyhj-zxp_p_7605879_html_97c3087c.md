@@ -44,8 +44,7 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 
 **Ø group，仓库组，用来合并多个hosted/proxy仓库，当你的项目希望在多个repository使用资源时就不需要多次引用了，只需要引用一个group即可。**
 
-4.2 **管理本地仓库**  
-
+4.2 **管理本地仓库**
 
 我们前面讲到类型为hosted的为本地仓库，Nexus预置了3个本地仓库，分别是Releases, Snapshots, 3rd Party. 分别讲一下这三个预置的仓库都是做什么用的:
 
@@ -61,17 +60,15 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 
 顾名思义, 第三方库, 你可能会问不是有中央仓库来管理第三方库嘛,没错, 这里的是指可以让你添加自己的第三方库, 比如有些构件在中央仓库是不存在的. 比如你在中央仓库找不到Oracle 的JDBC驱动, 这个时候我们就需要自己添加到3rdparty仓库。
 
-  
 
 
-## 
+##
 
 ## 4.3 在Nexus为自己的项目手动单独建库
 
 1\. 建库，Add-- >HostedRepository
 
-按照下图填写信息，注意圈的地方，填写完成后save  
-
+按照下图填写信息，注意圈的地方，填写完成后save
 
 2\. 然后选择PublicRepositories,打开configuration选项卡
 
@@ -81,7 +78,7 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 
 ## 5\. 在Nexus创建账户
 
-**  
+**
 **
 
 最后点击保存。当然自己也可以创建角色，分配权限等，这里直接用已有的角色，省略了一些步骤。
@@ -91,8 +88,8 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 **1\. 远程仓库的认证**
 
 大部分公共的远程仓库无须认证就可以直接访问，但我们在平时的开发中往往会架设自己的Maven远程仓库，出于安全方面的考虑，我们需要提供认证信息才能访问这样的远程仓库。配置认证信息和配置远程仓库不同，远程仓库可以配置在settings.xml文件中，也可直接在pom.xml中配置，后面会分别举例说明，但是认证信息必须配置在settings.xml文件中。在settings.xml中配置认证信息更为安全。如下：在settings.xml中配置<servers>节点，用的账号为上面我们创建的账户。
-    
-    
+
+
      1 <settings>
      2  2     ...
      3  3     <!--配置远程仓库认证信息-->
@@ -100,7 +97,7 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
      5  5         <server>
      6  6             <id>bbsnexus</id>
      7  7             <username>licui</username>
-     8  8             <password>a111111</password>
+     8  8              a111111
      9  9         </server>
     10 10     </servers>
     11 11     ...
@@ -112,7 +109,6 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 
 如果只有一个项目，可以配置在项目的pom文件中：
 
-  
 
 
 如果有多个项目时，可以将如上配置放到Maven的Settings文件中：
@@ -150,12 +146,12 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 **1）将已有的项目打成jar包上传到私服服务器**
 
 首先需要在pom.xml中配置上传仓库的地址，配置distributionManagement元素，仓库地址指向前面自定义的仓库bbsid
-    
-    
+
+
     <!--上传源码插件，不打算上传源码可以不配置-->
         <build>
-            <plugins>
-                <plugin>
+
+
                     <artifactId>maven-source-plugin</artifactId>
                     <version>3.0.0</version>
                     <configuration>
@@ -164,21 +160,21 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
                     <executions>
                         <execution>
                             <!-- 在compile阶段中执行 -->
-                            <phase>compile</phase>
+                             compile
                             <goals>
                                 <goal>jar</goal>
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
-            </plugins>
+
+
         </build>
-    
-    
+
+
      1 <distributionManagement>
-     2         <repository>  
+     2         <repository>
                    <!-- 仓库id,对应配置的nexus服务器认证用户id：在settings.xml中<server>的id-->
-     3             <id>bbsnexus</id>  
+     3             <id>bbsnexus</id>
                    <!-- 这个名称自己定义,方便阅读 -->
      4             <name>bbsidrepository</name>
      5             <url>http://127.0.0.1:8081/nexus/content/repositories/bbsid</url>
@@ -225,12 +221,10 @@ repositoryId与server的id必须一致。
 
 **maven的settings.xml文件里面有proxy、server、repository、mirror的配置，在配置仓库地址的时候容易混淆**
 
-  1. proxy是服务器不能直接访问外网时需要设置的代理服务，不常用 
-  2. server是服务器要打包上传到私服时，设置私服的鉴权信息 
-  3. repository是服务器下载jar包的仓库地址 
+  1. proxy是服务器不能直接访问外网时需要设置的代理服务，不常用
+  2. server是服务器要打包上传到私服时，设置私服的鉴权信息
+  3. repository是服务器下载jar包的仓库地址
   4. mirror是用于替代仓库地址的镜像地址
-
-
 
 **mirror和repository加载顺序：**
 
@@ -240,9 +234,8 @@ repositoryId与server的id必须一致。
   4. 只配置mirrorOf为central的时候可以不用配置repository
 
 
-    
-    
-     
+
+
 
 参考文章：http://www.cnblogs.com/luotaoyeah/p/3791966.html
 

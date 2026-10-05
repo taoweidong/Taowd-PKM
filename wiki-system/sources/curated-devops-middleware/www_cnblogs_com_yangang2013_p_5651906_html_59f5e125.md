@@ -6,8 +6,8 @@ fetched_at: "2026-10-05 15:30:17"
 
 # 一、概述
 
-Maven是一个项目管理工具，它包含了一个项目对象模型(Project Object Model)，一组标准集合，一个项目生命周期(Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。当你使用Maven的时候，你用一个明确定义的项目对象模型来描述你的项目，然后Maven可以应用横切的逻辑，这些逻辑来自一组共享的（或者自定义的）插件。   
-Maven有一个生命周期，当你运行mvn install的时候被调用。这条命令告诉Maven执行一系列的有序的步骤，直到到达你指定的生命周期。遍历生命周期旅途中的一个影响就是，Maven 运行了许多默认的插件目标，这些目标完成了像编译和创建一个JAR文件这样的工作。   
+Maven是一个项目管理工具，它包含了一个项目对象模型(Project Object Model)，一组标准集合，一个项目生命周期(Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。当你使用Maven的时候，你用一个明确定义的项目对象模型来描述你的项目，然后Maven可以应用横切的逻辑，这些逻辑来自一组共享的（或者自定义的）插件。
+Maven有一个生命周期，当你运行mvn install的时候被调用。这条命令告诉Maven执行一系列的有序的步骤，直到到达你指定的生命周期。遍历生命周期旅途中的一个影响就是，Maven 运行了许多默认的插件目标，这些目标完成了像编译和创建一个JAR文件这样的工作。
 此外，Maven能够很方便的帮你管理项目报告，生成站点，管理JAR文件，等等。
 
 ## 1.项目的构建流程
@@ -38,13 +38,13 @@ pom.xml 文件
 
 [](http://images2015.cnblogs.com/blog/496517/201607/496517-20160707231147921-282061464.png)
 
-**bin:** 含有mvn运行的脚本。 
+**bin:** 含有mvn运行的脚本。
 
 **boot:** 含有plexus-classworlds类加载器框架 。
 
-**conf:** 含有settings.xml配置文件。 
+**conf:** 含有settings.xml配置文件。
 
-**lib:** 含有Maven运行时所需要的java类库。 
+**lib:** 含有Maven运行时所需要的java类库。
 
 LICENSE.txt, NOTICE.txt, README.txt针对Maven版本，第三方软件等简要介绍。
 
@@ -109,21 +109,21 @@ D:\maven-3.3.9\conf目录下有settings.xml文件，复制到上面的路径下�
 ****
 
 **One.java**
-    
-    
+
+
     public class One{
-    
+
     	public String say(String name){
-    	
+
     		return "Hello Maven " + name;
     	}
     }
 
 **OneTest.java**
-    
-    
+
+
     public class OneTest{
-    	
+
     	@Test
     	public void testOne(){
     		One one = new One();
@@ -139,25 +139,24 @@ D:\maven-3.3.9\conf目录下有settings.xml文件，复制到上面的路径下�
 [](http://images2015.cnblogs.com/blog/496517/201607/496517-20160707231211077-458667928.png)
 
 **(4)POM文件的解释**
-    
-    
-    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-      
+
+
+
+
       <!-- 模型版本号 -->
-      <modelVersion>4.0.0</modelVersion> 
+      <modelVersion>4.0.0</modelVersion>
       <!-- 群组ID: 公司域名反写 -->
       <groupId>com.kiwi</groupId>
       <!-- 项目ID: 一个公司只有一个域名，但是可以有多个项目 -->
       <artifactId>One</artifactId>
       <!-- 版本号: 用于描述开发过程的阶段性标识-->
       <version>0.0.1-SNAPSHOT</version>
-    
+
       <!-- 默认字符集 -->
-      <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      </properties>
-    
+
+         UTF-8
+
+
      <!-- 依赖管理 -->
       <dependencies>
     	  	<!-- 具体的依赖 -->
@@ -168,4 +167,3 @@ D:\maven-3.3.9\conf目录下有settings.xml文件，复制到上面的路径下�
     		      <scope>test</scope>
     	    </dependency>
       </dependencies>
-    </project>

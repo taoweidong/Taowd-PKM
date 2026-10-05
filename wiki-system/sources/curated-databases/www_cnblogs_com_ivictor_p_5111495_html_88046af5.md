@@ -23,8 +23,8 @@ Java Oracle官方下载地址为：
 编辑/etc/profile文件
 
 # vim /etc/profile 添加如下内容
-    
-    
+
+
     export JAVA_HOME=/usr/local/jdk1.7.0_79
     export PATH=$JAVA_HOME/bin:$PATH
     export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
@@ -32,8 +32,8 @@ Java Oracle官方下载地址为：
 # source /etc/profile --使/etc/profile文件生效
 
 # java -version
-    
-    
+
+
     java version "1.7.0_79"
     Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
     Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
@@ -55,8 +55,8 @@ MySQL官方下载地址如下：
 启动MySQL
 
 # /etc/init.d/mysqld start
-    
-    
+
+
     Starting mysqld (via systemctl):                           [  OK  ]
 
 为root账户创建密码
@@ -86,14 +86,14 @@ MySQL官方下载地址如下：
 **四、测试MyCAT**
 
 首先在MySQL上创建三个数据库：db1，db2，db3。
-    
-    
+
+
     mysql> create database db1;
     Query OK, 1 row affected (0.00 sec)
-    
+
     mysql> create database db2;
     Query OK, 1 row affected (0.00 sec)
-    
+
     mysql> create database db3;
     Query OK, 1 row affected (0.00 sec)
 
@@ -102,15 +102,15 @@ MySQL官方下载地址如下：
 # cd /usr/local/mycat/bin/
 
 # ./mycat start
-    
-    
+
+
     Starting Mycat-server...
 
 查看mycat服务是否启动
 
 # ps -ef |grep mycat
-    
-    
+
+
     root       9640   7257  0 22:47 pts/3    00:00:00 grep --color=auto mycat
 
 并没有启动
@@ -120,8 +120,8 @@ MySQL官方下载地址如下：
 # cd /usr/local/mycat/logs/
 
 # cat wrapper.log
-    
-    
+
+
     STATUS | wrapper  | 2016/01/07 22:44:23 | --> Wrapper Started as Daemon
     STATUS | wrapper  | 2016/01/07 22:44:23 | Launching a JVM...
     ERROR  | wrapper  | 2016/01/07 22:44:25 | JVM exited while loading the application.
@@ -147,8 +147,8 @@ MySQL官方下载地址如下：
 修改hosts文件，绑定主机名
 
 # vim /etc/hosts
-    
-    
+
+
     127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
     ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
     192.168.244.144 MySQL-Server1
@@ -162,8 +162,8 @@ MySQL官方下载地址如下：
 这次mycat正常启动
 
 # ps -ef |grep mycat
-    
-    
+
+
     root      10725      1  0 22:54 ?        00:00:00 /usr/local/mycat/bin/./wrapper-linux-x86-64 /usr/local/mycat/conf/wrapper.conf wrapper.syslog.ident=mycat wrapper.pidfile=/usr/local/mycat/logs/mycat.pid wrapper.daemonize=TRUE wrapper.lockfile=/var/lock/subsys/mycat
     root      10881   7257  0 22:55 pts/3    00:00:00 grep --color=auto mycat
 
@@ -182,25 +182,25 @@ MySQL官方下载地址如下：
 红色部分表明连接的是mycat。
 
 创建Travelrecord表
-    
-    
+
+
     create table travelrecord (id bigint not null primary key,user_id varchar(100),traveldate DATE, fee decimal,days int);
 
 插入数据
-    
-    
+
+
     mysql> insert into travelrecord(id,user_id,traveldate,fee,days)  values(1,'Victor',20160101,100,10);
     Query OK, 1 row affected (0.00 sec)
-    
+
     mysql> insert into travelrecord(id,user_id,traveldate,fee,days)  values(5000001,'Job',20160102,100,10);
     Query OK, 1 row affected (0.00 sec)
-    
+
     mysql> insert into travelrecord(id,user_id,traveldate,fee,days)  values(10000001,'Slow',20160103,100,10);
     Query OK, 1 row affected (0.00 sec)
 
 至于ID为什么取三个值，这个与conf目录下autopartition-long.txt的定义有关，这个文件主要定义auto-sharding-long的规则。
-    
-    
+
+
     # range start-end ,data node index
     # K=1000,M=10000.
     0-500M=0
@@ -210,8 +210,8 @@ MySQL官方下载地址如下：
 我主要是测试在id取不同区间的值时，分片的效果。
 
 下面来看看分片的效果
-    
-    
+
+
     mysql> select * from db1.travelrecord;
     +----+---------+------------+------+------+
     | id | user_id | traveldate | fee  | days |
@@ -219,7 +219,7 @@ MySQL官方下载地址如下：
     |  1 | Victor  | 2016-01-01 |  100 |   10 |
     +----+---------+------------+------+------+
     1 row in set (0.00 sec)
-    
+
     mysql> select * from db2.travelrecord;
     +---------+---------+------------+------+------+
     | id      | user_id | traveldate | fee  | days |
@@ -227,7 +227,7 @@ MySQL官方下载地址如下：
     | 5000001 | Job     | 2016-01-02 |  100 |   10 |
     +---------+---------+------------+------+------+
     1 row in set (0.00 sec)
-    
+
     mysql> select * from db3.travelrecord;
     +----------+---------+------------+------+------+
     | id       | user_id | traveldate | fee  | days |
@@ -243,8 +243,8 @@ MySQL官方下载地址如下：
 语法其实蛮简单，就是SQL语句前加上explain语句。
 
 下面根据explain命令查看create语句和insert语句具体会分配到哪些Datanode上。
-    
-    
+
+
     mysql> explain create table travelrecord (id bigint not null primary key,user_id varchar(100),traveldate DATE, fee decimal,days int);
     +-----------+-----------------------------------------------------------------------------------------------------------------------+
     | DATA_NODE | SQL                                                                                                                   |
@@ -254,7 +254,7 @@ MySQL官方下载地址如下：
     | dn3       | create table travelrecord (id bigint not null primary key,user_id varchar(100),traveldate DATE, fee decimal,days int) |
     +-----------+-----------------------------------------------------------------------------------------------------------------------+
     3 rows in set (0.00 sec)
-    
+
     mysql>  explain insert into travelrecord(id,user_id,traveldate,fee,days)  values(1,'Victor',20160101,100,10);
     +-----------+----------------------------------------------------------------------------------------------+
     | DATA_NODE | SQL                                                                                          |
@@ -262,7 +262,7 @@ MySQL官方下载地址如下：
     | dn1       | insert into travelrecord(id,user_id,traveldate,fee,days)  values(1,'Victor',20160101,100,10) |
     +-----------+----------------------------------------------------------------------------------------------+
     1 row in set (0.01 sec)
-    
+
     mysql> explain insert into travelrecord(id,user_id,traveldate,fee,days)  values(5000001,'Job',20160102,100,10);
     +-----------+-------------------------------------------------------------------------------------------------+
     | DATA_NODE | SQL                                                                                             |
@@ -270,7 +270,7 @@ MySQL官方下载地址如下：
     | dn2       | insert into travelrecord(id,user_id,traveldate,fee,days)  values(5000001,'Job',20160102,100,10) |
     +-----------+-------------------------------------------------------------------------------------------------+
     1 row in set (0.00 sec)
-    
+
     mysql> explain insert into travelrecord(id,user_id,traveldate,fee,days)  values(10000001,'Slow',20160103,100,10);
     +-----------+---------------------------------------------------------------------------------------------------+
     | DATA_NODE | SQL                                                                                               |

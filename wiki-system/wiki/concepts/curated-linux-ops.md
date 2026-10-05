@@ -100,7 +100,6 @@ source: "[[topics/browser-bookmarks]]"
 - [Eclipse Downloads](http://www.eclipse.org/downloads/eclipse-packages/)
 - [Eclipse IDE for Java EE Developers | Packages](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junosr1)
 - [Eclipse 最牛的几款插件](https://blog.csdn.net/sanjiaozhen/article/details/42099559)
-- [GitHub windows客户端简单使用教程 - HelloMagic - 博客园](http://www.cnblogs.com/hellomagic/p/5237096.html)
 - [Github作为远程仓库的使用详解 - code life - 博客频道 - CSDN.NET](http://blog.csdn.net/djl4104804/article/details/50778717)
 - [Git在tortoiseGit以及eclipse的使用方法 - IT-caijw - 博客园](http://www.cnblogs.com/caijw/p/5954465.html)
 - [IntelliJ IDEA2017.3 激活 - CSDN博客](http://blog.csdn.net/zx110503/article/details/78734428)
@@ -115,8 +114,6 @@ source: "[[topics/browser-bookmarks]]"
 ### 其他 / 综合（9）
 
 - [FlashFXP连接linux 教程_百度经验](http://jingyan.baidu.com/article/2d5afd69db8ba385a2e28eb2.html)
-- [Index of /centos/6/os/x86_64/Packages/](http://mirrors.163.com/centos/6/os/x86_64/Packages/)
-- [Kali linux教程使用交流论坛](http://www.backtrack.org.cn/forum-69-1.html)
 - [Linux公社 - Linux系统门户网站](http://www.linuxidc.com/)
 - [Ubuntu Pastebin](http://paste.ubuntu.com/)
 - [Unix技术网](http://www.chinaunix.net/)

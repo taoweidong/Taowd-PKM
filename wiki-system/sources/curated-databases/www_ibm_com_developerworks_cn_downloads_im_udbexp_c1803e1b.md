@@ -24,9 +24,6 @@ conference | Prague[Open Source Summit Europe](https://developer.ibm.com/events/
 
 conference | Atlanta[IBM TechXchange Conference 2026](https://developer.ibm.com/events/ibm-techxchange-conference-2026)
 
-
-
-
 [More events](https://developer.ibm.com/events/?utm_source=home-page&utm_medium=hero-spot)
 
 loading

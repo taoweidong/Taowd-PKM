@@ -34,11 +34,11 @@ fetched_at: "2026-10-05 15:26:55"
 
 **OK，SDK 安装完成了。。。。**
 
-  * 在用户变量中新建PATH值为：Android SDK中的tools绝对路径（本机为D:\AndroidDevelop\android-sdk-windows\tools）。 
+  * 在用户变量中新建PATH值为：Android SDK中的tools绝对路径（本机为D:\AndroidDevelop\android-sdk-windows\tools）。
 
 [![image](https://i-blog.csdnimg.cn/blog_migrate/cfa5cb15d5eb89afdc99532122d6ea22.png)](http://images.cnblogs.com/cnblogs_com/skynet/WindowsLiveWriter/Android1_552/image_4.png)图2、设置Android SDK的环境变量
 
-“确定”后，重新启动计算机。重启计算机以后，进入cmd命令窗口，检查SDK是不是安装成功。   
+“确定”后，重新启动计算机。重启计算机以后，进入cmd命令窗口，检查SDK是不是安装成功。
 运行 android –h 如果有类似以下的输出，表明安装成功：
 
 [![image](https://i-blog.csdnimg.cn/blog_migrate/06486321001bd01e2ccbddf1878a5be5.png)](http://images.cnblogs.com/cnblogs_com/skynet/WindowsLiveWriter/Android1_552/image_10.png)图3、验证Android SDK是否安装成功
@@ -117,7 +117,7 @@ if(this.txtView!=null){
 
 this.txtView.setText("Hello World");
 
-} 
+}
 
 }
 
@@ -130,6 +130,3 @@ this.txtView.setText("Hello World");
 android4.0 Api文档、模拟器等 下载链接
 
 ed2k://|file|[Android开发环境搭建].android-sdk_r15-windows.7z|626349500|5ed5d36562e047889ec8a79449962620|h=r6ltf5wmm2lcffotyiqent76pd4nvx7r|/
-
-
-

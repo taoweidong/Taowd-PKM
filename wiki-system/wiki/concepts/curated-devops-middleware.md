@@ -31,18 +31,15 @@ source: "[[topics/browser-bookmarks]]"
 - [在Windows平台上搭建Docker开发环境 - CSDN博客](http://blog.csdn.net/u011054333/article/details/70064285)
 - [在centos和redhat上安装docker_慕课手记](http://www.imooc.com/article/16448)
 - [解决Windows下无法对docker容器进行端口映射的问题 | 王民利的个人站点](http://www.wangminli.com/?p=1179)
-- [镜像加速 | Docker 中国](https://www.docker-cn.com/registry-mirror)
 
 ### Jenkins / CI / 质量（15）
 
 - [Jenkins2.32.1+svn+maven安装配置与构建部署(一) - High阔天空 - 博客园](http://www.cnblogs.com/quyanhui/p/6278587.html)
 - [Jenkins中换了maven地址后，一直使用原来的maven地址 - CSDN博客](https://blog.csdn.net/w7569133507/article/details/80372892)
-- [Jenkins中文网 - 免费开源的持续集成工具、jenkins安装、jenkins使用、jenkins培训](http://www.jenkins.org.cn/)
 - [Jenkins中文说明](https://jenkins.io/zh/doc/book/installing/)
 - [Jenkins入门系列之——02第二章 Jenkins安装与配置 - - 博客频道 - CSDN.NET](http://blog.csdn.net/wangmuming/article/details/22925127/)
 - [Jenkins入门系列之——02第二章 Jenkins安装与配置 - 爱自己 - 博客园](https://www.cnblogs.com/zz0412/p/jenkins02.html)
 - [Jenkins内存溢出的处理方法 - EasonJim - 博客园](https://www.cnblogs.com/EasonJim/p/6394434.html)
-- [Jenkins搭建，从零手把手教你入门及项目实践 - 今日头条(www.toutiao.com)](http://www.toutiao.com/i6434296217454264834/)
 - [Jenkins自动部署Maven 多个子项目 - CSDN博客](https://blog.csdn.net/tangxingILoveyou/article/details/78109740)
 - [RedHat Repository for Jenkins](https://pkg.jenkins.io/redhat-stable/)
 - [jenkins.war](http://updates.jenkins-ci.org/download/war/)
@@ -65,10 +62,8 @@ source: "[[topics/browser-bookmarks]]"
 - [MyEclipse使用Maven创建web项目+搭建SSM框架教 - 流逝的是岁月,沉淀的是经典 - 博客频道 - CSDN.NET](http://blog.csdn.net/v123411739/article/details/50742885)
 - [eclipse新建maven项目出现红叉解决办法 - yc - 博客频道 - CSDN.NET](http://blog.csdn.net/TingiBanDeQu/article/details/51870145)
 - [maven + eclipse 问题记录 - cai5的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/cai5/article/details/20553731)
-- [maven私有仓库 搭建 搭建Maven私服-系统/上网/安全-就爱阅读网](http://www.92to.com/bangong/2016/10-22/11675892.html)
 - [myeclipse 10创建maven项目 - hins - 博客频道 - CSDN.NET](http://blog.csdn.net/kenhins/article/details/27963235)
 - [关于maven下载jar包失败的问题的总结和解决 - 博客频道 - CSDN.NET](http://blog.csdn.net/captian_900331/article/details/50897831)
-- [搭建Maven私服（使用Nexus）-博客-云栖社区-阿里云](https://yq.aliyun.com/articles/7427)
 - [转:Maven常用命令 - phoebus0501 - 博客园](http://www.cnblogs.com/phoebus0501/archive/2011/05/10/2042511.html)
 
 ### 消息队列（4）
@@ -106,7 +101,6 @@ source: "[[topics/browser-bookmarks]]"
 - [EasyPoi教程_V1.0](http://easypoi.mydoc.io/#text_186905)
 - [Eclipse开发工具安装MyBatipse](https://segmentfault.com/a/1190000005733379)
 - [Index of /download/plugins](http://updates.jenkins-ci.org/download/plugins/)
-- [JEECG智能开发平台v3 开发指南](http://www.jeecg.org/book/jeecg_v3.html)
 - [Redis设置Auth认证保护](https://www.cnblogs.com/wt645631686/p/8352677.html)
 - [The Elastic Stack Download · Get Started in Minutes | Elastic](https://www.elastic.co/downloads)
 - [git命令大全](http://www.freep.cn/zhuangxiu_6/News_2497746.html)

@@ -4,7 +4,7 @@ title: "安卓设计类毕业范例设计_源码成品展示 - 计算机毕业�
 fetched_at: "2026-10-05 15:27:33"
 ---
 
-欢迎光临！ 
+欢迎光临！
 
 [Rss订阅](http://www.shuangyulin.com/article/rss.xml)设为首页[请您留言](http://www.shuangyulin.com/book.asp)
 
@@ -16,8 +16,6 @@ fetched_at: "2026-10-05 15:27:33"
   * [ ![计算机毕业范例设计诚聘英才](http://www.shuangyulin.com/images/icon_05.gif)诚聘英才](http://www.shuangyulin.com/zhaopin.asp "计算机毕业范例设计诚聘英才")
   * [ ![计算机毕业范例设计订做流程](http://www.shuangyulin.com/images/icon_03.gif)订做流程](http://www.shuangyulin.com/dingzuo.asp "计算机毕业范例设计订做流程")
   * [ ![计算机毕业范例设计本站信誉](http://www.shuangyulin.com/images/icon_04.gif)本站信誉](http://www.shuangyulin.com/xinyong.asp "计算机毕业范例设计本站信誉")
-
-
 
 ![全民反炸，诚信网站](http://www.shuangyulin.com/images/zfb.gif)
 
@@ -109,9 +107,6 @@ fetched_at: "2026-10-05 15:27:33"
 
 ![](http://img.shuangyulin.com/qqphoto/1175/photo3.jpg)系统一共三个身份： 1 用户： 注册登录客户端app后可以查询附近的装修公司和装修套餐信息，其中装修公司和套餐信息都有地图显示具体的位置，以及距离用户当前的距离，采用百度地图sdk实现，查询到自己喜欢的装修风格套餐可以下单后要求装修公司商家服务，用户可以对装修套餐服务质量好坏进行评价！ 2 装修公司商家： 账号由管理员在web端后台添加，客户端登录后可以查询公司信息...
 
-
-
-
   * [asp.net设计类](http://www.shuangyulin.com/article/list_2.html)
   * [java,jsp类](http://www.shuangyulin.com/article/list_3.html)
   * [vb设计类](http://www.shuangyulin.com/article/list_4.html)
@@ -121,8 +116,6 @@ fetched_at: "2026-10-05 15:27:33"
   * [ios设计类](http://www.shuangyulin.com/article/list_29.html)
   * [Python技术类](http://www.shuangyulin.com/article/list_30.html)
   * [小程序及其他类](http://www.shuangyulin.com/article/list_31.html)
-
-
 
 ![最新设计](http://www.shuangyulin.com/images/right_dot.gif)最近计算机毕业范例设计
 
@@ -137,8 +130,6 @@ fetched_at: "2026-10-05 15:27:33"
   * [1320基于AndroidStudio疾病预防疫](http://www.shuangyulin.com/article/1454.html)
   * [1307基于AndroidStudio员工绩效考](http://www.shuangyulin.com/article/1441.html)
 
-
-
 ![设计排行](http://www.shuangyulin.com/images/right_dot.gif)计算机毕业范例设计排行
 
   * [1303基于安卓AndroidStudio校园求](http://www.shuangyulin.com/article/1437.html)
@@ -151,8 +142,6 @@ fetched_at: "2026-10-05 15:27:33"
   * [506大神基于安卓Android设备报修](http://www.shuangyulin.com/article/593.html)
   * [892大神安卓Android快递代拿跑腿](http://www.shuangyulin.com/article/1009.html)
   * [1344基于安卓AndroidStudio在线订](http://www.shuangyulin.com/article/1478.html)
-
-
 
   * [ 设为首页](javascript:void\(0\);)
   * 收藏本站

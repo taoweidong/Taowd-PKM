@@ -40,7 +40,6 @@ source: "[[topics/browser-bookmarks]]"
 - [(6条消息)python利用paramiko库远程连接Linux服务器上传文件并执行命令_运维_实践求真知-CSDN博客](https://blog.csdn.net/chengqiuming/article/details/86515656)
 - [windows下设置pip国内源_pip 源 windows_zhoyuwo的博客-CSDN博客](https://blog.csdn.net/zhoyuwo/article/details/100140034)
 - [关于command 'gcc' failed with exit status 1 解决方法 - gerrydeng - 博客园](https://www.cnblogs.com/gerrydeng/p/7159021.html)
-- [在linux的终端怎么退出python命令行_百度知道](http://zhidao.baidu.com/link?url=ONvrAwhCkmhVpBDFwVWIKRXUnCwX8Byoq3tTL4r3oypecRFT5gQBvI2UasWmrkeIAZTxi9dQKfWXnYTPLfs2EUypPUZ2XWjYbJMTzCikKVe)
 - [详解Linux安装GCC方法 - 习惯沉淀 - 博客园](https://www.cnblogs.com/yadongliang/p/6100003.html)
 
 ### 包管理 / 并发（3）

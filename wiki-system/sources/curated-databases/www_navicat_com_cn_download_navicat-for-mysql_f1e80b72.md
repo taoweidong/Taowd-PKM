@@ -34,94 +34,91 @@ Navicat 18 for MySQL
 
 (位置 1)
 
-[直接下载  
+[直接下载
 (64 bit)](/download/direct-download?product=navicat18_mysql_cs_x64.exe&location=1)
 
 (位置 2)
 
-[直接下载  
+[直接下载
 (64 bit)](/download/direct-download?product=navicat18_mysql_cs_x64.exe&location=2)
 
 (位置 3)
 
-[下载连支持  
+[下载连支持
 (64 bit)](/download/support-download?product=navicat18_mysql_cs_x64.exe)
 
 ### ![](/images/dl_mac.png)macOS
 
 Navicat 18 for MySQL
 
-  
-  
-  
-  
+
+
+
 
 
 ### Apple Silicon
 
 (位置 1)
 
-[直接下载  
+[直接下载
 (arm64)](/download/direct-download?product=navicat18_mysql_cs_arm64.dmg&location=1)
 
 (位置 2)
 
-[直接下载  
+[直接下载
 (arm64)](/download/direct-download?product=navicat18_mysql_cs_arm64.dmg&location=2)
 
 (位置 3)
 
-[下载连支持  
+[下载连支持
 (arm64)](/download/support-download?product=navicat18_mysql_cs_arm64.dmg)
 
-  
-  
-  
-  
+
+
+
 
 
 ### Intel
 
 (位置 1)
 
-[直接下载  
+[直接下载
 (x86_64)](/download/direct-download?product=navicat18_mysql_cs_x86_64.dmg&location=1)
 
 (位置 2)
 
-[直接下载  
+[直接下载
 (x86_64)](/download/direct-download?product=navicat18_mysql_cs_x86_64.dmg&location=2)
 
 (位置 3)
 
-[下载连支持  
+[下载连支持
 (x86_64)](/download/support-download?product=navicat18_mysql_cs_x86_64.dmg)
 
 ### ![](/images/dl_linux.png)Linux
 
 Navicat 18 for MySQL
 
-  
-  
-  
-  
+
+
+
 
 
 ### AppImage（x86_64）
 
 (位置 1)
 
-[直接下载  
+[直接下载
 (x86_64)](/download/direct-download?product=navicat18-mysql-cs-x86_64.AppImage&location=1)
 
 (位置 2)
 
-[直接下载  
+[直接下载
 (x86_64)](/download/direct-download?product=navicat18-mysql-cs-x86_64.AppImage&location=2)
 
 (位置 3)
 
-[下载连支持  
+[下载连支持
 (x86_64)](/download/support-download?product=navicat18-mysql-cs-x86_64.AppImage)
 
 # 使其可执行
@@ -132,27 +129,26 @@ chmod +x navicat18-mysql-cs-x86_64.AppImage
 
 ./navicat18-mysql-cs-x86_64.AppImage
 
-  
-  
-  
-  
+
+
+
 
 
 ### AppImage（aarch64）
 
 (位置 1)
 
-[直接下载  
+[直接下载
 (aarch64)](/download/direct-download?product=navicat18-mysql-cs-aarch64.AppImage&location=1)
 
 (位置 2)
 
-[直接下载  
+[直接下载
 (aarch64)](/download/direct-download?product=navicat18-mysql-cs-aarch64.AppImage&location=2)
 
 (位置 3)
 
-[下载连支持  
+[下载连支持
 (aarch64)](/download/support-download?product=navicat18-mysql-cs-aarch64.AppImage)
 
 # 使其可执行
@@ -163,10 +159,9 @@ chmod +x navicat18-mysql-cs-aarch64.AppImage
 
 ./navicat18-mysql-cs-aarch64.AppImage
 
-  
-  
-  
-  
+
+
+
 
 
 ### Flatpak
@@ -199,8 +194,6 @@ Windows macOS Linux
     * [Navicat for MongoDB](/what-is-navicat-for-mongodb)
     * [阿里云与 Navicat](/navicat-support-aliyun)
 
-
-
   * [**产品**](/products)
 
 ![](/images/00_expand_up_icon.svg)
@@ -215,8 +208,6 @@ Windows macOS Linux
     * [Navicat Cloud](/products#navicat-collaboration)
     * [Navicat Monitor](/products#navicat-monitor)
 
-
-
   * [**技术支持**](/support)
 
 ![](/images/00_expand_up_icon.svg)
@@ -226,8 +217,6 @@ Windows macOS Linux
     * [问卷调查](/support/survey)
     * [即时支持](/support/live)
 
-
-
   * **帐户**
 
 ![](/images/00_expand_up_icon.svg)
@@ -235,8 +224,6 @@ Windows macOS Linux
   *     * [客户服务中心](https://cncustomer.navicat.com/)
     * [订阅门户](https://subscription.navicat.com)
     * [Navicat Cloud](https://cloud.navicat.com/login)
-
-
 
   * [**合作伙伴**](/company/partner)
 
@@ -247,8 +234,6 @@ Windows macOS Linux
     * [技术合作伙伴](/store/technology-partner)
     * [赞助](/sponsorship)
     * [Navicat 学术伙伴计划](/sponsorship/education)
-
-
 
   * [**关于我们**](/company/aboutus)
 
@@ -261,8 +246,6 @@ Windows macOS Linux
     * [新闻](/company/press)
     * [博客](/company/aboutus/blog)
 
-
-
   * **其他**
 
 ![](/images/00_expand_up_icon.svg)
@@ -272,5 +255,3 @@ Windows macOS Linux
     * [非商业版许可证](/store/non-commercial)
     * [离线订单](/store/offline-order)
     * [取消订阅](/unsubscribe)
-
-

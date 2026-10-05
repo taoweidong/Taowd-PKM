@@ -32,7 +32,7 @@ using(变量类型 变量名 =new 变量类型())
 
 必须实现了[IDisposable](http://www.aisto.com/roeder/dotnet/Default.aspx?Target=code://mscorlib:4.0.0.0:b77a5c561934e089/System.IDisposable "System.IDisposable
 
-CTRL+Click to open in new tab.") 接口的类型才可以使用using回收！ 
+CTRL+Click to open in new tab.") 接口的类型才可以使用using回收！
 
 3.using回收的是托管还是非托管资源？
 
@@ -115,12 +115,12 @@ para.Value;
 ## 5.SQL语句中参数化模糊查询写法
 
 解析：like '%'+@name+'%'
-    
-    
+
+
     private void btnOK_Click(object sender, EventArgs e)
             {
                 string str = "Data Source=.;initial catalog=MySchool;uid=sa;pwd=6375196";
-    
+
                 SqlConnection con = new SqlConnection(str);
                 string sql = "select * from student where studentname like '%'+@name+'%'";
                 SqlCommand cmd = con.CreateCommand();
@@ -130,12 +130,12 @@ para.Value;
                 DataSet ds=new DataSet();
                 da.Fill(ds, "Info");
                 dataGridView1.DataSource = ds.Tables[0];
-    
+
             }
 
 SQL注入
-    
-    
+
+
                 //登录按钮 用户名和密码不对也可以成功登录
                 //1.1获取到用户名和密码
                 string uname = txtName.Text;
@@ -154,16 +154,16 @@ SQL注入
                 else
                 {
                     MessageBox.Show("失败!");
-                } 
-    
-    
+                }
+
+
                 //用户名输入 ' or 1=1 --  密码输入 :随便输
                 //SQL Server 查询的语句是  select count(1) from student where studentName='' or 1=1 --' and Loginpwd='sb
-               
+
 
 为防止SQL注入
-    
-    
+
+
                 //1.1获取到用户名和密码
                 string uname = txtName.Text;
                 string pwd = txtPwd.Text;
@@ -172,7 +172,7 @@ SQL注入
                 string sql = "select count(1) from student where studentName=@name and loginpwd=@pwd";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = new SqlCommand(sql, con);
-    
+
                 con.Open();
                 SqlParameter p1 = new SqlParameter("@name", uname);
                 SqlParameter p2 = new SqlParameter("@pwd", pwd);
@@ -189,19 +189,19 @@ SQL注入
                     {
                         MessageBox.Show("失败!");
                     }
-    
+
                 }
                 catch (Exception)
                 {
-    
+
                     // throw;
-                } 
+                }
 
 C#调用带输入参数的存储过程
 
 数据库--->可编程性--->存储过程--->
-    
-    
+
+
     //开始把Alter改成如下的create
     create procedure usp_selectInfoOutput
     @sex nvarchar(32),
@@ -215,8 +215,8 @@ C#调用带输入参数的存储过程
 按性别加载数据
 
 在Main窗体中写
-    
-    
+
+
     //1.1  连接字符串
                 string str = "data source=.;initial catalog=MySchool;uid=sa;";
                 //1.2 创建连接对象    呵呵
@@ -251,8 +251,8 @@ C#调用带输入参数的存储过程
                 con.Close();
 
 同上
-    
-    
+
+
                 string str = "Data Source=.;Initial Catalog=MySchool;uid=sa;";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = con.CreateCommand();
@@ -273,8 +273,8 @@ C#调用带输入参数的存储过程
 在boy's number 的输出:5 在返回值:100 在 学生框中支持模糊查询 在dgvList控件输出查询的结果
 
 数据库--->可编程性--->存储过程--->
-    
-    
+
+
     create procedure usp_selectInfoOutput
     @sex nvarchar(32),
     @count int output
@@ -285,26 +285,26 @@ C#调用带输入参数的存储过程
     return 100
 
 在<调用带输出和返回值的存储过程>窗体里写
-    
-    
+
+
      //1.1  连接字符串
                 string str = "data source=.;initial catalog=MySchool;uid=sa;";
                 //1.2 创建连接对象    呵呵
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = con.CreateCommand();
-    
+
                 cmd.CommandText = "usp_selectInfoOutput";
                 cmd.CommandType = CommandType.StoredProcedure;
-    
+
                 SqlParameter[] paras =
                 {
                     new SqlParameter("@sex","1"),
                     //凭什么    C#  @count  输出参数
-                    new SqlParameter("@count",SqlDbType.Int), 
-                    new SqlParameter("@myreturn",SqlDbType.Int) 
+                    new SqlParameter("@count",SqlDbType.Int),
+                    new SqlParameter("@myreturn",SqlDbType.Int)
                     //返回值
                 };
-    
+
                 //为参数指定方向
                 paras[1].Direction = ParameterDirection.Output;
                 paras[2].Direction = ParameterDirection.ReturnValue;
@@ -313,15 +313,15 @@ C#调用带输入参数的存储过程
                 da.SelectCommand = cmd;
                 DataSet ds = new DataSet();
                 da.Fill(ds, "StuInfo");
-    
+
                 dataGridView1.DataSource = ds.Tables["StuInfo"];
                 //填充总人数
                 txtNum.Text = paras[1].Value.ToString();
                 txtReturn.Text = paras[2].Value.ToString();
 
 四:模糊查询 在Select控件中写
-    
-    
+
+
     string name = '%' + "hhe" + '%';
                 //1.1  连接字符串
                 string str = "data source=.;initial catalog=MySchool;uid=sa;";
@@ -336,9 +336,9 @@ C#调用带输入参数的存储过程
                 cmd.CommandText = "select * from student where studentname like '%'+@name+'%'";
                 cmd.CommandType = CommandType.Text;
                 SqlParameter para = new SqlParameter("@name",  txtName.Text);
-    
+
                 cmd.Parameters.Add(para);
-    
+
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataSet ds = new DataSet();

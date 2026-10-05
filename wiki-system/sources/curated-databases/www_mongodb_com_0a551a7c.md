@@ -14,8 +14,6 @@ fetched_at: "2026-10-05 15:29:19"
   * 所有文档
   * 社区论坛
 
-
-
   * 产品
 
 平台
@@ -114,8 +112,6 @@ Investors
 
   * [定价](https://www.mongodb.com/zh-cn/pricing)
 
-
-
 简体中文
 
 Support](https://www.mongodb.com/zh-cn/services/support)[登录](https://account.mongodb.com/account/login)
@@ -164,7 +160,7 @@ MONGODB ATLAS
 
 ### 利用 AI 更智能地构建
 
-学习使用 AI 工具及我们丰富的 AI 合作伙伴生态系统构建智能应用。 
+学习使用 AI 工具及我们丰富的 AI 合作伙伴生态系统构建智能应用。
 
 [访问学习中心](https://www.mongodb.com/zh-cn/resources/use-cases/artificial-intelligence)
 
@@ -218,7 +214,7 @@ MongoDB Atlas 将操作型数据库和向量数据库集成在一个统一的平
 
 ### 操作使用案例
 
-采用与应用程序的访问模式一致的文档数据模型优化写入性能。通过支持从简单查找到用于数据分析和转换的复杂处理管道的单个查询 API，满足广泛的查询需求。 
+采用与应用程序的访问模式一致的文档数据模型优化写入性能。通过支持从简单查找到用于数据分析和转换的复杂处理管道的单个查询 API，满足广泛的查询需求。
 
 [了解详情](https://www.mongodb.com/zh-cn/resources/products/fundamentals/why-use-mongodb)
 
@@ -404,8 +400,6 @@ MongoDB 与开发者喜爱的 100 多种技术无缝集成
 
   * [定价](https://www.mongodb.com/pricing)
 
-
-
 ![MongoDB logo](https://webimages.mongodb.com/_com_assets/cms/kuyj3d95v5vbmm2f4-horizontal_white.svg?auto=format%252Ccompress)](https://www.mongodb.com/zh-cn)
 
 简体中文
@@ -420,8 +414,6 @@ MongoDB 与开发者喜爱的 100 多种技术无缝集成
   * [Français](https://mongodb.com/fr-fr)
   * [简体中文](https://mongodb.com/zh-cn)
 
-
-
 © 2026 MongoDB, Inc.
 
 关于MongoDB
@@ -435,8 +427,6 @@ MongoDB 与开发者喜爱的 100 多种技术无缝集成
   * [信任中心](https://www.mongodb.com/zh-cn/products/platform/trust)
   * [关注我们](https://www.mongodb.com/company/contact/social-media-hub)
 
-
-
 支持
 
   * [联系我们](https://www.mongodb.com/zh-cn/company/contact)
@@ -447,15 +437,11 @@ MongoDB 与开发者喜爱的 100 多种技术无缝集成
   * 管理 Cookie
   * 您的隐私选择
 
-
-
 部署选项
 
   * [MongoDB Atlas](https://www.mongodb.com/zh-cn/cloud/atlas/register)
   * [Enterprise Advanced](https://www.mongodb.com/try/download/enterprise)
   * [社区版]( https://www.mongodb.com/try/download/community)
-
-
 
 数据基础知识
 
@@ -467,7 +453,5 @@ MongoDB 与开发者喜爱的 100 多种技术无缝集成
   * [MERN 堆栈](https://www.mongodb.com/zh-cn/resources/languages/mern-stack)
   * [代理记忆](https://www.mongodb.com/zh-cn/resources/basics/artificial-intelligence/agent-memory)
   * [MEAN 堆栈]( https://www.mongodb.com/zh-cn/resources/languages/mean-stack)
-
-
 
 © 2026 MongoDB, Inc.

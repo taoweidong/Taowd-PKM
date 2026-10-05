@@ -1,7 +1,7 @@
 ---
 source: "http://www.cnblogs.com/ericli-ericli/p/5902270.html"
 title: "windows下 安装 rabbitMQ 及操作常用命令 - Eric-Lee - 博客园"
-fetched_at: "2026-10-05 15:29:46"
+fetched_at: "2026-10-05 15:30:26"
 ---
 
 rabbitMQ是一个在AMQP协议标准基础上完整的，可服用的企业消息系统。它遵循Mozilla Public License开源协议，采用 Erlang 实现的工业级的消息队列(MQ)服务器，Rabbit MQ 是建立在Erlang OTP平台上。
@@ -37,15 +37,15 @@ rabbitMQ是一个在AMQP协议标准基础上完整的，可服用的企业消�
 打开命令窗口：
 
 输入命令：
-    
-    
+
+
     "C:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.5\sbin\rabbitmq-plugins.bat" enable rabbitmq_management
 
 ![](https://images2015.cnblogs.com/blog/784082/201609/784082-20160924000520059-1488931520.png)
 
 这样，就安装好插件了，是不是能使用了呢？别急，需要重启服务才行，使用命令：
-    
-    
+
+
     net stop RabbitMQ && net start RabbitMQ
 
 这时候的，也许会出现这种结果：
@@ -71,15 +71,15 @@ rabbitMQ是一个在AMQP协议标准基础上完整的，可服用的企业消�
 rabbitmq的用户管理包括增加用户，删除用户，查看用户列表，修改用户密码。
 
 查看已有用户及用户的角色：
-    
-    
+
+
     rabbitmqctl.bat list_users
 
 ![](https://images2015.cnblogs.com/blog/784082/201609/784082-20160924001810231-489339837.png)
 
 新增一个用户：
-    
-    
+
+
     rabbitmqctl.bat add_user username password
 
 ![](https://images2015.cnblogs.com/blog/784082/201609/784082-20160924002317996-1750317042.png)
@@ -100,7 +100,7 @@ eric 后面没有“[administrator]”
 
 (2) 监控者(monitoring)
 
-可登陆管理控制台(启用management plugin的情况下)，同时可以查看rabbitmq节点的相关信息(进程数，内存使用情况，磁盘使用情况等) 
+可登陆管理控制台(启用management plugin的情况下)，同时可以查看rabbitmq节点的相关信息(进程数，内存使用情况，磁盘使用情况等)
 
 (3) 策略制定者(policymaker)
 
@@ -115,8 +115,8 @@ eric 后面没有“[administrator]”
 无法登陆管理控制台，通常就是普通的生产者和消费者。
 
 好啦，我们也给 eric 变成 “超级管理员” 角色：
-    
-    
+
+
     rabbitmqctl.bat set_user_tags username administrator
 
 ![](https://images2015.cnblogs.com/blog/784082/201609/784082-20160924003014246-2015422375.png)
@@ -128,22 +128,22 @@ eric 后面没有“[administrator]”
 当然，除了上面的administrator 还有 monitoring、policymaker、management、自定义名称 ，对应上面介绍到的不同的角色。
 
 像我们人一样，我们角色除了是公司的员工，还是父母的孩子、子女的爸妈等，用户也可以同时具有多个角色,设置方式:
-    
-    
+
+
     rabbitmqctl.bat  set_user_tags  username tag1 tag2 ...
 
 ![](https://images2015.cnblogs.com/blog/784082/201609/784082-20160924005224668-1215172795.png)
 
 恩，现在总觉得guest 这个不安全（它的默认密码是guest）,想更改密码，好办：
-    
-    
+
+
     rabbitmqctl change_password userName newPassword
 
 ![](https://images2015.cnblogs.com/blog/784082/201609/784082-20160924003352168-1350202979.png)
 
 有的人也许会说，我就是看guest不爽，老子新增了administrator用户了，就是想干掉它，可以：
-    
-    
+
+
     rabbitmqctl.bat delete_user username
 
 ![](https://images2015.cnblogs.com/blog/784082/201609/784082-20160924003722731-332310837.png)

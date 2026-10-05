@@ -8,17 +8,13 @@ Oracle静默安装文件 db_install.rsp 详解
 
 （ 转自：<http://blog.chinaunix.net/uid-23886490-id-3565908.html> ）
 
-  
 
 
-相关阅读：《 [ 静默安装Oracle](http://blog.csdn.net/iw1210/article/details/10277145) 》  
+相关阅读：《 [ 静默安装Oracle](http://blog.csdn.net/iw1210/article/details/10277145) 》
 
 
-  
 
-
-附录A：db_install.rsp 文件详解  
-
+附录A：db_install.rsp 文件详解
 
 ####################################################################
 
@@ -82,7 +78,7 @@ ORACLE_HOSTNAME=ora11gr2
 
 #-------------------------------------------------------------------------------
 
-# Specify the Unix group to be set fortheinventory directory. 
+# Specify the Unix group to be set fortheinventory directory.
 
 #**指定 oracleinventory目录的所有者，通常会是oinstall或者dba**
 
@@ -102,53 +98,53 @@ INVENTORY_LOCATION=/u01/app/oracle/oraInventory
 
 #-------------------------------------------------------------------------------
 
-# Specify the languages in which thecomponentswill be installed. 
+# Specify the languages in which thecomponentswill be installed.
 
-# en :English ja :Japanese 
+# en :English ja :Japanese
 
-# fr :French ko :Korean 
+# fr :French ko :Korean
 
-# ar :Arabic es : Latin AmericanSpanish 
+# ar :Arabic es : Latin AmericanSpanish
 
-# bn :Bengali lv :Latvian 
+# bn :Bengali lv :Latvian
 
-# pt_BR: BrazilianPortuguese lt :Lithuanian 
+# pt_BR: BrazilianPortuguese lt :Lithuanian
 
-# bg :Bulgarian ms :Malay 
+# bg :Bulgarian ms :Malay
 
-# fr_CA: CanadianFrench es_MX: MexicanSpanish 
+# fr_CA: CanadianFrench es_MX: MexicanSpanish
 
-# ca :Catalan no :Norwegian 
+# ca :Catalan no :Norwegian
 
-# hr :Croatian pl :Polish 
+# hr :Croatian pl :Polish
 
-# cs :Czech pt :Portuguese 
+# cs :Czech pt :Portuguese
 
-# da :Danish ro :Romanian 
+# da :Danish ro :Romanian
 
-# nl :Dutch ru :Russian 
+# nl :Dutch ru :Russian
 
-# ar_EG:Egyptian zh_CN: SimplifiedChinese 
+# ar_EG:Egyptian zh_CN: SimplifiedChinese
 
-# en_GB: English (Great Britain) sk :Slovak 
+# en_GB: English (Great Britain) sk :Slovak
 
-# et :Estonian sl :Slovenian 
+# et :Estonian sl :Slovenian
 
-# fi :Finnish es_ES:Spanish 
+# fi :Finnish es_ES:Spanish
 
-# de :German sv :Swedish 
+# de :German sv :Swedish
 
-# el :Greek th :Thai 
+# el :Greek th :Thai
 
-# iw :Hebrew zh_TW:TraditionalChinese 
+# iw :Hebrew zh_TW:TraditionalChinese
 
-# hu :Hungarian tr :Turkish 
+# hu :Hungarian tr :Turkish
 
-# is :Icelandic uk :Ukrainian 
+# is :Icelandic uk :Ukrainian
 
-# in :Indonesian vi :Vietnamese 
+# in :Indonesian vi :Vietnamese
 
-# it :Italian 
+# it :Italian
 
 # Example : SELECTED_LANGUAGES=en,fr,ja
 
@@ -176,13 +172,13 @@ ORACLE_BASE=/u01/app/oracle
 
 #------------------------------------------------------------------------------
 
-# Specify the installation edition ofthecomponent. 
+# Specify the installation edition ofthecomponent.
 
-# The value should contain only one ofthesechoices. 
+# The value should contain only one ofthesechoices.
 
-#EE :EnterpriseEdition 
+#EE :EnterpriseEdition
 
-#SE :StandardEdition 
+#SE :StandardEdition
 
 # SEONE Standard EditionOne
 
@@ -250,7 +246,7 @@ oracle.install.db.customComponents=oracle.server:11.2.0.1.0,oracle.sysman.ccr:10
 
 ###############################################################################
 
-# PRIVILEGED OPERATING SYSTEMGROUPS 
+# PRIVILEGED OPERATING SYSTEMGROUPS
 
 # Provide values for the OS groups to whichOSDBAand OSOPERprivileges #
 
@@ -294,9 +290,9 @@ oracle.install.db.CLUSTER_NODES=
 
 # It can be one of the following:
 
-# -GENERAL_PURPOSE/TRANSACTION_PROCESSING 
+# -GENERAL_PURPOSE/TRANSACTION_PROCESSING
 
-# -DATA_WAREHOUSE 
+# -DATA_WAREHOUSE
 
 #**选择数据库的用途，一般用途 /事物处理，数据仓库**
 
@@ -592,7 +588,7 @@ oracle.install.db.config.starterdb.storageType=
 
 # Specify the database file location whichis adirectory for datafiles, control
 
-# files, redologs. 
+# files, redologs.
 
 # Applicable only whenoracle.install.db.config.starterdb.storage=FILE_SYSTEM
 
@@ -628,7 +624,7 @@ oracle.install.db.config.asm.diskGroup=
 
 #-------------------------------------------------------------------------------
 
-# Specify the password for ASMSNMP user ofthe ASMinstance. 
+# Specify the password for ASMSNMP user ofthe ASMinstance.
 
 # Applicable onlywhenoracle.install.db.config.starterdb.storage=ASM_SYSTEM
 
@@ -734,7 +730,7 @@ PROXY_USER=
 
 #------------------------------------------------------------------------------
 
-# Specify the proxy password. LeavePROXY_USER andPROXY_PWD 
+# Specify the proxy password. LeavePROXY_USER andPROXY_PWD
 
 # blank if your proxy server requiresnoauthentication.
 
@@ -745,6 +741,3 @@ PROXY_USER=
 #------------------------------------------------------------------------------
 
 PROXY_PWD=
-
-  
-

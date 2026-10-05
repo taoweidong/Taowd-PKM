@@ -1,0 +1,33 @@
+{
+  "scanned": 332,
+  "formatted": 327,
+  "deleted": 5,
+  "deleted_links_removed_from_wiki": 10,
+  "deleted_samples": [
+    {
+      "file": "sources\\curated-other-favorites\\coding_net_764553e6.md",
+      "source": "https://coding.net/",
+      "reason": "命中反爬/登录墙关键词"
+    },
+    {
+      "file": "sources\\curated-other-favorites\\www_zhihu_com_44553aef.md",
+      "source": "https://www.zhihu.com/#signin",
+      "reason": "命中反爬/登录墙关键词"
+    },
+    {
+      "file": "sources\\curated-python\\www_yisu_com_zixun_483075_html_60910a61.md",
+      "source": "https://www.yisu.com/zixun/483075.html",
+      "reason": "命中反爬/登录墙关键词"
+    },
+    {
+      "file": "sources\\curated-software-exam\\www_ruankao_org_cn_jsjnew_cms_focusExam_zgjs_zj_detail_news-00398_64bcc88d.md",
+      "source": "http://www.ruankao.org.cn/jsjnew/cms/focusExam/zgjs/zj/detail/news-00398/",
+      "reason": "命中反爬/登录墙关键词"
+    },
+    {
+      "file": "sources\\curated-web-tools\\web_chacuo_net_formatsh_c6ebdd66.md",
+      "source": "http://web.chacuo.net/formatsh/",
+      "reason": "命中反爬/登录墙关键词"
+    }
+  ]
+}

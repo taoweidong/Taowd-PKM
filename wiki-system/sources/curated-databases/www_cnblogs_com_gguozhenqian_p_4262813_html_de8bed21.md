@@ -16,24 +16,24 @@ fetched_at: "2026-10-05 15:27:44"
 
 操作步骤：
 
-  1. DLL下载后并引用  
-下载地址：[Oracle.ManagedDataAccess.zip](https://files.cnblogs.com/files/gguozhenqian/Oracle.ManagedDataAccess.zip)  
-下载后，将Oracle.ManagedDataAccess.dll放到自己的项目中，然后引用  
-  
+  1. DLL下载后并引用
+下载地址：[Oracle.ManagedDataAccess.zip](https://files.cnblogs.com/files/gguozhenqian/Oracle.ManagedDataAccess.zip)
+下载后，将Oracle.ManagedDataAccess.dll放到自己的项目中，然后引用
 
-  2. 直接调用（connString 改为自己的连接字符串）  
 
-         
+  2. 直接调用（connString 改为自己的连接字符串）
+
+
          using Oracle.ManagedDataAccess.Client;
-         
+
          public static string ConnectOracle()
                  {
                      try
                      {
                          string connString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=130.147.246.144)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ECMS)));Persist Security Info=True;User ID=system;Password=Service01;";
                          OracleConnection con = new OracleConnection(connString);
-                        
-                         con.Open(); 
+
+                         con.Open();
                          return string.Empty;
                      }
                      catch (Exception ex)
@@ -41,15 +41,12 @@ fetched_at: "2026-10-05 15:27:44"
                          return ex.ToString();
                      }
                  }
-         
 
-  
+
+
 就是这么简单！！！
-
-
-
 
 其他帮助文档：
 
-<http://www.cnblogs.com/yjmyzz/archive/2013/11/01/3400999.html>  
+<http://www.cnblogs.com/yjmyzz/archive/2013/11/01/3400999.html>
 <http://www.cnblogs.com/ly303550688/archive/2013/01/31/2887104.html>

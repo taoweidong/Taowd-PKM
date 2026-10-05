@@ -52,7 +52,7 @@ select * from flow_user where username like '老[0-9]';
 
 将找出“老1”、“老2”、……、“老9”；
 
-Oracle 10g以上的版本用法为： 
+Oracle 10g以上的版本用法为：
 
 select * from flow_user where regexp_like(username, '[张王李]飞');
 
@@ -67,8 +67,8 @@ select * from flow_user where username LIKE'[^王李张]飞';
 5、查询内容包含通配符时：
 
 由于通配符的缘故，导致查询特殊字符“%”、“_”、“[”的语句无法正常实现，把特殊字符用“[]”括起来便可以正常查询。
-    
-    
+
+
     　　function sqlencode(str)
     　　str=replace(str,"[","[[]") '此句一定要在最前
     　　str=replace(str,"_","[_]")

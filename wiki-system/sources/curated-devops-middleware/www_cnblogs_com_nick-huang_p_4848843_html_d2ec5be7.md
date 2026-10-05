@@ -1,7 +1,7 @@
 ---
 source: "http://www.cnblogs.com/nick-huang/p/4848843.html"
 title: "【Quartz】Quartz的搭建、应用（单独使用Quartz） - nick_huang - 博客园"
-fetched_at: "2026-10-05 15:30:23"
+fetched_at: "2026-10-05 15:30:59"
 ---
 
 Quartz在Java构建的系统中，是十分常用的定时任务框架。
@@ -15,15 +15,15 @@ Quartz在Java构建的系统中，是十分常用的定时任务框架。
 除了Quartz，还引入logback（为了看详细的日志嘛！）
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-    
-    
+
+
         <dependencies>
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
                 <version>2.2.0</version>
             </dependency>
-    
+
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
@@ -44,8 +44,8 @@ quartz.properties，配置quartz的设置。
 **注** ，org.quartz.threadPool.threadCount，配置线程池的容量，即表示同时最多可运行的线程数量。在生产环境，此参数应根据实际情况配置。
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-    
-    
+
+
     org.quartz.scheduler.instanceName = MyScheduler
     org.quartz.threadPool.threadCount = 3
     org.quartz.jobStore.class = org.quartz.simpl.RAMJobStore
@@ -55,32 +55,32 @@ View Code
 logback.xml，日志框架logback的配置。这里只简单地配置了控制台和日志文件的输出哦(>_<)
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-    
-    
+
+
     <configuration>
-    
+
         <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-            <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+            <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
                 by default -->
             <encoder>
-                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
-                </pattern>
+                 %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+
             </encoder>
         </appender>
-    
+
         <appender name="FILE" class="ch.qos.logback.core.FileAppender">
             <file>D:/logs/quartz_task_application.log</file>
             <encoder>
-                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
-                </pattern>
+                 %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+
             </encoder>
         </appender>
-    
+
         <root level="debug">
             <appender-ref ref="STDOUT" />
             <appender-ref ref="FILE" />
         </root>
-    
+
     </configuration>
 
 View Code
@@ -88,26 +88,26 @@ View Code
 HelloJob.java，具体执行的任务
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-    
-    
+
+
     package No01简单的定时任务;
-    
+
     import org.quartz.Job;
     import org.quartz.JobExecutionContext;
     import org.quartz.JobExecutionException;
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
-    
+
     public class HelloJob implements Job {
-        
+
         Logger logger = LoggerFactory.getLogger(this.getClass());
-    
+
         @Override
         public void execute(JobExecutionContext arg0) throws JobExecutionException {
             // 此任务仅打印日志便于调试、观察
             this.logger.debug(this.getClass().getName() + " trigger...");
         }
-    
+
     }
 
 View Code
@@ -115,12 +115,12 @@ View Code
 那么，在哪里定义“在什么时候执行什么任务呢？”
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-    
-    
+
+
     package No01简单的定时任务;
-    
+
     import java.util.concurrent.TimeUnit;
-    
+
     import org.quartz.JobBuilder;
     import org.quartz.JobDetail;
     import org.quartz.Scheduler;
@@ -131,45 +131,45 @@ View Code
     import org.quartz.impl.StdSchedulerFactory;
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
-    
-    
+
+
     public class Bootstrap {
         private static Logger logger = LoggerFactory.getLogger(Bootstrap.class);
-    
+
         public static void main(String[] args) {
-    
+
             try {
                 // 获取Scheduler实例
                 Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
                 scheduler.start();
-    
+
                 // 具体任务
                 JobDetail job = JobBuilder.newJob(HelloJob.class).withIdentity("job1", "group1").build();
-    
+
                 // 触发时间点
                 SimpleScheduleBuilder simpleScheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
                         .withIntervalInSeconds(5).repeatForever();
                 Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1")
                         .startNow().withSchedule(simpleScheduleBuilder).build();
-    
+
                 // 交由Scheduler安排触发
                 scheduler.scheduleJob(job, trigger);
-                
+
                 /* 为观察程序运行，此设置主程序睡眠3分钟才继续往下运行（因下一个步骤是“关闭Scheduler”） */
                 try {
                     TimeUnit.MINUTES.sleep(3);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-    
+
                 // 关闭Scheduler
                 scheduler.shutdown();
-    
+
             } catch (SchedulerException se) {
                 logger.error(se.getMessage(), se);
             }
         }
-    
+
     }
 
 View Code
@@ -185,13 +185,13 @@ Quartz也常用在Web应用中，常见的是交由Spring托管的形式，但�
 其他配置文件、Java类与上例子相同，这里只是注册定时任务的地方换成此监听器了。
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-    
-    
+
+
     package No02Web应用使用Quartz;
-    
+
     import javax.servlet.ServletContextEvent;
     import javax.servlet.ServletContextListener;
-    
+
     import org.quartz.JobBuilder;
     import org.quartz.JobDetail;
     import org.quartz.Scheduler;
@@ -202,69 +202,69 @@ Quartz也常用在Web应用中，常见的是交由Spring托管的形式，但�
     import org.quartz.impl.StdSchedulerFactory;
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
-    
+
     import No01简单的定时任务.HelloJob;
-    
+
     /**
      * Application Lifecycle Listener implementation class AListener
      *
      */
     public class ApplicationContextListener implements ServletContextListener {
-        
+
         private Logger logger = LoggerFactory.getLogger(this.getClass());
-        
+
         public static Scheduler scheduler = null;
-    
+
         @Override
         public void contextInitialized(ServletContextEvent arg0) {
             this.logger.info("The application start...");
-            
+
             /* 注册定时任务 */
             try {
                 // 获取Scheduler实例
                 scheduler = StdSchedulerFactory.getDefaultScheduler();
                 scheduler.start();
-    
+
                 // 具体任务
                 JobDetail job = JobBuilder.newJob(HelloJob.class).withIdentity("job1", "group1").build();
-    
+
                 // 触发时间点
                 SimpleScheduleBuilder simpleScheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
                         .withIntervalInSeconds(5).repeatForever();
                 Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1")
                         .startNow().withSchedule(simpleScheduleBuilder).build();
-    
+
                 // 交由Scheduler安排触发
                 scheduler.scheduleJob(job, trigger);
-                
+
                 this.logger.info("The scheduler register...");
             } catch (SchedulerException se) {
                 logger.error(se.getMessage(), se);
             }
         }
-        
+
         @Override
         public void contextDestroyed(ServletContextEvent arg0) {
             this.logger.info("The application stop...");
-            
+
             /* 注销定时任务 */
             try {
                 // 关闭Scheduler
                 scheduler.shutdown();
-                
+
                 this.logger.info("The scheduler shutdown...");
             } catch (SchedulerException se) {
                 logger.error(se.getMessage(), se);
             }
         }
-    
+
     }
 
 View Code
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-    
-    
+
+
         <listener>
             <listener-class>No02Web应用使用Quartz.ApplicationContextListener</listener-class>
         </listener>
@@ -288,16 +288,16 @@ View Code
 Cron Schedule的使用
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-    
-    
+
+
     // 具体任务
     JobDetail job = JobBuilder.newJob(HelloJob.class).withIdentity("job1", "group1").build();
-    
+
     // 触发时间点
     CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule("0 * * * * ? *");
     Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1")
             .withSchedule(cronScheduleBuilder).build();
-    
+
     // 交由Scheduler安排触发
     scheduler.scheduleJob(job, trigger);
 

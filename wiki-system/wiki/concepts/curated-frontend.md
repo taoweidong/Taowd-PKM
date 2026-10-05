@@ -18,7 +18,6 @@ source: "[[topics/browser-bookmarks]]"
 
 ### Vue / 现代框架（5）
 
-- [Table | Components | BootstrapVue](https://bootstrap-vue.js.org/docs/components/table)
 - [Vue.js 教程](https://learning.dcloud.io/#/)
 - [iView - A high quality UI Toolkit based on Vue.js](https://www.iviewui.com/)
 - [介绍 | vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E5%8A%9F%E8%83%BD)
@@ -69,7 +68,6 @@ source: "[[topics/browser-bookmarks]]"
 - [jQuery API 中文文档 | jQuery 中文网](https://www.jquery123.com/)
 - [jQuery+zTree加载树形结构菜单 - limeiky - 博客园](http://www.cnblogs.com/limeiky/p/5352009.html)
 - [jQueryUI插件](http://www.jq22.com/jqueryUI-1-jq)
-- [jQuery库 / 按钮和图标_jQuery之家-自由分享jQuery、html5、css3的插件库](http://www.htmleaf.com/jQuery/Buttons-Icons/)
 - [jQuery插件库-收集最全最新最好的jQuery插件](http://www.jq22.com/)
 - [jquery下载所有版本（实时更新）](http://www.jq22.com/jquery-info122)
 - [ztree+java后台取数据(包括异步)生成树状图 - Eric_ChenXiao的博客 - 博客频道 - CSDN.NET](http://blog.csdn.net/Eric_ChenXiao/article/details/50085883)

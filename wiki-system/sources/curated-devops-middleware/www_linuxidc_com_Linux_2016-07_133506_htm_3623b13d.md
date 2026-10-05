@@ -8,9 +8,9 @@ fetched_at: "2026-10-05 15:29:51"
 
 你好，游客 登录 [注册](../../memberreg.aspx)
 
-[![Linux公社](../../pic/logo.jpg)](https://www.linuxidc.com/) |   
----|---  
-  
+[![Linux公社](../../pic/logo.jpg)](https://www.linuxidc.com/) |
+---|---
+
 [首页](../../index.htm)[Linux新闻](../../it/)[Linux教程](../../Linuxit/)[数据库技术](../../MySql/)[Linux编程](../../RedLinux/)[服务器应用](../../Apache/)[Linux安全](../../Unix/)[Linux下载](../../download/)[Linux主题](../../theme/)[Linux壁纸](../../Linuxwallpaper/)[Linux软件](../../linuxsoft/)[数码](../../digi/)[手机](../../mobile/)[电脑](../../diannao/)
 
 [首页](../../index.htm) → [服务器应用](../../Apache/)
@@ -19,9 +19,9 @@ fetched_at: "2026-10-05 15:29:51"
 
 # Windows下安装Docker
 
-| [日期：2016-07-25] | 来源：cnblogs.com/homewch 作者：wangchao 王超 | [字体：[大](javascript:ContentSize\(16\)) [中](javascript:ContentSize\(0\)) [小](javascript:ContentSize\(12\))]   
----|---|---  
-  
+| [日期：2016-07-25] | 来源：cnblogs.com/homewch 作者：wangchao 王超 | [字体：[大](javascript:ContentSize\(16\)) [中](javascript:ContentSize\(0\)) [小](javascript:ContentSize\(12\))]
+---|---|---
+
 放在三年前，你不认识Docker情有可原，但如果现在你还这么说，不好意思，只能说明你OUT了，行动起来吧骚年，很可能你们公司或者你即将要去的公司，或者你想去的公司很可能就会引入Docker，或者已经引入了Docker。
 
 [![image](../../upload/2016_07/160725065623202.png)](../../upload/2016_07/160725065623201.png)
@@ -99,8 +99,8 @@ Docker仓库用来保存我们的images，当我们创建了自己的image之后
 [![image](../../upload/2016_07/1607250656232020.png)](../../upload/2016_07/1607250656232019.png)
 
 然后，在空白处输入（因为我想将以后的镜像都安装到H盘，此处可以修改你喜欢的盘符）：
-    
-    
+
+
     export MACHINE_STORAGE_PATH='H:\docker'
 
 [![image](../../upload/2016_07/1607250656232022.png)](../../upload/2016_07/1607250656232021.png)
@@ -122,8 +122,8 @@ Docker仓库用来保存我们的images，当我们创建了自己的image之后
 [![image](../../upload/2016_07/1607250656232050.png)](../../upload/2016_07/1607250656232049.png)
 
 复制红色方框中的代码，然后修改为如下（根据自己盘符修改）：
-    
-    
+
+
     docker-machine -s "H:\docker" create --engine-registry-mirror=https://vf29u5xi.mirror.aliyuncs.com -d virtualbox default
 
 现在就可以在Git Bash中运行了：
@@ -143,17 +143,17 @@ Docker仓库用来保存我们的images，当我们创建了自己的image之后
 [![image](../../upload/2016_07/1607250656232036.png)](../../upload/2016_07/1607250656232035.png)
 
 也可以在Git Bash中运行：
-    
-    
-    docker-machine ls 
+
+
+    docker-machine ls
 
 [![image](../../upload/2016_07/1607250656232038.png)](../../upload/2016_07/1607250656232037.png)
 
 这里面就是一个linux风格的Docker环境，提示的IP：192.168.99.100就是Docker虚拟机的IP了。
 
 这台docker machine创建后就启动了，如果下次我们再打开电脑，想要启动docker machine，可以打开Docker Quickstart Terminal或者Git Bash，然后执行下面的命令：
-    
-    
+
+
     docker-machine start
 
 来启动docker machine。
@@ -170,7 +170,7 @@ docker machine的IP是192.168.99.100，用SSH工具登录它，用户名是`dock
 
 [![image](../../upload/2016_07/1607250656232044.png)](../../upload/2016_07/1607250656232043.png)
 
-**更多 Docker相关教程见以下内容**： 
+**更多 Docker相关教程见以下内容**：
 
 Docker安装应用([CentOS](https://www.linuxidc.com/topicnews.aspx?tid=14 "CentOS") 6.5_x64) [http://www.linuxidc.com/Linux/2014-07/104595.htm](../../Linux/2014-07/104595.htm)
 
@@ -186,7 +186,7 @@ Ubuntu 15.04下安装Docker [http://www.linuxidc.com/Linux/2015-07/120444.htm](.
 
 在 Ubuntu 15.04 上如何安装Docker及基本用法 [http://www.linuxidc.com/Linux/2015-09/122885.htm](../../Linux/2015-09/122885.htm)
 
-**Docker 的详细介绍** ：[请点这里](../../Linux/2013-10/91050.htm "Docker")  
+**Docker 的详细介绍** ：[请点这里](../../Linux/2013-10/91050.htm "Docker")
 **Docker 的下载地址** ：[请点这里](../../down.aspx?id=1020)
 
 **本文永久更新链接地址** ：[http://www.linuxidc.com/Linux/2016-07/133506.htm](../../Linux/2016-07/133506.htm)
@@ -203,21 +203,21 @@ Ubuntu 15.04下安装Docker [http://www.linuxidc.com/Linux/2015-07/120444.htm](.
   * [CentOS 7 下安装 Docker 及操作命](../../Linux/2019-05/158742.htm "CentOS 7 下安装 Docker 及操作命令") (05月18日)
   * [通过 Ansible 安装 Docker](../../Linux/2018-12/155792.htm) (12/11/2018 09:51:37)
 
-| 
+|
 
   * [CentOS 7下yum方式安装Docker环境](../../Linux/2019-08/160208.htm) (08月19日)
   * [CentOS 7上安装Docker 1.8](../../Linux/2018-12/155834.htm) (12/14/2018 12:03:18)
   * [使用Docker官方yum源安装指定版本](../../Linux/2018-10/154955.htm "使用Docker官方yum源安装指定版本Docker的标准操作流程") (10/22/2018 19:36:03)
 
-  
----|---  
-  
+
+---|---
+
 本文评论 [查看全部评论](../../remark.aspx?id=133506) (3)
 
-表情： ![表情](../../pic/b.gif) 姓名：  匿名 字数    
-  
-同意评论声明 发表   
-评论声明 
+表情： ![表情](../../pic/b.gif) 姓名：  匿名 字数
+
+同意评论声明 发表
+评论声明
 
   * 尊重网上道德，遵守中华人民共和国的各项有关法律法规
   * 承担一切因您的行为而直接或间接导致的民事或刑事法律责任
@@ -225,14 +225,14 @@ Ubuntu 15.04下安装Docker [http://www.linuxidc.com/Linux/2015-07/120444.htm](.
   * 本站有权在网站内转载或引用您的评论
   * 参与本评论即表明您已经阅读并接受上述条款
 
-|   
----|---  
-  
+|
+---|---
+
 第 3 楼
 
 ![*](../../pic/b.gif) trojx 发表于 2017/11/9 0:19:00
 
-export MACHINE_STORAGE_PATH='H:\docker'  
+export MACHINE_STORAGE_PATH='H:\docker'
 这一步在Windows下应该是去添加windows的环境变量
 
 回复 支持 (1) 反对 (0)
@@ -266,10 +266,10 @@ https://vf29u5xi.mirror.aliyuncs.com 这个地址访问不了？
   * [FBI警告用户不应连接到公共Wifi网络](../../Linux/2019-12/161815.htm)
   * [德国法兰克福因恶意软件感染而关闭了整个IT](../../Linux/2019-12/161814.htm "德国法兰克福因恶意软件感染而关闭了整个IT网络")
 
-  
-  
-[Linux公社简介](https://www.linuxidc.com/aboutus.htm) \- [广告服务](https://www.linuxidc.com/adsense.htm) \- [网站地图](https://www.linuxidc.com/sitemap.aspx) \- [帮助信息](https://www.linuxidc.com/help.htm) \- [联系我们](https://www.linuxidc.com/contactus.htm)  
-本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。  
-  
-  
-Copyright © 2006-2019 [Linux公社](https://www.linuxidc.com/) All rights reserved 浙ICP备07014134号-8 
+
+
+[Linux公社简介](https://www.linuxidc.com/aboutus.htm) \- [广告服务](https://www.linuxidc.com/adsense.htm) \- [网站地图](https://www.linuxidc.com/sitemap.aspx) \- [帮助信息](https://www.linuxidc.com/help.htm) \- [联系我们](https://www.linuxidc.com/contactus.htm)
+本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。
+
+
+Copyright © 2006-2019 [Linux公社](https://www.linuxidc.com/) All rights reserved 浙ICP备07014134号-8

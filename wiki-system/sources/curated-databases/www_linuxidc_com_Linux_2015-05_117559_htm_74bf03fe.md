@@ -6,9 +6,9 @@ fetched_at: "2026-10-05 15:27:44"
 
 你好，游客 登录 [注册](../../memberreg.aspx) [搜索](../../search.aspx)
 
-[![Linux公社](../../pic/logo.jpg)](http://www.linuxidc.com/) |   
----|---  
-  
+[![Linux公社](../../pic/logo.jpg)](http://www.linuxidc.com/) |
+---|---
+
 [首页](../../index.htm)[Linux新闻](../../it/)[Linux教程](../../Linuxit/)[数据库技术](../../MySql/)[Linux编程](../../RedLinux/)[服务器应用](../../Apache/)[Linux安全](../../Unix/)[Linux下载](../../download/)[Linux认证](../../Linuxrz/)[Linux主题](../../theme/)[Linux壁纸](../../Linuxwallpaper/)[Linux软件](../../linuxsoft/)[数码](../../digi/)[手机](../../mobile/)[电脑](../../diannao/)
 
 [首页](../../index.htm) → [数据库技术](../../MySql/)
@@ -17,17 +17,17 @@ fetched_at: "2026-10-05 15:27:44"
 
 # Linux平台Oracle 11g单实例 安装部署配置 快速参考
 
-| [日期：2015-05-15] | 来源：Linux社区 作者：AlfredZhao | [字体：[大](javascript:ContentSize\(16\)) [中](javascript:ContentSize\(0\)) [小](javascript:ContentSize\(12\))]   
----|---|---  
-  
+| [日期：2015-05-15] | 来源：Linux社区 作者：AlfredZhao | [字体：[大](javascript:ContentSize\(16\)) [中](javascript:ContentSize\(0\)) [小](javascript:ContentSize\(12\))]
+---|---|---
+
 1.重建主机的[Oracle](http://www.linuxidc.com/topicnews.aspx?tid=12 "Oracle")用户 组 统一规范 uid gid 以保证共享存储挂接或其他需求的权限规范
 
-userdel -r oracle  
-groupadd -g 500 oinstall  
-groupadd -g 501 dba  
+userdel -r oracle
+groupadd -g 500 oinstall
+groupadd -g 501 dba
 useradd -g oinstall -G dba -u 500 oracle
 
-#id oracle  
+#id oracle
 uid=500(oracle) gid=500(oinstall) 组=500(oinstall),501(dba)
 
 2.安装好Oracle 需要的rpm包。安装rpm依赖包
@@ -58,41 +58,41 @@ CentOS 6.4上搭建yum本地源 [http://www.linuxidc.com/Linux/2014-07/104533.ht
 
 3.修改配置文件 /etc/security/limits.conf
 
-oracle soft nproc 2047  
-oracle hard nproc 16384  
-oracle soft nofile 1024  
-oracle hard nofile 65536  
+oracle soft nproc 2047
+oracle hard nproc 16384
+oracle soft nofile 1024
+oracle hard nofile 65536
 oracle soft stack 10240
 
 4.修改配置文件 /etc/sysctl.conf
 
-fs.aio-max-nr = 1048576  
-fs.file-max = 6815744  
-kernel.shmall = 2097152  
-kernel.shmmax = XXXXXXXXXX //共享内存字节数(一般75%物理内存)  
-kernel.shmmni = 4096  
-kernel.sem = 250 32000 100 128  
-net.ipv4.ip_local_port_range = 9000 65500  
-net.core.rmem_default = 262144  
-net.core.rmem_max = 4194304  
-net.core.wmem_default = 262144  
+fs.aio-max-nr = 1048576
+fs.file-max = 6815744
+kernel.shmall = 2097152
+kernel.shmmax = XXXXXXXXXX //共享内存字节数(一般75%物理内存)
+kernel.shmmni = 4096
+kernel.sem = 250 32000 100 128
+net.ipv4.ip_local_port_range = 9000 65500
+net.core.rmem_default = 262144
+net.core.rmem_max = 4194304
+net.core.wmem_default = 262144
 net.core.wmem_max = 1048586
 
 注：重启主机或者输入命令 sysctl -p 生效当前配置
 
 5.Oracle用户环境变量配置
 
-export ORACLE_BASE=/u01/app/oracle  
-export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1  
-export ORACLE_SID=jingyu  
-export NLS_LANG="american_america.ZHS16GBK"  
-export NLS_DATE_FORMAT="YYYY-MM-DD HH24:Mi:SS"  
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib  
+export ORACLE_BASE=/u01/app/oracle
+export ORACLE_HOME=/u01/app/oracle/product/11.2.0/dbhome_1
+export ORACLE_SID=jingyu
+export NLS_LANG="american_america.ZHS16GBK"
+export NLS_DATE_FORMAT="YYYY-MM-DD HH24:Mi:SS"
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 export PATH=$ORACLE_HOME/bin:$PATH
 
 6.解压oracle软件安装包
 
-# unzip p10404530_112030_Linux-x86-64_1of7.zip; unzip p10404530_112030_Linux-x86-64_2of7.zip  
+# unzip p10404530_112030_Linux-x86-64_1of7.zip; unzip p10404530_112030_Linux-x86-64_2of7.zip
 # chown -R oracle:oinstall database
 
 7.xmanager 安装数据库软件，dbca建库，netca创建监听
@@ -105,8 +105,8 @@ export PATH=$ORACLE_HOME/bin:$PATH
 
 打开数据库归档，规划归档路径，确定db_recovery_file_dest_size大小
 
-\--调整processes和open_cursors  
-alter system set processes = 1500 scope=spfile;  
+\--调整processes和open_cursors
+alter system set processes = 1500 scope=spfile;
 alter system set open_cursors = 1000;
 
 system/sysaux表空间大小；
@@ -137,8 +137,8 @@ rman备份策略：手工做一个数据库的全备份，定时每周日凌晨3
 
 为提高1级备份效率，打开block_change_tracking
 
-SQL> alter database enable block change tracking using file '/u01/app/oracle/oradata/jingyu/block_change_tracking.dbf';  
-SQL> select status from v$block_change_tracking;  
+SQL> alter database enable block change tracking using file '/u01/app/oracle/oradata/jingyu/block_change_tracking.dbf';
+SQL> select status from v$block_change_tracking;
 \--确定STATUS状态为ENABLED
 
 更多Oracle相关信息见[Oracle](../../topicnews.aspx?tid=12) 专题页面 [http://www.linuxidc.com/topicnews.aspx?tid=12](../../topicnews.aspx?tid=12 "Oracle")
@@ -156,19 +156,19 @@ SQL> select status from v$block_change_tracking;
   * [Linux上Oracle 11g单实例安装详解](../../Linux/2017-06/144630.htm) (今 05:14)
   * [Oracle 11g单实例GI and DB升级](../../Linux/2014-02/96512.htm) (02/12/2014 14:31:38)
 
-| 
+|
 
   * [Linux平台Oracle 11g单实例 + ASM](../../Linux/2015-04/115721.htm "Linux平台Oracle 11g单实例 + ASM存储 安装部署 快速参考") (04/03/2015 08:07:20)
 
-  
----|---  
-  
+
+---|---
+
 本文评论 [查看全部评论](../../remark.aspx?id=117559) (0)
 
-表情： ![表情](../../pic/b.gif) 姓名：  匿名 字数    
-  
-同意评论声明 发表   
-评论声明 
+表情： ![表情](../../pic/b.gif) 姓名：  匿名 字数
+
+同意评论声明 发表
+评论声明
 
   * 尊重网上道德，遵守中华人民共和国的各项有关法律法规
   * 承担一切因您的行为而直接或间接导致的民事或刑事法律责任
@@ -176,9 +176,9 @@ SQL> select status from v$block_change_tracking;
   * 本站有权在网站内转载或引用您的评论
   * 参与本评论即表明您已经阅读并接受上述条款
 
-|   
----|---  
-  
+|
+---|---
+
 最新资讯
 
   * [Linux上Oracle 11g单实例安装详解](../../Linux/2017-06/144630.htm)
@@ -192,10 +192,10 @@ SQL> select status from v$block_change_tracking;
   * [Linux 系统中修复 SambaCry 漏洞（CVE-2017](../../Linux/2017-06/144622.htm "Linux 系统中修复 SambaCry 漏洞（CVE-2017-7494）")
   * [更快的机器学习即将来到 Linux 内核](../../Linux/2017-06/144621.htm)
 
-  
-  
-[Linux公社简介](http://www.linuxidc.com/aboutus.htm) \- [广告服务](http://www.linuxidc.com/adsense.htm) \- [网站地图](http://www.linuxidc.com/sitemap.aspx) \- [帮助信息](http://www.linuxidc.com/help.htm) \- [联系我们](http://www.linuxidc.com/contactus.htm)  
-本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。  
-  
-  
-Copyright © 2006-2016 [Linux公社](http://www.linuxidc.com/) All rights reserved 沪ICP备15008072号-1号 
+
+
+[Linux公社简介](http://www.linuxidc.com/aboutus.htm) \- [广告服务](http://www.linuxidc.com/adsense.htm) \- [网站地图](http://www.linuxidc.com/sitemap.aspx) \- [帮助信息](http://www.linuxidc.com/help.htm) \- [联系我们](http://www.linuxidc.com/contactus.htm)
+本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。
+
+
+Copyright © 2006-2016 [Linux公社](http://www.linuxidc.com/) All rights reserved 沪ICP备15008072号-1号

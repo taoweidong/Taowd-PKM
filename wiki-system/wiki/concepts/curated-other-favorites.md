@@ -36,7 +36,6 @@ source: "[[topics/browser-bookmarks]]"
 - [今日头条](https://www.toutiao.com/c/user/6305114237/?tab=following)
 - [博客园 - 开发者的网上家园](https://www.cnblogs.com/)
 - [掘金](https://juejin.im/timeline)
-- [整理 node-sass 安装失败的原因及解决办法 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000010984731?utm_source=tag-newest)
 - [极术社区 - AIoT 开发者之家](https://aijishu.com/)
 - [知乎](https://www.zhihu.com/#signin)
 - [简书](http://www.jianshu.com/)

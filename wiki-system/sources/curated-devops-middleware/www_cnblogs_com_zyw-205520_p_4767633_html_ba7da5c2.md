@@ -30,7 +30,7 @@ fetched_at: "2026-10-05 15:30:14"
 
 ## 2.Eclipse的安装
 
-下载地址：http://www.eclipse.org/downloads/ 版本自行选择 
+下载地址：http://www.eclipse.org/downloads/ 版本自行选择
 
 完成之后我们启动Eclipse，设置好工作路径，也可以直接默认。我们打开window-->preference输入jre，安装下图
 
@@ -50,7 +50,7 @@ Tomcat我使用的版本是8，大家可以到apache的官网上去下载，[htt
 
 ## 5.Maven安装配置
 
-### 5.1 maven配置环境变量 
+### 5.1 maven配置环境变量
 
 下载maven，就是一个包：apache-maven-3.2.1，我用的版本是3.2.1，解压到一个路径，然后配置环境变量：
 
@@ -66,13 +66,13 @@ Tomcat我使用的版本是8，大家可以到apache的官网上去下载，[htt
 
 ![](https://images2015.cnblogs.com/blog/441423/201508/441423-20150828190819234-882295285.png)
 
-### 5.2Maven数据仓库的配置 
+### 5.2Maven数据仓库的配置
 
 MAVEN中还有一个重要的配置就是数据仓库的路径配置，我们找到MAVEN的安装路径，进入conf-->打开settings.xml，找到localRepository标签，此时是被注释掉的，我们解除注释，然后配置一个路径，例如：E:\Dev\Java\maven\repo，这样以后MAVEN管理下载的jar包都会在这个路径下。当然我们需要建这样一个目录结构，然后还要讲settings.xml复制一份到E:\Dev\Java\maven下，这个在与Eclipse集成时会用到。**修改默认保存路径**
 
 **![](https://images2015.cnblogs.com/blog/441423/201508/441423-20150829203627344-2088280037.png)**
 
-### 5.3Eclipse中集成Maven 
+### 5.3Eclipse中集成Maven
 
 在preferences中进行配置，如图：
 
@@ -89,8 +89,8 @@ MAVEN中还有一个重要的配置就是数据仓库的路径配置，我们找
 ![](https://images2015.cnblogs.com/blog/441423/201508/441423-20150829205005375-1380967534.png)
 
 如果indexjsp 提示有错误需要在pom.xml中导入 javaee-api.jar
-    
-    
+
+
     <dependency>
                 <groupId>javax</groupId>
                 <artifactId>javaee-api</artifactId>

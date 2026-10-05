@@ -20,34 +20,41 @@ fetched_at: "2026-10-05 15:29:34"
 ### 实例
 
 按价格对产品进行排序：
-    
-    
-    SELECT * FROM Products
-    ORDER BY Price;
-    
+
+
+
+    SELECT * FROM Products
+
+    ORDER BY Price;
+
+
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_price)
 
 ## ORDER BY 语法
-    
-    
-    SELECT _column1_ , _column2_ , ...
-    FROM _table_name_
-    ORDER BY _column1_ , _column2_ , ... ASC|DESC;
-    
+
+
+
+    SELECT _column1_ , _column2_ , ...
+
+    FROM _table_name_
+
+    ORDER BY _column1_ , _column2_ , ... ASC|DESC;
+
+
 
 ## 演示数据库
 
 以下是在实例中使用的 [Products](/sql/t.php?f=sql_products) 表的片段：
 
-ProductID | ProductName | SupplierID | CategoryID | Unit | Price  
----|---|---|---|---|---  
-1 | Chais | 1 | 1 | 10 boxes x 20 bags | 18  
-2 | Chang | 1 | 1 | 24 - 12 oz bottles | 19  
-3 | Aniseed Syrup | 1 | 2 | 12 - 550 ml bottles | 10  
-4 | Chef Anton's Cajun Seasoning | 2 | 2 | 48 - 6 oz jars | 22  
-5 | Chef Anton's Gumbo Mix | 2 | 2 | 36 boxes | 21.35  
-  
+ProductID | ProductName | SupplierID | CategoryID | Unit | Price
+---|---|---|---|---|---
+1 | Chais | 1 | 1 | 10 boxes x 20 bags | 18
+2 | Chang | 1 | 1 | 24 - 12 oz bottles | 19
+3 | Aniseed Syrup | 1 | 2 | 12 - 550 ml bottles | 10
+4 | Chef Anton's Cajun Seasoning | 2 | 2 | 48 - 6 oz jars | 22
+5 | Chef Anton's Gumbo Mix | 2 | 2 | 36 boxes | 21.35
+
 ## DESC
 
 要按降序对记录进行排序，请使用 `DESC` 关键字。
@@ -55,11 +62,14 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 ### 实例
 
 按价格从高到低对产品进行排序：
-    
-    
-    SELECT * FROM Products
-    ORDER BY Price DESC;
-    
+
+
+
+    SELECT * FROM Products
+
+    ORDER BY Price DESC;
+
+
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_price_desc)
 
@@ -70,11 +80,14 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 ### 实例
 
 按产品名称的字母顺序对产品进行排序：
-    
-    
-    SELECT * FROM Products
-    ORDER BY ProductName;
-    
+
+
+
+    SELECT * FROM Products
+
+    ORDER BY ProductName;
+
+
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_name)
 
@@ -85,11 +98,14 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 ### 实例
 
 按产品名称的逆序对产品进行排序：
-    
-    
-    SELECT * FROM Products
-    ORDER BY ProductName DESC;
-    
+
+
+
+    SELECT * FROM Products
+
+    ORDER BY ProductName DESC;
+
+
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_name_desc)
 
@@ -100,11 +116,14 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 这意味着它按国家排序，但如果某些行具有相同的国家，则按 CustomerName 对它们进行排序：
 
 ### 实例
-    
-    
-    SELECT * FROM Customers
-    ORDER BY Country, CustomerName;
-    
+
+
+
+    SELECT * FROM Customers
+
+    ORDER BY Country, CustomerName;
+
+
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_1)
 
@@ -113,11 +132,14 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 以下 SQL 语句从 "Customers" 表中选择所有客户，并按 "Country" 列升序和 "CustomerName" 列降序进行排序：
 
 ### 实例
-    
-    
-    SELECT * FROM Customers
-    ORDER BY Country ASC, CustomerName DESC;
-    
+
+
+
+    SELECT * FROM Customers
+
+    ORDER BY Country ASC, CustomerName DESC;
+
+
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_2)
 

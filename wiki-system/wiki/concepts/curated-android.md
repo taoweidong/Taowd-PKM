@@ -26,12 +26,10 @@ source: "[[topics/browser-bookmarks]]"
 ### 定位 / 地图 / LBS（2）
 
 - [Android百度地图开发（一）之初体验 - crazy_jack - 博客频道 - CSDN.NET](http://blog.csdn.net/crazy1235/article/details/42614603)
-- [LBS（基于位置服务）_百度百科](http://baike.baidu.com/link?url=w3DFCofF3An7Z39Vq5gxPX4J6BFas8vYXTDmudJLVGCx5PScI6r_rwwIgmn4RytTVmi5GCNNrDsP7FWcEPMQEGAY_oxmFkbkVWoNplXEb8a)
 
 ### 源码 / 教程 / 毕业设计（3）
 
 - [Android毕业设计题目_文库163毕业设计(论文)网](http://www.wenku163.com/computer/android/1.html)
-- [安卓Android开发视频教程大全50GB/安卓基础+进阶+高级+项目+源码 - 『动画精品转载区』 - 吾爱破解论坛 - LCG - LSG |安卓破解|病毒分析|破解软件|www.52pojie.cn](http://www.52pojie.cn/thread-294318-1-1.html)
 - [安卓源码,android源码下载,app源码 - A5源码](http://down.admin5.com/android/)
 
 ### 其他 / 综合（4）

@@ -26,17 +26,17 @@ Could not load file or assembly 'Oracle.DataAccess, Version=2.112.1.2, Culture=n
 
 总之就是找不到对应的程序集。显然，这里系统找的是2.112.1.2版本的 Oracle.DataAccess，而服务器上只有2.112.1.0版本的，所以才报错，解决办法就是在web.config中修改，在 configSections节点结束之后增加如下内容：
 
-<runtime>   
-<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">   
-<dependentAssembly>   
-<assemblyIdentity name="Oracle.DataAccess"   
-publicKeyToken="89B483F429C47342"   
-culture="neutral" />   
-<bindingRedirect   
-oldVersion="2.112.1.2"   
-newVersion="2.112.1.0"/>   
-</dependentAssembly>   
-</assemblyBinding>   
+<runtime>
+<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+<dependentAssembly>
+<assemblyIdentity name="Oracle.DataAccess"
+publicKeyToken="89B483F429C47342"
+culture="neutral" />
+<bindingRedirect
+oldVersion="2.112.1.2"
+newVersion="2.112.1.0"/>
+</dependentAssembly>
+</assemblyBinding>
 </runtime>
 
 这样就可以让IIS调用2.112.1.0的Oracle.DataAccess了。添加这个配置后便可正常运行

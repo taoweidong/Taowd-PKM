@@ -1,7 +1,7 @@
 ---
 source: "http://dubbo.apache.org/zh-cn/"
 title: "Apache Dubbo"
-fetched_at: "2026-10-05 15:29:51"
+fetched_at: "2026-10-05 15:30:32"
 ---
 
 ## 一款云原生微服务开发框架
@@ -109,11 +109,8 @@ Dubbo 提供的基于路由规则的流量管控策略，可以帮助实现全�
   * [快速开始](/zh-cn/overview/quickstart/)
   * [开发者指南](/zh-cn/contact/contributor/software-donation-guide_dev/)
 
-
   * 资源
   * [社区](/zh-cn/contact/)
-
-
 
 © 2026 The Apache Software Foundation. Apache Dubbo, Dubbo, Apache, the Apache feather logo, and the Apache Dubbo project logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries. 保留所有权利
 

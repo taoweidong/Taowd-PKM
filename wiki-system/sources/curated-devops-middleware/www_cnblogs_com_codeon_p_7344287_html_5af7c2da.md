@@ -1,7 +1,7 @@
 ---
 source: "https://www.cnblogs.com/codeon/p/7344287.html"
 title: "【58沈剑架构系列】lvs为何不能完全替代DNS轮询 - 简简人事 - 博客园"
-fetched_at: "2026-10-05 15:29:52"
+fetched_at: "2026-10-05 15:30:32"
 ---
 
 上一篇文章“[一分钟了解负载均衡的一切](http://www.cnblogs.com/codeon/p/6206308.html)”引起了不少同学的关注，评论中大家争论的比较多的一个技术点是**接入层负载均衡技术** ，部分同学持这样的观点：
@@ -40,7 +40,7 @@ nginx、lvs、keepalived、f5、DNS轮询，每每提到这些技术，往往讨
 
 **【裸奔时代（0）单机架构】**
 
-![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095750808-697270524.png)  
+![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095750808-697270524.png)
 裸奔时代的架构图如上：
 
 1）浏览器通过DNS-server，域名解析到ip
@@ -59,7 +59,7 @@ nginx、lvs、keepalived、f5、DNS轮询，每每提到这些技术，往往讨
 
 假设tomcat的吞吐量是1000次每秒，当系统总吞吐量达到3000时，如何扩容是首先要解决的问题，DNS轮询是一个很容易想到的方案：
 
-![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095757480-2046162982.png)  
+![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095757480-2046162982.png)
 此时的架构图如上：
 
 1）多部署几份web-server，1个tomcat抗1000，部署3个tomcat就能抗3000
@@ -86,7 +86,7 @@ nginx、lvs、keepalived、f5、DNS轮询，每每提到这些技术，往往讨
 
 tomcat的性能较差，但nginx作为反向代理的性能就强多了，假设线上跑到1w，就比tomcat高了10倍，可以利用这个特性来做扩容：
 
-![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)  
+![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 此时的架构图如上：
 
 1）站点层与浏览器层之间加入了一个反向代理层，利用高性能的nginx来做反向代理
@@ -115,14 +115,14 @@ tomcat的性能较差，但nginx作为反向代理的性能就强多了，假设
 
 为了解决高可用的问题，keepalived出场了（之前的文章“[使用shadow-master保证系统可用性](http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959480&idx=1&sn=337bd74410a6bef616128fd17abd08a8&scene=21#wechat_redirect)”详细介绍过）：
 
-![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095809277-961447837.jpg)  
+![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095809277-961447837.jpg)
 此时：
 
 1）做两台nginx组成一个集群，分别部署上keepalived，设置成相同的虚IP，保证nginx的高可用
 
 2）当一台nginx挂了，keepalived能够探测到，并将流量自动迁移到另一台nginx上，整个过程对调用方透明
 
-![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095815730-1098038874.jpg)  
+![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095815730-1098038874.jpg)
 **优点** ：
 
 1）解决了高可用的问题
@@ -139,7 +139,7 @@ nginx毕竟是软件，性能比tomcat好，但总有个上限，超出了上限
 
 lvs就不一样了，它实施在操作系统层面；f5的性能又更好了，它实施在硬件层面；它们性能比nginx好很多，例如每秒可以抗10w，这样可以利用他们来扩容，常见的架构图如下：
 
-![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095822292-407369985.jpg)  
+![](https://images2017.cnblogs.com/blog/946550/201708/946550-20170811095822292-407369985.jpg)
 此时：
 
 1）如果通过nginx可以扩展多个tomcat一样，可以通过lvs来扩展多个nginx
@@ -158,7 +158,7 @@ lvs就不一样了，它实施在操作系统层面；f5的性能又更好了，
 
 facebook，google，baidu的PV是不是超过80亿呢，它们的域名只对应一个ip么，**终点又是起点，还是得通过DNS轮询来进行扩容** ：
 
-![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)  
+![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 此时：
 
 1）通过DNS轮询来线性扩展入口lvs层的性能

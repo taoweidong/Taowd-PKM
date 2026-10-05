@@ -10,7 +10,7 @@ fetched_at: "2026-10-05 15:27:29"
 
 [您还未登录!](/login "登录") [登录](/login)
 
-` 
+`
 
 [![txlong_onz的博客](https://www.iteye.com/upload/logo/user/348099/1c1127b8-9e00-3990-a5e7-e34faa369074.jpg?1717537732)](https://www.iteye.com/blog/user/txlong-onz)
 
@@ -18,10 +18,8 @@ txlong_onz
 
   * 浏览: 1129793 次
   * 性别: ![Icon_minigender_1](https://www.iteye.com/images/icon_minigender_1.gif?1652290086)
-  * 来自: 郑州 
+  * 来自: 郑州
   * ![](/images/status/offline.gif)
-
-
 
 ##### 最近访客  [更多访客>>](/blog/user_visits)
 
@@ -74,15 +72,11 @@ txlong_onz
   * [工具 (1)](/category/298847)
   * [PHP (1)](/category/368836)
 
-
-
 ##### 社区版块
 
   * [我的资讯](/blog/news) ( 0)
-  * [我的论坛](/blog/post) ( 6) 
+  * [我的论坛](/blog/post) ( 6)
   * [我的问答](/blog/answered_problems) ( 51)
-
-
 
 ##### 存档分类
 
@@ -91,22 +85,18 @@ txlong_onz
   * [2014-03](/blog/monthblog/2014-03) ( 2)
   * [更多存档...](/blog/monthblog_more)
 
-
-
 ##### 最新评论
 
-  * [baiyi168](https://www.iteye.com/blog/user/baiyi168 "baiyi168")： 非常有用，多谢楼主  
+  * [baiyi168](https://www.iteye.com/blog/user/baiyi168 "baiyi168")： 非常有用，多谢楼主
 [Android中的一个TextView中的字体设置不同大小](/blog/1142781#bc2392357)
-  * [qq271629261](https://www.iteye.com/blog/user/qq271629261 "qq271629261")： [img] ...  
+  * [qq271629261](https://www.iteye.com/blog/user/qq271629261 "qq271629261")： [img] ...
 [android开发工具 Eclipse+Android SDK+ADT](/blog/870650#bc2380478)
-  * [txlong_onz](https://www.iteye.com/blog/user/txlong-onz "txlong_onz")： haotainan 写道Activity伪造Dialog，这个 ...  
+  * [txlong_onz](https://www.iteye.com/blog/user/txlong-onz "txlong_onz")： haotainan 写道Activity伪造Dialog，这个 ...
 [Activity伪造Dialog的时候不能全屏显示](/blog/1880390#bc2363092)
-  * [haotainan](https://www.iteye.com/blog/user/haotainan "haotainan")： Activity伪造Dialog，这个Dialog显示的时候界 ...  
+  * [haotainan](https://www.iteye.com/blog/user/haotainan "haotainan")： Activity伪造Dialog，这个Dialog显示的时候界 ...
 [Activity伪造Dialog的时候不能全屏显示](/blog/1880390#bc2363081)
-  * [gangbener](https://www.iteye.com/blog/user/gangbener "gangbener")： cainingyouyou 写道7楼的，tag,怎么解决的啊1 ...  
+  * [gangbener](https://www.iteye.com/blog/user/gangbener "gangbener")： cainingyouyou 写道7楼的，tag,怎么解决的啊1 ...
 [android中ListView点击和里边按钮或ImageView点击不能同时生效问题解决](/blog/907186#bc2360616)
-
-
 
 [txlong_onz](https://www.iteye.com/blog/user/txlong-onz)
 
@@ -114,8 +104,6 @@ txlong_onz
 
 **博客分类：**
   * [Android](/category/133434)
-
-
 
 [Android](http://www.iteye.com/blogs/tag/Android)[Eclipse](http://www.iteye.com/blogs/tag/Eclipse)[Linux](http://www.iteye.com/blogs/tag/Linux)[Google](http://www.iteye.com/blogs/tag/Google)[Windows](http://www.iteye.com/blogs/tag/Windows)
 
@@ -137,13 +125,13 @@ txlong_onz
 
 <http://developer.android.com/sdk/index.html> 这个是官方的api地址，也有下载地址，不过要借助饭抢工具才能看，不能直接访问了。不过你搞这个最好是看看撒。
 
-**Platform****** |  **Package******  
----|---  
-Windows |  [android-sdk_r08-windows.zip](http://dl.google.com/android/android-sdk_r08-windows.zip)  
-[installer_r08-windows.exe](http://dl.google.com/android/installer_r08-windows.exe) (Recommended)   
-Mac OS X (intel) |  [android-sdk_r08-mac_86.zip](http://dl.google.com/android/android-sdk_r08-mac_86.zip)  
-Linux (i386) |  [android-sdk_r08-linux_86.tgz](http://dl.google.com/android/android-sdk_r08-linux_86.tgz)  
-  
+**Platform****** |  **Package******
+---|---
+Windows |  [android-sdk_r08-windows.zip](http://dl.google.com/android/android-sdk_r08-windows.zip)
+[installer_r08-windows.exe](http://dl.google.com/android/installer_r08-windows.exe) (Recommended)
+Mac OS X (intel) |  [android-sdk_r08-mac_86.zip](http://dl.google.com/android/android-sdk_r08-mac_86.zip)
+Linux (i386) |  [android-sdk_r08-linux_86.tgz](http://dl.google.com/android/android-sdk_r08-linux_86.tgz)
+
 ****
 
 android-sdk_r08-*.zip/tgz官方下载地址，下边是是不同的系统的下载地址：
@@ -176,7 +164,7 @@ android-1.5_r03-linux_x86.zip
 
 android-1.5_r03-mac_x86.zip
 
-google_apis-3-r03.zip 
+google_apis-3-r03.zip
 
 API 4
 
@@ -266,12 +254,12 @@ Android ADT-0.9.9.zip官方下载地址：
 
 直接在eclipse下：Help->Install New Softwar...->Add…->然后就是填写了:Name自己定义，Location是http://dl-ssl.google.com/android/eclipse/->Developer Tools全选->Next
 
-  
+
 ![](http://dl.iteye.com/upload/attachment/390457/0a33b7f9-1afb-33d9-bbdc-eec583eb0374.jpg)
 
-  
-![](http://dl.iteye.com/upload/attachment/390459/9eac3c5c-6707-31c5-a24b-873c7684c51c.jpg)  
-  
+
+![](http://dl.iteye.com/upload/attachment/390459/9eac3c5c-6707-31c5-a24b-873c7684c51c.jpg)
+
 ![](http://dl.iteye.com/upload/attachment/390461/fcbb22e4-471b-3eee-842f-242ed6802184.jpg)
 
 接下来就是漫长的等待了。成功以后重启。
@@ -281,18 +269,13 @@ Android ADT-0.9.9.zip官方下载地址：
   * [![](http://dl2.iteye.com/upload/attachment/0039/0457/0a33b7f9-1afb-33d9-bbdc-eec583eb0374-thumb.jpg)](http://dl2.iteye.com/upload/attachment/0039/0457/0a33b7f9-1afb-33d9-bbdc-eec583eb0374.jpg)
   * 大小: 18.9 KB
 
-
   * [![](http://dl2.iteye.com/upload/attachment/0039/0459/9eac3c5c-6707-31c5-a24b-873c7684c51c-thumb.jpg)](http://dl2.iteye.com/upload/attachment/0039/0459/9eac3c5c-6707-31c5-a24b-873c7684c51c.jpg)
   * 大小: 12.3 KB
-
 
   * [![](http://dl2.iteye.com/upload/attachment/0039/0461/fcbb22e4-471b-3eee-842f-242ed6802184-thumb.jpg)](http://dl2.iteye.com/upload/attachment/0039/0461/fcbb22e4-471b-3eee-842f-242ed6802184.jpg)
   * 大小: 10.3 KB
 
-
   * 查看图片附件
-
-
 
 分享到： [![](/images/sina.jpg)](javascript:; "分享到新浪微博") [![](/images/tec.jpg)](javascript:; "分享到腾讯微博")
 
@@ -302,6 +285,4 @@ Android ADT-0.9.9.zip官方下载地址：
   * 分类:[移动开发](https://www.iteye.com/blogs/category/mobile)
   * [查看更多](https://www.iteye.com/wiki/blog/870650)
 
-
-
-Global site tag (gtag.js) - Google Analytics 
+Global site tag (gtag.js) - Google Analytics

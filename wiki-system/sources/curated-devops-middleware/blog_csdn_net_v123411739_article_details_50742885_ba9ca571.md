@@ -29,8 +29,6 @@ fetched_at: "2026-10-05 15:30:19"
   5. Maven实践：初次安装完后输入mvn help:system的命令，此时会打印出所有的Java系统属性和环境变量，然后Maven会执行一个真正的任务将相应的所需的构件下载到本地仓库中包括pom和jar文件，然后用户在C:\Users\Administrator\\.m2下就能看到本地仓库了
   6. 用户需要复制M2_HOME/conf/setting.xml文件到C:/Users/Administrator/.m2/setting.xml，这样用户每次升级后就不要在次修改setting.xml文件了
 
-
-
 ## 2.MyEclipse配置Maven
 
   1. 在本地创建一个文件夹MavenRepository，并在MavenRepository文件夹下创建文件夹repository。
@@ -39,8 +37,6 @@ fetched_at: "2026-10-05 15:30:19"
   4. 在MyEclipse中的Perferences进行如下配置，添加自己的Maven![](https://i-blog.csdnimg.cn/blog_migrate/a5ee4572cb5cc7b3af22ad985794390a.png)
   5. User Settings设置为之前修改过的setting.xml![](https://i-blog.csdnimg.cn/blog_migrate/a5648267c2ca7ae111dd318395cf9029.png)
   6. File->New->others，搜索maven，如果看到有Maven Project则代表配置成功。
-
-
 
 ![](https://i-blog.csdnimg.cn/blog_migrate/5b0431ab0ccb635c62095edcdc35be15.jpeg)
 
@@ -77,25 +73,24 @@ fetched_at: "2026-10-05 15:30:19"
 ### 1、Maven引入项目用到的jar包，修改pom.xml后保存会自动下载，存放在之前配置的本地仓库中，即：F:\m2\repository文件夹
 
 **pom.xml**
-    
-    
-    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+
+
     	<modelVersion>4.0.0</modelVersion>
     	<groupId>com.chillax</groupId>
     	<artifactId>Maven_Project</artifactId>
-    	<packaging>war</packaging>
+    	 war
     	<version>0.0.1-SNAPSHOT</version>
     	<name>Maven_Project Maven Webapp</name>
     	<url>http://maven.apache.org</url>
-    
+
     	<!-- 用来设置版本号 -->
-    	<properties>
+
     		<spring.version>4.0.2.RELEASE</spring.version>
     		<mybatis.version>3.2.8</mybatis.version>
     		<slf4j.version>1.7.12</slf4j.version>
     		<log4j.version>1.2.17</log4j.version>
-    	</properties>
+
     	<!-- 用到的jar包 -->
     	<dependencies>
     		<!-- 单元测试 -->
@@ -260,7 +255,7 @@ fetched_at: "2026-10-05 15:30:19"
     			<version>1.10</version>
     		</dependency>
     		<!-- 上传组件包 end -->
-    
+
     		<!-- AL相关添加 -->
     		<dependency>
     			<groupId>net.sourceforge.jexcelapi</groupId>
@@ -279,11 +274,11 @@ fetched_at: "2026-10-05 15:30:19"
     		</dependency>
     		<!-- AL相关添加 -->
     	</dependencies>
-    
+
     	<build>
     		<finalName>Maven_Project</finalName>
-    		<plugins>
-    			<plugin>
+
+
     				<groupId>org.apache.maven.plugins</groupId>
     				<artifactId>maven-compiler-plugin</artifactId>
     				<version>2.3.2</version>
@@ -291,48 +286,48 @@ fetched_at: "2026-10-05 15:30:19"
     					<source>1.7</source>
     					<target>1.7</target>
     				</configuration>
-    			</plugin>
-    		</plugins>
+
+
     	</build>
-    </project>
+
 
 ### 2、在src/main/resources下添加如下配置文件
 
 **applicationContext.xml**
-    
-    
+
+
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
     	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
     	xmlns:context="http://www.springframework.org/schema/context"
     	xmlns:mvc="http://www.springframework.org/schema/mvc"
-    	xsi:schemaLocation="http://www.springframework.org/schema/beans  
-                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd  
-                            http://www.springframework.org/schema/context  
-                            http://www.springframework.org/schema/context/spring-context-3.1.xsd  
-                            http://www.springframework.org/schema/mvc  
+    	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                            http://www.springframework.org/schema/mvc
                             http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-                            
+
         <!-- 使用注解式注入 -->
     	<context:annotation-config />
-    	
+
         <!-- 自动扫描 -->
     	<context:component-scan base-package="com.chillax" />
-    	
+
         <!-- 导入DAO配置 -->
     	<import resource="spring-dao.xml"/>
-    	
+
     	<!-- 导入数据库配置 -->
     	<import resource="spring-db.xml"/>
-    	
+
     	<!-- 导入数据库配置 -->
     	<import resource="spring-tx.xml"/>
-    	
+
     </beans>
 
 **jdbc.properties，** 有多人反映直接复制时，第一行的driver最后面多了个空格，请注意
-    
-    
+
+
     driver=com.mysql.jdbc.Driver
     url=jdbc:mysql://127.0.0.1:3306/maventest
     username=root
@@ -349,8 +344,8 @@ fetched_at: "2026-10-05 15:30:19"
     maxWait=60000
 
 **log4j.properties**
-    
-    
+
+
     #定义LOG输出级别
     log4j.rootLogger=INFO,Console,File
     #定义日志输出目的地为控制台
@@ -359,7 +354,7 @@ fetched_at: "2026-10-05 15:30:19"
     #可以灵活地指定日志输出格式，下面一行是指定具体的格式
     log4j.appender.Console.layout = org.apache.log4j.PatternLayout
     log4j.appender.Console.layout.ConversionPattern=[%c] - %m%n
-    
+
     #文件大小到达指定尺寸的时候产生一个新的文件
     log4j.appender.File = org.apache.log4j.RollingFileAppender
     #指定输出目录
@@ -372,80 +367,80 @@ fetched_at: "2026-10-05 15:30:19"
     log4j.appender.File.layout.ConversionPattern =[%p] [%d{yyyy-MM-dd HH\:mm\:ss}][%c]%m%n
 
 **spring-dao.xml**
-    
-    
+
+
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
     	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
     	xmlns:context="http://www.springframework.org/schema/context"
     	xmlns:mvc="http://www.springframework.org/schema/mvc"
-    	xsi:schemaLocation="http://www.springframework.org/schema/beans  
-                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd  
-                            http://www.springframework.org/schema/context  
-                            http://www.springframework.org/schema/context/spring-context-3.1.xsd  
-                            http://www.springframework.org/schema/mvc  
+    	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                            http://www.springframework.org/schema/mvc
                             http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-                            
-                            
+
+
     	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     	 	<!--basePackage指定要扫描的包，在此包之下的映射器都会被搜索到。
     		 可指定多个包，包与包之间用逗号或分号分隔-->
-    		<property name="basePackage" value="com.chillax.dao" />
-    		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-    	</bean>                       
-                            
+
+
+    	</bean>
+
     </beans>
 
 **spring-db.xml**
-    
-    
+
+
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
     	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
     	xmlns:context="http://www.springframework.org/schema/context"
     	xmlns:mvc="http://www.springframework.org/schema/mvc"
-    	xsi:schemaLocation="http://www.springframework.org/schema/beans  
-                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd  
-                            http://www.springframework.org/schema/context  
-                            http://www.springframework.org/schema/context/spring-context-3.1.xsd  
-                            http://www.springframework.org/schema/mvc  
+    	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                            http://www.springframework.org/schema/mvc
                             http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-    
+
     	<!-- 引入配置文件 -->
     	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-    		<property name="location" value="classpath:jdbc.properties" />
+
     	</bean>
-    	
+
     	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-    		<property name="driverClassName" value="${driver}" />
-    		<property name="url" value="${url}" />
-    		<property name="username" value="${username}" />
-    		<property name="password" value="${password}" />
+
+
+
+
     		<!-- 初始化连接大小 -->
-    		<property name="initialSize" value="${initialSize}"></property>
+
     		<!-- 连接池最大数量 -->
-    		<property name="maxActive" value="${maxActive}"></property>
+
     		<!-- 连接池最大空闲 -->
-    		<property name="maxIdle" value="${maxIdle}"></property>
+
     		<!-- 连接池最小空闲 -->
-    		<property name="minIdle" value="${minIdle}"></property>
+
     		<!-- 获取连接最大等待时间 -->
-    		<property name="maxWait" value="${maxWait}"></property>
+
     	</bean>
-    
+
     	<!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
     	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-    		<property name="dataSource" ref="dataSource" />
+
     		<!-- 自动扫描mapping.xml文件 -->
-    		<property name="mapperLocations" value="classpath:com/chillax/mapper/*.xml"></property>
+
     	</bean>
-    	
+
     </beans>
 
 **spring-tx.xml**
-    
-    
+
+
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
     	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
@@ -453,124 +448,124 @@ fetched_at: "2026-10-05 15:30:19"
     	xmlns:aop="http://www.springframework.org/schema/aop"
     	xmlns:tx="http://www.springframework.org/schema/tx"
     	xmlns:mvc="http://www.springframework.org/schema/mvc"
-    	xsi:schemaLocation="http://www.springframework.org/schema/beans  
-                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd  
-                            http://www.springframework.org/schema/context  
-                            http://www.springframework.org/schema/context/spring-context-3.1.xsd  
-                            http://www.springframework.org/schema/aop 
+    	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                            http://www.springframework.org/schema/aop
                				http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
                				http://www.springframework.org/schema/tx
          	  				http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
-    
+
     	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
     	<bean id="transactionManager"
     		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-    		<property name="dataSource" ref="dataSource" />
+
     	</bean>
-    	
+
     	 <!--  配置参与事务的类 -->
     	 <aop:config>
     		 <aop:pointcut id="allServiceMethod" expression="execution(* com.chillax.service.*.*(..))"/>
     		 <aop:advisor pointcut-ref="allServiceMethod" advice-ref="TxAdvice" />
     	 </aop:config>
-    	
+
     	<!-- 使用声明方式配置事务 -->
     	<tx:advice id="TxAdvice" transaction-manager="transactionManager">
     	     <tx:attributes>
     		       <tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
     	     </tx:attributes>
      	</tx:advice>
-     	
+
     </beans>
 
 ### 3、在WEB-INF文件夹下添加/修改以下配置文件
 
 **spring-mvc.xml**
-    
-    
+
+
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
     	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
     	xmlns:context="http://www.springframework.org/schema/context"
     	xmlns:mvc="http://www.springframework.org/schema/mvc"
-    	xsi:schemaLocation="http://www.springframework.org/schema/beans  
-                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd  
-                            http://www.springframework.org/schema/context  
-                            http://www.springframework.org/schema/context/spring-context-3.1.xsd  
-                            http://www.springframework.org/schema/mvc  
+    	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                            http://www.springframework.org/schema/mvc
                             http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-    
-    	 <!-- 添加注解驱动 -->  
+
+    	 <!-- 添加注解驱动 -->
         <mvc:annotation-driven />
         <mvc:default-servlet-handler/>
-        
+
         <!-- 设置使用注解的类所在的包 -->
     	<context:component-scan base-package="com.chillax.controller" />
-    	
+
     	<!-- 定义跳转的文件的前后缀 ，视图模式配置-->
     	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     		<!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
-    		<property name="prefix" value="/WEB-INF/jsp/" />
-    		<property name="suffix" value=".jsp" />
+
+
     	</bean>
-    	
+
     	<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器-->
-    	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+    	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
             <!-- 默认编码 -->
-            <property name="defaultEncoding" value="utf-8" />  
+
             <!-- 文件大小最大值 -->
-            <property name="maxUploadSize" value="10485760000" />  
+
             <!-- 内存中的最大值 -->
-            <property name="maxInMemorySize" value="40960" />  
-        </bean> 
-    
+
+        </bean>
+
     </beans>
 
 **web.xml**
-    
-    
+
+
     <?xml version="1.0" encoding="UTF-8"?>
     <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     	xmlns="http://java.sun.com/xml/ns/javaee"
     	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     	version="3.0">
     	<display-name>Archetype Created Web Application</display-name>
-    	
+
     	<welcome-file-list>
     		<welcome-file>/index.jsp</welcome-file>
     	</welcome-file-list>
-    	
+
     	<!-- 加载spring bean -->
         <context-param>
-             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:applicationContext.xml</param-value>
+              contextConfigLocation
+             classpath:applicationContext.xml
         </context-param>
         <listener>
             <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
         </listener>
-        
+
     	<!-- 编码过滤器 -->
     	<filter>
     		<filter-name>encodingFilter</filter-name>
     		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
     		<async-supported>true</async-supported>
     		<init-param>
-    			<param-name>encoding</param-name>
-    			<param-value>UTF-8</param-value>
+    			 encoding
+    			 UTF-8
     		</init-param>
     	</filter>
     	<filter-mapping>
     		<filter-name>encodingFilter</filter-name>
     		<url-pattern>/*</url-pattern>
     	</filter-mapping>
-    	
+
     	<!-- Spring MVC servlet -->
     	<servlet>
     		<servlet-name>SpringMVC</servlet-name>
     		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     		<init-param>
-    			<param-name>contextConfigLocation</param-name>
-    			<param-value>/WEB-INF/spring-mvc.xml</param-value>
+    			 contextConfigLocation
+    			 /WEB-INF/spring-mvc.xml
     		</init-param>
     		<load-on-startup>1</load-on-startup>
     		<async-supported>true</async-supported>
@@ -579,42 +574,42 @@ fetched_at: "2026-10-05 15:30:19"
     		<servlet-name>SpringMVC</servlet-name>
     		<url-pattern>/</url-pattern>
     	</servlet-mapping>
-    	
+
     </web-app>
-    
+
 
 ### 4、在src/main/java下添加如下包和类
 
 **UserController.java**
-    
-    
+
+
     package com.chillax.controller;
-    
+
     import java.util.List;
-    
+
     import javax.annotation.Resource;
     import javax.servlet.http.HttpServletRequest;
-    
+
     import org.springframework.stereotype.Controller;
     import org.springframework.ui.Model;
     import org.springframework.web.bind.annotation.RequestMapping;
-    
+
     import com.chillax.dto.User;
     import com.chillax.service.IUserService;
-    
+
     @Controller
     @RequestMapping("/user")
     public class UserController {
     	@Resource
     	private IUserService userService;
-    	
+
     	@RequestMapping("/userList")
     	public String userList(HttpServletRequest request,Model model){
     		List<User> uList = userService.getAllUser();
     		model.addAttribute("uList", uList);
     		return "userList";
     	}
-    	
+
     	@RequestMapping("/showUser")
     	public String showUser(HttpServletRequest request,Model model){
     		int userId = Integer.parseInt(request.getParameter("id"));
@@ -622,12 +617,12 @@ fetched_at: "2026-10-05 15:30:19"
     		model.addAttribute("user", user);
     		return "showUser";
     	}
-    	
+
     	@RequestMapping("/addUserUI")
     	public String addUserUI(){
     		return "addUser";
     	}
-    	
+
     	@RequestMapping("/addUser")
     	public String addUser(HttpServletRequest request,Model model){
     		User user = new User();
@@ -640,97 +635,97 @@ fetched_at: "2026-10-05 15:30:19"
     }
 
 **IUserDao.java**
-    
-    
+
+
     package com.chillax.dao;
-    
+
     import java.util.List;
     import java.util.Map;
-    
+
     import com.chillax.dto.User;
-    
+
     public interface IUserDao {
-    	
+
     	public User queryByPrimaryKey(Integer id);
-    	
+
     	public List<User> getAllUser();
-    		
+
     	public void insertUser(User user);
-    	
+
     	public void insertUserByBatch(List<User> list);
-    	
+
     	public void deleteByPrimaryKey(Integer id);
-    	
+
     	public void delteUserByBatch(Map<String,Object> params);
-    	
+
     	public void updateByPrimaryKey(User user);
-    	
+
     }
 
 **User.java**
-    
-    
+
+
     package com.chillax.dto;
-    
+
     public class User {
         private Integer id;
-    
+
         private String name;
-    
+
         private String password;
-    
+
         private Integer age;
-    
+
         public Integer getId() {
             return id;
         }
-    
+
         public void setId(Integer id) {
             this.id = id;
         }
-    
+
         public String getName() {
     		return name;
     	}
-    
+
     	public void setName(String name) {
     		this.name = name;
     	}
-    
+
     	public String getPassword() {
             return password;
         }
-    
+
         public void setPassword(String password) {
             this.password = password == null ? null : password.trim();
         }
-    
+
         public Integer getAge() {
             return age;
         }
-    
+
         public void setAge(Integer age) {
             this.age = age;
         }
     }
 
 **UserMapper.xml**
-    
-    
+
+
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-    <mapper namespace="com.chillax.dao.IUserDao" >  
+    <mapper namespace="com.chillax.dao.IUserDao" >
         <resultMap id="BaseResultMap" type="com.chillax.dto.User">
     		<result column="id" property="id" jdbcType="INTEGER" />
     		<result column="name" property="name" jdbcType="VARCHAR" />
     		<result column="password" property="password" jdbcType="VARCHAR" />
     		<result column="age" property="age" jdbcType="INTEGER" />
     	</resultMap>
-    
+
     	<sql id="Base_Column_List">
     		id, name, password, age
     	</sql>
-    
+
     	<!-- 查询用户-->
     	<select id="queryByPrimaryKey" resultMap="BaseResultMap"
     		parameterType="java.lang.Integer">
@@ -739,47 +734,47 @@ fetched_at: "2026-10-05 15:30:19"
     		from user
     		where id = #{id,jdbcType=INTEGER}
     	</select>
-    	
+
     	<!-- 查询用户-->
     	<select id="getAllUser" resultMap="BaseResultMap">
     		select
     		<include refid="Base_Column_List" />
     		from user
     	</select>
-    	
+
     	<!-- 插入用户 -->
     	<insert id="insertUser" parameterType="com.chillax.dto.User">
-    		insert into user  
-    		<trim prefix="(" suffix=")" suffixOverrides="," >  
-    		  <if test="id != null" >  
-    		    id,  
-    		  </if>  
-    		  <if test="name != null" >  
-    		    name,  
-    		  </if>  
-    		  <if test="password != null" >  
-    		    password,  
-    		  </if>  
-    		  <if test="age != null" >  
-    		    age,  
-    		  </if>  
-    		</trim>  
-    		<trim prefix="values (" suffix=")" suffixOverrides="," >  
-    		  <if test="id != null" >  
-    		    #{id,jdbcType=INTEGER},  
-    		  </if>  
-    		  <if test="name != null" >  
-    		    #{name,jdbcType=VARCHAR},  
-    		  </if>  
-    		  <if test="password != null" >  
-    		    #{password,jdbcType=VARCHAR},  
-    		  </if>  
-    		  <if test="age != null" >  
-    		    #{age,jdbcType=INTEGER},  
-    		  </if>  
-    		</trim>   
+    		insert into user
+    		<trim prefix="(" suffix=")" suffixOverrides="," >
+    		  <if test="id != null" >
+    		    id,
+    		  </if>
+    		  <if test="name != null" >
+    		    name,
+    		  </if>
+    		  <if test="password != null" >
+    		    password,
+    		  </if>
+    		  <if test="age != null" >
+    		    age,
+    		  </if>
+    		</trim>
+    		<trim prefix="values (" suffix=")" suffixOverrides="," >
+    		  <if test="id != null" >
+    		    #{id,jdbcType=INTEGER},
+    		  </if>
+    		  <if test="name != null" >
+    		    #{name,jdbcType=VARCHAR},
+    		  </if>
+    		  <if test="password != null" >
+    		    #{password,jdbcType=VARCHAR},
+    		  </if>
+    		  <if test="age != null" >
+    		    #{age,jdbcType=INTEGER},
+    		  </if>
+    		</trim>
     	</insert>
-    	
+
     	<!-- 批量插入用户 -->
     	<insert id="insertUserByBatch" parameterType="java.util.List" >
         insert into USER
@@ -790,7 +785,7 @@ fetched_at: "2026-10-05 15:30:19"
         select A.* from
              (
              <foreach collection="list" item="user" index="index" separator="union">
-                 select 
+                 select
                  #{user.id,jdbcType=INTEGER},
                  #{user.name,jdbcType=VARCHAR},
                  #{user.password,jdbcType=VARCHAR},
@@ -799,214 +794,214 @@ fetched_at: "2026-10-05 15:30:19"
              </foreach>
              ) A
       	</insert>
-    
+
     	<!-- 删除用户 -->
     	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     		delete from user
-    		where id = #{id,jdbcType=INTEGER}  
+    		where id = #{id,jdbcType=INTEGER}
       	</delete>
-      	
+
       	<!-- 批量删除用户 -->
     	<delete id="deleteUserByBatch" parameterType="java.util.Map" >
     	 delete from user
-    	 where id IN 
+    	 where id IN
     	     <foreach item="ids" collection="iList" open="(" separator="," close=")">
     	         #{ids,jdbcType=DECIMAL}
     	     </foreach>
     	</delete>
-    
+
     	<!-- 更新用户 -->
-    	<update id="updateByPrimaryKey" parameterType="com.chillax.dto.User" >  
-    	    update user  
-    		<set >  
-    		  <if test="name != null" >  
-    		    name = #{name,jdbcType=VARCHAR},  
-    		  </if>  
-    		  <if test="password != null" >  
-    		    password = #{password,jdbcType=VARCHAR},  
-    		  </if>  
-    		  <if test="age != null" >  
-    		    age = #{age,jdbcType=INTEGER},  
-    		  </if>  
-    		</set>  
-    		where id = #{id,jdbcType=INTEGER} 
+    	<update id="updateByPrimaryKey" parameterType="com.chillax.dto.User" >
+    	    update user
+    		<set >
+    		  <if test="name != null" >
+    		    name = #{name,jdbcType=VARCHAR},
+    		  </if>
+    		  <if test="password != null" >
+    		    password = #{password,jdbcType=VARCHAR},
+    		  </if>
+    		  <if test="age != null" >
+    		    age = #{age,jdbcType=INTEGER},
+    		  </if>
+    		</set>
+    		where id = #{id,jdbcType=INTEGER}
       	</update>
-      
+
     </mapper>
 
 **IUserService.java**
-    
-    
+
+
     package com.chillax.service;
-    
+
     import java.util.List;
-    
+
     import com.chillax.dto.User;
-    
+
     public interface IUserService {
-    	
+
     	public User getUserById(int userId);
-    
+
     	public void insertUser(User user);
-    
+
     	public void addUser(User user);
-    
+
     	public List<User> getAllUser();
     }
 
 **UserServiceImpl.java**
-    
-    
+
+
     package com.chillax.service.Impl;
-    
+
     import java.util.List;
-    
+
     import javax.annotation.Resource;
-    
+
     import org.springframework.stereotype.Service;
-    
+
     import com.chillax.dao.IUserDao;
     import com.chillax.dto.User;
     import com.chillax.service.IUserService;
-    
+
     @Service("userService")
     public class UserServiceImpl implements IUserService {
     	@Resource
     	private IUserDao userDao;
-    	
+
     	public User getUserById(int userId) {
     		return userDao.queryByPrimaryKey(userId);
     	}
-    
+
     	public void insertUser(User user) {
     		userDao.insertUser(user);
     	}
-    
+
     	public void addUser(User user) {
     		userDao.insertUser(user);
     	}
-    
+
     	@Override
     	public List<User> getAllUser() {
     		return userDao.getAllUser();
     	}
-    
+
     }
 
 ### 5、在WEB-INF文件夹下创建jsp文件夹，并添加userList.jsp，showUser.jsp、addUser.jsp
 
 **userList.jsp**
-    
-    
+
+
     <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
     %>
-    
+
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
     <html>
       <head>
         <base href="<%=basePath%>">
-        
+
         <title>My JSP 'showUser.jsp' starting page</title>
-        
+
     	<meta http-equiv="pragma" content="no-cache">
     	<meta http-equiv="cache-control" content="no-cache">
-    	<meta http-equiv="expires" content="0">    
+    	<meta http-equiv="expires" content="0">
     	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     	<meta http-equiv="description" content="This is my page">
     	<!--
     	<link rel="stylesheet" type="text/css" href="styles.css">
     	-->
-    
+
       </head>
-      
+
       <body>
         <c:forEach items="${uList }" var="u">
         	用户名称：${u.name}
         	用户年龄：${u.age }
-        	<br/>
+
         </c:forEach>
       </body>
     </html>
 
 **addUser.jsp**
-    
-    
+
+
     <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
     <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
     %>
-    
+
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
     <html>
       <head>
         <base href="<%=basePath%>">
-        
+
         <title>My JSP 'addUser.jsp' starting page</title>
-        
+
     	<meta http-equiv="pragma" content="no-cache">
     	<meta http-equiv="cache-control" content="no-cache">
-    	<meta http-equiv="expires" content="0">    
+    	<meta http-equiv="expires" content="0">
     	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     	<meta http-equiv="description" content="This is my page">
     	<!--
     	<link rel="stylesheet" type="text/css" href="styles.css">
     	-->
-    
+
       </head>
-      
+
       <body>
-        <form id="addUser" action="user/addUser" method="post"> 
-    	    userName: <input id="name" name="name" /><br/> 
-    	    password: <input id="password" name="password" /><br/> 
-    	    age: <input id="age" name="age"/><br/> 
-    	    <input type="submit" value="添加新用户"/> 
+        <form id="addUser" action="user/addUser" method="post">
+    	    userName: <input id="name" name="name" />
+    	    password: <input id="password" name="password" />
+    	    age: <input id="age" name="age"/>
+    	    <input type="submit" value="添加新用户"/>
     	</form>
       </body>
     </html>
 
 **showUser.jsp**
-    
-    
+
+
     <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
     <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
     %>
-    
+
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
     <html>
       <head>
         <base href="<%=basePath%>">
-        
+
         <title>My JSP 'showUser.jsp' starting page</title>
-        
+
     	<meta http-equiv="pragma" content="no-cache">
     	<meta http-equiv="cache-control" content="no-cache">
-    	<meta http-equiv="expires" content="0">    
+    	<meta http-equiv="expires" content="0">
     	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     	<meta http-equiv="description" content="This is my page">
     	<!--
     	<link rel="stylesheet" type="text/css" href="styles.css">
     	-->
-    
+
       </head>
-      
+
       <body>
-        ${user.name }<br>
+        ${user.name }
       </body>
     </html>
 
 ### 6、创建数据库，并创建表
-    
-    
+
+
     create database maventest;
     use maventest;
-    
+
     CREATE TABLE `user` (
       `id` int(12) NOT NULL AUTO_INCREMENT,
       `name` varchar(50) NOT NULL,
@@ -1014,7 +1009,7 @@ fetched_at: "2026-10-05 15:30:19"
       `age` int(9) NOT NULL,
       PRIMARY KEY (`id`)
     ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
-    
+
     insert  into `user`(`id`,`name`,`password`,`age`) values (1,'admin','admin',22);
 
 ### 7、整个项目文件结构图
@@ -1076,12 +1071,12 @@ fetched_at: "2026-10-05 15:30:19"
 ![](https://i-blog.csdnimg.cn/blog_migrate/2c28f292d6d3bef52ac64a305af6c153.png)
 
 **解答：** 在pom.xml文件的<build></build>的标签中加入以下代码，然后Update Project（参照问题5）
-    
-    
+
+
     <build>
     	<finalName>Maven_Project</finalName>
-    	<plugins>
-    		<plugin>
+
+
     			<groupId>org.apache.maven.plugins</groupId>
     			<artifactId>maven-compiler-plugin</artifactId>
     			<version>2.3.2</version>
@@ -1089,8 +1084,8 @@ fetched_at: "2026-10-05 15:30:19"
     				<source>1.7</source>
     				<target>1.7</target>
     			</configuration>
-    		</plugin>
-    	</plugins>
+
+
     </build>
 
 ### 问题8：访问报错

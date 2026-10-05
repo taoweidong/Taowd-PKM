@@ -1,7 +1,7 @@
 ---
 source: "http://tryrabbitmq.com/"
 title: "RabbitMQ Simulator"
-fetched_at: "2026-10-05 15:29:45"
+fetched_at: "2026-10-05 15:30:25"
 ---
 
 # RabbitMQ Simulator

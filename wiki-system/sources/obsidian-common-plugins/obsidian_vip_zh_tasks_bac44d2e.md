@@ -1,0 +1,43 @@
+---
+source: "https://obsidian.vip/zh/tasks/"
+title: "Tasks插件专题 | obsidian文档咖啡豆版"
+fetched_at: "2026-10-05 15:44:48"
+---
+
+### 1 专栏介绍 ​
+
+新增专题📢
+
+为了让咖啡豆文档站的结构更加合理，对新手更加友好。即日起对网站结构和正文进行重构
+
+tasks插件专题
+
+  * tasks 插件是咖啡豆最爱用的一个插件，主要是对Obsidian的待办任务进行添加管理和查询，可以做出很多不错的效果。
+  * 比如基于**GTD** 的四象限，**GTD** 任务回顾，以及更多的TODO清单类软件的收费功能，用 Obsidian tasks 插件都能完美的处理。
+
+加群交流
+
+如果在使用和学习中有不明白的地方，或者想看看别人的经验
+
+  * 可以查看[进阶用法](/zh/advanced/)
+  * 可以加群和大家聊聊，加微信 `coffeebean1688` 蹦跶的咖啡豆，然后进群
+  * 可以查看[咖啡豆豆龙_哔哩哔哩](https://space.bilibili.com/618777356)) 视频教程。😜**关注、👍点赞、📀投币一键三连**
+  * 关注公众号(文章很多)：`蹦跶的咖啡豆`
+  * 示例库（筹备中）
+  * 网站启用新域名：<https://obsidian.vip> 给VIP的你，很好记
+
+🌱【点我-扫码加群】![加群交流！先加在拉](/assets/WeChat-QRcode.jpg)🍻【点我-打赏】![随缘支持](/assets/WeChat-Pay.jpg)
+
+### 2 Tasks插件 ​
+
+tasks是 obsidian 的任务管理插件。他可以实现丰富的任务管理。比Obsidian 系统自带的待办功能强太多了，拥有了他基本上就可以放下别的todo list 任务清单管理App了。
+
+### 3 Tasks相关文章 ​
+
+  1. [tasks进阶(1)](/zh/tasks/tasks进阶\(1\)) \- 基础入门，插件介绍和基本操作
+  2. [tasks进阶(2)](/zh/tasks/tasks进阶\(2\)) \- 进阶语法，详细讲解查询语法
+  3. [tasks进阶(3)](/zh/tasks/tasks进阶\(3\)) \- 高级功能，排序、反向链接等
+  4. [tasks常用示例汇总](/zh/tasks/tasks-common-examples) \- 实用案例，拿来就用
+  5. [tasks自定义过滤器](/zh/tasks/tasks-custom-filters) \- 高级功能，自定义查询
+  6. [tasks插件的日期解密](/zh/tasks/tasks-difference-between-dates) \- 深入理解日期概念
+  7. [tasks语法快速参考](/zh/tasks/tasks-Quick-Reference) \- 语法速查表，忘记时查阅

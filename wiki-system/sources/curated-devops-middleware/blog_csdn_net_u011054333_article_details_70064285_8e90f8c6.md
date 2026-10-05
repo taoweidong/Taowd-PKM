@@ -12,7 +12,7 @@ fetched_at: "2026-10-05 15:29:03"
 
 首先打开[Docker下载页面](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description)，然后下载Docker For Windows安装包。注意这个安装包是针对最新的Windows 10系统的，如果使用Windows 8之类的，请下载旧版本的Docker。
 
-安装之后可能会弹出这么一个对话框，提示我们说HyperV未开启，询问我们是否要开启HyperV，我们选择是，然后电脑会重启。之后一切就准备就绪了。   
+安装之后可能会弹出这么一个对话框，提示我们说HyperV未开启，询问我们是否要开启HyperV，我们选择是，然后电脑会重启。之后一切就准备就绪了。
 ![未开启HyperV](https://i-blog.csdnimg.cn/blog_migrate/f248207c7b032b9453a2a605cd5abaa3.webp?x-image-process=image/format,png)
 
 电脑重启之后，我们应该可以在任务栏上找到一个Docker图标，右键点击选择version会弹出这样的对话框。如此一来，Docker就安装完毕了。
@@ -32,15 +32,15 @@ fetched_at: "2026-10-05 15:29:03"
 #### 设置阿里云加速器
 
 在下载Docker之前，我们需要先配置一下加速器。由于Docker的服务器在国外，所以下载镜像的速度不太理想。国内因此有了很多加速服务，其中最好用的还是阿里云的。我们打开[Docker 镜像服务](http://dev.aliyun.com/search.html)，登录账号之后，获取自己创加速器地址。然后使用`docker-machine`创建一个新的虚拟机并使用加速器来加速。
-    
-    
+
+
     docker-machine create --engine-registry-mirror=https://XXX.mirror.aliyuncs.com -d hyperv default
 
 当然如果你有自己的代理的话，也可以直接在Docker设置中设置代理。
 
 #### 安装镜像
 
-我们在Kitematic中搜索`hello-world`，然后安装。当然如果使用命令行的话也可以，输入`docker pull hello-world`即可。   
+我们在Kitematic中搜索`hello-world`，然后安装。当然如果使用命令行的话也可以，输入`docker pull hello-world`即可。
 ![docker hello-world](https://i-blog.csdnimg.cn/blog_migrate/cffc192d55dfc82dfd89606d2c49b1a4.webp?x-image-process=image/format,png)
 
 安装完成之后运行`docker run hello-world`即可看到如下的输出。
@@ -53,7 +53,7 @@ fetched_at: "2026-10-05 15:29:03"
 
 ![redis](https://i-blog.csdnimg.cn/blog_migrate/a9d0980f1ac8108e8d021be7183cc752.webp?x-image-process=image/format,png)
 
-默认情况下的shell是sh，不太好用。我们可以点击Kitematic下面的docker-cli右边的齿轮图标，然后将shell设置为bash。   
+默认情况下的shell是sh，不太好用。我们可以点击Kitematic下面的docker-cli右边的齿轮图标，然后将shell设置为bash。
 ![docker-cli设置](https://i-blog.csdnimg.cn/blog_migrate/5adb09ff5d7fe452d275da0a8e7fef13.webp?x-image-process=image/format,png)
 
 #### 配置镜像

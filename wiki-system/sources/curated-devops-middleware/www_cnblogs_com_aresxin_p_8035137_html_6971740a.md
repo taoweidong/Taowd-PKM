@@ -1,7 +1,7 @@
 ---
 source: "https://www.cnblogs.com/aresxin/p/8035137.html"
 title: "ELK原理与介绍 - 我是一条最咸的咸鱼 - 博客园"
-fetched_at: "2026-10-05 15:29:48"
+fetched_at: "2026-10-05 15:30:28"
 ---
 
 ### 为什么用到ELK：
@@ -18,10 +18,7 @@ fetched_at: "2026-10-05 15:29:48"
   * 分析－可以支持 UI 分析
   * 警告－能够提供错误报告，监控机制
 
-
-
-ELK提供了一整套解决方案，并且都是开源软件，之间互相配合使用，完美衔接，高效的满足了很多场合的应用。目前主流的一种日志系统。  
-
+ELK提供了一整套解决方案，并且都是开源软件，之间互相配合使用，完美衔接，高效的满足了很多场合的应用。目前主流的一种日志系统。
 
 ### ELK简介：
 
@@ -40,17 +37,15 @@ Filebeat隶属于Beats。目前Beats包含四种工具：
      3. Filebeat（搜集文件数据）
      4. Winlogbeat（搜集 Windows 事件日志数据）
 
-
-
 ### 官方文档：
 
 Filebeat：
 
-<https://www.elastic.co/cn/products/beats/filebeat>  
+<https://www.elastic.co/cn/products/beats/filebeat>
 <https://www.elastic.co/guide/en/beats/filebeat/5.6/index.html>
 
-Logstash：  
-<https://www.elastic.co/cn/products/logstash>  
+Logstash：
+<https://www.elastic.co/cn/products/logstash>
 <https://www.elastic.co/guide/en/logstash/5.6/index.html>
 
 Kibana:
@@ -59,11 +54,11 @@ Kibana:
 
 <https://www.elastic.co/guide/en/kibana/5.5/index.html>
 
-Elasticsearch：  
-<https://www.elastic.co/cn/products/elasticsearch>  
+Elasticsearch：
+<https://www.elastic.co/cn/products/elasticsearch>
 <https://www.elastic.co/guide/en/elasticsearch/reference/5.6/index.html>
 
-elasticsearch中文社区：  
+elasticsearch中文社区：
 <https://elasticsearch.cn/>
 
 ### ELK架构图：
@@ -97,8 +92,8 @@ Filebeat由两个主要组件组成：prospectors 和 harvesters。这两个组�
 **Harvester（收割机）：** 负责读取单个文件内容。每个文件会启动一个Harvester，每个Harvester会逐行读取各个文件，并将文件内容发送到制定输出中。Harvester负责打开和关闭文件，意味在Harvester运行的时候，文件描述符处于打开状态，如果文件在收集中被重命名或者被删除，Filebeat会继续读取此文件。所以在Harvester关闭之前，磁盘不会被释放。默认情况filebeat会保持文件打开的状态，直到达到[`close_inactive`](https://www.elastic.co/guide/en/beats/filebeat/5.5/configuration-filebeat-options.html#close-inactive "close_inactive")（如果此选项开启，filebeat会在指定时间内将不再更新的文件句柄关闭，时间从harvester读取最后一行的时间开始计时。若文件句柄被关闭后，文件发生变化，则会启动一个新的harvester。关闭文件句柄的时间不取决于文件的修改时间，若此参数配置不当，则可能发生日志不实时的情况，由scan_frequency参数决定，默认10s。Harvester使用内部时间戳来记录文件最后被收集的时间。例如：设置5m，则在Harvester读取文件的最后一行之后，开始倒计时5分钟，若5分钟内文件无变化，则关闭文件句柄。默认5m）。
 
 **Prospector（勘测者）：** 负责管理Harvester并找到所有读取源。
-    
-    
+
+
     filebeat.prospectors:
     - input_type: log
       paths:
@@ -112,8 +107,7 @@ Prospector会找到/apps/logs/*目录下的所有info.log文件，并为每个�
 
 **Filebeat如何保证事件至少被输出一次：**
 
-Filebeat之所以能保证事件至少被传递到配置的输出一次，没有数据丢失，是因为filebeat将每个事件的传递状态保存在文件中。在未得到输出方确认时，filebeat会尝试一直发送，直到得到回应。若filebeat在传输过程中被关闭，则不会再关闭之前确认所有时事件。任何在filebeat关闭之前为确认的时间，都会在filebeat重启之后重新发送。这可确保至少发送一次，但有可能会重复。可通过设置[`shutdown_timeout`](https://www.elastic.co/guide/en/beats/filebeat/5.5/configuration-global-options.html#shutdown-timeout "shutdown_timeout") 参数来设置关闭之前的等待事件回应的时间（默认禁用）。  
-
+Filebeat之所以能保证事件至少被传递到配置的输出一次，没有数据丢失，是因为filebeat将每个事件的传递状态保存在文件中。在未得到输出方确认时，filebeat会尝试一直发送，直到得到回应。若filebeat在传输过程中被关闭，则不会再关闭之前确认所有时事件。任何在filebeat关闭之前为确认的时间，都会在filebeat重启之后重新发送。这可确保至少发送一次，但有可能会重复。可通过设置[`shutdown_timeout`](https://www.elastic.co/guide/en/beats/filebeat/5.5/configuration-global-options.html#shutdown-timeout "shutdown_timeout") 参数来设置关闭之前的等待事件回应的时间（默认禁用）。
 
 ### Logstash工作原理：
 
@@ -139,7 +133,7 @@ beats：从filebeat中读取
 
 grok：解析任意文本数据，Grok 是 Logstash 最重要的插件。它的主要作用就是将文本格式的字符串，转换成为具体的结构化的数据，配合正则表达式使用。内置120多个解析语法。
 
-官方提供的grok表达式：<https://github.com/logstash-plugins/logstash-patterns-core/tree/master/patterns>  
+官方提供的grok表达式：<https://github.com/logstash-plugins/logstash-patterns-core/tree/master/patterns>
 grok在线调试：<https://grokdebug.herokuapp.com/>
 
 mutate：对字段进行转换。例如对字段进行删除、替换、修改、重命名等。

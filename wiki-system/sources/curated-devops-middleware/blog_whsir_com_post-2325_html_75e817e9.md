@@ -40,8 +40,7 @@ This Jenkins instance uses deprecated protocols: JNLP-connect,JNLP2-connect. It 
 
 ![](https://blog.whsir.com/image/alihb.png)
 
-  *   *   * 
-
+  *   *   *
 
 [赏](javascript:void\(0\);)
 

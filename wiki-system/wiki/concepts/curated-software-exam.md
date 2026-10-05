@@ -26,7 +26,6 @@ source: "[[topics/browser-bookmarks]]"
 ### 知识点 / 试题 / 心得（4）
 
 - [原码、反码、补码和移码](http://blog.csdn.net/liushuijinger/article/details/7429197)
-- [自学通过软件设计师考试后的一些感想_天极网](http://edu.yesky.com/347/3047347.shtml?qq-pf-to=pcqq.c2c)
 - [软件设计师上下午试题技巧知识点 - 疯狂源代码 - 博客频道 - CSDN.NET](http://blog.csdn.net/iluna/article/details/4376283)
 - [软件设计师考试心得_百度文库](http://wenku.baidu.com/link?url=yK-g83PR21QxgAwtbExCOYOHRgIWx9s2t1fT0LVQW6vggpEZWZyddUeAR8zDQGFP_0RhQphjzG56MAeY5xJDRIEID9lbKySuGY0dRo2TudS)
 

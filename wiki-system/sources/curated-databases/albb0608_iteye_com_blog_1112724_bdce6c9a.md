@@ -10,7 +10,7 @@ fetched_at: "2026-10-05 15:27:50"
 
 [您还未登录!](/login "登录") [登录](/login)
 
-` 
+`
 
 [![albb0608的博客](https://www.iteye.com/upload/logo/user/330660/8ef8a423-2f44-3adc-ab7c-93fd5c57e380.png?1717536912)](https://www.iteye.com/blog/user/albb0608)
 
@@ -18,10 +18,8 @@ albb0608
 
   * 浏览: 66628 次
   * 性别: ![Icon_minigender_1](https://www.iteye.com/images/icon_minigender_1.gif?1652290086)
-  * 来自: 北京 
+  * 来自: 北京
   * ![](/images/status/offline.gif)
-
-
 
 ##### 最近访客  [更多访客>>](/blog/user_visits)
 
@@ -63,15 +61,11 @@ albb0608
   * [Hadoop (2)](/category/191967)
   * [jsp (1)](/category/231661)
 
-
-
 ##### 社区版块
 
   * [我的资讯](/blog/news) ( 0)
-  * [我的论坛](/blog/post) ( 33) 
+  * [我的论坛](/blog/post) ( 33)
   * [我的问答](/blog/answered_problems) ( 10)
-
-
 
 ##### 存档分类
 
@@ -80,22 +74,18 @@ albb0608
   * [2011-11](/blog/monthblog/2011-11) ( 1)
   * [更多存档...](/blog/monthblog_more)
 
-
-
 ##### 最新评论
 
-  * [wxno1](https://www.iteye.com/blog/user/wxno1 "wxno1")： 阳光晒晒 写道wxno1 写道decode 解决一切行转列，可 ...  
+  * [wxno1](https://www.iteye.com/blog/user/wxno1 "wxno1")： 阳光晒晒 写道wxno1 写道decode 解决一切行转列，可 ...
 [前天笔试碰到的一个题，是列转行的，大家帮看看](/blog/980212#bc2047852)
-  * [阳光晒晒](https://www.iteye.com/blog/user/sunyday "阳光晒晒")： wxno1 写道decode 解决一切行转列，可惜只有orac ...  
+  * [阳光晒晒](https://www.iteye.com/blog/user/sunyday "阳光晒晒")： wxno1 写道decode 解决一切行转列，可惜只有orac ...
 [前天笔试碰到的一个题，是列转行的，大家帮看看](/blog/980212#bc2044620)
-  * [xici_magic](https://www.iteye.com/blog/user/qianzui "xici_magic")： Case函数能解决。  
+  * [xici_magic](https://www.iteye.com/blog/user/qianzui "xici_magic")： Case函数能解决。
 [前天笔试碰到的一个题，是列转行的，大家帮看看](/blog/980212#bc2042294)
-  * [ganjp](https://www.iteye.com/blog/user/ganjp "ganjp")： 咦……哈哈  
+  * [ganjp](https://www.iteye.com/blog/user/ganjp "ganjp")： 咦……哈哈
 [前天笔试碰到的一个题，是列转行的，大家帮看看](/blog/980212#bc2041651)
-  * [qiang106](https://www.iteye.com/blog/user/qiang106 "qiang106")： 好像Oracle、MySQL 用case可以，SQLServe ...  
+  * [qiang106](https://www.iteye.com/blog/user/qiang106 "qiang106")： 好像Oracle、MySQL 用case可以，SQLServe ...
 [前天笔试碰到的一个题，是列转行的，大家帮看看](/blog/980212#bc2041457)
-
-
 
 [albb0608](https://www.iteye.com/blog/user/albb0608)
 
@@ -103,8 +93,6 @@ albb0608
 
 **博客分类：**
   * [Oracle](/category/150184)
-
-
 
 [Oracle](http://www.iteye.com/blogs/tag/Oracle)
 
@@ -114,66 +102,82 @@ albb0608
 
 摘要： Oracle 查看索引表空间，Oracle 查看索引表空间语句，包括查看表空间的使用情况、查看数据库库对象、查看数据库的版本、查看数据库创建日期和归档方式、查询数据库中索引占用表空间的大小。 Oracle 查看表空间的使用情况或表空间的大小，应该如何实现呢？下面就为您介
 
-  
-  
-Oracle 查看索引表空间，Oracle 查看索引表空间语句，包括查看表空间的使用情况、查看数据库库对象、查看数据库的版本、查看数据库创建日期和归档方式、查询数据库中索引占用表空间的大小。   
-  
-Oracle 查看表空间的使用情况或表空间的大小，应该如何实现呢？下面就为您介绍实现 Oracle 查看表空间方面的语句。   
-  
-1、查看表空间的使用情况   
-  
 
-    
-    
-     
-    select sum(bytes)/(1024*1024) as free_space,tablespace_name 
-    from dba_free_space
-    group by tablespace_name;
-    
-    
-    SELECT A.TABLESPACE_NAME,A.BYTES TOTAL,B.BYTES USED, C.BYTES FREE,
-    (B.BYTES*100)/A.BYTES "% USED",(C.BYTES*100)/A.BYTES "% FREE"
-    FROM SYS.SM$TS_AVAIL A,SYS.SM$TS_USED B,SYS.SM$TS_FREE C
+
+Oracle 查看索引表空间，Oracle 查看索引表空间语句，包括查看表空间的使用情况、查看数据库库对象、查看数据库的版本、查看数据库创建日期和归档方式、查询数据库中索引占用表空间的大小。
+
+Oracle 查看表空间的使用情况或表空间的大小，应该如何实现呢？下面就为您介绍实现 Oracle 查看表空间方面的语句。
+
+1、查看表空间的使用情况
+
+
+
+
+
+
+    select sum(bytes)/(1024*1024) as free_space,tablespace_name
+
+    from dba_free_space
+
+    group by tablespace_name;
+
+
+
+
+
+    SELECT A.TABLESPACE_NAME,A.BYTES TOTAL,B.BYTES USED, C.BYTES FREE,
+
+    (B.BYTES*100)/A.BYTES "% USED",(C.BYTES*100)/A.BYTES "% FREE"
+
+    FROM SYS.SM$TS_AVAIL A,SYS.SM$TS_USED B,SYS.SM$TS_FREE C
+
     WHERE A.TABLESPACE_NAME=B.TABLESPACE_NAME AND A.TABLESPACE_NAME=C.TABLESPACE_NAME;
 
-  
-  
-2、查看数据库库对象   
-  
 
-    
-    
+
+2、查看数据库库对象
+
+
+
+
     select owner, object_type, status, count(*) count# from all_objects group by owner, object_type, status;
 
-  
-  
-3、查看数据库的版本   
 
-    
-    
-    Select version FROM Product_component_version 
+
+3、查看数据库的版本
+
+
+
+    Select version FROM Product_component_version
+
     Where SUBSTR(PRODUCT,1,6)='Oracle';
 
-  
-  
-4、查看数据库创建日期和归档方式   
 
-    
-    
+
+4、查看数据库创建日期和归档方式
+
+
+
     Select Created, Log_Mode, Log_Mode From V$Database;
 
-  
-  
-5、查询数据库中索引占用表空间的大小   
 
-    
-    
-    select a.segment_name,a.tablespace_name,b.table_name,a.bytes/1024/1024 mbytes,a.blocks
-    from user_segments a, user_indexes b
-    where a.segment_name = b.index_name
-    and a.segment_type = 'INDEX' --索引
-    and a.tablespace_name='APPINDEX' --表空间
-    and b.table_name like '%PREP%' --索引所在表
+
+5、查询数据库中索引占用表空间的大小
+
+
+
+    select a.segment_name,a.tablespace_name,b.table_name,a.bytes/1024/1024 mbytes,a.blocks
+
+    from user_segments a, user_indexes b
+
+    where a.segment_name = b.index_name
+
+    and a.segment_type = 'INDEX' --索引
+
+    and a.tablespace_name='APPINDEX' --表空间
+
+    and b.table_name like '%PREP%' --索引所在表
+
     order by table_name,a.bytes/1024/1024 desc
 
 分享到： [![](/images/sina.jpg)](javascript:; "分享到新浪微博") [![](/images/tec.jpg)](javascript:; "分享到腾讯微博")
@@ -184,6 +188,4 @@ Oracle 查看表空间的使用情况或表空间的大小，应该如何实现�
   * 分类:[数据库](https://www.iteye.com/blogs/category/database)
   * [查看更多](https://www.iteye.com/wiki/blog/1112724)
 
-
-
-Global site tag (gtag.js) - Google Analytics 
+Global site tag (gtag.js) - Google Analytics

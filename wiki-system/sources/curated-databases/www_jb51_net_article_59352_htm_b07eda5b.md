@@ -9,10 +9,7 @@ fetched_at: "2026-10-05 15:29:14"
   * __[手机版](https://m.jb51.net/)
   * __[关注微信](javascript:void\(0\))
 
-![扫一扫](//img.jbzj.com/skin/2018/images/erwm.jpg)
-
-
-
+![扫一扫](https://img.jbzj.com/skin/2018/images/erwm.jpg)
 
 [快捷导航 __](javascript:void\(0\);)
 
@@ -31,16 +28,13 @@ fetched_at: "2026-10-05 15:29:14"
   * [平面设计](/pingmian/)
   * _其它_ [媒体动画](/media/) [电脑基础](/diannaojichu/) [硬件教程](/hardware/) [网络安全](/hack/)
 
-
-
-
-__您的位置：[首页](/) → [数据库](/list/index_104.htm "数据库") → [mssql2008](/list/list_236_1.htm "mssql2008") → sql server 2005 找不到服务器名称 
+__您的位置：[首页](/) → [数据库](/list/index_104.htm "数据库") → [mssql2008](/list/list_236_1.htm "mssql2008") → sql server 2005 找不到服务器名称
 
 # 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器
 
-更新时间：2015年01月03日 12:40:43 投稿：mdxy-dxy 
+更新时间：2015年01月03日 12:40:43 投稿：mdxy-dxy
 
-在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接) 
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
 
 今早开机发现，打开SQL Server 2008 的 SQL Server Management Studio，输入sa的密码发现，无法登陆数据库？提示以下错误：
 
@@ -54,31 +48,31 @@ __您的位置：[首页](/) → [数据库](/list/index_104.htm "数据库") �
 
 **1、打开Sql server 管理配置器**
 
-![](//img.jbzj.com/file_images/article/201501/201501031230122.jpg)
+![](https://img.jbzj.com/file_images/article/201501/201501031230122.jpg)
 
 或者在命令行输入：SQLServerManager10.msc
 
 2、点击MSSQLSERVER的协议，在右侧的页面中选择TCP/IP协议
 
-![](//img.jbzj.com/file_images/article/201501/201501031230123.jpg)
+![](https://img.jbzj.com/file_images/article/201501/201501031230123.jpg)
 
 3、右键点击TCP/IP协议，选择“属性”，需要修改连接数据库的端口地址
 
-![](//img.jbzj.com/file_images/article/201501/201501031230124.jpg)
+![](https://img.jbzj.com/file_images/article/201501/201501031230124.jpg)
 
 4、跳出来的对话框，里面有好多TCP/IP的端口，找到“IP3”，更改IP地址 为自己电脑的IP地址（或者是127.0.0.1） 在TCP端口添加1433，然后选择启动
 
-![](//img.jbzj.com/file_images/article/201501/201501031230125.jpg)
+![](https://img.jbzj.com/file_images/article/201501/201501031230125.jpg)
 
 5、“IPALL”的所有端口改成“1433”
 
-![](//img.jbzj.com/file_images/article/201501/201501031230126.jpg)
+![](https://img.jbzj.com/file_images/article/201501/201501031230126.jpg)
 
 6、重新启动服务
 
-![](//img.jbzj.com/file_images/article/201501/201501031230127.jpg)
+![](https://img.jbzj.com/file_images/article/201501/201501031230127.jpg)
 
-![](//img.jbzj.com/file_images/article/201501/201501031230128.jpg)
+![](https://img.jbzj.com/file_images/article/201501/201501031230128.jpg)
 
 7、通过以上1-6步骤设置好端口，重新打开SQL Server Management Studio，在服务器名称输入：(local)或者127.0.0.1，即可登录数据库了。
 
@@ -105,99 +99,92 @@ VS报错：
   * [SQL Server错误代码大全及解释（留着备用）](/article/30653.htm "SQL Server错误代码大全及解释（留着备用）")
   * [SQL Server数据库附加失败的解决办法](/article/136939.htm "SQL Server数据库附加失败的解决办法")
 
-
-
 __
 
-  * [SQL](//www.jb51.net/tag/SQL/1.htm "搜索关于SQL的文章")
-  * [Server未找到或无法访问服务器](//www.jb51.net/tag/Server%E6%9C%AA%E6%89%BE%E5%88%B0%E6%88%96%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8/1.htm "搜索关于Server未找到或无法访问服务器的文章")
-
-
+  * [SQL](https://www.jb51.net/tag/SQL/1.htm "搜索关于SQL的文章")
+  * [Server未找到或无法访问服务器](https://www.jb51.net/tag/Server%E6%9C%AA%E6%89%BE%E5%88%B0%E6%88%96%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8/1.htm "搜索关于Server未找到或无法访问服务器的文章")
 
 ## 相关文章
 
-  *   * [ ![还原sqlserver2008 媒体的簇的结构不正确的解决方法](//img.jbzj.com/images/xgimg/bcimg0.png) ](/article/24318.htm "还原sqlserver2008 媒体的簇的结构不正确的解决方法")
+  *   * [ ![还原sqlserver2008 媒体的簇的结构不正确的解决方法](https://img.jbzj.com/images/xgimg/bcimg0.png) ](/article/24318.htm "还原sqlserver2008 媒体的簇的结构不正确的解决方法")
 
 [还原sqlserver2008 媒体的簇的结构不正确的解决方法](/article/24318.htm "还原sqlserver2008 媒体的簇的结构不正确的解决方法")
 
-还原sqlserver2008时，遇到的“媒体的簇的结构不正确的解决方法” 
+还原sqlserver2008时，遇到的“媒体的簇的结构不正确的解决方法”
 
-2010-07-07 
+2010-07-07
 
-  * [ ![sqlserver2008锁表语句详解\(锁定数据库一个表\)](//img.jbzj.com/images/xgimg/bcimg1.png) ](/article/44960.htm "sqlserver2008锁表语句详解\(锁定数据库一个表\)")
+  * [ ![sqlserver2008锁表语句详解\(锁定数据库一个表\)](https://img.jbzj.com/images/xgimg/bcimg1.png) ](/article/44960.htm "sqlserver2008锁表语句详解\(锁定数据库一个表\)")
 
 [sqlserver2008锁表语句详解(锁定数据库一个表)](/article/44960.htm "sqlserver2008锁表语句详解\(锁定数据库一个表\)")
 
 锁一个SQL表的语句是SQL数据库使用者都需要知道的，下面就将为您介绍锁SQL表的语句，希望对您学习锁SQL表方面能有所帮助
 
-2013-12-12 
+2013-12-12
 
-  * [ ![sql2008 还原数据库解决方案](//img.jbzj.com/images/xgimg/bcimg2.png) ](/article/32082.htm "sql2008 还原数据库解决方案")
+  * [ ![sql2008 还原数据库解决方案](https://img.jbzj.com/images/xgimg/bcimg2.png) ](/article/32082.htm "sql2008 还原数据库解决方案")
 
 [sql2008 还原数据库解决方案](/article/32082.htm "sql2008 还原数据库解决方案")
 
 本文将介绍如何利用bak恢复数据库，以sql2008 还原数据库为例进行介绍，需要的朋友可以参考下
 
-2012-11-11 
+2012-11-11
 
-  * [ ![SQL Server 2012降级至2008R2的方法](//img.jbzj.com/images/xgimg/bcimg3.png) ](/article/109270.htm "SQL Server 2012降级至2008R2的方法")
+  * [ ![SQL Server 2012降级至2008R2的方法](https://img.jbzj.com/images/xgimg/bcimg3.png) ](/article/109270.htm "SQL Server 2012降级至2008R2的方法")
 
 [SQL Server 2012降级至2008R2的方法](/article/109270.htm "SQL Server 2012降级至2008R2的方法")
 
 这篇文章主要为大家详细介绍了SQL Server 2012降级至SQL Server 2008R2的方法，具有一定的参考价值，感兴趣的小伙伴们可以参考一下
 
-2017-03-03 
+2017-03-03
 
-  * [ ![SQLserver 2008将数据导出到Sql脚本文件的方法](//img.jbzj.com/images/xgimg/bcimg4.png) ](/article/23007.htm "SQLserver 2008将数据导出到Sql脚本文件的方法")
+  * [ ![SQLserver 2008将数据导出到Sql脚本文件的方法](https://img.jbzj.com/images/xgimg/bcimg4.png) ](/article/23007.htm "SQLserver 2008将数据导出到Sql脚本文件的方法")
 
 [SQLserver 2008将数据导出到Sql脚本文件的方法](/article/23007.htm "SQLserver 2008将数据导出到Sql脚本文件的方法")
 
 大家都知道使用SQL的企业管理器可以导出SQL脚本，但导不出SQL的数据到脚本中，目前SQL2008有这个功能了。
 
-2010-04-04 
+2010-04-04
 
-  * [ ![SQLServer 2008 :error 40出现连接错误的解决方法](//img.jbzj.com/images/xgimg/bcimg5.png) ](/article/41473.htm "SQLServer 2008 :error 40出现连接错误的解决方法")
+  * [ ![SQLServer 2008 :error 40出现连接错误的解决方法](https://img.jbzj.com/images/xgimg/bcimg5.png) ](/article/41473.htm "SQLServer 2008 :error 40出现连接错误的解决方法")
 
 [SQLServer 2008 :error 40出现连接错误的解决方法](/article/41473.htm "SQLServer 2008 :error 40出现连接错误的解决方法")
 
 在与SQLServer建立连接时出现与网络相关的或特定与实例的错误.未找到或无法访问服务器.请验证实例名称是否正确并且SQL SERVER已配置允许远程链接
 
-2013-09-09 
+2013-09-09
 
-  * [ ![SQL Server 2008 R2 超详细安装图文教程](//img.jbzj.com/images/xgimg/bcimg6.png) ](/article/72561.htm "SQL Server 2008 R2 超详细安装图文教程")
+  * [ ![SQL Server 2008 R2 超详细安装图文教程](https://img.jbzj.com/images/xgimg/bcimg6.png) ](/article/72561.htm "SQL Server 2008 R2 超详细安装图文教程")
 
 [SQL Server 2008 R2 超详细安装图文教程](/article/72561.htm "SQL Server 2008 R2 超详细安装图文教程")
 
 这篇文章主要介绍了SQL Server 2008 R2 超详细安装图文教程,需要的朋友可以参考下
 
-2015-09-09 
+2015-09-09
 
-  * [ ![sql server 2008数据库连接字符串大全](//img.jbzj.com/images/xgimg/bcimg7.png) ](/article/47789.htm "sql server 2008数据库连接字符串大全")
+  * [ ![sql server 2008数据库连接字符串大全](https://img.jbzj.com/images/xgimg/bcimg7.png) ](/article/47789.htm "sql server 2008数据库连接字符串大全")
 
 [sql server 2008数据库连接字符串大全](/article/47789.htm "sql server 2008数据库连接字符串大全")
 
 这篇文章主要介绍了sql server 2008数据库的连接字符串大全,需要的朋友可以参考下
 
-2014-03-03 
+2014-03-03
 
-  * [ ![SQL Server 2008中的代码安全（二） DDL触发器与登录触发器](//img.jbzj.com/images/xgimg/bcimg8.png) ](/article/27382.htm "SQL Server 2008中的代码安全（二） DDL触发器与登录触发器")
+  * [ ![SQL Server 2008中的代码安全（二） DDL触发器与登录触发器](https://img.jbzj.com/images/xgimg/bcimg8.png) ](/article/27382.htm "SQL Server 2008中的代码安全（二） DDL触发器与登录触发器")
 
 [SQL Server 2008中的代码安全（二） DDL触发器与登录触发器](/article/27382.htm "SQL Server 2008中的代码安全（二） DDL触发器与登录触发器")
 
-MicrosoftSQL Server 提供两种主要机制来强制使用业务规则和数据完整性：约束和触发器。触发器为特殊类型的存储过程，可在执行语言事件时自动生效。SQL Server 包括三种常规类型的触发器：DML 触发器、DDL 触发器和登录触发器。 
+MicrosoftSQL Server 提供两种主要机制来强制使用业务规则和数据完整性：约束和触发器。触发器为特殊类型的存储过程，可在执行语言事件时自动生效。SQL Server 包括三种常规类型的触发器：DML 触发器、DDL 触发器和登录触发器。
 
-2011-06-06 
+2011-06-06
 
-  * [ ![SQL Server2008 Order by在union子句不可直接使用的原因详解](//img.jbzj.com/images/xgimg/bcimg9.png) ](/article/191929.htm "SQL Server2008 Order by在union子句不可直接使用的原因详解")
+  * [ ![SQL Server2008 Order by在union子句不可直接使用的原因详解](https://img.jbzj.com/images/xgimg/bcimg9.png) ](/article/191929.htm "SQL Server2008 Order by在union子句不可直接使用的原因详解")
 
 [SQL Server2008 Order by在union子句不可直接使用的原因详解](/article/191929.htm "SQL Server2008 Order by在union子句不可直接使用的原因详解")
 
-这篇文章主要介绍了SQL Server2008 Order by在union子句不可直接使用的原因详解，文中通过示例代码介绍的非常详细，对大家的学习或者工作具有一定的参考学习价值，需要的朋友们下面随着小编来一起学习学习吧 
+这篇文章主要介绍了SQL Server2008 Order by在union子句不可直接使用的原因详解，文中通过示例代码介绍的非常详细，对大家的学习或者工作具有一定的参考学习价值，需要的朋友们下面随着小编来一起学习学习吧
 
-2020-07-07 
-
-
-
+2020-07-07
 
 #### 大家感兴趣的内容
 
@@ -212,8 +199,6 @@ MicrosoftSQL Server 提供两种主要机制来强制使用业务规则和数据
   *  _9_[SQL Server 2008 清空删除日志文件(瞬间日志变](/article/37305.htm "SQL Server 2008 清空删除日志文件\(瞬间日志变几M\)")
   *  _10_[图文详解SQL Server 2008R2使用教程](/article/91230.htm "图文详解SQL Server 2008R2使用教程")
 
-
-
 #### 最近更新的内容
 
   * [SQL Server 2008中的代码安全（二） DDL触发器与登录触发器](/article/27382.htm "SQL Server 2008中的代码安全（二） DDL触发器与登录触发器")
@@ -227,9 +212,4 @@ MicrosoftSQL Server 提供两种主要机制来强制使用业务规则和数据
   * [SQL Server 2008 R2占用cpu、内存越来越大的两种解决方法](/article/126888.htm "SQL Server 2008 R2占用cpu、内存越来越大的两种解决方法")
   * [如何利用SQL进行推理](/article/69737.htm "如何利用SQL进行推理")
 
-
-
 #### 常用在线小工具
-
-
-

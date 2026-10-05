@@ -30,7 +30,7 @@ Redis将数据存储于内存中，或被配置为使用虚拟内存。
 
 接下来我们来安装Redis
 
-1、先到Redis官网(redis.io)下载redis安装包 
+1、先到Redis官网(redis.io)下载redis安装包
 
 2、将其下载到我的/lamp目录下
 
@@ -38,27 +38,25 @@ Redis将数据存储于内存中，或被配置为使用虚拟内存。
 
 4、编译源程序
 
-make 
+make
 
 cd src
 
 make install PREFIX=/usr/local/redis
 
-5、将配置文件移动到redis目录  
-
+5、将配置文件移动到redis目录
 
 6、启动redis服务
 
 7、默认情况，Redis不是在后台运行，我们需要把redis放在后台运行
 
-vim /usr/local/redis/etc/redis.conf  
-
+vim /usr/local/redis/etc/redis.conf
 
 将daemonize的值改为yes
 
 8、客户端连接
 
-/usr/local/redis/bin/redis-cli 
+/usr/local/redis/bin/redis-cli
 
 9、停止redis实例
 

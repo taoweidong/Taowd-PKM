@@ -47,7 +47,6 @@ source: "[[topics/browser-bookmarks]]"
 
 ### 政务 / 社保 / 证书（5）
 
-- [关于启用西咸新区商品住房购房意向登记平台的公告](http://www.xixianxinqu.gov.cn/xwzx/tzgg/49778.htm)
 - [站点列表_流量统计_网站分析_数据专家cnzz.com](http://web.umeng.com/main.php?c=site&a=getcode&siteid=1272687680)
 - [西安市社保卡网上领卡查询和预约](http://113.140.18.123/xawt//sbkonlineyy/sbkOldOlineQueryAction.do)
 - [证书查询 - 中国教育考试网](http://zscx.neea.edu.cn/)
@@ -56,11 +55,9 @@ source: "[[topics/browser-bookmarks]]"
 ### 其他 / 综合（11）
 
 - [Git 状态图标不显示的解决办法](https://blog.csdn.net/weixin_37569761/article/details/121163352)
-- [PHPStorm2017、2018最新版激活方法（授权激活服务器-免注册码）长久有效 | 猛牛哥的博客](https://mengniuge.com/phpstorm2017-active.html)
 - [Spring MVC概述 - Spring MVC教程™](https://www.yiibai.com/spring_mvc/springmvc_overview.html)
 - [WPF性能调试系列 – 内存监测 - want - 博客园](https://www.cnblogs.com/jingridong/p/6385661.html)
 - [分享几个IP获取地理位置的API接口 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1152362)
-- [在线编辑 - 千邮](https://qy.hiwelink.com/apps/email-signature)
 - [外链工厂 - 免费无限外链相册](http://www.wailian.work/)
 - [快搜 - 搜索快人一步 - Google](http://search.chongbuluo.com/)
 - [数据总览](http://changyan.kuaizhan.com/overview)

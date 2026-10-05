@@ -37,7 +37,7 @@ source: "[[10-个人知识管理/Obsidian/常用插件]]"
 
 ### 学习资源（源笔记链接）
 
-- [Obsidian 官网](https://obsidian.md/) · [官方社区](https://forum.obsidian.md/) · [中文社区](https://forum-zh.obsidian.md/) · [发行日志](https://forum.obsidian.md/c/announcements/13) · [路线图(Trello)](https://trello.com/b/Psqfqp7I/obsidian-roadmap)
+- [Obsidian 官网](https://obsidian.md/) · [官方社区](https://forum.obsidian.md/) · [中文社区](https://forum-zh.obsidian.md/) ·  · [路线图(Trello)](https://trello.com/b/Psqfqp7I/obsidian-roadmap)
 - [官方中文帮助文档](https://publish.obsidian.md/help-zh/)
 - [PKMer 知识库](https://pkmer.cn/) — 含《利用 AI 构建完美的 Obsidian 资料库结构》
 - 知乎：[知识管理体系搭建实战指南](https://zhuanlan.zhihu.com/p/1912968515327075959) · [Obsidian 胎教级教程](https://zhuanlan.zhihu.com/p/26089182467)

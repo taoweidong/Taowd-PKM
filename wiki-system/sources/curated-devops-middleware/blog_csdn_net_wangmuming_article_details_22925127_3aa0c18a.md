@@ -364,7 +364,7 @@ Deploy on failure：构建失败依然部署，一般不选择
 
 在上面展示的截图中，您将注意到有两个图标描述当前作业的状态。S栏目代表着“最新构建状态”，W栏目代表着“构建稳定性”。Jenkins使用这两个概念来介绍一个作业的总体状况：
 
-构建状态:下图中分级符号概述了一个Job新近一次构建会产生的四种可能的状态： 
+构建状态:下图中分级符号概述了一个Job新近一次构建会产生的四种可能的状态：
 
 Successful:完成构建，且被认为是稳定的。
 
@@ -458,7 +458,6 @@ Jenkins运行自动部署war包到servlet容器内，要实现这个功能必须
 
 <http://www.cnblogs.com/gao241/archive/2013/04/08/3008380.html>
 
-  
 
 
 转：http://www.cnblogs.com/zz0412/p/jenkins02.html [点击打开链接](http://www.cnblogs.com/zz0412/p/jenkins02.html)

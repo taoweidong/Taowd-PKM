@@ -1,7 +1,7 @@
 ---
 source: "https://www.elastic.co/downloads"
 title: "Download and provision Elastic Products | Elastic"
-fetched_at: "2026-10-05 15:30:22"
+fetched_at: "2026-10-05 15:30:58"
 ---
 
 # Download and provision Elastic
@@ -11,8 +11,8 @@ Download [Elasticsearch](/downloads/elasticsearch) to get started with search, o
 #### Copy to try locally in two minutes
 
 For local development and testing, use Docker to install and run Elasticsearch and Kibana on your local machine using start-local.
-    
-    
+
+
     curl -fsSL https://elastic.co/start-local | sh
 
 [Read docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html)
@@ -40,9 +40,6 @@ Unify your logs, metrics, traces, and profiling at scale in a single platform.
 Protect, investigate, and respond to threats with AI-driven security analytics — the future of SIEM.
 
 [Provision on Elastic Cloud](https://cloud.elastic.co/registration?onboarding_token=security&elektra=downloads-overview&storm=security)
-
-
-
 
 ## Open source Elasticsearch
 
@@ -96,9 +93,6 @@ Discover, extract, and index web content with Elastic Open Web Crawler.
 
 [Download](/downloads/crawler)
 
-
-
-
 ## Didn't find what you were looking for? Try below.
 
   * ###### Kibana
@@ -109,9 +103,6 @@ Discover, extract, and index web content with Elastic Open Web Crawler.
 
   * ###### Archived plugins
 
-
-
-
 ## Visualize all your data
 
   * ### Kibana on Elastic Cloud
@@ -121,9 +112,6 @@ Discover, extract, and index web content with Elastic Open Web Crawler.
   * ### Kibana on-premises
 
 [Download](/downloads/kibana)
-
-
-
 
 **General Information:** The export control information provided on this Website may not reflect the most current legal or regulatory developments and Elastic does not represent, warrant, or guarantee that it is complete, accurate or up to date. It is not intended as legal advice or as an exhaustive interpretation of the export control laws and regulations. For specific guidance, you should consult with your legal counsel, export professional or relevant governmental authorities.
 
