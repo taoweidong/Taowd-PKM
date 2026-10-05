@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3fa176ba80feade2",
+        "id": "e5c14ea4fcbf6454",
         "type": "tabs",
         "children": [
           {
-            "id": "6164e83265189a5e",
+            "id": "789b46f6900c42c6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wiki-system/wiki/concepts/curated-devops-middleware.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "curated-devops-middleware"
+              "title": "新标签页"
             }
           }
         ]
@@ -219,8 +215,21 @@
       "periodic-notes:Open this week": false
     }
   },
-  "active": "6164e83265189a5e",
+  "active": "3af1964ff7e62804",
   "lastOpenFiles": [
+    "wiki-system/sources/curated-android/www_open-open_com_lib_view_open1377581482589_html_72e73e4c.md",
+    "wiki-system/sources/curated-android/www_2cto_com_kf_201407_321688_html_a7186107.md",
+    "wiki-system/sources/curated-android/txlong-onz_iteye_com_blog_870650_5890c42b.md",
+    "wiki-system/sources/curated-android/blog_csdn_net_yzhj2005_article_details_6980676_f255a8c8.md",
+    "wiki-system/sources/curated-android/ask_dcloud_net_cn_article_38_59b14e0a.md",
+    "wiki-system/sources/curated-android/blog_csdn_net_crazy1235_article_details_42614603_10ddf092.md",
+    "wiki-system/sources/curated-devops-middleware/www_ibm_com_developerworks_cn_java_j-ap01117_05f9f6d6.md",
+    "wiki-system/wiki/concepts/curated-devops-middleware.md",
+    "wiki-system/sources/curated-devops-middleware/yun_itheima_com_course_ea9076fa.md",
+    "wiki-system/sources/curated-devops-middleware/www_open-open_com_25_htm_7c42ef2c.md",
+    "wiki-system/sources/curated-devops-middleware/www_cnblogs_com_nick-huang_p_4848843_html_d2ec5be7.md",
+    "wiki-system/sources/curated-devops-middleware/www_freep_cn_zhuangxiu_6_News_2497746_html_ea7b34ab.md",
+    "wiki-system/sources/curated-devops-middleware/www_elastic_co_downloads_055873d2.md",
     "wiki-system/wiki/concepts/curated-databases.md",
     "wiki-system/wiki/concepts/curated-android.md",
     "wiki-system/wiki/concepts/2025-annual-tasks.md",
@@ -236,19 +245,6 @@
     "20-技术积累/Go语言入门.md",
     "20-技术积累/Dockerfile编写指南.md",
     "99-附件/favorites_2026_10_5.html",
-    "10-个人知识管理/高级查询语法.md",
-    "30-软件设计/领域驱动设计-DDD.md",
-    "50-项目记录/项目笔记模板.md",
-    "50-项目记录/项目总结模板.md",
-    "50-项目记录/项目B-部署流程.md",
-    "50-项目记录/项目B-架构设计.md",
-    "50-项目记录/项目A-需求分析.md",
-    "50-项目记录/项目A-问题解决.md",
-    "50-项目记录/项目A-技术选型.md",
-    "30-软件设计/重构案例研究.md",
-    "30-软件设计/软件设计学习路径.md",
-    "30-软件设计/软件架构-微服务架构.md",
-    "30-软件设计/设计模式-观察者模式.md",
     "未命名",
     "Clippings",
     "80-日记记录/2026/02",
