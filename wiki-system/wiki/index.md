@@ -1,6 +1,6 @@
 # Wiki 索引
 
-> 总页面数: 25 | 最后更新: 2026-10-05
+> 总页面数: 27 | 最后更新: 2026-10-05
 > 子系统: [[wiki-system]] · 规则: [[SCHEMA]]
 
 ## 按类型
@@ -8,7 +8,7 @@
 ### 实体 ({1})
 - [[entities/project-fullstack-admin]] — 全栈后台管理系统：FastAPI+Vue 企业级后台脚手架
 
-### 概念 ({23})
+### 概念 ({25})
 - [[concepts/project-ticket-system]] — 工程师工作台：项目-工单管理体系的 frontmatter 规范与看板
 - [[concepts/obsidian-dataview]] — Dataview：把仓库变动态数据库，工作台看板引擎
 - [[concepts/obsidian-quickadd]] — QuickAdd：一键 Capture/Template/Multi/Macro 自动化
@@ -17,7 +17,7 @@
 - [[concepts/slowapi-rate-limiting]] — slowapi 接口限流：/api/system 防刷（进行中 P1）
 - [[concepts/playwright-login-flow]] — Playwright 登录 UI 自动化（待办 P2）
 - [[concepts/note-organization-principles]] — 笔记组织原则：分层分类 + 链接优先 + 渐进完善
-- [[concepts/obsidian-common-plugins]] — 常用插件与 Obsidian 资源（半成品收集页）
+- [[concepts/obsidian-common-plugins]] — 常用插件与 Obsidian 资源（已补全：本库启用插件清单 + 学习链接）
 - [[concepts/curated-opensource-projects]] — 精选开源项目（收藏夹 Ingest 第1批）：FastAPI Best Architecture/pig/RuoYi/ELADMIN/vue-admin/Sa-Token/Apollo 等 10 个
 - [[concepts/curated-quality-blogs]] — 优质博客与学习资源（收藏夹 Ingest 第2批）：47 条，微服务/算法/Python·前端工程化/技术社区，9 篇已抓要点
 - [[concepts/curated-ai-ml]] — AI 与大模型（收藏夹 Ingest）：AGENTS.md/OpenCode 规则、WeaveFox、CNB、AI 主机升级、WSL 镜像、Vue 指南，8 条逐条精编
@@ -32,6 +32,8 @@
 - [[concepts/curated-opensource-more]] — 精选开源项目·剩余（收藏夹 Ingest）：48 个，Vue 模板/快速开发平台/文档工具（第1批见 curated-opensource-projects）
 - [[concepts/curated-web-tools]] — 网页工具与效率站点（收藏夹 Ingest）：33 条，设计素材/编辑器/开发工具/政务
 - [[concepts/curated-other-favorites]] — 其他混合收藏（收藏夹 Ingest）：59 条，AI 工具/社区/公司内网/生活
+- [[concepts/personal-knowledge-mgmt]] — 个人知识管理 · 目录与方法综述（编译自 10-个人知识管理 索引，标注索引孤立引用）
+- [[concepts/2025-annual-tasks]] — 2025 年度主要任务（编译自 2025我的主要任务，3 项已完成）
 
 ### 主题 ({1})
 - [[topics/browser-bookmarks]] — 浏览器收藏夹知识归类索引：734 条清洗为 661 篇知识文章 + 73 条工具链接，按 13 主题归类（Ingest 路线图）

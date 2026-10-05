@@ -44,3 +44,9 @@
   - ✨ 新增: [[concepts/curated-other-favorites]] — 其他混合收藏 59 条（AI 工具/社区/公司内网/生活）
   - 🔗 链接: 11 页 ↔ [[topics/browser-bookmarks]] ↔ [[entities/project-fullstack-admin]]
   - 📊 进度: 收藏夹 13 主题全部 Ingest 完成（661 篇知识文章 + 73 工具链接已归类编目）；生成分类知识页 12 张（含 AI 主题逐条精编）
+- 📥 Ingest（个人知识管理目录补全）:
+  - ✨ 新增: [[concepts/personal-knowledge-mgmt]] — 编译 `10-个人知识管理/` 两份重复自动索引（01-/10-）为综述页；标注「索引声称子笔记缺失」的孤立引用 Lint 发现
+  - ✨ 新增: [[concepts/2025-annual-tasks]] — 编译 2025 年度任务清单（3 项已完成，Obsidian Tasks 格式）
+  - 🔄 更新: [[concepts/obsidian-common-plugins]] — 从半成品补全为本库实际启用插件清单（依据 [[AGENTS]] 插件生态：Dataview/QuickAdd/Templater/Tasks/Omnisearch/Excalidraw/obsidian-git/Homepage）+ 保留源学习资源链接
+  - 🔗 链接: 三页 ↔ [[concepts/note-organization-principles]] / 插件指南（Dataview/QuickAdd/Homepage）/ [[wiki/index]]
+  - 📊 进度: 个人知识管理目录（10-）8 个文件中 7 个进入 wiki（两份索引合并为 1 综述 + 5 实质页）；总页面数 25→27（概念 23→25）
