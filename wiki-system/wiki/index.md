@@ -1,6 +1,6 @@
 # Wiki 索引
 
-> 总页面数: 13 | 最后更新: 2026-10-05
+> 总页面数: 25 | 最后更新: 2026-10-05
 > 子系统: [[wiki-system]] · 规则: [[SCHEMA]]
 
 ## 按类型
@@ -8,7 +8,7 @@
 ### 实体 ({1})
 - [[entities/project-fullstack-admin]] — 全栈后台管理系统：FastAPI+Vue 企业级后台脚手架
 
-### 概念 ({9})
+### 概念 ({23})
 - [[concepts/project-ticket-system]] — 工程师工作台：项目-工单管理体系的 frontmatter 规范与看板
 - [[concepts/obsidian-dataview]] — Dataview：把仓库变动态数据库，工作台看板引擎
 - [[concepts/obsidian-quickadd]] — QuickAdd：一键 Capture/Template/Multi/Macro 自动化
@@ -20,6 +20,18 @@
 - [[concepts/obsidian-common-plugins]] — 常用插件与 Obsidian 资源（半成品收集页）
 - [[concepts/curated-opensource-projects]] — 精选开源项目（收藏夹 Ingest 第1批）：FastAPI Best Architecture/pig/RuoYi/ELADMIN/vue-admin/Sa-Token/Apollo 等 10 个
 - [[concepts/curated-quality-blogs]] — 优质博客与学习资源（收藏夹 Ingest 第2批）：47 条，微服务/算法/Python·前端工程化/技术社区，9 篇已抓要点
+- [[concepts/curated-ai-ml]] — AI 与大模型（收藏夹 Ingest）：AGENTS.md/OpenCode 规则、WeaveFox、CNB、AI 主机升级、WSL 镜像、Vue 指南，8 条逐条精编
+- [[concepts/curated-java-backend]] — Java 后端框架（收藏夹 Ingest）：57 条，Spring/MyBatis/Netty/Security/Activiti/基础
+- [[concepts/curated-databases]] — 数据库技术（收藏夹 Ingest）：102 条，Oracle/MySQL/SQL Server/Redis/MongoDB/PowerDesigner
+- [[concepts/curated-frontend]] — 前端开发（收藏夹 Ingest）：70 条，Vue/EasyUI/Bootstrap/jQuery/UI 库/构建工具
+- [[concepts/curated-linux-ops]] — Linux 与运维（收藏夹 Ingest）：90 条，安装配置/Shell/SSH/监控/IDE 工具链
+- [[concepts/curated-devops-middleware]] — DevOps 与中间件（收藏夹 Ingest）：76 条，Docker/Jenkins/Maven/RabbitMQ/ELK/微服务
+- [[concepts/curated-python]] — Python 技术（收藏夹 Ingest）：21 条，基础/Django·Flask·FastAPI/爬虫/运维
+- [[concepts/curated-android]] — Android 开发（收藏夹 Ingest）：13 条，环境/定位地图/源码教程
+- [[concepts/curated-software-exam]] — 软考备考（收藏夹 Ingest）：12 条，官网/知识点/试题心得
+- [[concepts/curated-opensource-more]] — 精选开源项目·剩余（收藏夹 Ingest）：48 个，Vue 模板/快速开发平台/文档工具（第1批见 curated-opensource-projects）
+- [[concepts/curated-web-tools]] — 网页工具与效率站点（收藏夹 Ingest）：33 条，设计素材/编辑器/开发工具/政务
+- [[concepts/curated-other-favorites]] — 其他混合收藏（收藏夹 Ingest）：59 条，AI 工具/社区/公司内网/生活
 
 ### 主题 ({1})
 - [[topics/browser-bookmarks]] — 浏览器收藏夹知识归类索引：734 条清洗为 661 篇知识文章 + 73 条工具链接，按 13 主题归类（Ingest 路线图）

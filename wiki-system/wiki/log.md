@@ -29,3 +29,18 @@
   - ✨ 新增: [[concepts/curated-quality-blogs]] — 分四类（微服务架构/算法/Python·前端工程化/技术社区），抓取 9 篇核心文章提炼要点
   - 🔗 链接: 优质博客 ↔ [[topics/browser-bookmarks]] ↔ [[concepts/curated-opensource-projects]] ↔ [[entities/project-fullstack-admin]]
   - ⚠️ 3 篇抓取失败（简书权限页 / daocloud fetch error / keepalived 403），已标注待补
+- 📥 Ingest 第 3~13 批（收藏夹剩余 11 个主题，分类知识页）:
+  - ✨ 新增: [[concepts/curated-ai-ml]] — AI 与大模型 8 条，逐条抓取 7 篇提炼要点（OpenCode 规则 / AGENTS.md 编写 / WeaveFox / cnb hello-cnb / AI 主机升级 / WSL 镜像 / Vue 应用）；千问 Token Plan 登录墙仅记导航
+  - ✨ 新增: [[concepts/curated-java-backend]] — Java 后端框架 57 条（Spring/MyBatis/Netty/Security/Activiti/基础）
+  - ✨ 新增: [[concepts/curated-databases]] — 数据库 102 条（Oracle/MySQL/SQL Server/Redis/MongoDB/PowerDesigner/SQL 语法/安装部署）
+  - ✨ 新增: [[concepts/curated-frontend]] — 前端 70 条（Vue/EasyUI/Bootstrap/jQuery/UI 库/构建工具/模板）
+  - ✨ 新增: [[concepts/curated-linux-ops]] — Linux 与运维 90 条（安装配置/Shell/SSH/监控/IDE 工具链）
+  - ✨ 新增: [[concepts/curated-devops-middleware]] — DevOps 与中间件 76 条（Docker/Jenkins/Maven/RabbitMQ/ELK/微服务）
+  - ✨ 新增: [[concepts/curated-python]] — Python 21 条（基础/Django·Flask·FastAPI/爬虫/运维）
+  - ✨ 新增: [[concepts/curated-android]] — Android 13 条（环境/定位地图/源码教程）
+  - ✨ 新增: [[concepts/curated-software-exam]] — 软考 12 条（官网/知识点/试题心得）
+  - ✨ 新增: [[concepts/curated-opensource-more]] — 开源项目·剩余 48 个（Vue 模板/快速开发平台/文档工具；第 1 批 10 个见 [[concepts/curated-opensource-projects]]）
+  - ✨ 新增: [[concepts/curated-web-tools]] — 网页工具 33 条（设计素材/编辑器/开发工具/政务）
+  - ✨ 新增: [[concepts/curated-other-favorites]] — 其他混合收藏 59 条（AI 工具/社区/公司内网/生活）
+  - 🔗 链接: 11 页 ↔ [[topics/browser-bookmarks]] ↔ [[entities/project-fullstack-admin]]
+  - 📊 进度: 收藏夹 13 主题全部 Ingest 完成（661 篇知识文章 + 73 工具链接已归类编目）；生成分类知识页 12 张（含 AI 主题逐条精编）
