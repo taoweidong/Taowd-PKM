@@ -1,0 +1,31 @@
+# 变更日志
+
+## 2026-10-05
+- ✨ 初始化: 创建 `wiki-system/` LLM Wiki 子系统（raw/ + wiki/ + SCHEMA.md）
+- 📝 新增: [[SCHEMA]] — 规则配置文件
+- 📝 新增: [[wiki/index]] — 内容目录（含数据源映射与空占位清单）
+- ✨ 新增: [[concepts/project-ticket-system]] — 编译自 [[50-项目记录/工程师工作台]]
+- ✨ 新增: [[entities/project-fullstack-admin]] — 编译自 [[50-项目记录/项目-全栈后台管理系统]]
+- 🔗 链接: [[concepts/project-ticket-system]] ↔ [[entities/project-fullstack-admin]]
+- ✨ 新增: [[concepts/obsidian-dataview]] — 编译自 Dataview 指南
+- ✨ 新增: [[concepts/obsidian-quickadd]] — 编译自 QuickAdd 指南
+- ✨ 新增: [[concepts/obsidian-homepage]] — 编译自 Homepage 指南
+- ✨ 新增: [[concepts/dictionary-api-500-error]] — 编译自 Dictionary API 500 工单（已完成 P0）
+- ✨ 新增: [[concepts/slowapi-rate-limiting]] — 编译自 slowapi 限流工单（进行中 P1）
+- ✨ 新增: [[concepts/playwright-login-flow]] — 编译自 Playwright 登录工单（待办 P2）
+- 🔗 链接: Dataview ↔ 工作台体系；Dictionary 500 / slowapi / Playwright ↔ 全栈后台管理系统
+- ✨ 新增: [[concepts/note-organization-principles]] — 编译自笔记组织原则
+- ✨ 新增: [[concepts/obsidian-common-plugins]] — 编译自常用插件（标注为半成品收集页）
+- 🔗 链接: 笔记组织原则 ↔ 工作台体系（链接优先）；常用插件 ↔ QuickAdd
+- 📂 处理: 浏览器收藏夹 `90-待整理与临时笔记/favorites_2026_10_5.html`（Chrome 导出，734 条，338 域名）
+  - 📝 新增: [[raw/browser-bookmarks-favorites_2026_10_5]] — 原始书签转储（raw 层，只读）
+  - 📝 新增: [[topics/browser-bookmarks]] — 分类索引：清洗为 661 篇知识文章 + 73 条工具链接，按 13 主题归类
+  - 🔗 链接: 索引 ↔ [[wiki-system]] / [[SCHEMA]]；待按优先级分批 Ingest（开源项目/优质博客/AI/架构类）
+- 📥 Ingest 第 1 批（开源项目主题，10/59）:
+  - ✨ 新增: [[concepts/curated-opensource-projects]] — FastAPI Best Architecture/pig/RuoYi/ELADMIN/vue-element-admin/vue-vben-admin/Sa-Token/Apollo/HelloGitHub/Django-Vue-Admin
+  - 🔗 链接: 精选开源项目 ↔ [[topics/browser-bookmarks]] ↔ [[entities/project-fullstack-admin]]（对标 KontainKeeper 技术栈）
+  - ⚠️ Django-Vue-Admin 深链 404，标记待补抓；剩余 49 条开源项目待后续批次
+- 📥 Ingest 第 2 批（优质博客主题，47 条）:
+  - ✨ 新增: [[concepts/curated-quality-blogs]] — 分四类（微服务架构/算法/Python·前端工程化/技术社区），抓取 9 篇核心文章提炼要点
+  - 🔗 链接: 优质博客 ↔ [[topics/browser-bookmarks]] ↔ [[concepts/curated-opensource-projects]] ↔ [[entities/project-fullstack-admin]]
+  - ⚠️ 3 篇抓取失败（简书权限页 / daocloud fetch error / keepalived 403），已标注待补

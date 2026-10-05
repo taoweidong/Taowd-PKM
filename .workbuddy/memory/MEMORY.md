@@ -29,6 +29,18 @@
 - 公式含双引号时，整个公式用单引号包裹：`'if(done, "Yes", "No")'`
 - 校验 YAML 用系统 Python（`D:/Program Files/Python3.10/python.exe`，自带 pyyaml）；managed python 3.13 未装 pyyaml
 
+## LLM Wiki 子系统（2026-10-05 建立）
+
+在知识库内新增 `wiki-system/` 顶层目录，作为 LLM Wiki 编译层，与 `00-99` 主结构并存、互不干扰。
+
+| 层 | 路径 | 角色 |
+|---|---|---|
+| 原始资料层 | `wiki-system/raw/` | 用户投放原文，只读 |
+| 编译知识层 | `wiki-system/wiki/` | index.md / log.md / entities / concepts / topics |
+| 规则配置 | `wiki-system/SCHEMA.md` | 全部规则 |
+
+**使用约定**：把文章/论文/笔记丢进 `raw/` 后说"处理 raw/ 里的新文件"触发 Ingest；日常主结构（`00-99`）是数据源，wiki/ 是提炼层，不重复搬运、用 wikilink 引用。页面模板用 llm-wiki 规范（frontmatter + 摘要/详情/关联/引用来源/变更记录），天然兼容 Obsidian。
+
 ## 用户协作习惯
 
 - 验证结果用表格，探索结果用清单，报错要根因分析
