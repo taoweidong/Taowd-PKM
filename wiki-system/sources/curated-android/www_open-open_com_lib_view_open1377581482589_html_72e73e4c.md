@@ -50,7 +50,6 @@ _0_ __
 
 User.java：
 
-
     package com.broada.demo.entity;
     /**
      *
@@ -64,7 +63,6 @@ User.java：
         private String password;    //用户密码
         private String username;    //用户昵称
         private String address;     //地址
-
 
         public String getUsername() {
             return username;
@@ -112,7 +110,6 @@ User.java：
 
 Web.xml:
 
-
     <!-- struts2模块 -->
         <filter>
             <filter-name>struts2</filter-name>
@@ -128,7 +125,6 @@ Web.xml:
         </filter-mapping>
 
 strust.xml:
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
@@ -169,7 +165,6 @@ strust.xml:
 
 jdbc.properties：
 
-
     jdbc.driverClass=com.mysql.jdbc.Driver
     jdbc.url=jdbc:mysql://localhost:3306/userinfo
     jdbc.user=root
@@ -187,7 +182,6 @@ jdbc.properties：
 
 SqlMapConfig.xml：
 
-
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
     "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
@@ -197,7 +191,6 @@ SqlMapConfig.xml：
     </sqlMapConfig>
 
 User.xml：
-
 
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
@@ -222,7 +215,6 @@ User.xml：
 
 web.xml：
 
-
     <listener>
             <!-- 这个就是今后用到的WebApplicationUtilContent -->
             <listener-class>
@@ -240,7 +232,6 @@ web.xml：
 
 applicationContext-web.xml:
 
-
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -250,19 +241,7 @@ applicationContext-web.xml:
            class="com.mchange.v2.c3p0.ComboPooledDataSource"
             destroy-method="close">
 
-
-
-
-
-
-
-
-
-
-
-
         </bean>
-
 
        <!-- 上面的数据源的value值用的是表达式，原因就在这里，这将配置文件放到了iBatis目录下，也就是jdbc.properties，设置了c3p0的各项参数 -->
         <bean id="propertyConfig"
@@ -290,13 +269,11 @@ applicationContext-web.xml:
 
         <bean id="userDaoServiceId" class="com.broada.demo.serviceImpl.UserDaoServiceImpl">
 
-
         </bean>
          <!-- 用户注册action-->
         <bean id="registerAction" name="registerAction"  class="com.broada.demo.action.RegisterAction" scope="prototype">
 
         </bean>
-
 
     </beans>
 
@@ -305,7 +282,6 @@ applicationContext-web.xml:
 最后编写相关的dao层，service层，action层以及jsp等等，我就不详细说明了，直接上相关代码：
 
 RegisterAction.java：
-
 
     package com.broada.demo.action;
 
@@ -407,7 +383,6 @@ RegisterAction.java：
 
 UserDao.java：
 
-
     package com.broada.demo.dao;
 
     /**
@@ -439,7 +414,6 @@ UserDao.java：
 
 UserDaoImpl.java：
 
-
     package com.broada.demo.daoImpl;
     /**
      * @author smm
@@ -450,8 +424,6 @@ UserDaoImpl.java：
     import com.broada.demo.entity.User;
 
     public class UserDaoImpl extends SqlMapClientDaoSupport implements UserDao{
-
-
 
         @Override
         public boolean insertUser(User user) {
@@ -479,7 +451,6 @@ UserDaoImpl.java：
     }
 
 UserDaoServiceInter.java：
-
 
     package com.broada.demo.service;
 
@@ -509,7 +480,6 @@ UserDaoServiceInter.java：
     }
 
 UserDaoServiceImpl.java：
-
 
     package com.broada.demo.serviceImpl;
 
@@ -544,7 +514,6 @@ UserDaoServiceImpl.java：
 
 Index.jsp：
 
-
     <%@ page language="java" contentType="text/html; charset=utf8"
         pageEncoding="utf8"%>
         <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -555,8 +524,6 @@ Index.jsp：
     <link rel="stylesheet" type="text/css" href="css/ext-all.css" />
     <link rel="stylesheet" type="text/css"
         href="css/ext-theme-classic-all.css" />
-
-
 
     <title>用户登陆</title>
 
@@ -670,7 +637,6 @@ Index.jsp：
             var name = Ext.getCmp('username').getValue();
             var password = Ext.getCmp('password').getValue();
 
-
             if(name == " " || password == ""){
                  Ext.MessageBox.alert('提示', '账号或密码不能为空！');
             }
@@ -692,8 +658,6 @@ Index.jsp：
              });
             }
         };
-
-
 
     </head>
     <body>

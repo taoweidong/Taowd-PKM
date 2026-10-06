@@ -6,8 +6,6 @@ fetched_at: "2026-10-05 15:31:19"
 
 # jQuery EasyUI 教程
 
-
-
 jQuery EasyUI 是一个基于 jQuery 的框架，集成了各种用户界面插件。
 
 jQuery EasyUI 框架提供了创建网页所需的一切，帮助您轻松建立站点。本教程将告诉您如何使用 jQuery EasyUI 框架创建应用。

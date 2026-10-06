@@ -16,7 +16,6 @@ c3p0(2个)、jdbc（1个）、spring（15个）、Hibernate（10个）、Struts2
 
 2， 在src目录下新建一个实体类的包，并新建一个实体类
 
-
     package com.han.entity;
 
     import java.util.Date;
@@ -76,7 +75,6 @@ db.properties的配置（放在src下面）：
 
 dao层接口
 
-
     package com.hanqi.dao;
 
     import java.util.List;
@@ -97,7 +95,6 @@ dao层接口
     }
 
 dao层接口的实现类impl
-
 
     package com.hanqi.dao.impl;
 
@@ -156,7 +153,6 @@ dao层接口的实现类impl
             {
                  qu.setString("sclasss", sclasss) ;
             }
-
 
             //System.out.println(sql);
             list = qu.setMaxResults(rows)//每页行数
@@ -220,7 +216,6 @@ dao层接口的实现类impl
 
 service层接口
 
-
     package com.hanqi.service;
 
     import java.util.List;
@@ -244,7 +239,6 @@ service层接口
     }
 
 service层接口的实现类impl
-
 
     package com.hanqi.service.impl;
 
@@ -318,7 +312,6 @@ service层接口的实现类impl
     }
 
 action类（这里用的域模型来接受从页面传递过来的参数，即直接定义名字相同的属性值，并生成set、get方法）
-
 
     package com.hanqi.action;
 
@@ -467,7 +460,6 @@ action类（这里用的域模型来接受从页面传递过来的参数，即�
         private String sclass ;
         private String sbirthday ;
 
-
         public String getSno() {
             return sno;
         }
@@ -525,7 +517,6 @@ action类（这里用的域模型来接受从页面传递过来的参数，即�
 
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-
                     stu.setSbirthday(sdf.parse(sbirthday));
 
                     studentService.insert(stu);
@@ -564,7 +555,6 @@ action类（这里用的域模型来接受从页面传递过来的参数，即�
 
 字符串格式的泛型辅助类，代码如下：
 
-
     package com.hanqi.service;
 
     import java.util.ArrayList;
@@ -592,11 +582,9 @@ action类（这里用的域模型来接受从页面传递过来的参数，即�
             this.rows = rows;
         }
 
-
     }
 
 Struts.xml
-
 
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE struts PUBLIC
@@ -607,8 +595,6 @@ Struts.xml
         <!-- 允许调用静态方法和静态属性 -->
         <constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
         <constant name="struts.action.extension" value="do,action,,"></constant>
-
-
 
                 <action name="studentAction"
                         class="studentAction" method="getStudentList">
@@ -624,11 +610,9 @@ Struts.xml
                         <!-- method 方法是Action这个类中的方法 -->
                 </action>
 
-
     </struts>
 
 app.xml
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -651,28 +635,16 @@ app.xml
     <!-- 连接池 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 
-
-
-
-
-
     </bean>
-
 
     <!-- Hibernate 的 SessionFactory -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
-
-
-
         <!-- 加载Hibernate的配置文件 -->
-
 
         <!-- 映射文件， 可以使用*作为通配符-->
 
-
     </bean>
-
 
     <!-- bean -->
     <!-- DAO -->
@@ -713,7 +685,6 @@ app.xml
 
 Hibernate.cfg.xml
 
-
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
                                              "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
@@ -737,7 +708,6 @@ Hibernate.cfg.xml
     </hibernate-configuration>
 
 web.xml(这里同时还配置了过滤器要放在Struts配置之前)
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
@@ -780,7 +750,6 @@ web.xml(这里同时还配置了过滤器要放在Struts配置之前)
             <url-pattern>/*</url-pattern>
         </filter-mapping>
 
-
       <!-- 加载 spring 配置 -->
       <!-- needed for ContextLoaderListener -->
         <context-param>
@@ -793,13 +762,9 @@ web.xml(这里同时还配置了过滤器要放在Struts配置之前)
             <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
         </listener>
 
-
-
-
     </web-app>
 
 html（在页面的部分并没有多大改动，只是提交的servlert变成了Struts2的action）
-
 
     <!DOCTYPE html>
     <html>
@@ -807,7 +772,6 @@ html（在页面的部分并没有多大改动，只是提交的servlert变成�
     <meta charset="UTF-8">
     <title>77</title>
     <!-- 1    jQuery的js包 -->
-
 
     <!-- 2    css资源 -->
     <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.4/themes/default/easyui.css">
@@ -817,13 +781,10 @@ html（在页面的部分并没有多大改动，只是提交的servlert变成�
 
     <!-- 4    EasyUI的js包 -->
 
-
     <!-- 5    本地语言 -->
-
 
     </head>
     <body>
-
 
     //把long型日期转为想要类型
     function getDate(date)
@@ -978,14 +939,12 @@ html（在页面的部分并没有多大改动，只是提交的servlert变成�
     });
     })
 
-
             <form action=""  id="form2">
             姓名<input class="easyui-textbox" id="snames" name="snames">
             班级<input class="easyui-textbox" id="sclasss" name="sclasss">
             </form>
 
     <table id="dg"></table>
-
 
     <form action="" id="form1" method="post">
     <table border="0" width="100%">
@@ -1017,9 +976,6 @@ html（在页面的部分并没有多大改动，只是提交的servlert变成�
         </tr>
     </table>
     </form>
-
-
-
 
     </body>
     </html>

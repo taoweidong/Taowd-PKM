@@ -16,13 +16,11 @@ fetched_at: "2026-10-05 15:35:52"
 
 VM虚拟机下linux系统，桥接和NAT方式，都是可以临时切换，即时生效的，不必纠结于到底使用哪个好。
 
-
     关于虚拟机VMware 3种网络模式（桥接、nat、Host-only）的工作原理，可参见我的另一篇博客
 
     [http://www.cnblogs.com/gylei/archive/2012/04/06/2435087.html](http://www.cnblogs.com/gylei/archive/2012/04/06/2435087.html%20 "虚拟机VMware3种网络模式（桥接、nat、Host-only）的工作原理")
 
 一、NAT方式不必多说，也没什么说的；你不会，就先别学linux了，先研究研究虚拟机和网络吧。
-
 
 二、桥接模式设置小解：
 **第1步**

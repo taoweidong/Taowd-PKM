@@ -73,8 +73,6 @@ public void setChildren(List<EasyUiTree> children) {
 this.children = children;
 }
 
-
-
 }
 
 测试代码如下：
@@ -87,7 +85,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
-
 
 /**@ClassName: TestJsonTree
 * @Description: TODO(这里用一句话描述这个类的作用)
@@ -129,7 +126,6 @@ System.out.println("test 开始转化");
 str= JSON.toJSONString(tree1);
 System.out.println(str);
 System.exit(0);
-
 
 }
 

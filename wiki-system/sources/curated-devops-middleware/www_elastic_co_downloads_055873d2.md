@@ -12,7 +12,6 @@ Download [Elasticsearch](/downloads/elasticsearch) to get started with search, o
 
 For local development and testing, use Docker to install and run Elasticsearch and Kibana on your local machine using start-local.
 
-
     curl -fsSL https://elastic.co/start-local | sh
 
 [Read docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html)

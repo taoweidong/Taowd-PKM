@@ -18,7 +18,6 @@ Conway’s law: Organizations which design systems[...] are constrained to produ
 
 [![2016102722](https://images2015.cnblogs.com/blog/15172/201612/15172-20161225120448886-1875260050.png)](http://images2015.cnblogs.com/blog/15172/201612/15172-20161225120448464-637592260.png)
 
-
 Monolithic比较适合小项目，优点是：
 
 开发简单直接，集中式管理, 基本不会重复开发
@@ -345,7 +344,6 @@ Twitter的微服务架构，注重高效的可扩展的数据中心：
 如有想了解更多软件研发 , 系统 IT集成 , 企业信息化，项目管理，企业管理 等资讯，请关注我的微信订阅号：
 
 [![MegadotnetMicroMsg_thumb1_thumb1_thu\[1\]](https://images0.cnblogs.com/blog/15172/201412/061436392178007.jpg)](https://images0.cnblogs.com/blog/15172/201412/061436383581137.jpg)
-
 
 作者：[Petter Liu](http://www.cnblogs.com/wintersun/)
 出处：<http://www.cnblogs.com/wintersun/>

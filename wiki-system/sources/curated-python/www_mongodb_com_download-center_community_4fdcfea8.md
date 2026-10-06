@@ -20,12 +20,9 @@ The Community version of our distributed database offers a flexible document dat
 
 * * *
 
-
-
 To download MongoDB Community Server, use the download link below, and [read the installation documentation](https://www.mongodb.com/docs/manual/administration/install-community/).
 
 Or get started with [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) (on macOS) from your MongoDB [terminal](https://www.mongodb.com/products/tools/atlas-cli?tck=community_atlas_ct) with the following two commands:
-
 
     Code Snippet$ brew install mongodb-atlas
     $ atlas setup

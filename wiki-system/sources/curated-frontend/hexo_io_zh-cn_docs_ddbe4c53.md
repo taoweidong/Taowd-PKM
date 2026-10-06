@@ -69,9 +69,7 @@ Node.js 为大多数平台提供了官方的 [安装程序](https://nodejs.org/z
 
 所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。
 
-
     $ npm install -g hexo-cli
-
 
 ---
 
@@ -79,9 +77,7 @@ Node.js 为大多数平台提供了官方的 [安装程序](https://nodejs.org/z
 
 对于熟悉 npm 的进阶用户，可以仅局部安装 `hexo` 包。
 
-
     $ npm install hexo
-
 
 ---
 
@@ -90,10 +86,7 @@ Node.js 为大多数平台提供了官方的 [安装程序](https://nodejs.org/z
   1. `npx hexo <command>`
   2. Linux 用户可以将 Hexo 所在的目录下的 `node_modules` 添加到环境变量之中即可直接使用 `hexo <command>`：
 
-
-
     echo 'PATH="$PATH:./node_modules/.bin"' >> ~/.profile
-
 
 ---
 

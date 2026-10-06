@@ -32,7 +32,6 @@ ConcurrentHashMap是由Segment数组结构和HashEntry数组结构组成。Segme
 
 ConcurrentHashMap(1.7及之前)中主要实体类就是三个：ConcurrentHashMap（整个Hash表）,Segment（桶），HashEntry（节点），对应上面的图可以看出之间的关系
 
-
     /**
     * The segments, each of which is a specialized hash table
     */
@@ -41,7 +40,6 @@ ConcurrentHashMap(1.7及之前)中主要实体类就是三个：ConcurrentHashMa
 ## 不变(Immutable)和易变(Volatile)
 
 ConcurrentHashMap完全允许多个读操作并发进行，读操作并不需要加锁。如果使用传统的技术，如HashMap中的实现，如果允许可以在hash链的中间添加或删除元素，读操作不加锁将得到不一致的数据。ConcurrentHashMap实现技术是保证HashEntry几乎是不可变的。HashEntry代表每个hash链中的一个节点，其结构如下所示：
-
 
      static final class HashEntry<K,V> {
          final K key;
@@ -57,7 +55,6 @@ ConcurrentHashMap完全允许多个读操作并发进行，读操作并不需要
 为了加快定位段以及段中hash槽的速度，每个段hash槽的的个数都是2^n，这使得通过位运算就可以定位段和段中hash槽的位置。当并发级别为默认值16时，也就是段的个数，hash值的高4位决定分配在哪个段中。但是我们也不要忘记《算法导论》给我们的教训：hash槽的的个数不应该是 2^n，这可能导致hash槽分配不均，这需要对hash值重新再hash一次。（这段似乎有点多余了 ）
 
 ## 定位操作：
-
 
      final Segment<K,V> segmentFor(int hash) {
          return segments[(hash >>> segmentShift) & segmentMask];
@@ -89,7 +86,6 @@ System.out.println(Integer.parseInt("1111111", 2) & 15);
 
 默认情况下segmentShift为28，segmentMask为15，再哈希后的数最大是32位二进制数据，向右无符号移动28位，意思是让高4位参与到hash运算中， (hash >>> segmentShift) & segmentMask的运算结果分别是4，15，7和8，可以看到hash值没有发生冲突。
 
-
     final Segment<K,V> segmentFor(int hash) {
         return segments[(hash >>> segmentShift) & segmentMask];
     }
@@ -101,7 +97,6 @@ System.out.println(Integer.parseInt("1111111", 2) & 15);
 关于Hash表的基础数据结构，这里不想做过多的探讨。Hash表的一个很重要方面就是如何解决hash冲突，ConcurrentHashMap 和HashMap使用相同的方式，都是将hash值相同的节点放在一个hash链中。与HashMap不同的是，ConcurrentHashMap使用多个子Hash表，也就是段(Segment)。
 
 每个Segment相当于一个子Hash表，它的数据成员如下：
-
 
     static final class Segment<K,V> extends ReentrantLock implements Serializable {
              /**
@@ -140,7 +135,6 @@ count用来统计该段数据的个数，它是volatile，它用来协调修改�
 
 ## 删除操作remove(key)
 
-
     public V remove(Object key) {
        hash = hash(key.hashCode());
        return segmentFor(hash).remove(key, hash, null);
@@ -149,7 +143,6 @@ count用来统计该段数据的个数，它是volatile，它用来协调修改�
 整个操作是先定位到段，然后委托给段的remove操作。当多个删除操作并发进行时，只要它们所在的段不相同，它们就可以同时进行。
 
 下面是Segment的remove方法实现：
-
 
      V remove(Object key, int hash, Object value) {
          lock();
@@ -207,7 +200,6 @@ count用来统计该段数据的个数，它是volatile，它用来协调修改�
 
 ConcurrentHashMap的get操作是直接委托给Segment的get方法，直接看Segment的get方法：
 
-
     V get(Object key, int hash) {
          if (count != 0) { // read-volatile 当前桶的数据个数是否为0
              HashEntry<K,V> e = getFirst(hash);  得到头节点
@@ -234,7 +226,6 @@ get操作不需要锁。
 
 最后，如果找到了所求的结点，判断它的值如果非空就直接返回，否则在有锁的状态下再读一次。这似乎有些费解，理论上结点的值不可能为空，这是因为 put的时候就进行了判断，如果为空就要抛NullPointerException。空值的唯一源头就是HashEntry中的默认值，因为 HashEntry中的value不是final的，非同步读取有可能读取到空值。仔细看下put操作的语句：tab[index] = new HashEntry<K,V>(key, hash, first, value)，在这条语句中，HashEntry构造函数中对value的赋值以及对tab[index]的赋值可能被重新排序，这就可能导致结点的值为空。这里当v为空时，可能是一个线程正在改变节点，而之前的get操作都未进行锁定，根据bernstein条件，读后写或写后读都会引起数据的不一致，所以这里要对这个e重新上锁再读一遍，以保证得到的是正确值。
 
-
      V readValueUnderLock(HashEntry<K,V> e) {
          lock();
          try {
@@ -249,7 +240,6 @@ get操作不需要锁。
 ## put操作
 
 同样地put操作也是委托给段的put方法。下面是段的put方法：
-
 
      V put(K key, int hash, V value, boolean onlyIfAbsent) {
          lock();
@@ -290,7 +280,6 @@ get操作不需要锁。
   * 如何扩容。扩容的时候首先会创建一个两倍于原容量的数组，然后将原数组里的元素进行再hash后插入到新的数组里。为了高效ConcurrentHashMap不会对整个容器进行扩容，而只对某个segment进行扩容。
 
 另一个操作是containsKey，这个实现就要简单得多了，因为它不需要读取值：
-
 
      boolean containsKey(Object key, int hash) {
          if (count != 0) { // read-volatile

@@ -106,7 +106,6 @@ Whether starting from scratch or rebuilding a rich ecosystem, get pipelines flow
 
 Python JavaScipt (node.JS) Java C/C++ PHP Rust Go C# Ruby
 
-
     language: python
     python:
       - "3.7"
@@ -159,7 +158,6 @@ Python JavaScipt (node.JS) Java C/C++ PHP Rust Go C# Ruby
 
 Copied
 
-
     language: node_js
     node_js:
       - "12"
@@ -211,7 +209,6 @@ Copied
           - secure: "encrypted-slack-webhook-url"
 
 Copied
-
 
     language: java
     jdk:
@@ -269,9 +266,7 @@ Copied
         - main
         - develop
 
-
 Copied
-
 
     language: cpp
     compiler:
@@ -290,7 +285,6 @@ Copied
       email: false
 
 Copied
-
 
     language: php
     php:
@@ -314,7 +308,6 @@ Copied
       email: false
 
 Copied
-
 
     language: rust
     rust:
@@ -341,7 +334,6 @@ Copied
       email: false
 
 Copied
-
 
     language: go
     go:
@@ -372,7 +364,6 @@ Copied
 
 Copied
 
-
     language: csharp
     mono: none
     dotnet: 6.0.100
@@ -397,7 +388,6 @@ Copied
         - $HOME/.nuget/packages
 
 Copied
-
 
     language: ruby
     rvm:
@@ -431,7 +421,6 @@ PHYTON Javascript (node.js) Java C++ php Rust Go C# Ruby
 
 ![](https://www.travis-ci.com/wp-content/uploads/2025/06/t-icon.svg)
 
-
     language: python
     python:
       - "3.7"
@@ -486,7 +475,6 @@ Copied
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
 
-
     language: node_js
     node_js:
       - "12"
@@ -540,7 +528,6 @@ Copied
 Copied
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
-
 
     language: java
     jdk:
@@ -602,7 +589,6 @@ Copied
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
 
-
     language: cpp
     compiler:
       - gcc
@@ -622,7 +608,6 @@ Copied
 Copied
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
-
 
     language: php
 
@@ -649,7 +634,6 @@ Copied
 Copied
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
-
 
     language: rust
 
@@ -679,7 +663,6 @@ Copied
 Copied
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
-
 
     language: go
 
@@ -713,7 +696,6 @@ Copied
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
 
-
     language: csharp
     mono: none
     dotnet: 6.0.100
@@ -740,7 +722,6 @@ Copied
 Copied
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
-
 
     language: ruby
     rvm:
@@ -771,7 +752,6 @@ Travis CI elegantly compacts all your testing automation into one minimal Config
 ![](https://www.travis-ci.com/wp-content/uploads/2025/06/t-icon.svg)
 
 Build matrix Parallel builds Integrations Notifications Build Stage and Conditionals Multiple OSs and Architectures
-
 
     language: python
     python:
@@ -809,7 +789,6 @@ Copied
 
 Run tests against different versions of your runtimes or dependencies—or even multiple languages—for comprehensive automation and absolute quality guarantees on your way to production.
 
-
     language: python
     python:
       - "3.8"
@@ -843,7 +822,6 @@ Copied
 
 Quickly split complex operations, like unit and integration tests, into multiple jobs that give you faster visual feedback on code quality and results—stop waiting on your pipeline to finish and get back to your IDE.
 
-
     language: python
     python:
       - "3.8"
@@ -876,7 +854,6 @@ Quickly split complex operations, like unit and integration tests, into multiple
 Copied
 
 Enable the must-haves, like build status images, static code analysis, and key management without wasting time on needlessly complex glue. For everything else, the Travis CI API has your back.
-
 
     language: python
     python:
@@ -930,7 +907,6 @@ Copied
 
 Switch on highly customizable notifications to email, Slack, Opsgenie, any webhook destination, and many more. All you need to bring is your API token and as little as two fresh lines of YAML.
 
-
     language: python
     python:
       - "3.8"
@@ -976,7 +952,6 @@ Switch on highly customizable notifications to email, Slack, Opsgenie, any webho
 Copied
 
 Infinitely organize complex CI/CD pipelines into groups that only run if other parallel jobs have been completed successfully. Catch failures faster or layer in smart conditionals to catch edge cases other CI/CD tools lose track of.
-
 
     language: generic
 
@@ -1016,7 +991,6 @@ Build matrix Parallel builds Integrations Notifications Build Stages and Conditi
 
 ![](https://www.travis-ci.com/wp-content/uploads/2025/06/t-icon.svg)
 
-
     language: python
     python:
       - "3.7"
@@ -1055,7 +1029,6 @@ Run tests against different versions of your runtimes or dependencies—or even 
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
 
-
     language: python
     python:
       - "3.8"
@@ -1091,7 +1064,6 @@ Quickly split complex operations, like unit and integration tests, into multiple
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
 
-
     language: python
     python:
       - "3.8"
@@ -1126,7 +1098,6 @@ Copied
 Enable the must-haves, like build status images, static code analysis, and key management without wasting time on needlessly complex glue. For everything else, the Travis CI API has your back.
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
-
 
     language: python
     python:
@@ -1182,7 +1153,6 @@ Switch on highly customizable notifications to email, Slack, Opsgenie, any webho
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
 
-
     language: python
     python:
       - "3.8"
@@ -1230,7 +1200,6 @@ Copied
 Infinitely organize complex CI/CD pipelines into groups that only run if other parallel jobs have been completed successfully. Catch failures faster or layer in smart conditionals to catch edge cases other CI/CD tools lose track of.
 
 ![](https://stage.travis-ci.com/wp-content/uploads/2025/01/Group-3648.svg)
-
 
     language: generic
 

@@ -8,34 +8,23 @@ fetched_at: "2026-10-05 15:36:14"
 
 共8个日志输出方法，具体如下：
 
-
     Log.debug("hello log4j");  //debug输出
-
 
     Log.debug("自定义Tag","hello log4j");  //debug输出，带自定义tag
 
-
     Log.info("hello info");  //info输出
-
 
     Log.info("自定义Tag","hello info");  //info输出，带自定义tag
 
-
     Log.warn("hello warn");  //warn输出
-
 
     Log.warn("自定义Tag","hello warn");  //warn输出，带自定义tag
 
-
     Log.error("hello error");  //error输出
-
 
     Log.error("自定义Tag","hello error");  //error输出，带自定义tag
 
     以下是封装类的源代码：
-
-
-
 
     package com.ycl.core.common;
 

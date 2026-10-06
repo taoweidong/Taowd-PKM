@@ -51,11 +51,6 @@ Navicat 18 for MySQL
 
 Navicat 18 for MySQL
 
-
-
-
-
-
 ### Apple Silicon
 
 (位置 1)
@@ -72,11 +67,6 @@ Navicat 18 for MySQL
 
 [下载连支持
 (arm64)](/download/support-download?product=navicat18_mysql_cs_arm64.dmg)
-
-
-
-
-
 
 ### Intel
 
@@ -98,11 +88,6 @@ Navicat 18 for MySQL
 ### ![](/images/dl_linux.png)Linux
 
 Navicat 18 for MySQL
-
-
-
-
-
 
 ### AppImage（x86_64）
 
@@ -129,11 +114,6 @@ chmod +x navicat18-mysql-cs-x86_64.AppImage
 
 ./navicat18-mysql-cs-x86_64.AppImage
 
-
-
-
-
-
 ### AppImage（aarch64）
 
 (位置 1)
@@ -158,11 +138,6 @@ chmod +x navicat18-mysql-cs-aarch64.AppImage
 #运行
 
 ./navicat18-mysql-cs-aarch64.AppImage
-
-
-
-
-
 
 ### Flatpak
 

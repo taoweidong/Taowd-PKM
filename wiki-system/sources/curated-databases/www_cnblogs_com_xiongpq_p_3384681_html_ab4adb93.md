@@ -14,11 +14,9 @@ CentOS 6.4下通过yum安装的MySQL是5.1版的，比较老，所以就想通�
 
 使用下面的命令检查是否安装有MySQL Server
 
-
     rpm -qa | grep mysql
 
 有的话通过下面的命令来卸载掉
-
 
     rpm -e mysql   //普通删除模式
     rpm -e --nodeps mysql    // 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除
@@ -27,18 +25,15 @@ CentOS 6.4下通过yum安装的MySQL是5.1版的，比较老，所以就想通�
 
 ### 安装编译代码需要的包
 
-
     yum -y install make gcc-c++ cmake bison-devel  ncurses-devel
 
 ### 下载MySQL 5.6.14
-
 
     wget http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.14.tar.gz
     tar xvf mysql-5.6.14.tar.gz
     cd mysql-5.6.14
 
 ### 编译安装
-
 
     cmake \
     -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
@@ -68,18 +63,15 @@ CentOS 6.4下通过yum安装的MySQL是5.1版的，比较老，所以就想通�
 
 使用下面的命令查看是否有mysql用户及用户组
 
-
     cat /etc/passwd 查看用户列表
     cat /etc/group  查看用户组列表
 
 如果没有就创建
 
-
     groupadd mysql
     useradd -g mysql mysql
 
 修改/usr/local/mysql权限
-
 
     chown -R mysql:mysql /usr/local/mysql
 
@@ -89,11 +81,9 @@ CentOS 6.4下通过yum安装的MySQL是5.1版的，比较老，所以就想通�
 
 进入安装路径
 
-
     cd /usr/local/mysql
 
 进入安装路径，执行初始化配置脚本，创建系统自带的数据库和表
-
 
     scripts/mysql_install_db --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --user=mysql
 
@@ -107,7 +97,6 @@ CentOS 6.4下通过yum安装的MySQL是5.1版的，比较老，所以就想通�
 
 添加服务，拷贝服务脚本到init.d目录，并设置开机启动
 
-
     cp support-files/mysql.server /etc/init.d/mysql
     chkconfig mysql on
     service mysql start  --启动MySQL
@@ -120,12 +109,10 @@ MySQL启动成功后，root默认没有密码，我们需要设置root密码。
 
 修改/etc/profile文件，在文件末尾添加
 
-
     PATH=/usr/local/mysql/bin:$PATH
     export PATH
 
 关闭文件，运行下面的命令，让配置立即生效
-
 
     source /etc/profile
 
@@ -133,12 +120,10 @@ MySQL启动成功后，root默认没有密码，我们需要设置root密码。
 
 执行下面的命令修改root密码
 
-
     mysql -uroot
     mysql> SET PASSWORD = PASSWORD('123456');
 
 若要设置root用户可以远程访问，执行
-
 
     mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'172.16.%' IDENTIFIED BY 'password' WITH GRANT OPTION;
 
@@ -152,21 +137,13 @@ MySQL启动成功后，root默认没有密码，我们需要设置root密码。
 
 在“-A INPUT –m state --state NEW –m tcp –p –dport 22 –j ACCEPT”，下添加：
 
-
     -A INPUT -m state --state NEW -m tcp -p -dport 3306 -j ACCEPT
 
 然后保存，并关闭该文件，在终端内运行下面的命令，刷新防火墙配置：
 
-
     service iptables restart
 
-
-
-
-
     OK，一切配置完毕，你可以访问你的MySQL了~
-
-
 
 \------------------------------------------------------------------------------------------------------------------
 

@@ -47,21 +47,15 @@ fetched_at: "2026-10-05 15:36:33"
 
 ### 1.1 全局安装 d2-admin
 
-
     npm install -g @d2-admin/d2-admin-cli
-
 
 ### 1.2 创建项目
 
-
     d2 create 项目名称
-
 
 或者
 
-
     d2 c 项目名称
-
 
 之后选择 **简化版**
 
@@ -69,13 +63,9 @@ fetched_at: "2026-10-05 15:36:33"
 
 进入项目文件夹
 
-
     npm i
 
-
-
     npm run serve
-
 
 ### 1.4 注意事项
 
@@ -85,14 +75,12 @@ fetched_at: "2026-10-05 15:36:33"
 
 ### 2.1 修改 title
 
-
     // .env.development
 
     # 开发环境
 
     # 页面 title 前缀
     VUE_APP_TITLE=ZAdmin
-
 
 修改完成后重启项目即生效
 
@@ -115,12 +103,9 @@ fetched_at: "2026-10-05 15:36:33"
 
 ### 3.2 安装v-charts
 
-
     npm i v-charts echarts -S
 
-
 ### 3.3 导入项目
-
 
     // main.js
     import Vue from 'vue'
@@ -134,7 +119,6 @@ fetched_at: "2026-10-05 15:36:33"
       render: h => h(App)
     })
 
-
 ![](https://img2018.cnblogs.com/blog/1669633/201906/1669633-20190628142007718-968665986.png)
 
 ### 3.4 简单举例
@@ -143,13 +127,11 @@ fetched_at: "2026-10-05 15:36:33"
 
 为了美观，将其包含在elementUI的Card组件中。
 
-
     <template>
       <el-card>
         <ve-line :data="chartData"></ve-line>
       </el-card>
     </template>
-
 
       export default {
         data: function () {
@@ -169,8 +151,6 @@ fetched_at: "2026-10-05 15:36:33"
         }
       }
 
-
-
 ![](https://img2018.cnblogs.com/blog/1669633/201906/1669633-20190628142122635-1777951620.png)
 
 ### 3.5 注意事项
@@ -180,7 +160,6 @@ fetched_at: "2026-10-05 15:36:33"
 ![](https://img2018.cnblogs.com/blog/1669633/201906/1669633-20190628142141283-1672505998.png)
 
 从第二 tbgs 标签页起，将`lazy` 属性设置为 `true`
-
 
     <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="用户管理" name="first">
@@ -193,7 +172,6 @@ fetched_at: "2026-10-05 15:36:33"
         <el-tab-pane :lazy="true" label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
     </el-tabs>
 
-
 ## 4 CURD插件（表格）
 
 D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的表格操作，使用该组件可以快速在页面上处理表格数据。
@@ -201,12 +179,9 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 
 ### 4.1 安装
 
-
     npm i element-ui @d2-projects/d2-crud -S
 
-
 ### 4.2 导入项目
-
 
     import Vue from 'vue'
     import ElementUI from 'element-ui'
@@ -221,7 +196,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       render: h => h(App)
     })
 
-
 ### 4.3 图表使用
 
 此处为带有新增和分页功能的表格，但CURD2.x中分页功能的数据需要从后台获取，因此这里只简单演示了表格的样式。
@@ -233,7 +207,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 `loading`: 加载数据时会有加载中的样式
 `slot="header"`： 表格的头部信息，自定义样式（如：标题，按钮，输入框等）可以显示在表格的顶部（2.x新增，更好的替代了1.x中的 `title` 属性）
 `BusinessTable1List`: 后台数据API，获取后台数据，这里只是页面展示，采用固定的数据，未使用API接口。
-
 
     <template>
     <d2-container>
@@ -261,7 +234,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       </el-card>
     </d2-container>
     </template>
-
 
     // import { BusinessTable1List } from '@api/demo.business.table.1'
     export default {
@@ -409,14 +381,10 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       }
     }
 
-
-
       .el-input {
         width: 200px;
         margin-right: 10px;
       }
-
-
 
 ![](https://img2018.cnblogs.com/blog/1669633/201906/1669633-20190628142212958-406133378.png)
 
@@ -442,12 +410,10 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 
 > 注意：创建调用API的URL时，需带上前缀 `/api/xxx`
 
-
     // /mock/api/product.js
     const Mock = require('mockjs')
     const Qs = require('qs')
     const Random = Mock.Random
-
 
     const titleList = ['男士上衣', 'T恤', '衬衫', '牛仔裤', '皮衣', '短裙', '女士衬衫', '长裙', '羽绒服', '秋裤', '军大衣'];
 
@@ -527,20 +493,16 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       }
     }
 
-
     // 创建API的URL，让vue通过URL获取数据
     Mock.mock('/api/products', 'get', getProductList); // 获取所有商品
     Mock.mock('/api/products', 'post', getProductList); // 获取分页商品数据
     Mock.mock('/api/productComments', 'post', getProductComments)
-
-
 
 ### 5.2 第二步，创建API接口，共VUE项目调用
 
 > 注意：
 >  引用 plugin/axios 中的 `request` 方法发起请求
 >  发起请求的URL，不需要带 `/api/` 前缀
-
 
     // /src/api/pruduct.js
     import request from '@/plugin/axios'
@@ -569,7 +531,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       })
     }
 
-
 ### 5.3 第三步，在 VUEX 中创建API，调用第二步中创建API接口，对数据进行操作
 
 > 注意：
@@ -581,11 +542,8 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 >   * 修改 \src\store\index.js 文件，将该模块导出，使 view 能够调用
 >
 
-
-
     // \src\store\modules\product\modules\product.js
     import { getProducts, getPageProducts, getProductComments } from '@/api/product'
-
 
     export default {
       namespaced: true,
@@ -671,8 +629,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       }
     }
 
-
-
     // \src\store\index.js
 
     import Vue from 'vue'
@@ -690,7 +646,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       }
     })
 
-
 ### 5.4 第四步，在 view 中调用 VUEX 中的模块中的方法实现具体功能。
 
 > 注意：
@@ -703,7 +658,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 
 自定义组件，用于显示图片：
 
-
     // \src\views\product\all\MyImage.vue
 
     <template>
@@ -712,32 +666,25 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 
     </template>
 
-
     export default {
         props: {
             value: '' // 必须叫value
         }
     }
 
-
-
 基于 CURD2.x 的本地增删改查 以及 分页功能实现
-
 
     <template>
     <d2-container>
       <template slot="header">
 
-
             商品列表
-
 
             <el-input v-model="searchWords" placeholder="商品名称" suffix-icon="el-icon-search"></el-input>
             <el-input v-model="searchMinPrice" placeholder="最低价格" suffix-icon="el-icon-caret-bottom"> </el-input>
             <el-input v-model="searchMaxPrice" placeholder="最高价格" suffix-icon="el-icon-caret-top"> </el-input>
             <el-button @click="onSearch"><i class="el-icon-search"></i> 搜索</el-button>
             <el-button type="primary" @click="addRow"><i class="fa fa-plus" aria-hidden="true"></i> 添加商品</el-button>
-
 
       </template>
       <el-card>
@@ -763,7 +710,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       <template slot="footer">ZAdmin Created By <a href="">@ZBW</a> for D2-admin</template>
     </d2-container>
     </template>
-
 
     // 导入自定义用于显示图片的组件
     import MyImage from "./MyImage"
@@ -985,7 +931,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
         }
       },
 
-
       methods: {
         onSearch() {
           this.filterProducts = this.all_products.filter(p => {
@@ -1073,8 +1018,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       }
     }
 
-
-
       .flex-header {
         display: flex;
         justify-content: space-between;
@@ -1088,8 +1031,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
         width: 200px;
         margin-right: 10px;
       }
-
-
 
 经测试，各功能全部正常。
 ![](https://img2018.cnblogs.com/blog/1669633/201906/1669633-20190628142344999-958714308.png)
@@ -1114,8 +1055,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 
   * 在 \src\mock\api\sys.login.js 中定义用户信息，以及不同用户角色(role)对应不同页面(路由)的权限信息
   * 定义获取用户信息接口，其中包括该用户对用角色的权限信息
-
-
 
     // src\mock\api\sys.login.js
 
@@ -1257,10 +1196,7 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       }
     ]
 
-
-
 ### 6.2 第二步，在 src/API 中定义调用 mock 中 API 的接口，取到用户信息
-
 
     // src\api\sys.login.js
 
@@ -1282,15 +1218,11 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       })
     }
 
-
-
 ### 6.3 第三步，在 router/index.js 中添加钩子函数。
 
   * 获取跳转路由的 meta 信息，判断该路由是否需要验证。
   * 若需验证，则从sessionStroage中获取用户的权限列表，如果该用户的权限列表中没有此路由信息，则跳转至401页面提示无权访问此页面，如果权限列表中有此路由信息，则将该用户对此路由的权限信息（如：增删改查）添加至路由的 meta 信息中，并跳转页面。
   * 若不需要验证，直接跳转。
-
-
 
     // \src\router\index.js
 
@@ -1390,8 +1322,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 
     export default router
 
-
-
 ### 6.4 第四步，在 store 中根据权限处理数据
 
   * （用户登录的API）登录成功后把 userInfo 存至本地的 sessionStorage 中，注销登录后将用户信息从sessionStorage 中删除
@@ -1402,8 +1332,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
 >   * $router: 表示全局的 router 对象
 >   * $route: 表示当前页面的路由对象
 >
-
-
 
     // src\store\modules\d2admin\modules\account.js
 
@@ -1538,13 +1466,9 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
       }
     }
 
-
-
 ### 6.5 第五步，渲染页面后，即可看到当前用户具体有哪些操作权限
 
   * 针对表格操作，可以根据 meta 信息中存储的操作权限来判断当前用户所具有的权限，最后对其权限之外的按钮等进行隐藏或者disable。
-
-
 
     // src\views\permission\index.vue
     <template>
@@ -1571,7 +1495,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
         <template slot="footer">ZAdmin Created By <a href="">@ZBW</a> for D2-admin</template>
       </d2-container>
     </template>
-
 
     export default {
       data () {
@@ -1833,13 +1756,6 @@ D2 CURD是一个基于Vue.js 和 Element UI的表格组件，封装了常用的�
         }
       }
     }
-
-
-
-
-
-
-
 
 **admin：**
 ![](https://img2018.cnblogs.com/blog/1669633/201906/1669633-20190628142410444-1889575352.png)

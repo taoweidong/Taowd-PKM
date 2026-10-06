@@ -32,15 +32,11 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
 
 强烈推荐先把 Token 写到环境变量里：
 
-
     1
-
 
 |
 
-
     export ACEDATACLOUD_API_KEY="替换为你的真实 Token"
-
 
 ---|---
 
@@ -50,7 +46,6 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
 
 文件位置：`~/.config/opencode/opencode.json`，适合”我自己的机器，一次配好，所有项目都能用”。
 
-
     1
     2
     3
@@ -64,9 +59,7 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
     11
     12
 
-
 |
-
 
     {
       "$schema": "https://opencode.ai/config.json",
@@ -80,7 +73,6 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
         }
       }
     }
-
 
 ---|---
 
@@ -90,7 +82,6 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
 
 文件位置：当前项目根目录下的 `opencode.json`，会**覆盖** 全局配置。适合团队共享、单仓库定制，或者只在某个项目里临时启用某个 MCP。
 
-
     1
     2
     3
@@ -104,9 +95,7 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
     11
     12
 
-
 |
-
 
     {
       "$schema": "https://opencode.ai/config.json",
@@ -120,7 +109,6 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
         }
       }
     }
-
 
 ---|---
 
@@ -132,17 +120,13 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
 
 配置后运行：
 
-
     1
     2
 
-
 |
-
 
     opencode mcp list
     opencode mcp debug serp
-
 
 ---|---
 
@@ -154,43 +138,31 @@ OpenCode 用一份 `opencode.json` 描述所有 MCP Server，文件可以放在�
 
 **调试生产问题**
 
-
     1
-
 
 |
 
-
     搜索 nginx 502 bad gateway response header too large 怎么解决
-
 
 ---|---
 
 **技术选型调研**
 
-
     1
-
 
 |
 
-
     搜索一下 2025 年 Python 异步 ORM 的性能对比，SQLAlchemy 2.0 async vs Tortoise ORM
-
 
 ---|---
 
 **查官方文档**
 
-
     1
-
 
 |
 
-
     搜索 Kubernetes CronJob concurrencyPolicy 的官方文档，Forbid 和 Replace 的区别
-
 
 ---|---
 

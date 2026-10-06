@@ -6,7 +6,6 @@ fetched_at: "2026-10-05 15:30:56"
 
 # Index of /download/plugins
 
-
     [Name](?C=N;O=A)                                                            [Last modified](?C=M;O=A)      [Size](?C=S;O=A)
     [Parent Directory](/download/)                                                                     -
     [zulip/](zulip/)                                                          2026-10-05 07:26    -

@@ -10,7 +10,6 @@ fetched_at: "2026-10-05 15:36:10"
 
 2、可以很方便的打印出堆栈信息
 
-
     package com.tradeplatform.receiveorder.util;
 
     import java.io.PrintWriter;
@@ -162,7 +161,6 @@ fetched_at: "2026-10-05 15:36:10"
 
 配置文件：
 
-
     base.logs.dir=D:/testMycatLog
 
     log4j.rootLogger = DEBUG, INFO, all_log, stdout ,DB
@@ -176,7 +174,6 @@ fetched_at: "2026-10-05 15:36:10"
     log4j.appender.all_log.File=${base.logs.dir}/all_log.log
     log4j.appender.all_log.layout=org.apache.log4j.PatternLayout
     log4j.appender.all_log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss SSS} %-5p [%-15x] [%t] - %m%n
-
 
     log4j.appender.DB = org.apache.log4j.jdbc.JDBCAppender
     log4j.appender.DB.BufferSize=1

@@ -6,8 +6,6 @@ fetched_at: "2026-10-05 15:29:41"
 
 * **写入文本文件**
 
-
-
         class WriteTextFile
         {
             static void Main()
@@ -39,8 +37,6 @@ fetched_at: "2026-10-05 15:29:41"
         }
 
   * **读取文本文件**
-
-
 
         class ReadTextFile
         {

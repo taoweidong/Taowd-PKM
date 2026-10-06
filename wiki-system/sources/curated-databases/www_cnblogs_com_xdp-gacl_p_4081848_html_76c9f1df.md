@@ -18,7 +18,6 @@ fetched_at: "2026-10-05 15:29:36"
 
 配置log4j的log4j.properties的配置文件，如下所示：
 
-
     log4j.logger.jdbc.sqlonly=DEBUG,console
     log4j.appender.console=org.apache.log4j.ConsoleAppender
     log4j.appender.console.layout=org.apache.log4j.PatternLayout
@@ -27,7 +26,6 @@ fetched_at: "2026-10-05 15:29:36"
     log4j.logger.jdbc.connection=INFO,console
 
 修改dbconfig.properties配置文件的url和driverClassName
-
 
      1 url:**jdbc:log4jdbc** :mysql://localhost:3306/xdptest
      2 driverClassName:**net.sf.log4jdbc.DriverSpy** 3 username:root
@@ -50,7 +48,6 @@ fetched_at: "2026-10-05 15:29:36"
 经过这样的配置之后，就可以使用log4jdbc记录应用系统执行的SQL信息了。
 
 编写一个测试Servlet进行测试，代码如下：
-
 
      1 /**
      2  *

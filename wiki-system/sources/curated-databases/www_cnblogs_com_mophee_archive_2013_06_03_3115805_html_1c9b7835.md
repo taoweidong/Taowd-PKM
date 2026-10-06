@@ -8,7 +8,6 @@ fetched_at: "2026-10-05 15:28:00"
 
 用OUI安装并配置Oracle数据库后，Oracle就开启了(包括：数据库实例、监听器、EM)。在重启操作系统之后，Oracle默认是没有启动的。使用如下命令查看Oracle相关服务是否已启动：
 
-
     ps aux | grep ora_ #若无ora_**_**相关的进程，则oracle数据库实例未启动
     netstat -tlnup | grep 1521 #若无任何显示，则监听器未启动
     lsnrctl status #查看监听器状态
@@ -21,11 +20,9 @@ fetched_at: "2026-10-05 15:28:00"
 
 数据库实例启动之后，需启动监听器，才能让远程用户建立连接。可使用如下命令启动监听器：
 
-
     lsnrctl start
 
 Oracle还提供网页版的管理器，要使用该管理器需启动相关服务，使用如下命令启动：
-
 
     emctl start dbconsole
 
@@ -35,17 +32,14 @@ Oracle还提供网页版的管理器，要使用该管理器需启动相关服�
 
 Oracle在$ORACLE_HOME/bin下提供许多对数据库进行操作的脚本，其中dbstart和dbshut可分别用来启动和关闭数据库。注意，这两个脚本已包含监听器的启动或关闭，但并未对EM进行相关的操作。使用如下命令：
 
-
     /opt/oracle/11g/bin/dbstart /opt/oracle/11g #启动数据库实例(包含监听器)
     /opt/oracle/11g/bin/dbshut /opt/oracle/11g #关闭数据库实例(包括监听器)
 
 以上命令要成功启动数据库实例还得打开Oracle设置的一个关卡：vi /etc/oratab，修改行：
 
-
     orcl:/opt/oracle/11g:Y #默认为orcl:/opt/oracle/11g:N
 
 以root身份建立开机启动oracle服务的脚本：vi /etc/init.d/oracle，添加如下脚本：
-
 
     #!/bin/sh
     #chkconfig: 2345 20 80
@@ -95,11 +89,9 @@ Oracle在$ORACLE_HOME/bin下提供许多对数据库进行操作的脚本，其�
 
 使用如下命令将 /etc/init.d/oracle 置为可执行文件：
 
-
     chmod a+x /etc/init.d/oracle
 
 至此，可使用如下命令对oracle进行启动和关闭
-
 
     /etc/init.d/oracle start #启动oracle(包括数据库实例、监听器、EM)
     /etc/init.d/oracle stop #关闭oracle
@@ -107,11 +99,9 @@ Oracle在$ORACLE_HOME/bin下提供许多对数据库进行操作的脚本，其�
 
 将 oracle 添加到 chkconfig中：
 
-
     chkconfig --add oracle
 
 可使用如下命令查看和设置oracle服务的开机启动级别：
-
 
     chkconfig | grep oracle #查看oracle服务的开机启动级别
     chkconfig --level 24 oracle off #修改oracle服务的开机启动级别
@@ -119,13 +109,11 @@ Oracle在$ORACLE_HOME/bin下提供许多对数据库进行操作的脚本，其�
 
 至此可使用如下命令对oracle的启动或关闭进行管理
 
-
     service oracle start #启动
     service oracle stop #关闭
     service oracle restart #重启
 
 建立连接：
-
 
     ln -s /etc/init.d/oracle /etc/rc0.d/K01oracle   #关机执行
     ln -s /etc/init.d/oracle /etc/rc6.d/K01oracle   #重启执行

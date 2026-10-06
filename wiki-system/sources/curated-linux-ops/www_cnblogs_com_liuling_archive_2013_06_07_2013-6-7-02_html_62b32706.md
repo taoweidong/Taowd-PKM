@@ -21,7 +21,6 @@ exprot PATH=$JAVA_HOME/bin:$PATH
 配置好之后要用命令source /etc/profile
 执行java -version 命令测试一下jdk是否安装成功
 
-
 2、tomcat的安装
 解压安装
 tar -xvf apache-tomcat-6.0.10.tar.gz -C /opt/tomcat/

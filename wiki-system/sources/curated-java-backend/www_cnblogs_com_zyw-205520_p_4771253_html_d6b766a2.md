@@ -42,8 +42,6 @@ MyBatis 3.2.6
 
 在pom.xml中引入jar包
 
-
-
         <modelVersion>4.0.0</modelVersion>
         <groupId>com.javen.maven01</groupId>
         <artifactId>maven01</artifactId>
@@ -52,7 +50,6 @@ MyBatis 3.2.6
         <name>maven01 Maven Webapp</name>
         <url>http://maven.apache.org</url>
 
-
             <!-- spring版本号 -->
             <spring.version>4.0.2.RELEASE</spring.version>
             <!-- mybatis版本号 -->
@@ -60,7 +57,6 @@ MyBatis 3.2.6
             <!-- log4j日志文件管理包版本 -->
             <slf4j.version>1.7.7</slf4j.version>
             <log4j.version>1.2.17</log4j.version>
-
 
         <dependencies>
             <dependency>
@@ -174,14 +170,12 @@ MyBatis 3.2.6
                 <version>${log4j.version}</version>
             </dependency>
 
-
             <!-- 格式化对象，方便输出日志 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.1.41</version>
             </dependency>
-
 
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -223,7 +217,6 @@ MyBatis 3.2.6
         <build>
             <finalName>maven01</finalName>
 
-
                     <groupId>org.eclipse.jetty</groupId>
                     <artifactId>jetty-maven-plugin</artifactId>
                     <version>9.2.8.v20150217</version>
@@ -235,17 +228,13 @@ MyBatis 3.2.6
                         <stopPort>9966</stopPort>
                     </configuration>
 
-
         </build>
-
-
 
 ## 3.2、整合SpringMVC
 
 ### 3.2.1、配置spring-mvc.xml
 
 配置里面的注释也很详细，主要是自动扫描控制器，视图模式，注解的启动这三个。
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -300,7 +289,6 @@ MyBatis 3.2.6
         <!-- 配置ViewResolver 。可用多个ViewResolver 。使用order属性排序。   InternalResourceViewResolver 放在最后-->
         <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 
-
                 <map>
                     <!-- 告诉视图解析器，返回的类型为json格式 -->
                     <entry key="json" value="application/json" />
@@ -308,19 +296,16 @@ MyBatis 3.2.6
                     <entry key="htm" value="text/htm" />
                 </map>
 
-
                 <list>
                     <!-- ModelAndView里的数据变成JSON -->
                     <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
                 </list>
-
 
         </bean>
 
        <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
         <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
             <!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
-
 
         </bean>
     </beans>
@@ -330,7 +315,6 @@ MyBatis 3.2.6
 配置的spring-mvc的Servlet就是为了完成SpringMVC+MAVEN的整合。
 
 web.xml
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -400,7 +384,6 @@ Log4j的配置很简单，而且也是通用的，下面给出一个基本的配
 
 log4j.properties
 
-
     log4j.rootLogger=INFO,Console,File
     #定义日志输出目的地为控制台
     log4j.appender.Console=org.apache.log4j.ConsoleAppender
@@ -423,7 +406,6 @@ log4j.properties
 ### 3.2.4、使用Jetty测试
 
 **![](https://images2015.cnblogs.com/blog/441423/201508/441423-20150830165405344-862946687.png)**
-
 
     package com.javen.model;
 
@@ -474,9 +456,7 @@ log4j.properties
                     + password + ", age=" + age + "]";
         }
 
-
     }
-
 
     package com.javen.controller;
     import javax.servlet.http.HttpServletRequest;
@@ -489,13 +469,11 @@ log4j.properties
     import org.springframework.web.bind.annotation.RequestMethod;
     import com.javen.model.User;
 
-
     @Controller
     @RequestMapping("/user")
     // /user/**
     public class UserController {
         private static Logger log=LoggerFactory.getLogger(UserController.class);
-
 
         // /user/test?id=1
         @RequestMapping(value="/test",method=RequestMethod.GET)
@@ -538,7 +516,6 @@ log4j.properties
 
 jdbc.properties（文件编码修改为utf-8）
 
-
     driver=com.mysql.jdbc.Driver
     url=jdbc:mysql://localhost:3306/maven
     username=root
@@ -564,7 +541,6 @@ jdbc.properties（文件编码修改为utf-8）
 
 spring-mybatis.xml
 
-
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
@@ -588,9 +564,6 @@ spring-mybatis.xml
         <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
             destroy-method="close">
 
-
-
-
             <!-- 初始化连接大小 -->
 
             <!-- 连接池最大数量 -->
@@ -613,7 +586,6 @@ spring-mybatis.xml
         <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
         <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 
-
         </bean>
 
         <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
@@ -631,7 +603,6 @@ spring-mybatis.xml
 #### 3.4.1、创建测试用表
 
 既然我们需要测试，那么我们就需要建立在数据库中建立一个测试表，这个表建的很简单，SQL语句为：
-
 
     -- ----------------------------
     -- Table structure for `user_t`
@@ -667,18 +638,15 @@ spring-mybatis.xml
 
 IUserService.jave
 
-
     package com.javen.service;
 
     import com.javen.model.User;
-
 
     public interface IUserService {
         public User getUserById(int userId);
     }
 
 UserServiceImpl.java
-
 
     package com.javen.service.impl;
     import javax.annotation.Resource;
@@ -687,7 +655,6 @@ UserServiceImpl.java
     import com.javen.dao.IUserDao;
     import com.javen.model.User;
     import com.javen.service.IUserService;
-
 
     @Service("userService")
     public class UserServiceImpl implements IUserService {
@@ -706,7 +673,6 @@ UserServiceImpl.java
 测试类在src/test/java中建立，下面测试类中注释掉的部分是不使用Spring时，一般情况下的一种测试方法；如果使用了Spring那么就可以使用注解的方式来引入配置文件和类，然后再将service接口对象注入，就可以进行测试了。
 
 如果测试成功，表示Spring和Mybatis已经整合成功了。输出信息使用的是Log4j打印到控制台。
-
 
     package com.javen.testmybatis;
 
@@ -753,7 +719,6 @@ UserServiceImpl.java
 
 UserController.java 控制器
 
-
     package com.javen.controller;
     import java.io.File;
     import java.io.IOException;
@@ -778,7 +743,6 @@ UserController.java 控制器
 
     import com.javen.model.User;
     import com.javen.service.IUserService;
-
 
     @Controller
     @RequestMapping("/user")
@@ -807,7 +771,6 @@ UserController.java 控制器
             return "index";
         }
 
-
         // /user/showUser?id=1
         @RequestMapping(value="/showUser",method=RequestMethod.GET)
         public String toIndex(HttpServletRequest request,Model model){
@@ -829,7 +792,6 @@ UserController.java 控制器
             model.addAttribute("user", user);
             return "showUser";
         }
-
 
         // /user/showUser3/{id}
         @RequestMapping(value="/showUser3/{id}",method=RequestMethod.GET)
@@ -882,7 +844,6 @@ UserController.java 控制器
 
 file.jsp
 
-
     <%@ page language="java" contentType="text/html; charset=utf-8"
         pageEncoding="utf-8"%>
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -903,7 +864,6 @@ file.jsp
 
 index.jsp
 
-
     <html>
     <body>
     <h2>Hello World!</h2>
@@ -911,7 +871,6 @@ index.jsp
     </html>
 
 showUser.jsp
-
 
     <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">

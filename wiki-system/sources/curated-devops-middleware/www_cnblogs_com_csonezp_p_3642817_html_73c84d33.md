@@ -26,8 +26,6 @@ fetched_at: "2026-10-05 15:30:14"
 
 修改pom.xml，最终结果如下：
 
-
-
         <modelVersion>4.0.0</modelVersion>
         <groupId>zp.maven</groupId>
         <artifactId>test</artifactId>
@@ -127,7 +125,6 @@ fetched_at: "2026-10-05 15:30:14"
         </dependencies>
         <build>
 
-
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
@@ -135,15 +132,12 @@ fetched_at: "2026-10-05 15:30:14"
                         <target>1.6</target>
                     </configuration>
 
-
             <finalName>test</finalName>
         </build>
-
 
 dependences标签中是spring和hibernate需要用的的所有依赖，其中javaee-api可以换成 javax:javaee-web-api:6.0。build标签中是将项目设为java1.6编译。
 
 然后，用资源管理器打开项目的根目录中的.setting文件夹，修改其中的org.eclipse.wst.common.project.facet.core.xml文件，改为：
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <faceted-project>
@@ -195,11 +189,8 @@ src/test/java ，src/test/resources, 选择target/test-classes;
 
 首先，要修改Web.xml文件（位于webapp/WEB-INF下），最终结果如下：
 
-
     <?xml version="1.0" encoding="UTF-8"?>
     <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-
-
 
       <display-name>Archetype Created Web Application</display-name>
       <context-param>
@@ -216,7 +207,6 @@ src/test/java ，src/test/resources, 选择target/test-classes;
         </listener>
         <!-- Spring配置文件结束 -->
 
-
         <filter>
             <filter-name>Encoding</filter-name>
             <filter-class>
@@ -231,7 +221,6 @@ src/test/java ，src/test/resources, 选择target/test-classes;
             <filter-name>Encoding</filter-name>
             <url-pattern>/*</url-pattern>
         </filter-mapping>
-
 
         <!-- Spring MVC配置开始 -->
         <servlet>
@@ -255,7 +244,6 @@ src/test/java ，src/test/resources, 选择target/test-classes;
 
 在src/main/resources下建立classpath:spring-config.xml 文件
 
-
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -275,7 +263,6 @@ src/test/java ，src/test/resources, 选择target/test-classes;
 代码就不多解释了，不懂的再看看spring的基础配置。
 
 在src/main/resources下建立classpath:spring-servlet.xml 文件
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -301,9 +288,6 @@ src/test/java ，src/test/resources, 选择target/test-classes;
 
             <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:order="3">
 
-
-
-
         </bean>
 
     </beans>
@@ -314,14 +298,12 @@ src/test/java ，src/test/resources, 选择target/test-classes;
 
 在service包中添加HelloWorldService接口
 
-
     package com.zp.test.service;
     public interface HelloWorldService {
          public String getNewName(String userName);
     }
 
 service.impl中添加HelloWorldServiceImpl类
-
 
     package com.zp.test.service.impl;
 
@@ -343,7 +325,6 @@ service.impl中添加HelloWorldServiceImpl类
 
 controller中添加HelloWorldController类
 
-
     package com.zp.test.controller;
 
     import javax.servlet.http.HttpServletRequest;
@@ -359,7 +340,6 @@ controller中添加HelloWorldController类
     public class HelloWorldController {
          @Autowired
          private HelloWorldService helloWorldService;
-
 
          @RequestMapping("helloworld")
          public String getNewName(@RequestParam("userName") String userName, HttpServletRequest request){
@@ -382,7 +362,6 @@ controller中添加HelloWorldController类
 
 index.jsp:
 
-
     <%@ page language="java" contentType="text/html; charset=UTF-8"
         pageEncoding="UTF-8"%>
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -398,14 +377,11 @@ index.jsp:
 
     <input type="submit" value="提交" />
 
-
-
     </form>
     </body>
     </html>
 
 helloworld.jsp:
-
 
     <%@ page language="java" contentType="text/html; charset=UTF-8"
         pageEncoding="UTF-8"%>

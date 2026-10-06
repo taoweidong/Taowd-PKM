@@ -116,7 +116,6 @@ para.Value;
 
 解析：like '%'+@name+'%'
 
-
     private void btnOK_Click(object sender, EventArgs e)
             {
                 string str = "Data Source=.;initial catalog=MySchool;uid=sa;pwd=6375196";
@@ -134,7 +133,6 @@ para.Value;
             }
 
 SQL注入
-
 
                 //登录按钮 用户名和密码不对也可以成功登录
                 //1.1获取到用户名和密码
@@ -156,13 +154,10 @@ SQL注入
                     MessageBox.Show("失败!");
                 }
 
-
                 //用户名输入 ' or 1=1 --  密码输入 :随便输
                 //SQL Server 查询的语句是  select count(1) from student where studentName='' or 1=1 --' and Loginpwd='sb
 
-
 为防止SQL注入
-
 
                 //1.1获取到用户名和密码
                 string uname = txtName.Text;
@@ -201,7 +196,6 @@ C#调用带输入参数的存储过程
 
 数据库--->可编程性--->存储过程--->
 
-
     //开始把Alter改成如下的create
     create procedure usp_selectInfoOutput
     @sex nvarchar(32),
@@ -215,7 +209,6 @@ C#调用带输入参数的存储过程
 按性别加载数据
 
 在Main窗体中写
-
 
     //1.1  连接字符串
                 string str = "data source=.;initial catalog=MySchool;uid=sa;";
@@ -252,7 +245,6 @@ C#调用带输入参数的存储过程
 
 同上
 
-
                 string str = "Data Source=.;Initial Catalog=MySchool;uid=sa;";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = con.CreateCommand();
@@ -274,7 +266,6 @@ C#调用带输入参数的存储过程
 
 数据库--->可编程性--->存储过程--->
 
-
     create procedure usp_selectInfoOutput
     @sex nvarchar(32),
     @count int output
@@ -285,7 +276,6 @@ C#调用带输入参数的存储过程
     return 100
 
 在<调用带输出和返回值的存储过程>窗体里写
-
 
      //1.1  连接字符串
                 string str = "data source=.;initial catalog=MySchool;uid=sa;";
@@ -320,7 +310,6 @@ C#调用带输入参数的存储过程
                 txtReturn.Text = paras[2].Value.ToString();
 
 四:模糊查询 在Select控件中写
-
 
     string name = '%' + "hhe" + '%';
                 //1.1  连接字符串

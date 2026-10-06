@@ -59,7 +59,6 @@ commons-dbcp-1.2.2.jar
 
 使用c3p0-config.xml配置：
 
-
     package com.c3p0;
 
     import java.sql.Connection;
@@ -149,9 +148,7 @@ commons-dbcp-1.2.2.jar
             }
     }
 
-
 配置文件：c3p0-config.xml(路径放在src下)
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <c3p0-config>
@@ -176,7 +173,6 @@ hsqldb.jar --> org.hsqldb.server --> Server 右击选择run -->java Application 
 
 新建监听类，继承 ServletContextListenpackage com.c3p0.Listener;
 
-
     import java.beans.PropertyVetoException;
     import java.sql.Connection;
     import java.sql.SQLException;
@@ -190,7 +186,6 @@ hsqldb.jar --> org.hsqldb.server --> Server 右击选择run -->java Application 
     import javax.sql.DataSource;
 
     import com.mchange.v2.c3p0.ComboPooledDataSource;
-
 
     @WebListener
     public class cplistener implements ServletContextListener {
@@ -229,14 +224,12 @@ hsqldb.jar --> org.hsqldb.server --> Server 右击选择run -->java Application 
 
 新建c3p0.properties(注意名字必须为这个，放在src文件夹下面)
 
-
     c3p0.driverClass=org.hsqldb.jdbc.JDBCDriver
     c3p0.jdbcUrl=jdbc:hsqldb:hsql://localhost/
     c3p0.user=sa
     c3p0.password=
 
 测试代码
-
 
     package com.c3p0.Listener;
 
@@ -291,7 +284,6 @@ hsqldb.jar --> org.hsqldb.server --> Server 右击选择run -->java Application 
 
 代码：
 
-
     <Resource
             name="jdbc/mysql"
             auth="Container"
@@ -318,7 +310,6 @@ hsqldb.jar --> org.hsqldb.server --> Server 右击选择run -->java Application 
 
 在Web.xml配置中添加以下代码
 
-
     <resource-ref>
      <res-ref-name>jdbc/mysql</res-ref-name>
      <res-type>javax.sql.DataSource</res-type>
@@ -326,7 +317,6 @@ hsqldb.jar --> org.hsqldb.server --> Server 右击选择run -->java Application 
     </resource-ref>
 
 java代码，新建监听类继承 ServletContextListener
-
 
     package com.c3p0.Listener;
 
@@ -391,9 +381,6 @@ java代码，新建监听类继承 ServletContextListener
                 }
             }
     }
-
-
-
 
     Java连接池编辑
     在Java中开源的数据库连接池有以下几种 ：

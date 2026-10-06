@@ -10,14 +10,12 @@ spring结合mysql，一般是单独出配置文件jdbc.properties,
 
 配置如下
 
-
     driverClassName=com.mysql.jdbc.Driver
     db.mysql.url=jdbc:mysql://127.0.0.1:3306/tq?autoReconnect=true&useUnicode=true&characterEncoding=utf8
     db.mysql.username=test
     db.mysql.password=123456
 
 配置spring-jdbc.xml，使其加载该配置项。示例如下：
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -51,18 +49,6 @@ spring结合mysql，一般是单独出配置文件jdbc.properties,
     	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
     		destroy-method="close" lazy-init="true" depends-on="propertyConfigurer">
 
-
-
-
-
-
-
-
-
-
-
-
-
     	</bean>
 
     	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
@@ -71,12 +57,9 @@ spring结合mysql，一般是单独出配置文件jdbc.properties,
 
     </beans>
 
-
-
 按上面进行配置，由于数据库连接、账号、密码是明文，存在泄露风险。可以在配置文件中存密文，在spring读取该配置文件时，进行解密。
 
 ### 改进配置
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -110,18 +93,6 @@ spring结合mysql，一般是单独出配置文件jdbc.properties,
     	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
     		destroy-method="close" lazy-init="true" depends-on="propertyConfigurer">
 
-
-
-
-
-
-
-
-
-
-
-
-
     	</bean>
 
     	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
@@ -130,7 +101,6 @@ spring结合mysql，一般是单独出配置文件jdbc.properties,
     </beans>
 
 注意上面类GvtvPropertyPlaceholderConfigurer，该类的实现如下：
-
 
     package com.tq.app.epg.utils.config;
 
@@ -165,17 +135,12 @@ spring结合mysql，一般是单独出配置文件jdbc.properties,
 
 相应的jdbc.properties变为
 
-
     driverClassName=com.mysql.jdbc.Driver
     db.mysql.url.encryption=XXXXXXXXXXXXXXXXXXXXXXX
     db.mysql.username.encryption=D12450E55E370A310C1AAAB5189BB42A
     db.mysql.password.encryption=ADC6327D7DB1D55623B70B48614A331B
 
-
-
-
 另附AESHelper类：
-
 
     package com.tq.app.epg.utils.config;
 

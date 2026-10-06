@@ -7,13 +7,11 @@ fetched_at: "2026-10-05 15:31:02"
 使用easyui自带的样式等，做的一个简单的登录界面，效果如下：
 ![这里写图片描述](https://img-blog.csdn.net/20160218160031826)
 
-
     <!DOCTYPE html>
     <html>
     <head>
         <meta name="viewport" content="width=device-width" />
         <title>用户登录</title>
-
 
         <link href="~/Plugins/easyui-1.4.4/themes/gray/easyui.css" rel="stylesheet" />
         <link href="~/Plugins/easyui-1.4.4/themes/icon.css" rel="stylesheet" />
@@ -54,24 +52,17 @@ fetched_at: "2026-10-05 15:31:02"
     </head>
     <body>
 
-
-
                     <form id="loginForm" method="post">
 
                             <label for="login">帐号:</label>
                             <input type="text" name="login" style="width:260px;" />
 
-
                             <label for="password">密码:</label>
                             <input type="password" name="password" style="width:260px;" />
 
-
                     </form>
 
-
                     <a class="easyui-linkbutton" iconcls="icon-ok" href="javascript:void(0)" onclick="login()">登录</a>
-
-
 
     </body>
     </html>

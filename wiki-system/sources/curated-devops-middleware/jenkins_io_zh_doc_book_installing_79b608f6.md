@@ -228,13 +228,9 @@ Jenkins 也可以使用`brew`以下方式安装：
 
   * 安装最新版本
 
-
-
     brew install jenkins
 
   * 安装 LTS 版本
-
-
 
     brew install jenkins-lts
 
@@ -245,7 +241,6 @@ Jenkins 也可以使用`brew`以下方式安装：
 在基于Debian的发行版（如Ubuntu）上，您可通过`apt`安装Jenkins
 
 在[an apt repository](https://pkg.jenkins.io/debian/)可获得最新版本，较老但稳定的LTS版本在[this apt repository](https://pkg.jenkins.io/debian-stable/)这里可获得
-
 
     wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
     sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
@@ -286,7 +281,6 @@ __ |  免责声明：这个平台不是由Jenkins团队正式支持的，使用�
 
 对于运行每周最新的版本包作为独立服务器这种常见情景，只需执行：
 
-
     pkg install jenkins
     svcadm enable jenkins
 
@@ -309,7 +303,6 @@ __ |  长期支持（LTS）的Jenkins版本目前不支持基于OpenZFS的系统
 
 要更改服务的属性（如环境变量JENKINS_HOME 或用于Jetty Web服务器的端口号），请使用`svccfg`：
 
-
     svccfg -s svc:/network/http:jenkins editprop
     svcadm refresh svc:/network/http:jenkins
 
@@ -317,11 +310,9 @@ __ |  长期支持（LTS）的Jenkins版本目前不支持基于OpenZFS的系统
 
 可用于OpenIndiana特定版本的Jenkins相关软件包的当前状态可以通过查询：
 
-
     pkg info -r '*jenkins*'
 
 升级包可以通过更新整个操作环境来执行`pkg update`，或者专门针对Jenkins核心软件进行更新：
-
 
     pkg update jenkins-core-weekly
 
@@ -407,7 +398,5 @@ __ |  从这时起，Jenkins用户界面只能通过提供有效的用户名和�
 或者，你不想填表单，只需填写你要反馈的内容
 
 Yes No
-
-
 
 看已有的反馈 [这里](https://docs.google.com/spreadsheets/d/1IIdpVs39JDYKg0sLQIv-MNO928qcGApAIfdW5ohfD78).

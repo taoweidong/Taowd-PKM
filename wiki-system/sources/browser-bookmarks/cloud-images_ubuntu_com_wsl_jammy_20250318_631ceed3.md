@@ -6,7 +6,6 @@ fetched_at: "2026-10-05 15:46:07"
 
 # Index of /wsl/jammy/20250318
 
-
     ![Icon ](/icons/blank.gif) [Name](?C=N;O=D)                                                [Last modified](?C=M;O=A)      [Size](?C=S;O=A)  [Description](?C=D;O=A)
 
     * * *
@@ -21,7 +20,6 @@ fetched_at: "2026-10-05 15:46:07"
     ![\[   \]](/icons/compressed.gif) [ubuntu-jammy-wsl-arm64-ubuntu22.04lts.rootfs.tar.gz](ubuntu-jammy-wsl-arm64-ubuntu22.04lts.rootfs.tar.gz) 2025-03-18 21:46  309M  File system image and Kernel packed
     ![\[TXT\]](/icons/text.gif) [ubuntu-jammy-wsl-arm64-wsl.manifest](ubuntu-jammy-wsl-arm64-wsl.manifest)                 2025-03-18 21:46   17K  Package manifest file
     ![\[DIR\]](../../../../cdicons/folder.png) [unpacked/](unpacked/)                                           2025-03-19 15:01    -
-
 
     * * *
 

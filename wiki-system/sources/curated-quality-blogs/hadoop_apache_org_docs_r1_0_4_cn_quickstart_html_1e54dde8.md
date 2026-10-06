@@ -158,10 +158,8 @@ Hadoop可以在单节点上以所谓的伪分布式模式运行，此时每一�
 <name>fs.default.name</name>
 <value>localhost:9000</value>
 
-
 <name>mapred.job.tracker</name>
 <value>localhost:9001</value>
-
 
 <name>dfs.replication</name>
 <value>1</value>

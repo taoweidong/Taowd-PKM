@@ -34,8 +34,6 @@ fetched_at: "2026-10-05 15:26:52"
 
 ![](https://img-blog.csdn.net/20150111204527281?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY3JhenkxMjM1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-
-
 数字签名搞定了，然后创建应用就ok了。创建完成之后，应用列表中会显示相应的AK，也就是api key。
 
 ### 二、下载SDK开发包
@@ -48,10 +46,7 @@ fetched_at: "2026-10-05 15:26:52"
 
 ![](https://img-blog.csdn.net/20150111210601745?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY3JhenkxMjM1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-
-
 2\. 在AndroidManifest.xml中添加开发秘钥和所需权限。
-
 
     <application
             android:allowBackup="true"
@@ -63,7 +58,6 @@ fetched_at: "2026-10-05 15:26:52"
                 android:value="填写你申请的AK" />
 
 权限：
-
 
     <!-- 百度API所需权限 -->
         <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -83,7 +77,6 @@ fetched_at: "2026-10-05 15:26:52"
 
 3\. 在布局文件中添加地图控件：
 
-
     <com.baidu.mapapi.map.MapView
             android:id="@+id/bmapview"
             android:layout_width="match_parent"
@@ -91,7 +84,6 @@ fetched_at: "2026-10-05 15:26:52"
             android:clickable="true" />
 
 4\. 在应用程序创建时初始化SDK引用的Context全局变量。
-
 
     	@Override
     	protected void onCreate(Bundle savedInstanceState) {
@@ -108,7 +100,6 @@ fetched_at: "2026-10-05 15:26:52"
 ![](https://img-blog.csdn.net/20150111211830578?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY3JhenkxMjM1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 然后重写activity的生命周期的几个方法来管理地图的生命周期。在activity的onResume、onPause、onDestory方法中分别执行mapview的onReusme、onPause、onDestory方法。
-
 
     package com.bdmap.view;
     import com.baidu.mapapi.SDKInitializer;
@@ -157,14 +148,11 @@ fetched_at: "2026-10-05 15:26:52"
     	}
     }
 
-
-
 完成以上步骤，此时就可以完成一个简单的”Hello Map“程序了。
 
 ### 三、普通地图和卫星地图切换
 
 百度地图将地图的类型分为两种：普通矢量地图和卫星图。
-
 
     mMapView = (MapView) findViewById(R.id.bmapView);
     mBaiduMap = mMapView.getMap();
@@ -173,20 +161,16 @@ fetched_at: "2026-10-05 15:26:52"
     //卫星地图
     mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
 
-
 ### 四、显示实时交通图（路况图）
-
 
     //开启交通图
     mBaiduMap.setTrafficEnabled(true);
-
 
 ### 五、显示热力图
 
 热力图就是以特殊高亮的形式显示访客热衷的页面区域和访客所在的地理区域的图示。通俗来说就是显示地图上某一块区域的人的密集程度。类似于下图所示：
 
 ![](https://img-blog.csdn.net/20150111213200406?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY3JhenkxMjM1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-
 
     //开启热力图
     mBaiduMap.setBaiduHeatMapEnabled(true);

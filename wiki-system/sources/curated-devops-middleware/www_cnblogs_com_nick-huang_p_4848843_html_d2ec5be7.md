@@ -16,7 +16,6 @@ Quartz在Java构建的系统中，是十分常用的定时任务框架。
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
 
-
         <dependencies>
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>
@@ -45,7 +44,6 @@ quartz.properties，配置quartz的设置。
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
 
-
     org.quartz.scheduler.instanceName = MyScheduler
     org.quartz.threadPool.threadCount = 3
     org.quartz.jobStore.class = org.quartz.simpl.RAMJobStore
@@ -55,7 +53,6 @@ View Code
 logback.xml，日志框架logback的配置。这里只简单地配置了控制台和日志文件的输出哦(>_<)
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-
 
     <configuration>
 
@@ -89,7 +86,6 @@ HelloJob.java，具体执行的任务
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
 
-
     package No01简单的定时任务;
 
     import org.quartz.Job;
@@ -116,7 +112,6 @@ View Code
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
 
-
     package No01简单的定时任务;
 
     import java.util.concurrent.TimeUnit;
@@ -131,7 +126,6 @@ View Code
     import org.quartz.impl.StdSchedulerFactory;
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
-
 
     public class Bootstrap {
         private static Logger logger = LoggerFactory.getLogger(Bootstrap.class);
@@ -185,7 +179,6 @@ Quartz也常用在Web应用中，常见的是交由Spring托管的形式，但�
 其他配置文件、Java类与上例子相同，这里只是注册定时任务的地方换成此监听器了。
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-
 
     package No02Web应用使用Quartz;
 
@@ -264,7 +257,6 @@ View Code
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
 
-
         <listener>
             <listener-class>No02Web应用使用Quartz.ApplicationContextListener</listener-class>
         </listener>
@@ -288,7 +280,6 @@ View Code
 Cron Schedule的使用
 
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-
 
     // 具体任务
     JobDetail job = JobBuilder.newJob(HelloJob.class).withIdentity("job1", "group1").build();

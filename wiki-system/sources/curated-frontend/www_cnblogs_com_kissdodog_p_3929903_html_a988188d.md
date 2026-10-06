@@ -8,20 +8,15 @@ fetched_at: "2026-10-05 15:31:34"
 
 要使用Bootstrap，基本架构要引用如下文件：
 
-
         <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-
-
 最简单的页面示例代码如下：
-
 
     <!doctype html>
     <head>
         <meta charset="utf-8">
         <title>js</title>
         <link href="ace.min.css" rel="stylesheet" type="text/css" />
-
 
     </head>
     <body>
@@ -41,14 +36,12 @@ fetched_at: "2026-10-05 15:31:34"
 
 Bootstrap使用了HTML5元素，所以HTML头部要加上
 
-
     <!DOCTYPE html>
     <html>
     ....
     </html>
 
 **2、viewport**
-
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -64,7 +57,6 @@ Bootstrap使用了HTML5元素，所以HTML头部要加上
 **3、img-responsive响应式图像**
 
 为图片加上img-responsive属性，可以让图片对响应式布局更加好。其样式如下：
-
 
     .img-responsive {
     　　display: inline-block;
@@ -82,12 +74,9 @@ Bootstrap使用了HTML5元素，所以HTML头部要加上
 
 Bootstrap把一个页面分为12列，通过指定数字就能够设置宽度。简单的示例:
 
-
-
              3
              6
              3
-
 
 显示效果如下：
 
@@ -113,13 +102,10 @@ Bootstrap把一个页面分为12列，通过指定数字就能够设置宽度。
 
 示例说明：
 
-
-
              3
              3
              3
              3
-
 
 显示效果如下：
 
@@ -146,7 +132,6 @@ Bootstrap把一个页面分为12列，通过指定数字就能够设置宽度。
 
 示例：
 
-
          3 　　//向右偏移2列了
          3
 
@@ -162,15 +147,10 @@ Bootstrap把一个页面分为12列，通过指定数字就能够设置宽度。
 
 在网格里嵌套网格
 
-
-
-
                  2
                  2
                  2
                  2
-
-
 
 输出效果如下：
 
@@ -182,8 +162,6 @@ Bootstrap把一个页面分为12列，通过指定数字就能够设置宽度。
 
 示例如下：
 
-
-
         无排序：
 
              First
@@ -193,7 +171,6 @@ Bootstrap把一个页面分为12列，通过指定数字就能够设置宽度。
 
              First
              Second
-
 
 显示效果如下：
 

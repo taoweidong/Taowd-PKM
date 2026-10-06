@@ -22,9 +22,7 @@ OpenClaw 是一个开源的个人 AI 助手平台，支持通过多种消息渠�
 
 OpenClaw 需要 Node.js 22.19.0 或更高版本。可通过以下命令检查 Node.js 版本：
 
-
     node --version
-
 
 如果未安装或版本过低，请访问 [Node.js 官网](https://nodejs.org/)下载安装。
 
@@ -32,29 +30,21 @@ OpenClaw 需要 Node.js 22.19.0 或更高版本。可通过以下命令检查 No
 
 推荐使用官方安装脚本：
 
-
     curl -fsSL https://openclaw.ai/install.sh | bash
-
 
 或通过 npm 全局安装：
 
-
     npm install -g openclaw@latest
-
 
 #### Windows
 
 在 PowerShell 中执行：
 
-
     iwr -useb https://openclaw.ai/install.ps1 | iex
-
 
 或通过 npm 全局安装：
 
-
     npm install -g openclaw@latest
-
 
 首次安装后，OpenClaw 会自动启动配置向导，完成初始设置。也可以手动执行`openclaw onboard`命令进行配置。
 
@@ -87,7 +77,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
 **首次配置** ：复制以下内容到配置文件，将 `YOUR_API_KEY` 替换为 Token Plan 个人版 API Key。
 
 **已有配置** ：若需保留已有配置，请勿直接全量替换，详见已有配置如何安全修改。
-
 
     {
       "meta": {
@@ -249,7 +238,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
       }
     }
 
-
 ### Token Plan 团队版
 
 **配置项**| **说明**
@@ -266,18 +254,13 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
   1. **打开配置文件**
 
-
-
     nano ~/.openclaw/openclaw.json
-
 
   2. **写入配置**
 
 **首次配置** ：复制以下内容到配置文件，将 `YOUR_API_KEY` 替换为 Token Plan 团队版 API Key。
 
 **已有配置** ：若需保留已有配置，请勿直接全量替换，详见已有配置如何安全修改。
-
-
 
     {
       "meta": {
@@ -536,7 +519,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
         "auth": { "mode": "none" }
       }
     }
-
 
   3. **保存并退出**
 
@@ -546,10 +528,7 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
 运行以下命令重启网关，使配置生效。
 
-
-
     openclaw gateway restart
-
 
 #### 方式二：Web UI 方式
 
@@ -557,17 +536,13 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
 在终端运行以下命令启动 Web UI：
 
-
-
     openclaw dashboard
-
 
 在浏览器打开的页面中，单击左侧菜单 **设置** ，将编辑器模式从 **Form** 切换为 **Raw** 。 2\. **写入配置**
 
 **首次配置** ：复制以下内容到配置文件，将 `YOUR_API_KEY` 替换为 Token Plan 团队版 API Key。
 
 **已有配置** ：若需保留已有配置，请勿直接全量替换，详见已有配置如何安全修改。
-
 
     {
       "meta": {
@@ -826,7 +801,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
         "auth": { "mode": "none" }
       }
     }
-
 
   3. **保存并应用**
 
@@ -848,18 +822,13 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
   1. **打开配置文件**
 
-
-
     nano ~/.openclaw/openclaw.json
-
 
   2. **写入配置**
 
 **首次配置** ：复制以下内容到配置文件，将 `YOUR_API_KEY` 替换为 Coding Plan API Key。
 
 **已有配置** ：若需保留已有配置，请勿直接全量替换，详见已有配置如何安全修改。
-
-
 
     {
       "meta": {
@@ -998,7 +967,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
         "auth": { "mode": "none" }
       }
     }
-
 
   3. **保存并退出**
 
@@ -1008,10 +976,7 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
 运行以下命令重启网关，使配置生效。
 
-
-
     openclaw gateway restart
-
 
 #### 方式二：Web UI 方式
 
@@ -1019,17 +984,13 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
 在终端运行以下命令启动 Web UI：
 
-
-
     openclaw dashboard
-
 
 在浏览器打开的页面中，单击左侧菜单 **设置** ，将编辑器模式从 **Form** 切换为 **Raw** 。 2\. **写入配置**
 
 **首次配置** ：复制以下内容到配置文件，将 `YOUR_API_KEY` 替换为 Coding Plan API Key。
 
 **已有配置** ：若需保留已有配置，请勿直接全量替换，详见已有配置如何安全修改。
-
 
     {
       "meta": {
@@ -1168,7 +1129,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
         "auth": { "mode": "none" }
       }
     }
-
 
   3. **保存并应用**
 
@@ -1184,7 +1144,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
   * 华北2（北京）：`https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/apps/anthropic`
   * 新加坡：`https://{WorkspaceId}.ap-southeast-1.maas.aliyuncs.com/apps/anthropic`
 
-
 **可用模型**|  填入[模型广场](https://bailian.console.aliyun.com/model/market)中支持的模型
 
 以下配置以华北2（北京）地域为例，如使用其他地域请替换 `baseUrl` 为上表中对应地域的 URL。
@@ -1197,18 +1156,13 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
   1. **打开配置文件**
 
-
-
     nano ~/.openclaw/openclaw.json
-
 
   2. **写入配置**
 
 **首次配置** ：复制以下内容到配置文件，将 `YOUR_API_KEY` 替换为百炼 API Key。
 
 **已有配置** ：若需保留已有配置，请勿直接全量替换，详见已有配置如何安全修改。
-
-
 
     {
       "meta": {
@@ -1284,7 +1238,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
         "auth": { "mode": "none" }
       }
     }
-
 
   3. **保存并退出**
 
@@ -1294,10 +1247,7 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
 运行以下命令重启网关，使配置生效。
 
-
-
     openclaw gateway restart
-
 
 #### 方式二：Web UI 方式
 
@@ -1305,17 +1255,13 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
 在终端运行以下命令启动 Web UI：
 
-
-
     openclaw dashboard
-
 
 在浏览器打开的页面中，单击左侧菜单 **设置** ，将编辑器模式从 **Form** 切换为 **Raw** 。 2\. **写入配置**
 
 **首次配置** ：复制以下内容到配置文件，将 `YOUR_API_KEY` 替换为百炼 API Key。
 
 **已有配置** ：若需保留已有配置，请勿直接全量替换，详见已有配置如何安全修改。
-
 
     {
       "meta": {
@@ -1391,7 +1337,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
         "auth": { "mode": "none" }
       }
     }
-
 
   3. **保存并应用**
 
@@ -1435,17 +1380,11 @@ How do you want to hatch your bot?| 选择 **Do this later**
 
   1. 在终端执行以下命令安装钉钉渠道插件
 
-
-
     openclaw plugins install @soimy/dingtalk
-
 
   2. 安装完成后，执行以下命令确认插件已加载：
 
-
-
     openclaw plugins list
-
 
 输出中应该包含`dingtalk`插件且状态为 `loaded`。
 
@@ -1456,7 +1395,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
 在 `~/.openclaw/openclaw.json` 中添加 `channels` 和 `plugins.allow` 配置。将 `YOUR_DINGTALK_APPKEY` 和 `YOUR_DINGTALK_APPSECRET` 替换为[步骤一](/zh/model-studio/openclaw)中获取的凭证。请将 `channels` 和 `plugins` 添加到已有配置文件的对应位置，不要覆盖已有的 `models`、`agents` 等配置。
 
 **说明** 如果使用轻量应用服务器或无影云电脑部署 OpenClaw，通常可以通过图形化界面进行配置，无需手动修改配置文件，具体请参见对应产品的文档。
-
 
     {
       "channels": {
@@ -1480,32 +1418,23 @@ How do you want to hatch your bot?| 选择 **Do this later**
       }
     }
 
-
 以上配置中 `dmPolicy` 和 `groupPolicy` 均设为 `open`，适用于测试或个人使用场景。生产环境中建议设为 `allowlist`，通过白名单限制可访问的用户和群组，降低安全风险。
 
 切换到 `allowlist` 模式时，将 `dmPolicy` 和 `groupPolicy` 改为 `"allowlist"`，并添加 `allowFrom` 字段，填入允许访问的工号和群 ID。示例：
-
 
     "dmPolicy": "allowlist",
     "groupPolicy": "allowlist",
     "allowFrom": ["你的工号", "群ID"]
 
-
 #### 步骤四：测试
 
   1. 执行以下命令重启网关。
 
-
-
     openclaw gateway restart
-
 
   2. 执行以下命令检查钉钉渠道状态
 
-
-
     openclaw status
-
 
 在 Channels 部分，DingTalk 应显示为 `ON` 且状态为 `OK - configured`。 3\. 在钉钉群聊中找到机器人，发送消息进行测试。
 
@@ -1518,7 +1447,6 @@ How do you want to hatch your bot?| 选择 **Do this later**
   3. 左侧导航栏单击 **权限管理** 页面，单击**批量导入/导出权限** 按钮，粘贴以下 JSON 配置，单击**下一步，确认新增权限** ，单击**申请开通** 。
 
 JSON配置文件内容
-
 
        {
          "scopes": {
@@ -1550,7 +1478,6 @@ JSON配置文件内容
          }
        }
 
-
   1. 左侧导航栏中单击**添加应用能力** ， 选择**按能力添加** 页签，找到**机器人** 卡片，单击**配置** 。
 
   2. 配置事件订阅。
@@ -1563,10 +1490,7 @@ JSON配置文件内容
 
   1. 在终端中输入以下命令配置飞书渠道
 
-
-
     openclaw channels add
-
 
 根据界面交互提示，完成以下配置。
 
@@ -1580,17 +1504,11 @@ JSON配置文件内容
 
   1. 执行以下命令重启网关。
 
-
-
     openclaw gateway restart
-
 
   2. 执行以下命令检查飞书渠道状态
 
-
-
     openclaw status
-
 
 在 Channels 部分，Feishu 应显示为 `ON` 且状态为 `OK`。 3. 在飞书中发送消息进行测试。
 
@@ -1602,18 +1520,12 @@ JSON配置文件内容
 
   1. 在终端中执行以下命令安装微信渠道插件。
 
-
-
     npx -y @tencent-weixin/openclaw-weixin-cli@latest install
-
 
   2. 安装完成后，终端会显示一个二维码，使用微信扫描该二维码完成身份绑定。绑定成功后，微信会自动弹出 ClawBot 的聊天页面。
   3. 安装完成后，执行以下命令确认插件已加载：
 
-
-
     openclaw plugins list
-
 
 输出中应包含 `openclaw-weixin` 插件且状态为 `loaded`。
 
@@ -1621,10 +1533,7 @@ JSON配置文件内容
 
   1. 执行以下命令重启网关。
 
-
-
     openclaw gateway restart
-
 
   2. 在微信中找到 ClawBot，发送消息进行测试。
 
@@ -1634,17 +1543,11 @@ JSON配置文件内容
 
   1. 在终端中执行以下命令安装 QQ 渠道插件：
 
-
-
     openclaw plugins install @sliverp/qqbot
-
 
   2. 安装完成后，执行以下命令确认插件已加载：
 
-
-
     openclaw plugins list
-
 
 输出中应该包含`qqbot`插件且状态为`loaded` 。
 
@@ -1661,8 +1564,6 @@ JSON配置文件内容
 #### 步骤三：接入 QQ 消息渠道
 
   1. 在 `~/.openclaw/openclaw.json` 中添加 `channels` 和 `plugins.allow` 配置。将 `YOUR_APP_ID` 和 `YOUR_APP_SECRET` 替换为[步骤二](/zh/model-studio/openclaw)中获取的凭证。请将 `channels` 和 `plugins` 添加到已有配置文件的对应位置，不要覆盖已有的 `models`、`agents` 等配置。
-
-
 
     {
       "channels": {
@@ -1685,12 +1586,9 @@ JSON配置文件内容
       }
     }
 
-
 以上配置中`dmPolicy`设为`open`表示允许私聊，`allowFrom`设为`["*"]`表示允许所有用户消息，适用于测试或个人使用场景，生产环境中建议根据实际需求限制访问范围。 2. 配置完成后重启网关。
 
-
     openclaw gateway restart
-
 
   1. 在 QQ 中向机器人发送消息进行测试。
 
@@ -1702,17 +1600,11 @@ JSON配置文件内容
 
   1. 在终端中执行以下命令安装邮箱渠道插件：
 
-
-
     openclaw plugins install @openclaw/email
-
 
   2. 安装完成后，执行以下命令确认插件已加载：
 
-
-
     openclaw plugins list
-
 
 输出中应包含 `email` 插件且状态为 `loaded`。
 
@@ -1721,7 +1613,6 @@ JSON配置文件内容
 在 `~/.openclaw/openclaw.json` 中添加 `channels` 和 `plugins.allow` 配置。请将 `channels` 和 `plugins` 添加到已有配置文件的对应位置，不要覆盖已有的 `models`、`agents` 等配置。
 
 以 163 邮箱为例，将 `YOUR_EMAIL` 替换为您的 163 邮箱地址，将 `YOUR_AUTH_CODE` 替换为 163 邮箱的授权码（非登录密码，需在 163 邮箱设置中开启 IMAP 服务后获取）。
-
 
     {
       "channels": {
@@ -1753,22 +1644,15 @@ JSON配置文件内容
       }
     }
 
-
 #### 步骤三：测试
 
   1. 执行以下命令重启网关。
 
-
-
     openclaw gateway restart
-
 
   2. 执行以下命令检查邮箱渠道状态。
 
-
-
     openclaw status
-
 
 在 Channels 部分，Email 应显示为 `ON` 且状态为 `OK`。 3\. 向配置的邮箱地址发送一封邮件，验证机器人是否自动回复。
 
@@ -1795,8 +1679,6 @@ JSON配置文件内容
   1. 完成[钉钉接入](/zh/model-studio/openclaw#osi54uxg79k0a)。
   2. 在终端执行以下命令：
 
-
-
     openclaw cron add \
       --name "ai-daily-news" \
       --cron "0 9 * * *" \
@@ -1806,7 +1688,6 @@ JSON配置文件内容
       --announce \
       --timeout-seconds 120
 
-
 参数说明如下：
 
 | **参数** | **说明** | | --- | --- | | `--name` | 任务名称 | | `--cron` | Cron 表达式，`"0 9 * * *"` 表示每天 9:00 执行 | | `--tz` | 时区，设为 `"Asia/Shanghai"` 即北京时间 | | `--message` | 发送给 Agent 的提示词，告诉 AI 要抓取什么内容、如何总结 | | `--channel` | 推送通道，设为 `dingtalk` | | `--announce` | 将结果推送到钉钉对话中 | | `--timeout-seconds` | 任务超时时间（秒），网页抓取建议设为 120 |
@@ -1815,24 +1696,15 @@ JSON配置文件内容
 
   1. 查看任务列表，获取任务 ID。
 
-
-
     openclaw cron list
-
 
   2. 手动触发执行。
 
-
-
     openclaw cron run <任务ID> --timeout 120000
-
 
   3. 查看执行结果。
 
-
-
     openclaw cron runs --id <任务ID>
-
 
 当输出中 `"status": "ok"` 且 `"delivered": true` 时，表示新闻已成功推送到钉钉。
 
@@ -1841,7 +1713,6 @@ JSON配置文件内容
 arXiv 最新论文推送
 
 示例：每周一早上九点推送`agent+evaluation`相关的最新论文。
-
 
     openclaw cron add \
       --name "paper-digest" \
@@ -1860,11 +1731,9 @@ arXiv 最新论文推送
       --announce \
       --timeout-seconds 120
 
-
 HuggingFace 热门模型推送
 
 示例：每周一早上九点推送 HuggingFace 上最近热门的大语言模型。
-
 
     openclaw cron add \
       --name "hf-trending-models" \
@@ -1882,11 +1751,9 @@ HuggingFace 热门模型推送
       --announce \
       --timeout-seconds 120
 
-
 Github 热门项目推送
 
 示例：每周一早上九点推送 Github 上新创建的热门项目。
-
 
     openclaw cron add \
         --name "github-trending" \
@@ -1901,7 +1768,6 @@ Github 热门项目推送
         --announce \
         --timeout-seconds 120
 
-
 ### 案例三：小红书自动运营
 
 通过 OpenClaw 可自动化运营小红书账号，提供内容创作、自动发布、评论回复等全链路运营能力。
@@ -1912,24 +1778,15 @@ Github 热门项目推送
 
 在 OpenClaw 对话中输入以下指令，自动完成安装。
 
-
-
     帮我安装这个skill，`https://github.com/Xiangyu-CAS/xiaohongshu-ops-skill`
-
 
   2. 安装完成后，返回终端并重启网关使 Skill 生效。
 
-
-
     openclaw gateway restart
-
 
   3. 验证 Skill 是否安装成功。
 
-
-
     openclaw skills list
-
 
   4. 首次使用需登录小红书，后续无需重复验证。在 OpenClaw 对话中输入`登录小红书`，按照提示完成扫码登录即可。
 
@@ -1957,32 +1814,21 @@ Github 热门项目推送
 
   1. **安装 ClawHub CLI**
 
-
-
     npm install -g clawhub
-
 
   2. **安装 Skill**
 
 在 OpenClaw 对话中输入以下指令，OpenClaw 会自动完成安装：
 
-
-
     帮我安装 china-stock-analysis 这个 skill
-
 
   3. 安装完成后，返回终端并重启网关使 Skill 生效。
 
-
-
     openclaw gateway restart
-
 
 验证 Skill 是否安装成功。
 
-
     openclaw skills list
-
 
   4. 在 OpenClaw 对话中输入股市相关问题，例如`分析贵州茅台的股价`。
 
@@ -1996,8 +1842,6 @@ Skill 是可扩展的能力模块，Agent 会根据请求自动匹配并加载�
 
   1. 执行以下命令查看已安装的 Skill 及其状态。
 
-
-
     # 列出已安装的 Skill
     openclaw skills list
 
@@ -2007,10 +1851,7 @@ Skill 是可扩展的能力模块，Agent 会根据请求自动匹配并加载�
     # 查看特定 Skill 的详细信息
     openclaw skills info <skill-name>
 
-
   2. 内置 Skill 默认未启用，需在 `~/.openclaw/openclaw.json` 中通过 `skills.allowBundled` 白名单启用，只有列在其中的内置 Skill 才会被加载。
-
-
 
     {
       "skills": {
@@ -2027,7 +1868,6 @@ Skill 是可扩展的能力模块，Agent 会根据请求自动匹配并加载�
       }
     }
 
-
 部分内置 Skill需要配置对应的第三方 API Key 才能使用，请在 `~/.openclaw/openclaw.json` 的 `skills.entries` 中配置，具体请参考 [Skills 配置文档](https://docs.openclaw.ai/zh-CN/tools/skills-config)。
 
 #### 查找更多 Skill
@@ -2038,20 +1878,15 @@ Skill 是可扩展的能力模块，Agent 会根据请求自动匹配并加载�
 
 [ClawHub](https://clawhub.com/) 提供 3,000+ 个社区 Skill，可以在网站上浏览，也可以通过命令行搜索。
 
-
-
     # 按关键词搜索
     npx clawhub search [关键词]
 
     # 浏览最近更新的 Skill
     npx clawhub explore
 
-
 找到合适的 Skill 后，执行以下命令安装，安装完成后重启网关即可使用。
 
-
     npx clawhub install <skill-name>
-
 
   2. **直接在 OpenClaw 中提问**
 
@@ -2061,14 +1896,9 @@ Skill 是可扩展的能力模块，Agent 会根据请求自动匹配并加载�
 
   1. 创建 Skill 目录。
 
-
-
     mkdir -p ~/.openclaw/workspace/skills/my-custom-skill
 
-
   2. 在该目录下创建 `SKILL.md` 文件。文件由 YAML 前置元数据和 Markdown 指令两部分组成，其中 `name` 和 `description` 为必填字段。Agent 根据 `description` 判断是否加载该 Skill，请确保描述准确。
-
-
 
     ---
     name: my-custom-skill
@@ -2083,17 +1913,13 @@ Skill 是可扩展的能力模块，Agent 会根据请求自动匹配并加载�
     2. 解析输出结果
     3. 以表格形式返回给用户
 
-
   3. 重启网关使 Skill 生效。
-
-
 
     # 重启网关
     openclaw gateway restart
 
     # 查看 Skill 是否生效
     openclaw skills list
-
 
 更多 Skill 配置说明请参考[OpenClaw 官方文档](https://docs.openclaw.ai/tools/creating-skills)。
 
@@ -2130,9 +1956,7 @@ OpenClaw 支持通过 MCP（Model Context Protocol）插件扩展 Agent 的工�
 
 详细报错信息：
 
-
     http://127.0.0.1:18791/15:05:56 [ws] closed before connect conn=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx remote=127.0.0.1 fwd=n/a origin=n/a host=127.0.0.1:18789 ua=n/a code=1008 reason=device identity required
-
 
 **原因：**
 
@@ -2146,17 +1970,13 @@ OpenClaw 支持通过 MCP（Model Context Protocol）插件扩展 Agent 的工�
 
 在终端执行以下命令，允许当前设备连接并重新生成浏览器访问地址：
 
-
     openclaw devices approve --latest
     openclaw dashboard --no-open
 
-
 如果仍未解决，先清除异常的设备记录再重试：
-
 
     openclaw devices clear --pending --yes
     openclaw dashboard --no-open
-
 
 执行 `openclaw devices list`，确认设备显示在 Paired 列表中即为正常。
 

@@ -119,7 +119,6 @@ javawsg
 
 一图胜千言，官网上的一个图：
 
-
 ![](http://dl.iteye.com/upload/attachment/426780/0c184c55-5f4f-305d-b019-04ce68389fd6.png)
 
 从上图可以发现，选择还是很多的。
@@ -178,12 +177,9 @@ Logback 号称在性能各方面有很多优势，也很诱人。
 
 直接使用SLf4j 也很简单：
 
-
     import org.slf4j.Logger;
 
     import org.slf4j.LoggerFactory;
-
-
 
     public class HelloWorld {
 
@@ -212,7 +208,6 @@ Logback 没用过，看到过一些诱人介绍。具体大家可以去研究。
 二.slf4j
 
 下边一段程序是经典的使用slf4j的方法.
-
 
     import org.slf4j.Logger;
 
@@ -260,7 +255,6 @@ Logback 没用过，看到过一些诱人介绍。具体大家可以去研究。
 运行得到结果:
 \----------------------------
 
-
     0 [main] ERROR Wombat - Temperature set to 1. Old temperature was null.
 
     0 [main] ERROR Wombat - Temperature set to 55. Old temperature was 1.
@@ -273,7 +267,6 @@ Logback 没用过，看到过一些诱人介绍。具体大家可以去研究。
 从classpath中移除，同时classpath中加入slj4j-jdk14-1.4.1.jar
 这时的运行结果:
 \---------------------------------------------------
-
 
     2007-7-9 10:40:15 Wombat setTemperature
 
@@ -289,12 +282,10 @@ Logback 没用过，看到过一些诱人介绍。具体大家可以去研究。
 
 已经变成jdk14的log风格了。
 
-
 4,再次切换到log4j
 同样移除slj4j-jdk14-1.4.1.jar，加入slf4j-log4j12-1.4.1.jar，同时加入log4j-1.2.x.jar
 加入log4j.properties。得到显示结果:
 \---------------------------------------
-
 
     10:42:27,328 ERROR Wombat: Temperature set to 1. Old temperature was null.
 
@@ -305,7 +296,6 @@ Logback 没用过，看到过一些诱人介绍。具体大家可以去研究。
 在不同的风格中切换只需要在部署期切换类库就可以了，和开发时无关。
 
 三.log4j 在spring等项目中web.xml的配置
-
 
     <context-param>
 

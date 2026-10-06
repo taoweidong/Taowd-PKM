@@ -14,12 +14,10 @@ _31_ __
 
 **1\. 字符串有整型的相互转换**
 
-
     String a = String.valueOf(2);   //integer to numeric string
     int i = Integer.parseInt(a); //numeric string to an int
 
 **2\. 向文件末尾添加内容**
-
 
     BufferedWriter out = null;
     try {
@@ -35,31 +33,24 @@ _31_ __
 
 **3\. 得到当前方法的名字**
 
-
     String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 **4\. 转字符串到日期**
 
-
     java.util.Date = java.text.DateFormat.getDateInstance().parse(date String);
 
 或者是：
-
 
     SimpleDateFormat format = new SimpleDateFormat( "dd.MM.yyyy" );
     Date date = format.parse( myString );
 
 **5\. 使用JDBC链接Oracle**
 
-
     public class OracleJdbcTest
 
     {
 
         String driverClass = "oracle.jdbc.driver.OracleDriver";
-
-
-
 
     Connection con;
 
@@ -95,17 +86,14 @@ _31_ __
         test.fetch();
     }
 
-
 }
 
 **6\. 把 Java util.Date 转成 sql.Date**
-
 
     java.util.Date utilDate = new java.util.Date();
     java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
 
 **7\. 使用NIO进行快速的文件拷贝**
-
 
     public static void fileCopy( File in, File out )
 
@@ -121,9 +109,6 @@ _31_ __
             {
 
     //          inChannel.transferTo(0, inChannel.size(), outChannel);      // original -- apparently has trouble copying large files on Windows
-
-
-
 
             // magic number for Windows, 64Mb - 32Kb)
             int maxCount = (64 * 1024 * 1024) - (32 * 1024);
@@ -147,9 +132,7 @@ _31_ __
         }
     }
 
-
 ******8\. 创建图片的缩略图**
-
 
     private void createThumbnail(String filename, int thumbWidth, int thumbHeight, int quality, String outFilename)
 
@@ -168,9 +151,6 @@ _31_ __
             mediaTracker.waitForID(0);
 
             // use this to test for errors at this point: System.out.println(mediaTracker.isErrorAny());
-
-
-
 
         // determine thumbnail size from WIDTH and HEIGHT
         double thumbRatio = (double)thumbWidth / (double)thumbHeight;
@@ -201,13 +181,11 @@ _31_ __
         out.close();
     }
 
-
 **9\. 创建 JSON 格式的数据**
 
 请先阅读[这篇文章](/misc/goto?guid=4959755032893893899) 了解一些细节，
 
 并下面这个JAR 文件：[json-rpc-1.0.jar (75 kb)](/misc/goto?guid=4959755032982989596)
-
 
     import org.json.JSONObject;
     ...
@@ -223,7 +201,6 @@ _31_ __
 
 阅读这篇[文章](/misc/goto?guid=4959755033064350467) 了解更多细节
 
-
     import java.io.File;
 
     import java.io.FileOutputStream;
@@ -232,22 +209,13 @@ _31_ __
 
     import java.util.Date;
 
-
     import com.lowagie.text.Document;
 
     import com.lowagie.text.Paragraph;
 
     import com.lowagie.text.pdf.PdfWriter;
 
-
-
-
     public class GeneratePDF {
-
-
-
-
-
 
     public static void main(String[] args) {
         try {
@@ -268,13 +236,11 @@ _31_ __
         }
     }
 
-
 }
 
 **11\. HTTP 代理设置**
 
 阅读这篇 [文章](/misc/goto?guid=4959755033150580955) 了解更多细节。
-
 
     System.getProperties().put("http.proxyHost", "someProxyURL");
     System.getProperties().put("http.proxyPort", "someProxyPort");
@@ -285,13 +251,9 @@ _31_ __
 
 请先阅读这篇[文章](/misc/goto?guid=4959755033228683323) 了解更多信息
 
-
     public class SimpleSingleton {
 
         private static SimpleSingleton singleInstance =  new SimpleSingleton();
-
-
-
 
     //Marking default constructor private
     //to avoid direct instantiation.
@@ -304,11 +266,9 @@ _31_ __
         return singleInstance;
     }
 
-
 }
 
 另一种实现
-
 
     public enum SimpleSingleton {
 
@@ -320,24 +280,13 @@ _31_ __
 
     }
 
-
     //Call the method from Singleton:
 
     SimpleSingleton.INSTANCE.doSomething();
 
-
-
-
      **13. 抓屏程序**
 
-
-
-
      阅读这篇[文章](/misc/goto?guid=4959755033313190241) 获得更多信息。
-
-
-
-
 
     import java.awt.Dimension;
 
@@ -353,16 +302,9 @@ _31_ __
 
     import java.io.File;
 
-
     ...
 
-
-
-
     public void captureScreen(String fileName) throws Exception {
-
-
-
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -374,21 +316,11 @@ _31_ __
 
        ImageIO.write(image, "png", new File(fileName));
 
-
-
-
     }
 
     ...
 
-
-
-
      **14. 列出文件和目录**
-
-
-
-
 
     File dir = new File("directoryName");
 
@@ -410,7 +342,6 @@ _31_ __
 
       }
 
-
     // It is also possible to filter the list of returned files.
 
       // This example does not return any files that start with `.'.
@@ -427,15 +358,9 @@ _31_ __
 
       children = dir.list(filter);
 
-
-
-
     // The list of files can also be retrieved as File objects
 
       File[] files = dir.listFiles();
-
-
-
 
     // This filter only returns directories
 
@@ -451,19 +376,11 @@ _31_ __
 
       files = dir.listFiles(fileFilter);
 
-
-
-
      **15. 创建ZIP和JAR文件**
-
-
-
-
 
     import java.util.zip._;
 
     import java.io._;
-
 
     public class ZipIt {
 
@@ -559,19 +476,9 @@ _31_ __
 
     }
 
-
-
-
      **16. 解析/读取XML 文件**
 
-
-
-
      XML文件
-
-
-
-
 
     <?xml version="1.0"?>
     <students>
@@ -594,18 +501,13 @@ _31_ __
 
 Java代码
 
-
     package net.viralpatel.java.xmlparser;
-
 
     import java.io.File;
 
     import javax.xml.parsers.DocumentBuilder;
 
     import javax.xml.parsers.DocumentBuilderFactory;
-
-
-
 
     import org.w3c.dom.Document;
 
@@ -615,15 +517,7 @@ Java代码
 
     import org.w3c.dom.NodeList;
 
-
-
-
     public class XMLParser {
-
-
-
-
-
 
     public void getAllUserNames(String fileName) {
         try {
@@ -685,21 +579,15 @@ Java代码
         parser.getAllUserNames("c:\\test.xml");
     }
 
-
 }
 
 **17\. 把 Array 转换成 Map**
-
 
     import java.util.Map;
 
     import org.apache.commons.lang.ArrayUtils;
 
-
     public class Main {
-
-
-
 
     public static void main(String[] args) {
 
@@ -707,22 +595,15 @@ Java代码
 
             { "Netherland", "Amsterdam" }, { "Japan", "Tokyo" }, { "France", "Paris" } };
 
-
-
-
-
-
     Map countryCapitals = ArrayUtils.toMap(countries);
 
     System.out.println("Capital of Japan is " + countryCapitals.get("Japan"));
     System.out.println("Capital of France is " + countryCapitals.get("France"));
 
-
 }
 }
 
 **18\. 发送邮件**
-
 
     import javax.mail._;
 
@@ -730,17 +611,11 @@ Java代码
 
     import java.util.*;
 
-
     public void postMail( String recipients[ ], String subject, String message , String from) throws MessagingException
 
     {
 
         boolean debug = false;
-
-
-
-
-
 
      //Set the host smtp address
      Properties props = new Properties();
@@ -772,18 +647,15 @@ Java代码
     msg.setContent(message, "text/plain");
     Transport.send(msg);
 
-
 }
 
 **19\. 发送代数据的HTTP 请求**
-
 
     import java.io.BufferedReader;
 
     import java.io.InputStreamReader;
 
     import java.net.URL;
-
 
     public class Main {
 
@@ -813,17 +685,9 @@ Java代码
 
     }
 
-
-
-
      **20. 改变数组的大小**
 
-
-
-
-
     /**
-
 
   * Reallocates an array with a new size, and copies the contents
   * of the old array to the new array.
@@ -836,12 +700,10 @@ Object newArray = java.lang.reflect.Array.newInstance(
 
         elementType,newSize);
 
-
 int preserveLength = Math.min(oldSize,newSize);
 if (preserveLength > 0)
 
         System.arraycopy (oldArray,0,newArray,0,preserveLength);
-
 
 return newArray;
 }

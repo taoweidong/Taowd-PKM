@@ -95,7 +95,6 @@ select * from V$NLS_PARAMETERS
 
 复制代码 代码如下:
 
-
 select count(*)
 from ( select rownum-1 rnum
 from all_objects
@@ -105,7 +104,6 @@ where rownum <= to_date('2002-02-28','yyyy-mm-dd') - to_date('2002-
 where to_char( to_date('2002-02-01','yyyy-mm-dd')+rnum-1, 'D' )
 not in ( '1', '7' )
 
-
 查找2002-02-28至2002-02-01间除星期一和七的天数
 在前后分别调用DBMS_UTILITY.GET_TIME, 让后将结果相减(得到的是1/100秒, 而不是毫秒).
 
@@ -113,24 +111,20 @@ not in ( '1', '7' )
 
 复制代码 代码如下:
 
-
 select months_between(to_date('01-31-1999','MM-DD-YYYY'),to_date('12-31-1998','MM-DD-YYYY')) "MONTHS" FROM DUAL;
 1
 select months_between(to_date('02-01-1999','MM-DD-YYYY'),to_date('12-31-1998','MM-DD-YYYY')) "MONTHS" FROM DUAL;
 1.03225806451613
 
-
 10\. Next_day的用法
 
 复制代码 代码如下:
-
 
 Next_day(date, day)
 
 Monday-Sunday, for format code DAY
 Mon-Sun, for format code DY
 1-7, for format code D
-
 
 11
 select to_char(sysdate,'hh:mi:ss') TIME from all_objects
@@ -139,7 +133,6 @@ select to_char(sysdate,'hh:mi:ss') TIME from all_objects
 
 复制代码 代码如下:
 
-
 create or replace function sys_date return date is
 begin
 return sysdate;
@@ -147,12 +140,10 @@ end;
 
 select to_char(sys_date,'hh:mi:ss') from all_objects;
 
-
 12.获得小时数
 extract()找出日期或间隔值的字段值
 
 复制代码 代码如下:
-
 
 SELECT EXTRACT(HOUR FROM TIMESTAMP '2001-02-16 2:38:40') from offer
 SQL> select sysdate ,to_char(sysdate,'hh') from dual;
@@ -167,11 +158,9 @@ SYSDATE TO_CHAR(SYSDATE,'HH24')
 \-------------------- -----------------------
 2003-10-13 19:35:21 19
 
-
 13.年月日的处理
 
 复制代码 代码如下:
-
 
 select older_date,
 newer_date,
@@ -195,7 +184,6 @@ from emp
 )
 )
 
-
 14.处理月份天数不定的办法
 select to_char(add_months(last_day(sysdate) +1, -2), 'yyyymmdd'),last_day(sysdate) from dual
 16.找出今年的天数
@@ -207,14 +195,12 @@ to_char( last_day( to_date('02' | | :year,'mmyyyy') ), 'dd' )
 
 复制代码 代码如下:
 
-
 'YYYY99 TO_C
 \------- ----
 yyyy 99 0099
 rrrr 99 1999
 yyyy 01 0001
 rrrr 01 2001
-
 
 18.不同时区的处理
 select to_char( NEW_TIME( sysdate, 'GMT','EST'), 'dd/mm/yyyy hh:mi:ss') ,sysdate
@@ -224,12 +210,10 @@ from dual;
 
 复制代码 代码如下:
 
-
 Select TO_DATE(FLOOR(TO_CHAR(sysdate,'SSSSS')/300) * 300,'SSSSS') ,TO_CHAR(sysdate,'SSSSS')
 from dual
 2002-11-1 9:55:00 35786
 SSSSS表示5位秒数
-
 
 20.一年的第几天
 select TO_CHAR(SYSDATE,'DDD'),sysdate from dual
@@ -239,7 +223,6 @@ select TO_CHAR(SYSDATE,'DDD'),sysdate from dual
 21.计算小时,分,秒,毫秒
 
 复制代码 代码如下:
-
 
 select
 Days,
@@ -262,7 +245,6 @@ order by decode(mode,'FIFO',1,-1)*to_char(rq,'yyyymmddhh24miss');
 floor((date2-date1) /365) 作为年
 floor((date2-date1, 365) /30) 作为月
 d(mod(date2-date1, 365), 30)作为日.
-
 
 23.next_day函数 返回下个星期的日期,day为1-7或星期日-星期六,1表示星期日
 next_day(sysdate,6)是从当前开始下一个星期五。后面的数字是从星期日开始算起。

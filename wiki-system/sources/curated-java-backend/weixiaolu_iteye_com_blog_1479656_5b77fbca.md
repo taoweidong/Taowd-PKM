@@ -170,10 +170,7 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
 **服务端：**
 
-
     package cn.nio;
-
-
 
     import java.io.IOException;
 
@@ -191,8 +188,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     import java.util.Iterator;
 
-
-
     /**
 
      * NIO服务端
@@ -206,8 +201,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
     	//通道管理器
 
     	private Selector selector;
-
-
 
     	/**
 
@@ -244,8 +237,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
     		serverChannel.register(selector, SelectionKey.OP_ACCEPT);
 
     	}
-
-
 
     	/**
 
@@ -297,8 +288,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     					channel.configureBlocking(false);
 
-
-
     					//在这里可以给客户端发送信息哦
 
     					channel.write(ByteBuffer.wrap(new String("向客户端发送了一条信息").getBytes()));
@@ -306,8 +295,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
     					//在和客户端连接成功之后，为了可以接收到客户端的信息，需要给通道设置读的权限。
 
     					channel.register(this.selector, SelectionKey.OP_READ);
-
-
 
     					// 获得了可读的事件
 
@@ -317,11 +304,7 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     				}
 
-
-
     			}
-
-
 
     		}
 
@@ -361,8 +344,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     	}
 
-
-
     	/**
 
     	 * 启动服务端测试
@@ -381,18 +362,11 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     	}
 
-
-
     }
-
-
 
 **客户端：**
 
-
     package cn.nio;
-
-
 
     import java.io.IOException;
 
@@ -408,8 +382,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     import java.util.Iterator;
 
-
-
     /**
 
      * NIO客户端
@@ -423,8 +395,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
     	//通道管理器
 
     	private Selector selector;
-
-
 
     	/**
 
@@ -452,8 +422,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     		this.selector = Selector.open();
 
-
-
     		// 客户端连接服务器,其实方法执行并没有实现连接，需要在listen（）方法中调
 
     		//用channel.finishConnect();才能完成连接
@@ -465,8 +433,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
     		channel.register(selector, SelectionKey.OP_CONNECT);
 
     	}
-
-
 
     	/**
 
@@ -512,15 +478,11 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     						channel.finishConnect();
 
-
-
     					}
 
     					// 设置成非阻塞
 
     					channel.configureBlocking(false);
-
-
 
     					//在这里可以给服务端发送信息哦
 
@@ -530,8 +492,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     					channel.register(this.selector, SelectionKey.OP_READ);
 
-
-
     					// 获得了可读的事件
 
     				} else if (key.isReadable()) {
@@ -540,11 +500,7 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     				}
 
-
-
     			}
-
-
 
     		}
 
@@ -566,10 +522,6 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     	}
 
-
-
-
-
     	/**
 
     	 * 启动客户端测试
@@ -588,11 +540,7 @@ Java NIO的服务端只需启动一个专门的线程来处理所有的 IO 事�
 
     	}
 
-
-
     }
-
-
 
 **小结：**
 

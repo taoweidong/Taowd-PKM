@@ -62,7 +62,6 @@ Let's take a look at the most bare-bones example of Vue SSR in action.
 
 js
 
-
     // this runs in Node.js on the server.
     import { createSSRApp } from 'vue'
     // Vue's server-rendering API is exposed under `vue/server-renderer`.
@@ -81,11 +80,9 @@ Then run:
 
 sh
 
-
     > node example.js
 
 It should print the following to the command line:
-
 
     <button>1</button>
 
@@ -97,7 +94,6 @@ We can then move the Vue SSR code into a server request handler, which wraps the
   * Create the following `server.js` file:
 
 js
-
 
     import express from 'express'
     import { createSSRApp } from 'vue'
@@ -144,7 +140,6 @@ To mount an app in hydration mode, we need to use [`createSSRApp()`](/api/applic
 
 js
 
-
     // this runs in the browser.
     import { createSSRApp } from 'vue'
 
@@ -167,7 +162,6 @@ app.js
 
 js
 
-
     // (shared between server and client)
     import { createSSRApp } from 'vue'
 
@@ -186,7 +180,6 @@ client.js
 
 js
 
-
     import { createApp } from './app.js'
 
     createApp().mount('#app')
@@ -196,7 +189,6 @@ And the server uses the same app creation logic in the request handler:
 server.js
 
 js
-
 
     // (irrelevant code omitted)
     import { createApp } from './app.js'
@@ -272,7 +264,6 @@ app.js
 
 js
 
-
     // (shared between server and client)
     import { createSSRApp } from 'vue'
     import { createStore } from './store.js'
@@ -304,9 +295,7 @@ If we produce this in our server-rendered HTML, the browser will terminate the f
 
 html
 
-
           hi
-
 
   2. The data used during render contains randomly generated values. Since the same application will run twice - once on the server, and once on the client - the random values are not guaranteed to be the same between the two runs. There are two ways to avoid random-value-induced mismatches:
 
@@ -327,7 +316,6 @@ In Vue 3.5+, it is possible to selectively suppress inevitable hydration mismatc
 Since most custom directives involve direct DOM manipulation, they are ignored during SSR. However, if you want to specify how a custom directive should be rendered (i.e. what attributes it should add to the rendered element), you can use the `getSSRProps` directive hook:
 
 js
-
 
     const myDirective = {
       mounted(el, binding) {
@@ -352,7 +340,6 @@ Teleports require special handling during SSR. If the rendered app contains Tele
 If you do need to hydrate teleported content, they are exposed under the `teleports` property of the ssr context object:
 
 js
-
 
     const ctx = {}
     const html = await renderToString(app, ctx)

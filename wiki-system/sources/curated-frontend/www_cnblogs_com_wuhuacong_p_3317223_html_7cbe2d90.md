@@ -18,28 +18,23 @@ fetched_at: "2026-10-05 15:31:29"
 
 界面代码如下所示：
 
-
     <input class="easyui-validatebox" type="text" id="Name" name="Name" />
     或者
     <input type="text" ID="txtLoginName" name="txtLoginName" style="width:100px"  />
 
 赋值给界面控件代码如下：
 
-
     $("#Name").val(info.Name);
 
 获取界面控件的值代码如下：
-
 
     var name = $("#Name").val();
 
 如果是标签Lable控件，这需要把val 使用text替代即可，如下代码所示：
 
-
     $("#Name").text(info.Name);
 
 对于easyui-validatebox样式的控件，一般来说，有几个常见属性可以设置他们的。
-
 
     //必输项：
      <input class="easyui-validatebox" type="text" name="name" data-options="required:true"></input>
@@ -59,21 +54,17 @@ easyui的界面样式，可以使用easyui-validatebox，或者默认的textarea
 
 界面代码如下所示：
 
-
     <textarea id="type_Remark" class="easyui-validatebox" required="true" style="height:100px;"></textarea>
 
 或者
-
 
     <textarea style="height:60px;width:200px" id="type_Remark" name="Remark"></textarea>
 
 赋值给界面控件代码如下：
 
-
     $("#type_Remark").val(json.Remark);
 
 获取界面控件的值代码如下：
-
 
      var text = $("#type_Remark").val();
 
@@ -85,17 +76,14 @@ easyui的界面样式，可以使用easyui-validatebox，或者默认的textarea
 
 界面代码如下所示：
 
-
      <input type="password" name="password" style="width:260px;"></input>
 
 赋值给界面控件代码如下：
-
 
     var password = '123';
     $("#Password").val(password)
 
 获取界面控件的值代码如下：
-
 
                 $("#btnLogin").click(function () {
                     var postData = {
@@ -112,11 +100,9 @@ easyui的界面样式，可以使用easyui-validatebox，或者默认的textarea
 
 界面代码如下所示：
 
-
     <input class="easyui-combobox" type="text" id="type_PID1" name="PID" />
 
 绑定下拉列表的数据源代码如下：
-
 
                 $('#type_PID1').combobox({
                     url: '/DictType/GetDictJson',
@@ -126,18 +112,15 @@ easyui的界面样式，可以使用easyui-validatebox，或者默认的textarea
 
 设置控件的选择的内容代码如下：
 
-
     $("#type_PID1").combobox('setValue', json.PID);
 
 获取界面控件的值代码如下：
-
 
     var systemType=  $("#txtSystemType_ID").combobox('getValue');
 
 而利用标准的Select控件虽然可以实现从列表选择，不过不够ComboBox控件那么灵活方便，Select控件的界面代码如下：
 
 ![](https://images0.cnblogs.com/blog/8867/201309/22160046-d867a9aa1a2c45be82adc38d5df8bb84.png)
-
 
     <select id="txtPID" style="width: 100%" > </select>
 
@@ -153,16 +136,13 @@ easyui使用class=‘easyui-datebox’来标识日期控件，从弹出的层中
 
 它的界面代码如下所示：
 
-
     <input class="easyui-datebox" type="text" ID="txtLastUpdated" name="txtLastUpdated" style="width:100px"  />
 
 赋值给界面控件代码如下：
 
-
     $("#LastUpdated").datebox('setValue', info.LastUpdated);
 
 获取界面控件的值代码如下：
-
 
     var lastupate = $("#txtLastUpdated").datebox('getValue');
 
@@ -174,33 +154,27 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
 
 界面代码如下所示：
 
-
     <input class="easyui-numberbox" data-options="min:10,max:90,precision:2,required:true">
 
 或者使用‘easyui-numberspinner’样式来标识，可以上下调节数值。
 
 ![](https://images0.cnblogs.com/blog/8867/201309/22161246-d241e97c9815425f9474ffa496a5685b.png)
 
-
     <input class="easyui-numberspinner" data-options="min:10,max:100,required:true" style="width:80px;"></input>
 
 赋值给界面控件代码如下：
-
 
     $('#nn').numberbox('setValue', 206.12);
 
 或者
 
-
     $('#ss').numberspinner('setValue', 8234725);
 
 获取界面控件的值代码如下：
 
-
     var v = $('#nn').numberbox('getValue');
 
 或者
-
 
     var v = $('#ss').numberspinner('getValue');
 
@@ -211,7 +185,6 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
 ![](https://images0.cnblogs.com/blog/8867/201309/22161547-eabd4c0fe9cf4cd29319a787483e65d1.png)
 
 界面代码如下所示：
-
 
                         <tr>
                             <th>
@@ -226,11 +199,9 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
 
 赋值给界面控件代码如下：
 
-
     $('input:radio[name="SplitType"][value="Split"]').prop('checked', true);
 
 获取界面控件的值代码如下：
-
 
     $("input[name='SplitType']:checked").val()
 
@@ -240,7 +211,6 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
 
 其界面代码如下所示：
 
-
         <select id="cc" style="width:150px"></select>
 
              Select a language
@@ -249,7 +219,6 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
             <input type="radio" name="lang" value="03"> Ruby
             <input type="radio" name="lang" value="04"> Basic
             <input type="radio" name="lang" value="05"> Fortran
-
 
             $(function(){
                 $('#cc').combo({
@@ -264,7 +233,6 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
                 });
             });
 
-
 ### 8、复选框
 
 复选框是在一项或多项内容中，选择零项或者多项的一个输入界面控件。
@@ -273,13 +241,11 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
 
 界面代码如下所示：
 
-
     <input id="chkIsExpire" type="checkbox" >帐号过期
 
 由于复选框的一些特殊性质，在表单提交的时候，如果没有勾选的选型，使用serializeArray()方法构造的数据，复选框的值则不会被提交。
 
 基于这个原因，我们可以使用Select控件进行替代，实现复选项的功能，而不影响
-
 
     var postData = $("#ffEdit").serializeArray();
 
@@ -289,7 +255,6 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
 
 使用Select控件的代码如下所示。
 
-
     <select  id="Visible1" name="Visible">
               <option value="true" selected>正常</option>
               <option value="false">不可见</option>
@@ -297,18 +262,15 @@ easyui使用样式easyui-numberbox标识为数值类型，其表现为文本框�
 
 赋值给界面控件代码如下：
 
-
     $("#Visible1").prop('checked', info.Visible);
 
 获取界面控件的值代码如下：
-
 
     var visible = $("#txtVisible").val();
 
 ### 9、表格控件DataGrid
 
 easyui的列表控件，可以通过指定table的class属性为easyui-datagrid即可实现表格的定义，界面代码如下所示：
-
 
     <table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
                 data-options="singleSelect:true,collapsible:true,url:'../datagrid/datagrid_data1.json'">
@@ -326,8 +288,6 @@ easyui的列表控件，可以通过指定table的class属性为easyui-datagrid�
 
 不过为了避免使用脚本定义datagrid导致多次初始化的问题，我们一般只需要指定一个table代码即可，界面如下所示
 
-
-
                 <table id="grid" style="width: 1024px" title="用户操作" iconcls="icon-view">
                 </table>
 
@@ -336,7 +296,6 @@ easyui的列表控件，可以通过指定table的class属性为easyui-datagrid�
 ![](https://images0.cnblogs.com/blog/8867/201309/22162745-bb551bedf44a40ceb9f5810a8cf5b4ce.png)
 
 Javascript代码如下所示，其中的width: function () { return document.body.clientWidth * 0.9 }是用来实现宽度自适应的一个操作。
-
 
             //实现对DataGird控件的绑定操作
             function InitGrid(queryData) {
@@ -418,7 +377,6 @@ Javascript代码如下所示，其中的width: function () { return document.bod
 
 对于查询按钮触发的数据后台查询及数据绑定操作，javascript代码如下所示：
 
-
             //绑定查询按钮的的点击事件
             function BindSearchEvent() {
                 //按条件进行查询数据，首先我们得到数据的值
@@ -453,7 +411,6 @@ Javascript代码如下所示，其中的width: function () { return document.bod
 
 首先需要在初始化代码里面增加列的formatter回调函数，如下所示。
 
-
                     columns: [[
                         { field: 'ck', checkbox: true },   //选择
                          { title: '显示名称', field: 'Name', width: 200},
@@ -477,7 +434,6 @@ Javascript代码如下所示，其中的width: function () { return document.bod
 
 在formatter回调函数里面添加逻辑代码，判断是否可见，其实就是增加两个图片按钮，但是图片按钮的样式设置，必须在加载数据完毕后才能操作，因此需要在函数里面处理。
 
-
                     onLoadSuccess: function () {
                         $(".grid_visible").linkbutton({ text: '可见', plain: true, iconCls: 'icon-ok' });
                         $(".grid_unvisible").linkbutton({ text: '不可见', plain: true, iconCls: 'icon-stop' });
@@ -495,13 +451,9 @@ Javascript代码如下所示，其中的width: function () { return document.bod
 
 引用代码如下所示：
 
-
         <link href="~/Content/JQueryTools/JQueryTree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
 
-
 初始化在Tree树控件的界面代码如下所示：
-
-
 
          <!--
             var setting = {
@@ -557,30 +509,17 @@ EasyUI通过DIV层来控制布局的显示，DIV里面增加一个Region的属�
 
 我们详细查看主工作区的代码，如下所示。
 
-
         <!--主工作区-->
 
-
-
-
-
 其中字典管理里面还有子布局的展示，我们查看字典管理里面界面代码，如下所示。
-
-
-
-
 
                     .......................
 
                     <ul id="treeDemo" class="ztree">
                     </ul>
 
-
-
                 <!-------------------------------详细信息展示表格----------------------------------->
                 <table id="grid" style="width: 940px" title="用户操作" iconcls="icon-view"></table>
-
-
 
 ### 12、弹出式对话框
 
@@ -596,14 +535,11 @@ EasyUI弹出式对话框用的很多，对话框的界面代码放在DIV层里�
 
 在常规的Web界面提示里面，我们一般用纯粹的javascript的alert函数来进行信息的提示，如果在基于EasyUI的界面布局和演示里面，使用这个提示显然会和界面演示不够匹配，因此我们使用messager类来进行相应的提示信息处理，简单的脚本提示代码如下。
 
-
     $.messager.alert("提示", "修改成功");
 
 ![](https://images0.cnblogs.com/blog/8867/201309/22170108-321c27d9d62d4870bee10a8741272490.png)
 
 提示信息也可以更加丰富，添加图标等信息，界面代码如下所示。
-
-
 
             function alert1(){
                 $.messager.alert('My Title','Here is a message!');
@@ -621,13 +557,11 @@ EasyUI弹出式对话框用的很多，对话框的界面代码放在DIV层里�
                 $.messager.alert('My Title','Here is a warning message!','warning');
             }
 
-
 对于一般的删除操作，一般有一个提示确认的消息框，这个messager类也进行了封装处理，效果也不错。
 
 ![](https://images0.cnblogs.com/blog/8867/201309/22170710-24e3b1ef797c4e2d9ffd9ebae26182b2.png)
 
 界面代码如下所示。
-
 
                     $.messager.confirm("删除确认", "您确认删除选定的记录吗？", function (deleteAction) {
                         if (deleteAction) {

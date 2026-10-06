@@ -8,8 +8,6 @@ fetched_at: "2026-10-05 15:32:17"
 
 1、POM.xml
 
-
-
       <modelVersion>4.0.0</modelVersion>
       <groupId>org.nercita</groupId>
       <artifactId>BCP</artifactId>
@@ -17,7 +15,6 @@ fetched_at: "2026-10-05 15:32:17"
       <version>0.0.1-SNAPSHOT</version>
       <name>BCP</name>
       <url>http://maven.apache.org</url>
-
 
          UTF-8
         <spring.version>4.0.5.RELEASE</spring.version>
@@ -72,7 +69,6 @@ fetched_at: "2026-10-05 15:32:17"
           <artifactId>javax.servlet</artifactId>
           <version>3.0.1</version>
         </dependency>
-
 
         <!-- spring4 -->
         <dependency>
@@ -314,7 +310,6 @@ fetched_at: "2026-10-05 15:32:17"
     		<version>1.9.0</version>
     	</dependency>
 
-
     	<!-- pinyin4j -->
     	<dependency>
     		<groupId>com.belerweb</groupId>
@@ -368,8 +363,6 @@ fetched_at: "2026-10-05 15:32:17"
     		  <version>2.3.0</version>
     	</dependency>
 
-
-
     	<dependency>
     		<groupId>org.sitemesh</groupId>
     		<artifactId>sitemesh</artifactId>
@@ -422,13 +415,11 @@ fetched_at: "2026-10-05 15:32:17"
     		<version>1.4.7</version>
     	</dependency>
 
-
     	<dependency>
     		<groupId>com.sun.mail</groupId>
     		<artifactId>javax.mail</artifactId>
     		<version>1.5.2</version>
     	</dependency>
-
 
     	<dependency>
     		<groupId>org.apache.struts</groupId>
@@ -513,8 +504,6 @@ fetched_at: "2026-10-05 15:32:17"
     		<version>2.1</version>
     	</dependency>
 
-
-
         <!-- 文件上传 -->
         <dependency>
           	 <groupId>commons-fileupload</groupId>
@@ -555,7 +544,6 @@ fetched_at: "2026-10-05 15:32:17"
     		<version>1.0-beta</version>
     	</dependency>
         -->
-
 
     	<!-- jxls -->
     	<dependency>
@@ -606,21 +594,13 @@ fetched_at: "2026-10-05 15:32:17"
     	  <version>2.6.3</version>
     	</dependency>
 
-
-
       </dependencies>
-
 
       <build>
         <finalName>BCP</finalName>
       </build>
 
-
-
-
-
 2.web.xml
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <web-app version="3.0"  xmlns="http://java.sun.com/xml/ns/javaee"
@@ -644,7 +624,6 @@ fetched_at: "2026-10-05 15:32:17"
         <listener>
     		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     	</listener>
-
 
         <!-- ETag过滤器,节省带宽 -->
     	<filter>
@@ -688,7 +667,6 @@ fetched_at: "2026-10-05 15:32:17"
     		<url-pattern>/*</url-pattern>
     	</filter-mapping>
 
-
         <filter>
     		<filter-name>springSecurityFilterChain</filter-name>
     		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -697,7 +675,6 @@ fetched_at: "2026-10-05 15:32:17"
     	    <filter-name>springSecurityFilterChain</filter-name>
     	    <url-pattern>/*</url-pattern>
     	</filter-mapping>
-
 
         <!-- 页面装配-sitemesh -->
         <filter>
@@ -708,7 +685,6 @@ fetched_at: "2026-10-05 15:32:17"
     		<filter-name>sitemesh</filter-name>
     		<url-pattern>/*</url-pattern>
     	</filter-mapping>
-
 
         <!-- 清理内存 -->
     	<listener>
@@ -782,10 +758,7 @@ fetched_at: "2026-10-05 15:32:17"
          -->
     </web-app>
 
-
-
 3.application-security.xml
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans:beans xmlns="http://www.springframework.org/schema/security"
@@ -894,9 +867,7 @@ fetched_at: "2026-10-05 15:32:17"
 
     </beans:beans>
 
-
 4\. applicationContext.xml
-
 
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -923,17 +894,12 @@ fetched_at: "2026-10-05 15:32:17"
     	<!-- 数据源 -->
         <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >
 
-
-
-
         </bean>
 
         <!-- sessionFactory -->
         <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
     			<ref bean="dataSource" />
-
-
 
     				 ${hibernate.dialect}
     				 ${hibernate.show_sql}
@@ -942,8 +908,6 @@ fetched_at: "2026-10-05 15:32:17"
     				 ${hibernate.use_query_cache}
     				 org.hibernate.cache.ehcache.EhCacheRegionFactory
     				 ${hibernate.hbm2ddl}
-
-
 
     			<list>
     			      <value>org.nercita.bcp.**.domain**</value>
@@ -962,17 +926,11 @@ fetched_at: "2026-10-05 15:32:17"
         <!-- 获取spring上下文 的ApplicationContextAware的实现Bean -->
     	<bean  class="org.nercita.core.utils.SpringContextHolder" lazy-init="false" />
 
-
-
     </beans>
-
-
 
 5.application.properties
 
-
     #jdbc settings
-
 
     #Mysql settings 3306
     #db.url=jdbc:mysql://localhost:3306/bcp
@@ -981,9 +939,6 @@ fetched_at: "2026-10-05 15:32:17"
     #db.password=0729
     #hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
-
-
-
     #hibernate settings
     hibernate.show_sql=true
     hibernate.format_sql=true
@@ -991,17 +946,7 @@ fetched_at: "2026-10-05 15:32:17"
     hibernate.use_query_cache=true
     hibernate.hbm2ddl=update
 
-
-
-
-
-
-
-
-
-
 6\. springMVC-config.xml
-
 
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -1035,10 +980,8 @@ fetched_at: "2026-10-05 15:32:17"
     				<ref bean="msgConverter"/>
     			</list>
 
-
     			<bean class="org.nercita.core.web.springmvc.CustomBindInitializer">
     				<!--
-
 
     				-->
     			</bean>
@@ -1062,24 +1005,17 @@ fetched_at: "2026-10-05 15:32:17"
 
         <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 
-
-
                 <map>
                     <entry key="json" value="application/json"/>
                     <entry key="xml" value="application/xml"/>
                 </map>
 
-
-
                 <list>
                     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
                     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
-
-
                     </bean>
                 </list>
-
 
                 <list>
                     <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"/>
@@ -1094,33 +1030,24 @@ fetched_at: "2026-10-05 15:32:17"
 
         <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 
-
-
     				 dataAccessFailure
     				 resourceNotFound
     				 resourceNotFound
     				 uncaughtException
-
 
     	</bean>
 
         <!-- 文件上传-->
         <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
-
         </bean>
-
 
     	<!-- 处理国际化资源文件 -->
         <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
 
-
         </bean>
 
-
-
     </beans>
-
 
 ****
 
@@ -1128,9 +1055,7 @@ fetched_at: "2026-10-05 15:32:17"
 
 **2、实现代码**
 
-
 1、CustomAccessDecisionManager.java
-
 
     package org.nercita.bcp.system.service;
 
@@ -1194,7 +1119,6 @@ fetched_at: "2026-10-05 15:32:17"
             }
             throw new AccessDeniedException("Access Denied");
 
-
     	}
 
     	@Override
@@ -1211,10 +1135,7 @@ fetched_at: "2026-10-05 15:32:17"
 
     }
 
-
-
 2、CustomFilterInvocationSecurityMetadataSource.java
-
 
     package org.nercita.bcp.system.service;
 
@@ -1296,8 +1217,6 @@ fetched_at: "2026-10-05 15:32:17"
                         resourceMap.put(url, atts);
                     }
 
-
-
     	        }
 
         }
@@ -1339,7 +1258,6 @@ fetched_at: "2026-10-05 15:32:17"
             // 如果当系统分配了资源url,但是这个用户立属的角色没有则 提示用户无权访问这个页面
     		return null;
 
-
     	}
 
     	/*
@@ -1359,17 +1277,9 @@ fetched_at: "2026-10-05 15:32:17"
     		return true;
     	}
 
-
-
-
-
-
     }
 
-
-
 3、CustomFilterSecurityInterceptor.java
-
 
     package org.nercita.bcp.system.service;
 
@@ -1454,7 +1364,6 @@ fetched_at: "2026-10-05 15:32:17"
     //            super.afterInvocation(token, null);
     //        }
 
-
         	InterceptorStatusToken token = null;
     	 	try {
     	          token = super.beforeInvocation(fi);
@@ -1488,13 +1397,10 @@ fetched_at: "2026-10-05 15:32:17"
     		           super.afterInvocation(token, null);
     		      }
 
-
         }
-
 
     	@Override
     	public void init(FilterConfig arg0) throws ServletException {
-
 
     	}
 
@@ -1513,7 +1419,6 @@ fetched_at: "2026-10-05 15:32:17"
     	@Override
     	public void destroy() {
 
-
     	}
 
     	public FilterInvocationSecurityMetadataSource getSecurityMetadataSource() {
@@ -1527,10 +1432,7 @@ fetched_at: "2026-10-05 15:32:17"
 
     }
 
-
-
 3、核心处理类：CustomUserDetailsService.java
-
 
     package org.nercita.bcp.system.service;
 
@@ -1652,11 +1554,9 @@ fetched_at: "2026-10-05 15:32:17"
 
     }
 
-
 4.附加类登录成功和退出成功处理
 
 1、CustomSavedRequestAwareAuthenticationSuccessHandler.java
-
 
     package org.nercita.bcp.system.service;
 
@@ -1737,17 +1637,11 @@ fetched_at: "2026-10-05 15:32:17"
     		super.setRequestCache(requestCache);
     	}
 
-
-
     }
-
-
 
 2、CustomLogoutSuccessHandler.java
 
-
     package org.nercita.bcp.system.service;
-
 
     import java.io.IOException;
     import java.text.SimpleDateFormat;
@@ -1781,19 +1675,14 @@ fetched_at: "2026-10-05 15:32:17"
 
     		super.onLogoutSuccess(request, response, authentication);
 
-
     	}
 
-
-
     }
-
 
 #####
 3、实体Bean
 
 1、User.java
-
 
     package org.nercita.bcp.system.domain;
 
@@ -1824,7 +1713,6 @@ fetched_at: "2026-10-05 15:32:17"
     import org.nercita.core.orm.BaseUidEntity;
 
     import com.alibaba.fastjson.annotation.JSONField;
-
 
     /**
      * 用户实体
@@ -1869,7 +1757,6 @@ fetched_at: "2026-10-05 15:32:17"
     	@Column(unique=true,nullable=true)
     	private String activationCode;
 
-
     	// 重置码
     	@Column(unique=true,nullable=true)
     	private String resetCode;
@@ -1884,13 +1771,11 @@ fetched_at: "2026-10-05 15:32:17"
     	 */
     	private UserState userState = UserState.Disable;
 
-
     	/*
     	 * 是否黑名单    0：白名单   1：黑名单
     	 */
     	@Column(length=1)
     	private int abolished=0;
-
 
     	//用户代号
     	@Column(length=1)
@@ -1956,8 +1841,6 @@ fetched_at: "2026-10-05 15:32:17"
 
     	@Column(length = 255)
     	private String remark;
-
-
 
     	public String getName() {
     		return name;
@@ -2055,7 +1938,6 @@ fetched_at: "2026-10-05 15:32:17"
     		this.userState = userState;
     	}
 
-
     	public int getAbolished() {
     		return abolished;
     	}
@@ -2079,8 +1961,6 @@ fetched_at: "2026-10-05 15:32:17"
     	public void setAuthoritySet(Set<Authority> authoritySet) {
     		this.authoritySet = authoritySet;
     	}
-
-
 
     	public List<Crop> getCropSet() {
     		return cropSet;
@@ -2158,7 +2038,6 @@ fetched_at: "2026-10-05 15:32:17"
 
     	}
 
-
     	public Date getRegistData() {
     		return registData;
     	}
@@ -2175,7 +2054,6 @@ fetched_at: "2026-10-05 15:32:17"
     		this.expirationDate = expirationDate;
     	}
 
-
     	public ExamineStatus getExamineStatus() {
     		return examineStatus;
     	}
@@ -2183,7 +2061,6 @@ fetched_at: "2026-10-05 15:32:17"
     	public void setExamineStatus(ExamineStatus examineStatus) {
     		this.examineStatus = examineStatus;
     	}
-
 
     	public String getCertificationUrls() {
     		return certificationUrls;
@@ -2206,10 +2083,7 @@ fetched_at: "2026-10-05 15:32:17"
 
     }
 
-
-
 2.Authority.java
-
 
     package org.nercita.bcp.system.domain;
 
@@ -2266,7 +2140,6 @@ fetched_at: "2026-10-05 15:32:17"
     	//权限树形深度
         private Integer deepLevel = 0;
 
-
         //权限是否可用
         private boolean enabled=true;
 
@@ -2275,14 +2148,11 @@ fetched_at: "2026-10-05 15:32:17"
         @JoinColumn(name="menu_id")
         private Menu menu;
 
-
     	//记录人
     	@Column(updatable = false)
     	private String recorder;
 
-
     	private Integer orderNum = 0;
-
 
     	//记录时间
         @Temporal(TemporalType.TIMESTAMP)
@@ -2291,7 +2161,6 @@ fetched_at: "2026-10-05 15:32:17"
 
         //修改人
         private String modifier;
-
 
         //修改时间
         @Temporal(TemporalType.TIMESTAMP)
@@ -2439,17 +2308,9 @@ fetched_at: "2026-10-05 15:32:17"
     		return true;
     	}
 
-
-
-
-
-
     }
 
-
-
 3\. UserGroup.java
-
 
     package org.nercita.bcp.system.domain;
 
@@ -2484,7 +2345,6 @@ fetched_at: "2026-10-05 15:32:17"
 
     public class UserGroup extends BaseUidEntity{
 
-
     	private static final long serialVersionUID = -2723021723072060418L;
 
     	//用户组名
@@ -2493,7 +2353,6 @@ fetched_at: "2026-10-05 15:32:17"
     	//父用户组 ---允许为空
     	@ManyToOne(optional=true,cascade=CascadeType.PERSIST,fetch=FetchType.EAGER)
     	private UserGroup parentUserGroup;
-
 
     	//子用户组
         @OneToMany(mappedBy="parentUserGroup")
@@ -2504,7 +2363,6 @@ fetched_at: "2026-10-05 15:32:17"
         @ManyToOne(optional=true, cascade=CascadeType.PERSIST)
         @JoinColumn(name="teamAdmin_id")
         private User teamAdmin;
-
 
         //组内用户列表
         @OneToMany(mappedBy="userGroup")
@@ -2526,7 +2384,6 @@ fetched_at: "2026-10-05 15:32:17"
 
         //修改人
         private String modifier;
-
 
         //修改时间
         @Temporal(TemporalType.TIMESTAMP)
@@ -2624,21 +2481,9 @@ fetched_at: "2026-10-05 15:32:17"
     		this.remark = remark;
     	}
 
-
-
-
-
-
-
-
-
-
     }
 
-
-
 4.BaseUidEntity.java
-
 
     @SuppressWarnings("serial")
     @MappedSuperclass
@@ -2671,14 +2516,9 @@ fetched_at: "2026-10-05 15:32:17"
             return o;
         }
 
-
-
     }
 
-
-
 5\. UserDetail.java
-
 
     package org.nercita.bcp.system.domain.reference;
 
@@ -2725,13 +2565,9 @@ fetched_at: "2026-10-05 15:32:17"
     		this.realName = realName;
     	}
 
-
     }
 
-
-
 6.UserState.java
-
 
     package org.nercita.bcp.system.domain.reference;
 
@@ -2756,7 +2592,6 @@ fetched_at: "2026-10-05 15:32:17"
                 return "Enable";
             }
         };
-
 
         @Override
         public String toString() {

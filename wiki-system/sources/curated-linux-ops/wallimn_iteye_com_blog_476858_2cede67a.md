@@ -114,9 +114,6 @@ wallimn
 将Log4j的日志输出的web工程目录会方便系统移植、日志远程查看。那么如何来实现呢？可以通过一个自定义的Servlet设置系统属性的方法来实现，只需要几句代码，而且可配置、移植方便。
 **一、Servlet代码**
 
-
-
-
     package com.wallimn.gyz.util;
 
     import javax.servlet.ServletException;
@@ -136,8 +133,6 @@ wallimn
      */
 
     public class SystemServlet extends HttpServlet {
-
-
 
     	private static final long serialVersionUID = 8164865597169685698L;
 
@@ -165,9 +160,6 @@ wallimn
 
     }
 
-
-
-
 **二、web.xml文件配置**
 <servlet>
 <servlet-name>SystemServlet</servlet-name>
@@ -192,7 +184,6 @@ log4j.appender.FILEOUT.layout = org.apache.log4j.HTMLLayout
 具体实现：编写一个 servlet, 在系统加载的时候, 就把 properties 的文件读到一个 properties 文件中。那个 file 的属性值(我使用的是相对目录)改掉(前面加上系统的根目录)，然后把这个 properties 对象设置到 propertyConfig 中去，这样就初始化了 log 的设置。在后面的使用中就用不着再配置了。
 一般在我们开发项目过程中，log4j 日志输出路径固定到某个文件夹，这样如果我换一个环境，日志路径又需要重新修改，比较不方便，目前我采用了动态改变日志路径的方法来实现相对路径保存日志文件
 (1) 在项目启动时,装入初始化类:
-
 
 public class Log4jInit extends HttpServlet {
 
@@ -229,7 +220,6 @@ System.out.println(content);
 实际上 log4j 的配置文件如果为默认名称: log4j.properties，则可放置在 JVM 能读到的 classpath 里的任意地方，一般是放在 WEB-INF/classes 目录下。当log4j 的配置文件不再是默认名称，则需要另外加载并给出参数，如上 "PropertyConfigurator.configure(props);//装入log4j配置信息"。
 
 (2) web.xml 中的配置
-
 
 <servlet>
 <servlet-name>log4j-init</servlet-name>

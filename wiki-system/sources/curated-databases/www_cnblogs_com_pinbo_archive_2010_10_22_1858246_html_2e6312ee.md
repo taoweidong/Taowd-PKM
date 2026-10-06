@@ -36,7 +36,6 @@ exp aichannel/aichannel@TESTDB2 file= d:\data\newsmgnt.dmp tables=
 
 (inner_notify,notify_staff_relat)
 
-
 上面是常用的导出，对于压缩，既用winzip把dmp文件可以很好的压缩。
 也可以在上面命令后面 加上 compress=y 来实现。
 数据的导入
@@ -93,6 +92,5 @@ JServer Release 8.1.7.0.0 - Production
 . . 正在导入表 "INNER_NOTIFY" 4行被导入
 准备启用约束条件...
 成功终止导入，但出现警告。
-
 
 来自: <http://hi.baidu.com/ooofcu/blog/item/ec5d1f9580d41f007af48077.html>

@@ -135,10 +135,7 @@ package:代表项目的包路径。
 
 8、同理，测试的配置文件也要新建一个资源包，进行存放，如下图示。这个叫约束优于配置，我们先把很多东西都约束好。
 
-
 ![](http://dl2.iteye.com/upload/attachment/0092/4288/d33f101c-4c2e-3ee2-af6f-5ff56cefa530.png)
-
-
 
   * [![](http://dl2.iteye.com/upload/attachment/0092/4254/3280c357-9e71-35ba-b83a-84b52680bfac-thumb.png)](http://dl2.iteye.com/upload/attachment/0092/4254/3280c357-9e71-35ba-b83a-84b52680bfac.png)
   * 大小: 33 KB

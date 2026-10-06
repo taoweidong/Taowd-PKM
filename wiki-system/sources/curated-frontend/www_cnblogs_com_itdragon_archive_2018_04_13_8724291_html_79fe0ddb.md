@@ -55,7 +55,6 @@ html有的属性，Thymeleaf基本都有，而常用的属性大概有七八个�
 
 五、th:insert，th:replace，th:include 三种插入代码块的效果相似，但区别很大。
 
-
     <!DOCTYPE html>
     <!--名称空间-->
     <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -67,8 +66,6 @@ html有的属性，Thymeleaf基本都有，而常用的属性大概有七八个�
         <h2>ITDragon Thymeleaf 语法</h2>
         <!--th:text 设置当前元素的文本内容，常用，优先级不高-->
 
-
-
         <!--th:value 设置当前元素的value值，常用，优先级仅比th:text高-->
         <input type="text" th:value="${thValue}" />
 
@@ -76,16 +73,11 @@ html有的属性，Thymeleaf基本都有，而常用的属性大概有七八个�
         <!--th:each 修饰在div上，则div层重复出现，若只想p标签遍历，则修饰在p标签上-->
           <!-- 遍历整个div-p，不推荐-->
 
-
           <!--只遍历p，推荐使用-->
-
-
 
         <!--th:if 条件判断，类似的有th:switch，th:case，优先级仅次于th:each, 其中#strings是变量表达式的内置方法-->
 
-
         <!--th:insert 把代码块插入当前div中，优先级最高，类似的有th:replace，th:include，~{} ：代码块表达式 -->
-
 
         <!--th:object 声明变量，和*{} 一起使用-->
 
@@ -93,13 +85,10 @@ html有的属性，Thymeleaf基本都有，而常用的属性大概有七八个�
              TH:   <!--${thObject.thName}-->
              DE:   <!--${thObject.desc}-->
 
-
     </body>
     </html>
 
-
 后台给负责给变量赋值，和跳转页面。
-
 
     import com.itdragon.entities.ThObject;
     import org.springframework.stereotype.Controller;
@@ -123,7 +112,6 @@ html有的属性，Thymeleaf基本都有，而常用的属性大概有七八个�
             return "grammar/thymeleaf";
         }
     }
-
 
 ## 二、标准表达式语法
 
@@ -165,16 +153,12 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
 
 用一个官方例子来区分三者的不同，第三部分会通过实战再次用到该知识。
 
-
     <!--th:fragment定义代码块标识-->
     <footer th:fragment="copy">
     © 2011 The Good Thymes Virtual Grocery
     </footer>
 
     <!--三种不同的引入方式-->
-
-
-
 
     <!--th:insert是在div中插入代码块，即多了一层div-->
 
@@ -190,8 +174,6 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
 
     © 2011 The Good Thymes Virtual Grocery
 
-
-
 ### #{...} 消息表达式
 
 消息表达式一般用于国际化的场景。结构：`th:text="#{msg}"` 。会在第三部分的实战详细介绍。
@@ -202,10 +184,8 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
 
 不管是静态资源的引用，form表单的请求，凡是链接都可以用`@{...}` 。这样可以动态获取项目路径，即便项目名变了，依然可以正常访问
 
-
     #修改项目名，链接表达式会自动修改路径，避免资源文件找不到
     server.context-path=/itdragon
-
 
 #### 链接表达式结构
 
@@ -219,13 +199,11 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
 
 列举：第三部分的实战引用会详细使用该表达式
 
-
     <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
     <link th:href="@{/main/css/itdragon.css}" rel="stylesheet">
     <form class="form-login" th:action="@{/user/login}" th:method="post" >
     <a class="btn btn-sm" th:href="@{/login.html(l='zh_CN')}">中文</a>
     <a class="btn btn-sm" th:href="@{/login.html(l='en_US')}">English</a>
-
 
 ### ${...}变量表达式
 
@@ -257,12 +235,10 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
 
 这里以常用的Session举例，用户刊登成功后，会把用户信息放在Session中，Thymeleaf通过内置对象将值从session中获取。
 
-
     // java 代码将用户名放在session中
     session.setAttribute("userinfo",username);
     // Thymeleaf通过内置对象直接获取
     th:text="${session.userinfo}"
-
 
 #### 常用的内置方法
 
@@ -281,7 +257,6 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
 七、**dates** ：日期方法，常用的方法有：format，year，month，hour，createNow等
 
 文章底部提供了对应的官网链接
-
 
     <!DOCTYPE html>
     <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -304,17 +279,12 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
              startsWith :
              contains :
 
-
         <h3>#numbers </h3>
 
              formatDecimal 整数部分随意，小数点后保留两位，四舍五入:
              formatDecimal 整数部分保留五位数，小数点后保留两位，四舍五入:
 
-
         <h3>#bools </h3>
-
-
-
 
         <h3>#arrays </h3>
 
@@ -351,9 +321,7 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
     </body>
     </html>
 
-
 后台给负责给变量赋值，和跳转页面。
-
 
     @RequestMapping("varexpressions")
     public String varexpressions(ModelMap map) {
@@ -369,7 +337,6 @@ id：HTML的id选择器，使用时要在前面加上#号，不支持class选择
       map.put("itdragonNum", 888.888D);
       return "grammar/varexpressions";
     }
-
 
 ## 三、Thymeleaf在SpringBoot应用
 
@@ -387,8 +354,6 @@ Thymeleaf是Spring Boot 官方推荐使用的模版引擎，这也意味着用Th
 
 pom.xml 引入Thymeleaf的依赖，并确定其版本
 
-
-
        UTF-8
        UTF-8
       <java.version>1.8</java.version>
@@ -402,13 +367,11 @@ pom.xml 引入Thymeleaf的依赖，并确定其版本
       </dependency>
     </dependencies>
 
-
 ### 提取公共页面
 
 为了统一页面风格，提高页面的复用率，我们一般都会提取公共页面。之前在文章中介绍了SiteMesh的使用，今天用Thymeleaf来实现。
 
 统一规范引入的资源文件
-
 
     <!DOCTYPE html>
     <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -422,16 +385,10 @@ pom.xml 引入Thymeleaf的依赖，并确定其版本
     	    <link th:href="@{/sb-admin-1.0.4/css/plugins/morris.css}" rel="stylesheet">
     	    <link th:href="@{/sb-admin-1.0.4/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
 
-
-
-
-
     	</head>
     </html>
 
-
 统一左侧菜单栏
-
 
     <!DOCTYPE html>
     <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -445,8 +402,6 @@ pom.xml 引入Thymeleaf的依赖，并确定其版本
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                      Toggle navigation
-
-
 
                 </button>
                 <a class="navbar-brand" href="/dashboard">ITDragon sb-admin-1.0.4</a>
@@ -468,7 +423,6 @@ pom.xml 引入Thymeleaf的依赖，并确定其版本
     </header>
     </body>
     </html>
-
 
 以上代码用到了三个知识点：
 
@@ -492,7 +446,6 @@ Spring Boot 实现国际化步骤：
 
 这里只贴出第四步的代码，前三步以及完整代码请异步github
 
-
     <!DOCTYPE html>
     <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{commons/default::common-head}">
@@ -506,9 +459,7 @@ Spring Boot 实现国际化步骤：
 
     	<header th:replace="~{commons/header::common-header(activeUrl='employees')}"></header>
 
-
     			<!-- Page Heading -->
-
 
     					<h1 class="page-header" th:text="#{employees}"></h1>
     					<ol class="breadcrumb">
@@ -517,17 +468,10 @@ Spring Boot 实现国际化步骤：
     						<li class="active"><i class="fa fa-table"></i>   </li>
     					</ol>
 
-
-
-
-
     						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     						<i class="fa fa-info-circle"></i> <strong th:text="${message}"></strong>
 
-
-
     			<!-- /.row -->
-
 
     					<h2 th:text="#{employees}"></h2>
 
@@ -562,15 +506,10 @@ Spring Boot 实现国际化步骤：
     							</tbody>
     						</table>
 
-
-
     			<!-- /.row -->
-
-
 
     </body>
     </html>
-
 
 以上代码用到了知识点：
 

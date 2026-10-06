@@ -232,12 +232,9 @@ uni-app默认把项目编译到根目录的unpackage目录。
 
 全局安装vue-cli
 
-
     npm install -g @vue/cli
 
-
 示例源码如下，请查看 pre > code 标签中的内容
-
 
     npm install -g @vue/cli
 
@@ -245,23 +242,17 @@ uni-app默认把项目编译到根目录的unpackage目录。
 
 **使用正式版** （对应HBuilderX最新正式版）
 
-
     vue create -p dcloudio/uni-preset-vue my-project
 
-
 示例源码如下，请查看 pre > code 标签中的内容
-
 
     vue create -p dcloudio/uni-preset-vue my-project
 
 **使用Alpha版** （对应HBuilderX最新Alpha版）
 
-
     vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
 
-
 示例源码如下，请查看 pre > code 标签中的内容
-
 
     vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
 
@@ -285,13 +276,10 @@ uni-app默认把项目编译到根目录的unpackage目录。
 
 ## # 运行、发布uni-app
 
-
     npm run dev:%PLATFORM%
     npm run build:%PLATFORM%
 
-
 示例源码如下，请查看 pre > code 标签中的内容
-
 
     npm run dev:%PLATFORM%
     npm run build:%PLATFORM%

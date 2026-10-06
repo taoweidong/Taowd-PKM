@@ -20,8 +20,6 @@ Scala 源代码被编译成 Java 字节码，所以它可以运行于 JVM 之上
 
 本教程适合想从零开始学习 Scala 编程语言的开发人员。当然本教程也会对一些模块进行深入，让你更好的了解 Scala 的应用。
 
-
-
 * * *
 
 ## 学习本教程前你需要了解
@@ -44,21 +42,15 @@ println("Hello, world!")
 }
 }
 
-
 [运行实例 »](/try/runcode.php?filename=HelloWorld&type=scala)
 
 将以上代码保存为 HelloWorld.scala 文件，执行以上 scala 程序（你也可以直接在线执行）：
-
-
 
     $ scalac HelloWorld.scala  // 把源码编译为字节码
 
     $ scala HelloWorld  // 把字节码放到虚拟机中解释运行
 
-
-
 输出结果为：
-
 
     Hello, world!
 

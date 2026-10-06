@@ -110,7 +110,6 @@ D:\maven-3.3.9\conf目录下有settings.xml文件，复制到上面的路径下�
 
 **One.java**
 
-
     public class One{
 
     	public String say(String name){
@@ -120,7 +119,6 @@ D:\maven-3.3.9\conf目录下有settings.xml文件，复制到上面的路径下�
     }
 
 **OneTest.java**
-
 
     public class OneTest{
 
@@ -140,9 +138,6 @@ D:\maven-3.3.9\conf目录下有settings.xml文件，复制到上面的路径下�
 
 **(4)POM文件的解释**
 
-
-
-
       <!-- 模型版本号 -->
       <modelVersion>4.0.0</modelVersion>
       <!-- 群组ID: 公司域名反写 -->
@@ -155,7 +150,6 @@ D:\maven-3.3.9\conf目录下有settings.xml文件，复制到上面的路径下�
       <!-- 默认字符集 -->
 
          UTF-8
-
 
      <!-- 依赖管理 -->
       <dependencies>

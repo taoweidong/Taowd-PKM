@@ -68,7 +68,6 @@ select * from flow_user where username LIKE'[^王李张]飞';
 
 由于通配符的缘故，导致查询特殊字符“%”、“_”、“[”的语句无法正常实现，把特殊字符用“[]”括起来便可以正常查询。
 
-
     　　function sqlencode(str)
     　　str=replace(str,"[","[[]") '此句一定要在最前
     　　str=replace(str,"_","[_]")

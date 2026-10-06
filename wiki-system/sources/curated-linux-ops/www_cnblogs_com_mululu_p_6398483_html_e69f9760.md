@@ -13,12 +13,10 @@ wget [http://sourceforge.net/projects/nmon/files/download/nmon_x86_12a.zip](http
 
 二、初始化工具
 
-
     [root@mululu ~]# cd /opt
     [root@mululu opt]# mkdir nmon
     [root@mululu opt]# cd nmon
     [root@mululu nmon]#wget [http://sourceforge.net/projects/nmon/files/download/nmon_x86_12a.zip](http://sourceforge.net/projects/nmon/files/download/nmon_x86_12a.zip/download)
-
 
     [root@mululu nmon]# unzip nmon_x86_12a.zip
     Archive:  nmon_x86_12a.zip
@@ -40,7 +38,6 @@ wget [http://sourceforge.net/projects/nmon/files/download/nmon_x86_12a.zip](http
 然后直接运行 nmon 即可，直接运行nmon可以实时监控系统资源的使用情况，执行下面的步骤可以展现一段时间系统资源消耗的报告。
 
 下面是直接执行nmon命令实时监控系统资源消耗情况的截图：
-
 
     [root@mululu nmon]#./nmon
 
@@ -75,7 +72,6 @@ CPU、内存、磁盘和网络的消耗情况都被很直观的展现出来。
 nmon -h查看更多帮助信息。
 
 解决方式：
-
 
     先看看这个命令属于哪个软件包：
     [root@mululu ~]#  yum provides */lsb_release
@@ -116,12 +112,10 @@ nmon -h查看更多帮助信息。
 下载 nmon analyser (生成性能报告的免费工具)：
 <https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Power%20Systems/page/nmon_analyser>
 
-
 将之前生成的 nmon 数据文件传到 Windows 机器上，用 Excel 打开分析工具 nmon analyser v33C.xls 。点击 Excel 文件中的 "Analyze nmon data" 按钮，选择 nmon 数据文件，这样就会生成一个分析后的结果文件： hostname_090824_1306.nmon.xls ，用 Excel 打开生成的文件就可以看到结果了。
 
 如果宏不能运行，需要做以下操作：
 工具 -> 宏 -> 安全性 -> 中，然后再打开文件并允许运行宏。
-
 
 下面是在测试环境中生成的NMON报告截图：
 

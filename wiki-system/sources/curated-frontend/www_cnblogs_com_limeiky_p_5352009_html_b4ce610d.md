@@ -42,7 +42,6 @@ zTree的介绍：
 
 zTree 的参数配置都在这里完成，简单的说：树的样式、事件、访问路径等都在这里配置
 
-
     var setting = {
         showLine: true,
         checkable: true
@@ -64,11 +63,7 @@ zTree 的全部节点数据集合，采用由JSON对象组成的数据结构，�
 
 **第一步 —— 引入相关文件**
 
-
     <link rel="stylesheet" href="ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
-
-
-
 
 备注：
 
@@ -81,7 +76,6 @@ zTree 的全部节点数据集合，采用由JSON对象组成的数据结构，�
 4、最后一个（js/jquery.ztree.excheck-3.5.min.js）则是拓展文件，主要用于单选框和复选框的功能，因为用到了复选框，所以也要要引进来。
 
 **第二步 —— 相关配置（具体的详细配置，请到官网参考详细API文档）**
-
 
     var zTree;
     var setting = {
@@ -120,7 +114,6 @@ zTree 的全部节点数据集合，采用由JSON对象组成的数据结构，�
 
 1、html页面，直接放一个ul就可以，数据最终会自动加载到这个ul元素里面
 
-
     <body>
 
         <ul id="user_tree" class="ztree" style="border: 1px solid #617775;overflow-y: scroll;height: 500px;"></ul>
@@ -130,7 +123,6 @@ zTree 的全部节点数据集合，采用由JSON对象组成的数据结构，�
 2、js中进行数据的加载
 
 一，静态方式（直接定义）
-
 
     var zNodes =[
       { id:1, pId:0, name:"test 1", open:false},
@@ -154,7 +146,6 @@ zTree 的全部节点数据集合，采用由JSON对象组成的数据结构，�
     }
 
 二、动态方式（从后台数据库加载）
-
 
     /**
      * 页面初始化
@@ -192,7 +183,6 @@ zTree 的全部节点数据集合，采用由JSON对象组成的数据结构，�
 **java后台加载数据代码** ：
 
 #### 1、定义tree的VO类，这个也可以不用定义，由于我要用到其他操作，方便一些
-
 
     /**
      * zTree树形结构对象VO类
@@ -241,7 +231,6 @@ zTree 的全部节点数据集合，采用由JSON对象组成的数据结构，�
     }
 
 2、查询数据库，并且sql的结构字段也要是id,pId,name,open(可选)这种格式（注意：pId中间的I必须大写），然后将结果封装到TreeVO类中。
-
 
     /**
        * 加载树形结构数据

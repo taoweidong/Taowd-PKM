@@ -44,25 +44,19 @@ fetched_at: "2026-10-05 15:44:46"
 
 进入到本地仓库 WorkSpaceMD 的文件目录下，执行以下命令：
 
-
     git init  // 初始化 git 项目
     git remote add origin git@github.com:Guizimo/WorkSpaceMD.git // 添加远程仓库
 
-
 添加 gitignore 配置，防止一些配置文件被提交上去了。（主要是不同设备的配置导致冲突，会影响自动同步）
-
 
      .idea
      .obsidian
      .vscode
 
-
 首次提交通过命令推送。
-
 
      git commit -m "first commit"
      git push -u origin main
-
 
 ### Git 插件配置
 
@@ -82,9 +76,7 @@ fetched_at: "2026-10-05 15:44:46"
 
 由于带 Mac 端已经创建了 Git 项目，这里直接拉取远程的仓库代码，然后使用 Obsidian 打开就可以了，同样的需要安装 Git 插件以及相应的配置。
 
-
     git clone git@github.com:Guizimo/WorkSpaceMD.git // 拉取远程仓库
-
 
 ### 同步 Git 异常
 
@@ -104,45 +96,35 @@ iSH 是一个IOS 端的 Linux Shell 工具，我们用它来拉取 git 的远程
 
 直接在 Apple Store下载 iSH
 
-
     apk update  // 更新软件包
     apk install git   // 安装 git
-
 
 ### 挂载目录
 
 在 IOS 端找到 Obsidian 的目录，在 ISH 中挂载到相应的目录，主要是把远程的 Git 仓库连接到对应目录下。
 
-
     mount -t ios obsidian /mnt
-
 
 此时会让你选择目录，选择 Obsidian 目录就好。
 
-
     cd /mnt/WorkSpaceMD
-
 
 ### 配置
 
 配置 Git
 ​
 
-
     git config --global user.name "Guizimo"
     git config --global user.email "17680262548@163.com"
     git config --global --add safe.directory /mnt/WorkSpaceMD  // 添加安全目录
 
-
 ​
 配置远程仓库
-
 
     git init   // 初始化 git​
     git branch -M main  // 调整分支为 main
     git remote add origin https://github.com/Guizimo/WorkSpaceMD.git  // 添加远程仓库​
     git pull origin main // 拉取远程代码
-
 
 ​
 注意我这里没有使用 SSH，这里使用的是 Https，使用的是账号 + Token 的认证方式。可以通过：
@@ -168,16 +150,12 @@ iSH 是一个IOS 端的 Linux Shell 工具，我们用它来拉取 git 的远程
 
 下载安装之后，打开Termux，在 Termux 中申请本机存储访问权限，之后使Termux可访问本机存储。
 
-
     termux-setup-storage
-
 
 下载依赖
 
-
     pkg update
     pkg install git
-
 
 ### 配置目录
 
@@ -185,14 +163,11 @@ iSH 是一个IOS 端的 Linux Shell 工具，我们用它来拉取 git 的远程
 
 通过cd命令，进入本机 Obsidian 文件夹的 WorkSpaceMD 文件夹内。不同手机型号地址位置可能有所不同，例如：
 
-
     cd ~/storage/documents/Obsidian/WorkSpaceMD
-
 
 ### 配置Git
 
 通过以下命令拉取远程仓库的代码。
-
 
     git init  // 初始化 git
     git branch -M main  // 调整分支为 main
@@ -202,7 +177,6 @@ iSH 是一个IOS 端的 Linux Shell 工具，我们用它来拉取 git 的远程
     git config --global user.name "Guizimo"
     git config --global user.email "17680262548@163.com"
     git pull origin main  // 拉取远程代码
-
 
 ### 配置 Git 插件
 

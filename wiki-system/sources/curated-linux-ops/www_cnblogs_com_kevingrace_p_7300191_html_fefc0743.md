@@ -8,7 +8,6 @@ fetched_at: "2026-10-05 15:34:51"
 
 Netdata用可视化的手段，将被监测者最细微的细节，展现了出来。这样便可以清晰地了解linux系统和应用程序此时的状况。Netdata主要功能:
 
-
     优美的界面：bootstrap框架下的控制界面, 酷炫（主要是dark主题，light主题就没这感觉了）
     自定义的控制界面：你可以使用简单的HTML代码去自定义控制界面(不需要使用javascript)
     极其的快速而高效：程序使用C进行编写(默认安装下，预计只有2%的单核CPU使用率和少许的内存使用率)
@@ -23,7 +22,6 @@ Netdata用可视化的手段，将被监测者最细微的细节，展现了出�
     支撑多种时间序列后端服务，比如graphite, opentsdb, prometheus, json document DBs
 
 **监测内容** ：下面是Netdata目前检测的内容（大多数都不需要进行配置，安装后即可开始监测）
-
 
     1.CPU的使用率,中断，软中断和频率(总量和每个单核)
     2.RAM，互换和内核内存的使用率（包括KSM和内核内存deduper）
@@ -48,9 +46,7 @@ Netdata用可视化的手段，将被监测者最细微的细节，展现了出�
     17.NUT UPSes（负载，充电，电池电压，温度，使用指标，输出指标）
     可以监测任意数量的SNMP服务，不过你需要进行配置，还可以对此软件进行扩展，可以使用任何语言编写插件，以此来从任何来源收集数据
 
-
 **下面简单记录下Netdata的部署过程（Cetnos下）：**
-
 
     netdata下载地址：http://firehol.org/download/netdata/releases/v1.0.0/
     autogen下载地址：http://ftp.gnu.org/gnu/autogen/5.11.8/
@@ -78,9 +74,7 @@ Netdata用可视化的手段，将被监测者最细微的细节，展现了出�
     启动：/data/netdata/usr/sbin/netdata
     关闭：killall netdata
 
-
 **或者 通过下面方式进行安装:**
-
 
     1) 安装准备
     Netdata提供了一个非常简便的安装方法，只需要执行下面的命令即可完成安装netdata所依赖的各种东西：

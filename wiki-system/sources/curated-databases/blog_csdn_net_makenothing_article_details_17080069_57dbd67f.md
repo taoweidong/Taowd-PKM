@@ -18,10 +18,7 @@ fetched_at: "2026-10-05 15:27:00"
 
 连接字符串：
 
-
     connectionString="Password=czh;User ID=czh;Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=XXX.XXX.XXX.XXX)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=skydream)));"
-
-
 
 1\. 微软提供的连接方法 : using System.Data.OracleClient;
 
@@ -33,13 +30,11 @@ fetched_at: "2026-10-05 15:27:00"
 
 ··3.在程序中 using System.Data.OracleClient;
 
-
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Data.OracleClient;
-
 
     namespace ConsoleApplication2
     {
@@ -76,9 +71,6 @@ fetched_at: "2026-10-05 15:27:00"
         }
     }
 
-
-
-
 2.Oracle自己提供的方法：using Oracle.DataAccess.Client;
 
 前提条件：安装oracle或者oracle client（说明：oracle client比较小，本人安装的是client）下载地址：[http://pan.baidu.com/share/link?shareid=462035167&uk=2098256597](http://pan.baidu.com/share/link?shareid=462035167&uk=2098256597)
@@ -90,7 +82,6 @@ fetched_at: "2026-10-05 15:27:00"
 ··2.右键、引用，在.NET/组件中选择Oracle.DataAccess.Client；如果找不到则选择 浏览，进入到oracleclient的安装目录寻找 Oracle.Data.Access.dll （典型目录为：E:\app\Administrator\product\11.2.0\client_1\ODP.NET\bin\2.x\Oracle.Data>Access.dll）
 
 ··3.程序中添加引用：using Oracle.DataAccess.Client;
-
 
     using System;
     using System.Collections.Generic;
@@ -132,9 +123,6 @@ fetched_at: "2026-10-05 15:27:00"
             }
         }
     }
-
-
-
 
 技术交流沟通请扫码或者关注公众: 木石说 （ mushiwords）, 直接回复 cpp 获取下载链接，其他问题，有空必回，欢迎交流沟通。
 

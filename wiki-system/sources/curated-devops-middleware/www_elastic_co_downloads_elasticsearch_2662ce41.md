@@ -12,7 +12,6 @@ fetched_at: "2026-10-05 15:30:27"
 
 For local testing, use Docker to install and run Elasticsearch and Kibana on your local machine using start-local.
 
-
     curl -fsSL https://elastic.co/start-local | shCopy to clipboard
 
 For production installations, follow the steps below.
@@ -41,11 +40,9 @@ Elasticsearch can also be installed from our package repositories using apt or y
 
 Run the following command to [start Elasticsearch with security enabled](https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-stack-security.html):
 
-
     bin/elasticsearchCopy to clipboard
 
 Windows
-
 
     bin\elasticsearch.batCopy to clipboard
 

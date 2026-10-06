@@ -6,7 +6,6 @@ fetched_at: "2026-10-05 15:29:33"
 
 **使用sqlcommand对象来返回数据集合的方法、**
 
-
     string strconn="data source=billgates;initial catalog=test;integrated security=SSPI;";
     SqlConnection conn=new SqlConnection(strconn);
     conn.Open();
@@ -37,7 +36,6 @@ fetched_at: "2026-10-05 15:29:33"
 
 **使用sqlcommand对象来操作存储过程**
 
-
     string strconn="data source=billgates;initial catalog=test;integrated security=SSPI;";
     SqlConnection conn=new SqlConnection(strconn);
     conn.Open();
@@ -55,7 +53,6 @@ fetched_at: "2026-10-05 15:29:33"
     dataGrid1.DataSource=dt;
 
 **ExecuteReader方法**
-
 
     using System;
     using System.Data.SqlClient;
@@ -78,7 +75,6 @@ fetched_at: "2026-10-05 15:29:33"
     }
 
 **ExecuteNonQuery方法**
-
 
     一般修改删除都插入都用它
     返回受影响的行数。
@@ -107,7 +103,6 @@ fetched_at: "2026-10-05 15:29:33"
 **ExecuteScalar方法**
 
 **执行查询，并返回查询所返回的结果集中第一行的第一列。所有其他的列和行将被忽略。**
-
 
     using System;
     using System.Data.SqlClient;

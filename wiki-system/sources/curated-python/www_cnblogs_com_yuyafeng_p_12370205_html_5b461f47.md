@@ -10,7 +10,6 @@ cookiecuter是用来建立项目的工程模板， 也就是在开始创建项�
 
 安装
 
-
      pip install cookiecutter
 
 使用
@@ -19,11 +18,9 @@ cookiecuter是用来建立项目的工程模板， 也就是在开始创建项�
 
 https://github.com/pydanny/cookiecutter-django.git
 
-
     $ cookiecutter https://github.com/pydanny/cookiecutter-django.git
 
 然后出现配置过程
-
 
     project_name [My Awesome Project]: myproject  # 项目名称
     project_slug [myproject]: app01  # slug

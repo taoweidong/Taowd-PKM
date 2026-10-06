@@ -14,9 +14,7 @@ ORA-28000: the account is locked
 第二种
 ALTER USER username ACCOUNT UNLOCK;
 
-
 第三种
-
 
 在plsql developer中要是以scott/tiger登录时提示ora-28000 the account is locked。
 

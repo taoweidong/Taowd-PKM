@@ -194,15 +194,11 @@ endual
 
 阅读更多
 
-
-
 可怜的我啊，搞了一个下午，连接 C#连接Sql server2005,就是连接不上，
 
 然后查资料啊查资料，不仅抱怨国内的文章千篇一律，都没讲清楚到底怎样去写
 
 怎样去配置，你转载我，我转载你。当然，我也喜欢转载。。。。，哈哈哈哈
-
-
 
 遇到的问题，就是连接不上Sql server2005, 提出的错误是：
 
@@ -212,8 +208,6 @@ endual
 
 名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接)
 
-
-
 于是，找啊，找啊，找啊，找啊，找到的就是这篇文章的上面那一个文章。
 
 其实连接的代码都差不多对了，但是没有人点出来，还有端口的问题。
@@ -222,21 +216,17 @@ endual
 
 1.打开Sql server 管理配置器
 
-
 ![](http://dl.iteye.com/upload/attachment/0073/4223/e0004604-6f38-39f1-bf29-8c0b6374b342.png)
 
 2.点击SqlExpress的协议，我们要启动所有状态。
-
 
 ![](http://dl.iteye.com/upload/attachment/0073/4239/309864a6-0a99-3d10-88c0-8aaf7474e0e7.png)
 
 3.选择TCP/IP，点击右键，选择属性，我们修改连接数据库的端口地址，非常重要
 
-
 ![](http://dl.iteye.com/upload/attachment/0073/4239/309864a6-0a99-3d10-88c0-8aaf7474e0e7.png)
 
 4.修改三处，第一你查看下跳出来的对话框，里面有好多TCP/IP的端口。我们要找的是三处。
-
 
 ![](http://dl.iteye.com/upload/attachment/0073/4241/c4948803-ed11-3cce-87dd-b8e6d85ff21f.png)
 
@@ -245,16 +235,13 @@ endual
 
 6\. IP地址是127.0.0.1的是默认的，也要改掉，如上
 
-
 ![](http://dl.iteye.com/upload/attachment/0073/4245/7f4c74aa-145e-3977-9989-f90adb999509.png)
 
 8.IPALL是否是表示所有端口？？反正也要修改下端口地址了。
 
-
 ![](http://dl.iteye.com/upload/attachment/0073/4247/7af27a2a-8043-379d-a896-38f0b3a4ca50.png)
 
 9.重新启动服务，不支持热修改，修改重新启动服务。
-
 
 ![](http://dl.iteye.com/upload/attachment/0073/4250/c117b8ae-44d4-3b87-a459-6fa2e789bbcb.png)
 
@@ -264,9 +251,7 @@ endual
 
 这个代码是可以运行的，所以您无需担心，你写的代码是有问题的，你要修改的就是习惯你的数据库
 
-
       strConnection += "initial catalog=修改成为你自己创建的数据库;Data Source=localhost;";
-
 
     using System;
 
@@ -277,8 +262,6 @@ endual
     using System.Text;
 
     using System.Data.SqlClient;
-
-
 
     namespace dbApp
 
@@ -302,10 +285,6 @@ endual
 
             }
 
-
-
-
-
             static void LinkDB()
 
             {
@@ -318,37 +297,19 @@ endual
 
                 strConnection += "Connect Timeout=3";
 
-
-
                // string constr = "server=.;database=myschool;integrated security=SSPI";
 
                //string constr = "server=.;database=myschool;uid=sa;pwd=sa";
 
                // strConnection = "data source=.;initial catalog=netdb;user id=sa;pwd=sa";
 
-
-
-
-
-
-
                 try
 
                 {
 
-
-
-
-
                     SqlConnection objConnection = new SqlConnection(strConnection);
 
-
-
-
-
                   //  SqlConnection objConnection = new SqlConnection(strConnection);
-
-
 
                     objConnection.Open();
 
@@ -362,27 +323,11 @@ endual
 
                 {
 
-
-
                     Console.WriteLine(ex.Message);
 
                 }
 
-
-
-
-
-
-
-
-
             }
-
-
-
-
-
-
 
         }
 
@@ -395,12 +340,9 @@ endual
 
 如果你还是连不上，那么再去查看如下的配置：
 
-
 ![](http://dl.iteye.com/upload/attachment/0073/4258/25a97896-61a2-3b36-928f-4072a5aaf366.png)
 
-
 ![](http://dl.iteye.com/upload/attachment/0073/4260/5013364e-3c51-3dee-aa7a-49daf8705d63.png)
-
 
 ![](http://dl.iteye.com/upload/attachment/0073/4262/b8f58629-19c5-3e09-895f-1fef8edbd623.png)
 

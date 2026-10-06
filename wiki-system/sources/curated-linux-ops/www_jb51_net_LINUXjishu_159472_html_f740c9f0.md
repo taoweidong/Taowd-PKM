@@ -39,74 +39,59 @@ __您的位置：[主页](https://www.jb51.net/) > [操作系统](/os/) > [LINUX
 
 1、实时查看当前进程中使用的shell种类：推荐
 
-
  _复制代码_
 
 代码如下:
 
-
 ps | grep $$ | awk '{print $4}'
-
 
 （注：$$表示shell的进程号）
 
 2、最常用的查看shell的命令，但不能实时反映当前shell
 
-
  _复制代码_
 
 代码如下:
-
 
 $ echo $SHELL
 
 3、更简洁，但并不是所有shell都支持
 
-
  _复制代码_
 
 代码如下:
-
 
 $ echo $0
 
 4、环境变量中shell的匹配查找
 
-
  _复制代码_
 
 代码如下:
-
 
 env | grep SHELL
 
 5、口令文件中shell的匹配查找
 
-
  _复制代码_
 
 代码如下:
-
 
 cat /etc/passwd | grep muye
 
 6、用ps -ef时候
 
-
  _复制代码_
 
 代码如下:
-
 
 $ ps -ef | grep $$ | grep -v grep | grep -v ps
 
 注：grep -v 表示取反，如下：
 
-
  _复制代码_
 
 代码如下:
-
 
 <a href="mailto:muye@bupt:~$">muye@bupt:~$</a> ps -ef | grep $$
 muye 4750 4745 0 15:47 pts/1 00:00:00 bash

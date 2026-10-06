@@ -22,7 +22,6 @@ Sonar还可以给代码打分，并且引用了技术宅的功能（告诉你有
 
 **Sonar部署**
 
-
     [root@linux-node1 ~]# yum install -y java-1.8.0
     [root@linux-node1 ~]# cd /usr/local/src
     软件包我们通过wget或者下载，rz上传到服务器
@@ -34,7 +33,6 @@ Sonar还可以给代码打分，并且引用了技术宅的功能（告诉你有
 
 **准备Sonar[数据库](http://lib.csdn.net/base/mysql "MySQL知识库")**
 如果没有数据库请执行`yum install -y mariadb mariadb-server`
-
 
     [root@linux-node1 ~]# systemctl start mariadb
     [root@linux-node1 ~]# systemctl enable mariadb
@@ -49,7 +47,6 @@ sonar好像不支持`[MySQL](http://lib.csdn.net/base/mysql "MySQL知识库") 5.
 
 **执行sql语句**
 
-
     mysql> CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
     mysql> GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar@pw';
     mysql> GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar@pw';
@@ -57,13 +54,11 @@ sonar好像不支持`[MySQL](http://lib.csdn.net/base/mysql "MySQL知识库") 5.
 
 **配置Sonar**
 
-
     [root@linux-node1 ~]#  cd /usr/local/sonarqube/conf/
     [root@linux-node1 conf]# ls
     sonar.properties  wrapper.conf
 
 编写配置文件，修改数据库配置
-
 
     [root@linux-node1 conf]# vim sonar.properties
     #我们只需要去配置文件里面修改数据库的认证即可
@@ -79,13 +74,11 @@ sonar好像不支持`[MySQL](http://lib.csdn.net/base/mysql "MySQL知识库") 5.
 **启动Sonar**
 你可以在Sonar的配置文件来配置Sonar Web监听的IP地址和端口，默认是9000端口。
 
-
     [root@linux-node1 conf]# vim sonar.properties
      99 #sonar.web.host=0.0.0.0
     106 #sonar.web.port=9000
 
 启动命令如下：
-
 
     [root@linux-node1 ~]# /usr/local/sonarqube/bin/linux-x86-64/sonar.sh start
     Starting SonarQube...
@@ -94,7 +87,6 @@ sonar好像不支持`[MySQL](http://lib.csdn.net/base/mysql "MySQL知识库") 5.
 如果有什么问题可以看一下日志`[/usr/local/sonarqube/logs/sonar.log]`
 
 **检查是否有相应的端口**
-
 
     [root@linux-node1 ~]# netstat -lntup
     Active Internet connections (only servers)
@@ -131,9 +123,6 @@ sonar安装插件有2种方式：第一种将插件下载完存放在sonar的插
 **安装中文插件**
 登陆：用户名：`admin` 密码：`admin`
 
-
-
-
 需要重启才会生效
 
 生效后如下图：
@@ -151,14 +140,12 @@ Sonar通过`SonarQube Scanner`（扫描器）来对代码进行分析
 
 下载扫描器插件
 
-
     [root@linux-node1 ~]# wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-2.8.zip
     [root@linux-node1 ~]# unzip sonar-scanner-2.8.zip
     [root@linux-node1 ~]# mv sonar-scanner-2.8 /usr/local/
     [root@linux-node1 ~]# ln -s /usr/local/sonar-scanner-2.8/ /usr/local/sonar-scanner
 
 我们要将扫描器和sonar关联起来
-
 
     [root@linux-node1 ~]# cd /usr/local/sonar-scanner
     [root@linux-node1 sonar-scanner]# ls
@@ -183,7 +170,6 @@ github:<https://github.com/SonarSource/sonar-examples>
 
 **解压**
 
-
     [root@linux-node1 src]# unzip sonar-examples-master.zip
     [root@linux-node1 php]# cd sonar-examples-master/projects/languages/php
     [root@linux-node1 php]# cd php-sonar-runner-unit-tests/
@@ -198,7 +184,6 @@ github:<https://github.com/SonarSource/sonar-examples>
 
 **配置文件解释：**
 如果你想让我扫描，就需要在代码路径下放一个配置文件
-
 
     [root@linux-node1 php-sonar-runner-unit-tests]# cat sonar-project.properties
     sonar.projectKey=org.sonarqube:php-ut-sq-scanner          #Key
@@ -220,7 +205,6 @@ github:<https://github.com/SonarSource/sonar-examples>
 
 **扫描**
 #提示：需要在项目文件里面进行执行
-
 
     [root@linux-node1 php-sonar-runner-unit-tests]# /usr/local/sonar-scanner/bin/sonar-scanner
     INFO: Scanner configuration file: /usr/local/sonar-scanner/conf/sonar-scanner.properties
@@ -270,7 +254,6 @@ github:<https://github.com/SonarSource/sonar-examples>
 
 对PHP文件进行复制
 
-
     [root@linux-node1 php-sonar-runner-unit-tests]# cat /usr/local/src/sonar-examples-master/projects/languages/php/php-sonar-runner-unit-tests/sonar-project.properties
     sonar.projectKey=org.sonarqube:php-ut-sq-scanner
     sonar.projectName=PHP :: PHPUnit :: SonarQube Scanner
@@ -287,7 +270,6 @@ github:<https://github.com/SonarSource/sonar-examples>
     sonar.php.coverage.reportPath=reports/phpunit.coverage.xml
     sonar.php.tests.reportPath=reports/phpunit.xml
 
-
 Analysis properties 分析的参数
 
 填写完毕后，我们点击保存
@@ -299,7 +281,6 @@ Analysis properties 分析的参数
 点击`Console Output`可以查看构建输出的内容
 
 #提示：只要没有`error`就可以
-
 
 构建完成后，我们发现这里的SonarQube可以点击，我们点击SonarQube就会链接到192.168.56.11:9000 就是代码查看器的地址
 

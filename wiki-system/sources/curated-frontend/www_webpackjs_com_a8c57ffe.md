@@ -14,13 +14,11 @@ assets  scripts
 
 **src/index.js**
 
-
      import bar from './bar.js';
 
     bar();
 
 **src/bar.js**
-
 
      export default function bar() {
 
@@ -29,7 +27,6 @@ assets  scripts
 ## 构建
 
 **[不使用配置](https://youtu.be/3Nv9muOkb6k?t=21293)** 或提供自定义的 **webpack.config.js**
-
 
      const path = require('path');
 
@@ -42,7 +39,6 @@ assets  scripts
     };
 
 **page.html**
-
 
      <!DOCTYPE html>
     <html>

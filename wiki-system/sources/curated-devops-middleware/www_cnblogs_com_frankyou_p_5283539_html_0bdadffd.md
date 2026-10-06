@@ -45,7 +45,6 @@ Message中的“routing key”如果和Binding中的“binding key”一致， D
 
 Routing key中可以包含两种通配符，类似于正则表达式：
 
-
     “#”通配任何零个或多个word
     “*”通配任何单个word
 

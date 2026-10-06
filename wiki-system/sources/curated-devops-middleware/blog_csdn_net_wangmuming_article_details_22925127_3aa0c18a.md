@@ -458,6 +458,4 @@ Jenkins运行自动部署war包到servlet容器内，要实现这个功能必须
 
 <http://www.cnblogs.com/gao241/archive/2013/04/08/3008380.html>
 
-
-
 转：http://www.cnblogs.com/zz0412/p/jenkins02.html [点击打开链接](http://www.cnblogs.com/zz0412/p/jenkins02.html)

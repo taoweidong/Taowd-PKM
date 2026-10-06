@@ -33,7 +33,6 @@ zuul有下列用途：
 
 ### 1.1 How to Include Zuul（依赖）
 
-
     1         <dependency>
     2             <groupId>org.springframework.cloud</groupId>
     3             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
@@ -49,14 +48,12 @@ Spring Cloud创建了一个内置Zuul代理来简化开发，比如有一个UI�
 
 为了防止自动添加服务，可以设置zuul.ignored-services参数来避免。如果一个服务匹配到一个忽略表达式，并且又在路由映射中明确指定了，那么它就不会被忽略。例如（application.yml）：
 
-
     1 zuul:
     2   ignoredServices: '*'
     3   routes:
     4     users: /myusers/**
 
 你可以单独指定路径和service ID，例如（application.yml）：
-
 
     1  zuul:
     2   routes:
@@ -67,7 +64,6 @@ Spring Cloud创建了一个内置Zuul代理来简化开发，比如有一个UI�
 其中path是一个ant风格的表达式，所以/myusers/*仅仅匹配一层目录，而/myusers/**可以匹配任意多层级目录。
 
 其中后端服务的位置既可以使用serviceId也可以使用url（物理位置）指定。如下（application.yml）：
-
 
     1  zuul:
     2   routes:
@@ -80,7 +76,6 @@ Spring Cloud创建了一个内置Zuul代理来简化开发，比如有一个UI�
 **application.yml.**
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
-
 
      1 zuul:
      2   routes:
@@ -114,7 +109,6 @@ Spring Cloud创建了一个内置Zuul代理来简化开发，比如有一个UI�
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
 
-
      1 zuul:
      2   routes:
      3     users:
@@ -135,7 +129,6 @@ Spring Cloud创建了一个内置Zuul代理来简化开发，比如有一个UI�
 
 **ApplicationConfiguration.java.**
 
-
     1 @Bean
     2 public PatternServiceRouteMapper serviceRouteMapper() {
     3     return new PatternServiceRouteMapper(
@@ -148,7 +141,6 @@ Spring Cloud创建了一个内置Zuul代理来简化开发，比如有一个UI�
 给所有映射添加前缀可以使用zuul.prefix。默认情况下，请求被转发前将会去除掉其中的代理前缀（可以使用zuul.stripPrefix=false来改变默认行为）。也可以在单独的一个路由中关闭去除服务指定前缀的行为。如下：
 
 **application.yml.**
-
 
     1  zuul:
     2   routes:
@@ -178,7 +170,6 @@ Zuul的默认HTTP客户端是Apache HTTP客户端而不是已经过时的Ribbon�
 
 **application.yml.**
 
-
     1 zuul:
     2   routes:
     3     users:
@@ -191,7 +182,6 @@ Zuul的默认HTTP客户端是Apache HTTP客户端而不是已经过时的Ribbon�
 sensitiveHeaders是一个黑名单，默认不为空。因此要让Zuul发送所有头部的话，需要明确指定sensitiveHeaders为空。如下：
 
 **application.yml.**
-
 
     1  zuul:
     2   routes:
@@ -221,7 +211,6 @@ get请求/routes：
 
 **GET /routes.**
 
-
     1 {
     2   /stores/**: "http://localhost:8081"
     3 }
@@ -231,7 +220,6 @@ get请求/routes：
 **GET /routes/details**
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
-
 
      1 {
      2   "/stores/**": {
@@ -266,7 +254,6 @@ get请求/routes：
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
 
-
      1  zuul:
      2   routes:
      3     first:
@@ -294,7 +281,6 @@ get请求/routes：
 
 **application.yml.**
 
-
     1 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
     2 ribbon:
     3   ConnectTimeout: 3000
@@ -308,7 +294,6 @@ get请求/routes：
 
 **application.yml.**
 
-
     1  zuul:
     2   forceOriginalQueryStringEncoding: true
 
@@ -321,7 +306,6 @@ get请求/routes：
 这种情况下，Zuul服务器的路由依然可以通过"zuul.routes.*"来配置，但是没有服务发现和代理。因此，"serviceId" 和 "url"会被忽略掉。在下面的例子中所有"/api/**"中的路径都会被映射到Zuul的过滤器链。
 
 **application.yml.**
-
 
     1  zuul:
     2   routes:
@@ -338,7 +322,6 @@ get请求/routes：
 当Zuul的路由回路出现问题时，可以通过一个FallbackProvider类型的bean来提供降级服务。在这个bean中，需要指定路由的ID，并且提供一个ClientHttpResponse。下面的例子提供了一个相对简单的FallbackProvider的实现。
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
-
 
      1 class MyFallbackProvider implements FallbackProvider {
      2
@@ -396,7 +379,6 @@ get请求/routes：
 
 下面的例子是对应上面例子的路由配置：
 
-
     1 zuul:
     2   routes:
     3     customers: /customers/**
@@ -404,7 +386,6 @@ get请求/routes：
 如果要对所有路由提供一个默认降级服务，可以创建一个FallbackProvider类型的bean，然后在getRoute方法中返回“*”或者null。如下：
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
-
 
      1 class MyFallbackProvider implements FallbackProvider {
      2     @Override
@@ -467,7 +448,6 @@ get请求/routes：
 可以通过配置一个LocationRewriteFilter类型的Zuul过滤器来重写Location头部到Zuul的URL。它还恢复了删除的全局前缀和特定于路由的前缀。如下：
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
-
 
      1 import org.springframework.cloud.netflix.zuul.filters.post.LocationRewriteFilter;
      2 ...
@@ -567,7 +547,6 @@ Pre filters为在RequestContext中设置数据，给下游的过滤器使用。�
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
 
-
      1 public class QueryParamPreFilter extends ZuulFilter {
      2     @Override
      3     public int filterOrder() {
@@ -612,7 +591,6 @@ How to Write a Route Filter
 Route filters在pre filters后执行。它转发请求到其他服务。这里的大部分工作是将请求和响应数据转换到客户机所需的模型。
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
-
 
      1 public class OkHttpRoutingFilter extends ZuulFilter {
      2     @Autowired
@@ -700,7 +678,6 @@ Post filters主要是用来修改响应。下面的例子中在响应头中添�
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
 
-
      1 public class AddResponseHeaderFilter extends ZuulFilter {
      2     @Override
      3     public String filterType() {
@@ -742,7 +719,6 @@ Zuul内部使用Ribbon来请求远程URL。默认，Ribbon客户端在第一次�
 
 **application.yml.**
 
-
     1 zuul:
     2   ribbon:
     3     eager-load:
@@ -761,7 +737,6 @@ Spring Cloud Netflix提供了许多发送HTTP请求的方法。你可以使用`R
 默认，在使用重试机制时是没有补偿政策的。如果你想配置一个补偿政策，则需要创建一个LoadBalancedBackOffPolicyFactory类型的bean。它会为指定的服务创建一个BackOffPolicy。如下：
 
 ![复制代码](https://i-blog.csdnimg.cn/blog_migrate/69c5a8ac3fa60e0848d784a6dd461da6.gif)
-
 
      1 @Configuration
      2 public class MyConfiguration {
@@ -785,7 +760,6 @@ Spring Cloud Netflix提供了许多发送HTTP请求的方法。你可以使用`R
 注意：开启client.ribbon.OkToRetryOnAllOperations的话将会包括重试POST请求，这样会对服务器资源有些影响，因为它会缓存请求体数据。
 
 另外，你可能希望对某些响应中的状态码进行重试请求。可通过设置clientName.ribbon.retryableStatusCodes。
-
 
     1 clientName:
     2   ribbon:

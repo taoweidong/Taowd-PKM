@@ -6,8 +6,6 @@ fetched_at: "2026-10-05 15:29:30"
 
 ### Product Documentation
 
-
-
 ## Abstract
 
 Download Db2 fix packs for Db2® for Linux®, UNIX®, and Windows® and Db2® Connect™ products.

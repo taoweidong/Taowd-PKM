@@ -60,8 +60,6 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 
 顾名思义, 第三方库, 你可能会问不是有中央仓库来管理第三方库嘛,没错, 这里的是指可以让你添加自己的第三方库, 比如有些构件在中央仓库是不存在的. 比如你在中央仓库找不到Oracle 的JDBC驱动, 这个时候我们就需要自己添加到3rdparty仓库。
 
-
-
 ##
 
 ## 4.3 在Nexus为自己的项目手动单独建库
@@ -89,7 +87,6 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 
 大部分公共的远程仓库无须认证就可以直接访问，但我们在平时的开发中往往会架设自己的Maven远程仓库，出于安全方面的考虑，我们需要提供认证信息才能访问这样的远程仓库。配置认证信息和配置远程仓库不同，远程仓库可以配置在settings.xml文件中，也可直接在pom.xml中配置，后面会分别举例说明，但是认证信息必须配置在settings.xml文件中。在settings.xml中配置认证信息更为安全。如下：在settings.xml中配置<servers>节点，用的账号为上面我们创建的账户。
 
-
      1 <settings>
      2  2     ...
      3  3     <!--配置远程仓库认证信息-->
@@ -108,8 +105,6 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 **2\. 配置远程仓库**
 
 如果只有一个项目，可以配置在项目的pom文件中：
-
-
 
 如果有多个项目时，可以将如上配置放到Maven的Settings文件中：
 
@@ -147,10 +142,8 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
 
 首先需要在pom.xml中配置上传仓库的地址，配置distributionManagement元素，仓库地址指向前面自定义的仓库bbsid
 
-
     <!--上传源码插件，不打算上传源码可以不配置-->
         <build>
-
 
                     <artifactId>maven-source-plugin</artifactId>
                     <version>3.0.0</version>
@@ -167,9 +160,7 @@ Nexus 专业版是需要付费的，这里我们下载开源版 Nexus OSS。下�
                         </execution>
                     </executions>
 
-
         </build>
-
 
      1 <distributionManagement>
      2         <repository>
@@ -232,10 +223,6 @@ repositoryId与server的id必须一致。
   2. mirrorOf等于*的时候覆盖所有repository配置
   3. 存在多个mirror配置的时候mirrorOf等于*放到最后
   4. 只配置mirrorOf为central的时候可以不用配置repository
-
-
-
-
 
 参考文章：http://www.cnblogs.com/luotaoyeah/p/3791966.html
 

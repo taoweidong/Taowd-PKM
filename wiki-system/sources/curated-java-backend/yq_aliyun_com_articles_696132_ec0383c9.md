@@ -12,7 +12,6 @@ fetched_at: "2026-10-05 15:34:32"
 
 ![image](https://yqfile.alicdn.com/0e3e037b58282a9cfeb9be24d1bac8c71b64fbc6.png?x-oss-process=image/resize,w_1400/format,webp)
 
-
     public class IndexServlet extends HttpServlet {
         private static final long serialVersionUID = -112210702214857712L;
 
@@ -71,18 +70,14 @@ fetched_at: "2026-10-05 15:34:32"
   * Deploy Location ：输入在 ECS 上部署路径，如 /root/tomcat/webapps。
   * Commond：输入应用启动命令，如 sh /root/restart.sh。表示在完成应用包的部署后，需要执行的命令 —— 对于 Java 程序而言，通常是一句 Tomcat 的启动命令。
 
-
 [立即点击下载](https://yq.aliyun.com/articles/673560)
-
 
 官网
 <https://toolkit.aliyun.com>
 
-
 ![5685e931e06cd61faa41dee0ad46bf251fe56837](https://yqfile.alicdn.com/5685e931e06cd61faa41dee0ad46bf251fe56837.png?x-oss-process=image/resize,w_1400/format,webp)
 
 交流群（钉钉）
-
 
 ![b35318a3e1a70775eee7dcb295468d50f5d21abb](https://yqfile.alicdn.com/b35318a3e1a70775eee7dcb295468d50f5d21abb.png?x-oss-process=image/resize,w_1400/format,webp)
 

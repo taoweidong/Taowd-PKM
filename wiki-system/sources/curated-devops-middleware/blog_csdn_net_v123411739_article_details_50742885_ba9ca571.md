@@ -74,8 +74,6 @@ fetched_at: "2026-10-05 15:30:19"
 
 **pom.xml**
 
-
-
     	<modelVersion>4.0.0</modelVersion>
     	<groupId>com.chillax</groupId>
     	<artifactId>Maven_Project</artifactId>
@@ -278,7 +276,6 @@ fetched_at: "2026-10-05 15:30:19"
     	<build>
     		<finalName>Maven_Project</finalName>
 
-
     				<groupId>org.apache.maven.plugins</groupId>
     				<artifactId>maven-compiler-plugin</artifactId>
     				<version>2.3.2</version>
@@ -287,14 +284,11 @@ fetched_at: "2026-10-05 15:30:19"
     					<target>1.7</target>
     				</configuration>
 
-
     	</build>
-
 
 ### 2、在src/main/resources下添加如下配置文件
 
 **applicationContext.xml**
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -327,7 +321,6 @@ fetched_at: "2026-10-05 15:30:19"
 
 **jdbc.properties，** 有多人反映直接复制时，第一行的driver最后面多了个空格，请注意
 
-
     driver=com.mysql.jdbc.Driver
     url=jdbc:mysql://127.0.0.1:3306/maventest
     username=root
@@ -344,7 +337,6 @@ fetched_at: "2026-10-05 15:30:19"
     maxWait=60000
 
 **log4j.properties**
-
 
     #定义LOG输出级别
     log4j.rootLogger=INFO,Console,File
@@ -368,7 +360,6 @@ fetched_at: "2026-10-05 15:30:19"
 
 **spring-dao.xml**
 
-
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
     	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
@@ -381,19 +372,16 @@ fetched_at: "2026-10-05 15:30:19"
                             http://www.springframework.org/schema/mvc
                             http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-
     	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     	 	<!--basePackage指定要扫描的包，在此包之下的映射器都会被搜索到。
     		 可指定多个包，包与包之间用逗号或分号分隔-->
-
 
     	</bean>
 
     </beans>
 
 **spring-db.xml**
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -413,9 +401,6 @@ fetched_at: "2026-10-05 15:30:19"
     	</bean>
 
     	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-
-
-
 
     		<!-- 初始化连接大小 -->
 
@@ -439,7 +424,6 @@ fetched_at: "2026-10-05 15:30:19"
     </beans>
 
 **spring-tx.xml**
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -482,7 +466,6 @@ fetched_at: "2026-10-05 15:30:19"
 
 **spring-mvc.xml**
 
-
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
     	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
@@ -506,7 +489,6 @@ fetched_at: "2026-10-05 15:30:19"
     	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     		<!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
 
-
     	</bean>
 
     	<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器-->
@@ -522,7 +504,6 @@ fetched_at: "2026-10-05 15:30:19"
     </beans>
 
 **web.xml**
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -577,11 +558,9 @@ fetched_at: "2026-10-05 15:30:19"
 
     </web-app>
 
-
 ### 4、在src/main/java下添加如下包和类
 
 **UserController.java**
-
 
     package com.chillax.controller;
 
@@ -636,7 +615,6 @@ fetched_at: "2026-10-05 15:30:19"
 
 **IUserDao.java**
 
-
     package com.chillax.dao;
 
     import java.util.List;
@@ -663,7 +641,6 @@ fetched_at: "2026-10-05 15:30:19"
     }
 
 **User.java**
-
 
     package com.chillax.dto;
 
@@ -710,7 +687,6 @@ fetched_at: "2026-10-05 15:30:19"
     }
 
 **UserMapper.xml**
-
 
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
@@ -831,7 +807,6 @@ fetched_at: "2026-10-05 15:30:19"
 
 **IUserService.java**
 
-
     package com.chillax.service;
 
     import java.util.List;
@@ -850,7 +825,6 @@ fetched_at: "2026-10-05 15:30:19"
     }
 
 **UserServiceImpl.java**
-
 
     package com.chillax.service.Impl;
 
@@ -892,7 +866,6 @@ fetched_at: "2026-10-05 15:30:19"
 
 **userList.jsp**
 
-
     <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%
@@ -928,7 +901,6 @@ fetched_at: "2026-10-05 15:30:19"
     </html>
 
 **addUser.jsp**
-
 
     <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
     <%
@@ -966,7 +938,6 @@ fetched_at: "2026-10-05 15:30:19"
 
 **showUser.jsp**
 
-
     <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
     <%
     String path = request.getContextPath();
@@ -997,7 +968,6 @@ fetched_at: "2026-10-05 15:30:19"
     </html>
 
 ### 6、创建数据库，并创建表
-
 
     create database maventest;
     use maventest;
@@ -1072,10 +1042,8 @@ fetched_at: "2026-10-05 15:30:19"
 
 **解答：** 在pom.xml文件的<build></build>的标签中加入以下代码，然后Update Project（参照问题5）
 
-
     <build>
     	<finalName>Maven_Project</finalName>
-
 
     			<groupId>org.apache.maven.plugins</groupId>
     			<artifactId>maven-compiler-plugin</artifactId>
@@ -1084,7 +1052,6 @@ fetched_at: "2026-10-05 15:30:19"
     				<source>1.7</source>
     				<target>1.7</target>
     			</configuration>
-
 
     </build>
 

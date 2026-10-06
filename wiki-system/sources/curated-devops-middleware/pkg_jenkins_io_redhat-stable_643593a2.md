@@ -16,25 +16,16 @@ To install Jenkins on Fedora, use the instructions provided in our [Fedora insta
 
 To use this repository with openSUSE, start by adding the requirements with the following command:
 
-
-
         zypper install dejavu-fonts fontconfig java-21-openjdk wget
 
-
 Then add the repository with run the following command:
-
-
 
         wget -O /etc/zypp/repos.d/jenkins.repo \
           https://pkg.jenkins.io/rpm-stable/jenkins.repo
 
-
 With that set up, the Jenkins package can be installed with:
 
-
-
         zypper install jenkins
-
 
 You will need to explicitly install a supported Java runtime environment (JRE), either from your distribution (as described above) or another Java vendor (e.g., [Adoptium](https://adoptium.net/)).
 

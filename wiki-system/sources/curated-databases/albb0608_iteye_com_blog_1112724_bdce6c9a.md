@@ -102,28 +102,17 @@ albb0608
 
 摘要： Oracle 查看索引表空间，Oracle 查看索引表空间语句，包括查看表空间的使用情况、查看数据库库对象、查看数据库的版本、查看数据库创建日期和归档方式、查询数据库中索引占用表空间的大小。 Oracle 查看表空间的使用情况或表空间的大小，应该如何实现呢？下面就为您介
 
-
-
 Oracle 查看索引表空间，Oracle 查看索引表空间语句，包括查看表空间的使用情况、查看数据库库对象、查看数据库的版本、查看数据库创建日期和归档方式、查询数据库中索引占用表空间的大小。
 
 Oracle 查看表空间的使用情况或表空间的大小，应该如何实现呢？下面就为您介绍实现 Oracle 查看表空间方面的语句。
 
 1、查看表空间的使用情况
 
-
-
-
-
-
     select sum(bytes)/(1024*1024) as free_space,tablespace_name
 
     from dba_free_space
 
     group by tablespace_name;
-
-
-
-
 
     SELECT A.TABLESPACE_NAME,A.BYTES TOTAL,B.BYTES USED, C.BYTES FREE,
 
@@ -133,38 +122,21 @@ Oracle 查看表空间的使用情况或表空间的大小，应该如何实现�
 
     WHERE A.TABLESPACE_NAME=B.TABLESPACE_NAME AND A.TABLESPACE_NAME=C.TABLESPACE_NAME;
 
-
-
 2、查看数据库库对象
-
-
-
 
     select owner, object_type, status, count(*) count# from all_objects group by owner, object_type, status;
 
-
-
 3、查看数据库的版本
-
-
 
     Select version FROM Product_component_version
 
     Where SUBSTR(PRODUCT,1,6)='Oracle';
 
-
-
 4、查看数据库创建日期和归档方式
-
-
 
     Select Created, Log_Mode, Log_Mode From V$Database;
 
-
-
 5、查询数据库中索引占用表空间的大小
-
-
 
     select a.segment_name,a.tablespace_name,b.table_name,a.bytes/1024/1024 mbytes,a.blocks
 

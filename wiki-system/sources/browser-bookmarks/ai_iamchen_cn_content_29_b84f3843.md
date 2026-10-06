@@ -105,11 +105,9 @@ OpenCode 支持从多个位置读取规则文件，不同位置对应不同用�
 
 bash 复制
 
-
     export OPENCODE_DISABLE_CLAUDE_CODE=1
     export OPENCODE_DISABLE_CLAUDE_CODE_PROMPT=1
     export OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1
-
 
 这里要注意，兼容机制的定位是“回退”，不是主路径。只要 OpenCode 自己的规则文件存在，它们会优先生效。
 
@@ -158,7 +156,6 @@ bash 复制
 
 json 复制
 
-
     {
       "$schema": "https://opencode.ai/config.json",
       "instructions": [
@@ -167,7 +164,6 @@ json 复制
         ".cursor/rules/*.md"
       ]
     }
-
 
 如果使用远程 URL，官方文档说明抓取超时时间为 5 秒。另一个很重要的点是，这些外部指令文件不会替代 `AGENTS.md`，而是与它合并使用。
 

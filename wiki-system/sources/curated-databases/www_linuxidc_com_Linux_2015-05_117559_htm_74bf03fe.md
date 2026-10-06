@@ -160,7 +160,6 @@ SQL> select status from v$block_change_tracking;
 
   * [Linux平台Oracle 11g单实例 + ASM](../../Linux/2015-04/115721.htm "Linux平台Oracle 11g单实例 + ASM存储 安装部署 快速参考") (04/03/2015 08:07:20)
 
-
 ---|---
 
 本文评论 [查看全部评论](../../remark.aspx?id=117559) (0)
@@ -192,10 +191,7 @@ SQL> select status from v$block_change_tracking;
   * [Linux 系统中修复 SambaCry 漏洞（CVE-2017](../../Linux/2017-06/144622.htm "Linux 系统中修复 SambaCry 漏洞（CVE-2017-7494）")
   * [更快的机器学习即将来到 Linux 内核](../../Linux/2017-06/144621.htm)
 
-
-
 [Linux公社简介](http://www.linuxidc.com/aboutus.htm) \- [广告服务](http://www.linuxidc.com/adsense.htm) \- [网站地图](http://www.linuxidc.com/sitemap.aspx) \- [帮助信息](http://www.linuxidc.com/help.htm) \- [联系我们](http://www.linuxidc.com/contactus.htm)
 本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。
-
 
 Copyright © 2006-2016 [Linux公社](http://www.linuxidc.com/) All rights reserved 沪ICP备15008072号-1号

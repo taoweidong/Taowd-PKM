@@ -93,7 +93,6 @@ Filebeat由两个主要组件组成：prospectors 和 harvesters。这两个组�
 
 **Prospector（勘测者）：** 负责管理Harvester并找到所有读取源。
 
-
     filebeat.prospectors:
     - input_type: log
       paths:

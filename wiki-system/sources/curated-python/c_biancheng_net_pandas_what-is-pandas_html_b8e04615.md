@@ -60,10 +60,8 @@ fetched_at: "2026-10-05 15:42:31"
 
 Pandas 是一个开源的第三方 [Python](/python/) 库，从 Numpy 和 Matplotlib 的基础上构建而来，享有数据分析“三剑客之一”的盛名（NumPy、Matplotlib、Pandas）。Pandas 已经成为 Python 数据分析的必备高级工具，它的目标是成为强大、灵活、可以支持任何编程语言的数据分析工具。
 
-
 ![pandas教程](/uploads/allimg/210901/1513331Z3-0.gif)
 图1：Pandas Logo
-
 
 Pandas 这个名字来源于面板数据（Panel Data）与数据分析（data analysis）这两个名词的组合。在经济学中，Panel Data 是一个关于多维数据集的术语。Pandas 最初被应用于金融量化交易领域，现在它的应用领域更加广泛，涵盖了农业、工业、交通等许多行业。
 
@@ -102,12 +100,10 @@ Pandas 主要包括以下几个特点：
 
 ##  Pandas内置[数据结构](/data_structure/)
 
-
 我们知道，构建和处理二维、多维数组是一项繁琐的任务。Pandas 为解决这一问题， 在 ndarray 数组（NumPy 中的数组）的基础上构建出了两种不同的数据结构，分别是 Series（一维数据结构）DataFrame（二维数据结构）：
 
   * Series 是带标签的一维数组，这里的标签可以理解为索引，但这个索引并不局限于整数，它也可以是字符类型，比如 a、b、c 等；
   * DataFrame 是一种表格型数据结构，它既有行标签，又有列标签。
-
 
 下面对上述数据结构做简单地的说明：
 

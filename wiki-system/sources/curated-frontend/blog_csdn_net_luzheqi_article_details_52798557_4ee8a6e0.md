@@ -36,13 +36,9 @@ fetched_at: "2026-10-05 15:32:14"
 
   1. 在Hexo工程根目录下执行下面的语句。
 
-
-
     npm install hexo-algolia --save
 
   1. 在Hexo工程根目录的_config.yml中加入如下配置，注意改成前面API Keys页面相应配置。
-
-
 
     algolia:
       applicationID: 'your applicationID'
@@ -53,22 +49,15 @@ fetched_at: "2026-10-05 15:32:14"
 
   1. 执行下面语句，必要时先进行`hexo clean`，确保最后得到提交成功提示。
 
-
-
     hexo algolia
 
 ### 修改NexT主题集成Algolia
 
   1. 在NexT主题文件夹下（这一部分不特殊指明都在这个文件夹中操作）找到`_config.yml`，增加aloglia配置项，如下。
 
-
-
     algolia: true
 
   1. 打开`layout/_partials/head.swig`，找到下面的语句。
-
-
-
 
       ...
       var CONFIG = {
@@ -76,11 +65,7 @@ fetched_at: "2026-10-05 15:32:14"
         }
       };
 
-
-
   1. 在`CONFIG`中增加下面的语句，相应的配置改为与API Keys页面相一致。
-
-
 
         root: '/',
         algolia: {
@@ -92,8 +77,6 @@ fetched_at: "2026-10-05 15:32:14"
             }
 
   1. 打开`layout/_partials/header.swig`，找到相应代码并做以下修改。
-
-
 
         ...
         <!-- {% set hasSearch = theme.swiftype_key || theme.tinysou_Key || config.search %} -->
@@ -127,28 +110,11 @@ fetched_at: "2026-10-05 15:32:14"
 
   1. 在`layout/_partials/search`文件夹下新增`algolia.swig`文件，内容如下。
 
-
-
-
-
-
             <i class="fa fa-search"></i>
-
-
-
-
-
-
-
-
 
           <i class="fa fa-times-circle"></i>
 
-
-
   1. 打开`layout/_partials/search.swig`，做以下修改。
-
-
 
         {% if theme.swiftype_key %}
           {% include 'search/swiftype.swig' %}
@@ -163,8 +129,6 @@ fetched_at: "2026-10-05 15:32:14"
     {% endif %}
 
   1. 在`source/js/src`下面新增文件`algolia.js`，内容如下。
-
-
 
     $(document).ready(function () {
       var algoliaSettings = CONFIG.algolia;
@@ -395,10 +359,7 @@ fetched_at: "2026-10-05 15:32:14"
         });
       });
 
-
   1. 在`layout/_scripts/third_party`文件夹下增加文件`algolia.swig`，内容如下。
-
-
 
     {%
       set js_algolia = [
@@ -420,21 +381,15 @@ fetched_at: "2026-10-05 15:32:14"
 
       {# E: Include Algolia instantsearch.js library #}
 
-
     {% endfor %}
 
-
   1. 在`layout/_scripts/_layout.swig`文件的`body`标签内添加下面的语句。
-
-
 
       {% if theme.algolia %}
         {% include '_scripts/third-party/algolia.swig' %}
       {% endif %}
 
   1. 在`source/css`下新建文件夹`_algolia`，新建文件`algolia.styl`，内容如下。
-
-
 
     ul.search-result-list {
       padding-left: 0px;
@@ -653,8 +608,6 @@ fetched_at: "2026-10-05 15:32:14"
     }
 
   1. 在`source/css/main.styl`文件的最后新增下面语句。
-
-
 
       @import "_algolia/algolia";
 

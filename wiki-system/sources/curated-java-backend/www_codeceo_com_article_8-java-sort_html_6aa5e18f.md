@@ -112,8 +112,6 @@ In most cases access to the domain will be available within one to two hours of 
 
 Your online safety and security is our top priority. We understand the importance of protecting your personal information.
 
-
-
 We protect your information through SSL encryption technology, providing the safest, most secure shopping experience possible. Additionally, you may checkout with PayPal or Escrow.com.
 
 ## FAQs

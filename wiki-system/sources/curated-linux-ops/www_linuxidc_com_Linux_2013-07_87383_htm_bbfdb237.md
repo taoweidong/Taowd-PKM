@@ -150,7 +150,6 @@ RedHat设置Yum源 [http://www.linuxidc.com/Linux/2013-06/86202.htm](../../Linux
   * [Linux里如何配置本地yum源和外网源](../../Linux/2019-06/158907.htm) (06月01日)
   * [你希望在Fedora中将DNF重命名为Yum](../../Linux/2019-03/157505.htm "你希望在Fedora中将DNF重命名为Yum吗？") (03月15日)
 
-
 ---|---
 
 本文评论 [查看全部评论](../../remark.aspx?id=87383) (0)
@@ -182,10 +181,7 @@ RedHat设置Yum源 [http://www.linuxidc.com/Linux/2013-06/86202.htm](../../Linux
   * [Qt 推出 Qt for MCUs，用于在微控制器上创](../../Linux/2019-08/160303.htm "Qt 推出 Qt for MCUs，用于在微控制器上创建图形工具")
   * [Red Hat Enterprise Linux 6 和 CentOS 6 ](../../Linux/2019-08/160302.htm "Red Hat Enterprise Linux 6 和 CentOS 6 收到重要的内核安全更新")
 
-
-
 [Linux公社简介](https://www.linuxidc.com/aboutus.htm) \- [广告服务](https://www.linuxidc.com/adsense.htm) \- [网站地图](https://www.linuxidc.com/sitemap.aspx) \- [帮助信息](https://www.linuxidc.com/help.htm) \- [联系我们](https://www.linuxidc.com/contactus.htm)
 本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。
-
 
 Copyright © 2006-2019 [Linux公社](https://www.linuxidc.com/) All rights reserved 浙ICP备07014134号-8

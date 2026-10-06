@@ -14,18 +14,12 @@ fetched_at: "2026-10-05 15:34:41"
 2.安装
 安装一般一直Next就可以了
 
-
-
-
-
 转载自：http://hovertree.com/hvtart/bjae/ldm2365l.htm
 
 3.获取
 打开Git Gui软件，选择Repository菜单的Clone子菜单，或者按Ctrl+L
 
-
 将会来到以下界面：
-
 
 在Source Location处输入地址：https://git01.codeplex.com/hovertree
 在Target Direction处，点击Browse按钮选择一个文件夹，例如E:\codeplex
@@ -34,9 +28,7 @@ fetched_at: "2026-10-05 15:34:41"
 
 然后点击Clone按钮，来到下图界面：
 
-
 等待一定时间后，就会获取代码成功，来到以下界面：
-
 
 这时候就可以在文件夹中看到项目代码了：
 

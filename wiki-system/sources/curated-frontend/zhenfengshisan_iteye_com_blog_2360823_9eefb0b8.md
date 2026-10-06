@@ -157,7 +157,6 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
 1、applicationContext.xml：
 
-
     <?xml version="1.0" encoding="UTF-8"?>
 
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -178,15 +177,11 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-
-
         <!-- 自动扫描dao层和service层，将包中的类纳入到Spring的管理中 -->
 
         <context:component-scan base-package="com.core.dao"/>
 
         <context:component-scan base-package="com.core.service"/>
-
-
 
         <!-- 配置数据源 -->
 
@@ -194,51 +189,25 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
               class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
-
-
-
-
             <!-- 改为你的地址即可 -->
 
-
-
-
-
         </bean>
-
-
-
-
 
         <!-- 配置mybatis的sqlSessionFactory -->
 
         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 
-
-
             <!-- 自动扫描mappers包下的所有xml文件 -->
-
-
 
             <!-- mybatis配置文件 -->
 
-
-
         </bean>
-
-
 
         <!-- dao接口所在包名，Spring会自动查找其下的类 -->
 
         <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 
-
-
-
-
         </bean>
-
-
 
         <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
 
@@ -246,11 +215,7 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
               class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 
-
-
         </bean>
-
-
 
         <!-- 配置事务通知属性 -->
 
@@ -300,8 +265,6 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
         </tx:advice>
 
-
-
         <!-- 配置事务切面，service包中的类会被代理 -->
 
         <aop:config>
@@ -314,14 +277,9 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
         </aop:config>
 
-
-
     </beans>
 
-
-
 2、mybatis-config.xml
-
 
     <?xml version="1.0" encoding="UTF-8" ?>
 
@@ -341,15 +299,11 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
         <typeAliases>
 
-
-
         </typeAliases>
 
     </configuration>
 
-
 3、接着是SpringMVC的配置文件：
-
 
     <?xml version="1.0" encoding="UTF-8"?>
 
@@ -363,13 +317,9 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-
-
         <!-- 扫描admin包，将控制器纳入Spring的管理中 -->
 
         <context:component-scan base-package="com.core.admin"/>
-
-
 
         <!-- 视图解析器，视图模式下的前缀和后缀 -->
 
@@ -377,19 +327,11 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
               class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
-
-
-
-
         </bean>
-
-
 
     </beans>
 
-
 4、web.xml文件
-
 
     <?xml version="1.0" encoding="UTF-8"?>
 
@@ -415,8 +357,6 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
         </context-param>
 
-
-
         <filter>
 
             <filter-name>encodingFilter</filter-name>
@@ -440,10 +380,6 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
             <url-pattern>/*</url-pattern>
 
         </filter-mapping>
-
-
-
-
 
         <!-- spring请求配置，指向springmvc的核心配置文件，定义所有以.do结尾的请求都被springmvc拦截 -->
 
@@ -481,8 +417,6 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
         </servlet-mapping>
 
-
-
         <!— 错误页面配置,这里只是简单的配置了一下 -->
 
         <error-page>
@@ -493,8 +427,6 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
 
         </error-page>
 
-
-
         <error-page>
 
             <error-code>500</error-code>
@@ -504,8 +436,6 @@ entity包中即为本项目的所有实体类，dao包中为数据层接口，ma
         </error-page>
 
     </web-app>
-
-
 
 整合过程中需要注意的点：
 

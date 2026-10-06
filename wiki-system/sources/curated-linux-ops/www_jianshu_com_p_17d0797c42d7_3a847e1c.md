@@ -29,23 +29,15 @@ git cmd: windows风格控制台系统, 不支持ssh相关命令, 完成ssh key�
 
   1. 启动 git bash, 如下图:
 
-
-
   2. 输入 ssh-keygen,回车, 记住括号中的路径,如下图:
 
-
-
   3. 继续输入3个回车, 完成key创建，最后得到了两个文件：id_rsa和id_rsa.pub；
-
-
 
 密钥id_rsa.pub
 
 4.github添加SSH keys;
 将id_rsa.pub里面的内容复制下来，在github上的settings里面找到 SSH and GPG keys，将其粘贴到key即可，title唯一即可随便填，建议写有意义的;
 具体过程如图：
-
-
 
 点击settings
 
@@ -64,29 +56,19 @@ git cmd: windows风格控制台系统, 不支持ssh相关命令, 完成ssh key�
 只要看到最后一行Hi wqcreed! You've successfully authenticated, but GitHub does not provide shell access.
 说明验证成功了
 
-
-
-
-
 发现红线部分发生变化，说明已经成功建立连接，可以进行克隆和上传文件了。
 
 #### 创建库
 
 1、创建一个新的git库
 
-
-
 点击New repository
 
 2、根据你的项目需求填写相应内容
 
-
-
 点击Create repository
 
 这就已经创建好了一个Test.git仓库；
-
-
 
 3、点击“Clone or download”,复制：[git@github.com](https://link.jianshu.com?t=mailto:git@github.com):wqcreed/Test.git，后面有用；
 
@@ -96,18 +78,15 @@ git cmd: windows风格控制台系统, 不支持ssh相关命令, 完成ssh key�
 输入命令： git clone [git@github.com](https://link.jianshu.com?t=mailto:git@github.com):wqcreed/Test.git
 能看到后面就是刚才复制的SSH地址，看到如下图所示，就可以到自己工作目录下看到库文件克隆到本地了。
 
-
 此时能看到Test仓库啦
 
 命令cd Test进入仓库
 
 2、上传添加文件到仓库，依次输入以下命令；
 
-
     $ git add .                                       这个点不要忘了！
     $ git commit -m "test log"                        上传日志
     $ git push origin master                          推送到GitHub仓库
-
 
 成功
 

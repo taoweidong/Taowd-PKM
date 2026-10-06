@@ -254,9 +254,7 @@ Android ADT-0.9.9.zip官方下载地址：
 
 直接在eclipse下：Help->Install New Softwar...->Add…->然后就是填写了:Name自己定义，Location是http://dl-ssl.google.com/android/eclipse/->Developer Tools全选->Next
 
-
 ![](http://dl.iteye.com/upload/attachment/390457/0a33b7f9-1afb-33d9-bbdc-eec583eb0374.jpg)
-
 
 ![](http://dl.iteye.com/upload/attachment/390459/9eac3c5c-6707-31c5-a24b-873c7684c51c.jpg)
 

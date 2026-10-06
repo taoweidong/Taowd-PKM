@@ -21,27 +21,19 @@ fetched_at: "2026-10-05 15:29:34"
 
 按价格对产品进行排序：
 
-
-
     SELECT * FROM Products
 
     ORDER BY Price;
 
-
-
 [亲自试一试](/sql/t.php?f=sql_select_orderby_price)
 
 ## ORDER BY 语法
-
-
 
     SELECT _column1_ , _column2_ , ...
 
     FROM _table_name_
 
     ORDER BY _column1_ , _column2_ , ... ASC|DESC;
-
-
 
 ## 演示数据库
 
@@ -63,13 +55,9 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 
 按价格从高到低对产品进行排序：
 
-
-
     SELECT * FROM Products
 
     ORDER BY Price DESC;
-
-
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_price_desc)
 
@@ -81,13 +69,9 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 
 按产品名称的字母顺序对产品进行排序：
 
-
-
     SELECT * FROM Products
 
     ORDER BY ProductName;
-
-
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_name)
 
@@ -99,13 +83,9 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 
 按产品名称的逆序对产品进行排序：
 
-
-
     SELECT * FROM Products
 
     ORDER BY ProductName DESC;
-
-
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_name_desc)
 
@@ -117,13 +97,9 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 
 ### 实例
 
-
-
     SELECT * FROM Customers
 
     ORDER BY Country, CustomerName;
-
-
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_1)
 
@@ -133,13 +109,9 @@ ProductID | ProductName | SupplierID | CategoryID | Unit | Price
 
 ### 实例
 
-
-
     SELECT * FROM Customers
 
     ORDER BY Country ASC, CustomerName DESC;
-
-
 
 [亲自试一试](/sql/t.php?f=sql_select_orderby_2)
 

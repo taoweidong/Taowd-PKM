@@ -40,16 +40,13 @@ JAVA：JAVA_HOME=/opt/jdk
 
 安装mysql前需要查询系统中含有的有关mysql的软件。
 
-
     rpm -qa | grep -i mysql  //grep -i是不分大小写字符查询，只要含有mysql就显示
 
 屏幕显示：
 
-
     mysql-libs-5.1.71-1.el6.i686  //它是好几个软件的依赖，其中在mini版本中postfix软件依赖mysql-libs，网络上很多建议都是直接删除，
 
     yum remove mysql-libs 或者 rpm -e --nodeps mysql-libs-5.1.71-1.el6.i686，总觉得这样做不好。
-
 
     查找mysql官方资料，得到安装方法是用MySQL-shared-compat将mysql-libs-5.1.71-1.el6.i686替换为同版本后在安装mysql。
 
@@ -64,7 +61,6 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 需要下载2个内容，一个是MySQL-5.6.21-1.el6.i686.rpm-bundle.tar，这个是几个程序的合集包，另一个是MySQL-shared-compat-5.6.21-1.el6.i686.rpm，这个是软件包包括MySQL 3.23和MySQL 4.0的共享库。如果你安装了应用程序动态连接MySQL 3.23，但是你想要升级到ySQL 4.0而不想打破库的从属关系，则安装该软件包而不要安装MySQL-shared。从MySQL 4.0.13起包含该安装软件包。
 
 将2个文件上传到CentOS中，解压MySQL-5.6.21-1.el6.i686.rpm-bundle.tar。
-
 
     #tar xvf MySQL-5.6.21-1.el6.i686.rpm-bundle.tar
 
@@ -102,7 +98,6 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 
 安装MySQL-shared-compat替换mysql-libs，如果不替换，在删除mysql-libs，会提示postfix依赖于mysql-libs：
 
-
     # rpm -i MySQL-shared-compat-5.6.21-1.el6.i686.rpm
 
     # rpm -qa | grep -i mysql
@@ -115,13 +110,11 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 
 测试MySQL-server安装，提示需要安装perl：
 
-
     # rpm -ivh --test MySQL-server-5.6.21-1.el6.i686.rpm
 
     # yum install perl
 
 安装MySQL-server，MySQL-client：
-
 
     # rpm -ivh  MySQL-server-5.6.21-1.el6.i686.rpm
 
@@ -161,7 +154,6 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 
 在安装MySQL-server，见上面的一段话，大意是全新安装设置的root密码在/root/.mysql_secret中，这是一个随机密码，你需要运行/usr/bin/mysql_secure_installation，删除anonymous用户。当然不建议用root用户来运行，rpm包已经建了一个mysql用户，可以使用这个用户：
 
-
     #more .mysql_secret
 
     # The random password set for the root user at Tue Nov 18 22:57:46 2014 (local t
@@ -178,8 +170,6 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 
           SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
 
-
-
     In order to log into MySQL to secure it, we'll need the current
 
     password for the root user.  If you've just installed MySQL, and
@@ -188,23 +178,15 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 
     so you should just press enter here.
 
-
-
     Enter current password for root (enter for none):    <–使用刚才得到的root的密码 NljqL63OYlGo5cqy
 
     OK, successfully used password, moving on...
-
-
 
     Setting the root password ensures that nobody can log into the MySQL
 
     root user without the proper authorisation.
 
-
-
     You already have a root password set, so you can safely answer 'n'.
-
-
 
     Change the root password? [Y/n] y   <– 是否更换root用户密码，输入y并回车，强烈建议更换
 
@@ -218,10 +200,6 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 
      ... Success!
 
-
-
-
-
     By default, a MySQL installation has an anonymous user, allowing anyone
 
     to log into MySQL without having to have a user account created for
@@ -232,33 +210,23 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 
     production environment.
 
-
-
     Remove anonymous users? [Y/n] y   <– 是否删除匿名用户,生产环境建议删除，所以输入y并回车
 
      ... Success!
-
-
 
     Normally, root should only be allowed to connect from 'localhost'.  This
 
     ensures that someone cannot guess at the root password from the network.
 
-
-
     Disallow root login remotely? [Y/n] y    <–是否禁止root远程登录,根据自己的需求选择Y/n并回车,建议禁止
 
      ... Success!
-
-
 
     By default, MySQL comes with a database named 'test' that anyone can
 
     access.  This is also intended only for testing, and should be removed
 
     before moving into a production environment.
-
-
 
     Remove test database and access to it? [Y/n] y    <– 是否删除test数据库,输入y并回车
 
@@ -270,42 +238,23 @@ CentOS是[RedHat](http://www.linuxidc.com/topicnews.aspx?tid=10 "RedHat")Linux�
 
      ... Success!
 
-
-
     Reloading the privilege tables will ensure that all changes made so far
 
     will take effect immediately.
-
-
 
     Reload privilege tables now? [Y/n] y   是否重新加载权限表，输入y并回车
 
      ... Success!
 
-
-
-
-
-
-
-
-
     All done!  If you've completed all of the above steps, your MySQL
 
     installation should now be secure.
 
-
-
     Thanks for using MySQL!
-
-
-
-
 
     Cleaning up...
 
 至此，MySQL已经安装完成，最后看一下是否已将MySQL加到开机服务里：
-
 
     #  chkconfig
 
@@ -403,7 +352,6 @@ MySQL-5.5.38通用二进制安装 [http://www.linuxidc.com/Linux/2014-07/104509.
   * [CentOS下MySQL安装配置](../../Linux/2015-07/120234.htm) (07/21/2015 10:59:38)
   * [CentOS 6.2上使用YUM安装MySQL](../../Linux/2013-03/80326.htm) (03/04/2013 09:53:44)
 
-
 ---|---
 
 本文评论 [查看全部评论](../../remark.aspx?id=111413) (0)
@@ -435,10 +383,7 @@ MySQL-5.5.38通用二进制安装 [http://www.linuxidc.com/Linux/2014-07/104509.
   * [CentOS 7.3 搭建 Redis-4.0.1 单机服务](../../Linux/2017-11/148516.htm)
   * [MySQL导入数据提示ERROR 1418 (HY000)](../../Linux/2017-11/148515.htm)
 
-
-
 [Linux公社简介](http://www.linuxidc.com/aboutus.htm) \- [广告服务](http://www.linuxidc.com/adsense.htm) \- [网站地图](http://www.linuxidc.com/sitemap.aspx) \- [帮助信息](http://www.linuxidc.com/help.htm) \- [联系我们](http://www.linuxidc.com/contactus.htm)
 本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。
-
 
 Copyright © 2006-2017 [Linux公社](http://www.linuxidc.com/) All rights reserved 沪ICP备15008072号-1号

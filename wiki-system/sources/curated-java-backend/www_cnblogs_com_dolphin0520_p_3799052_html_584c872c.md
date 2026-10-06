@@ -66,7 +66,6 @@ static关键字还有一个比较关键的作用就是 用来形成静态代码�
 
 为什么说static块可以用来优化程序性能，是因为它的特性:只会在类加载的时候执行一次。下面看个例子:
 
-
     class Person{
     	private Date birthDate;
 
@@ -81,9 +80,7 @@ static关键字还有一个比较关键的作用就是 用来形成静态代码�
     	}
     }
 
-
 isBornBoomer是用来这个人是否是1946-1964年出生的，而每次isBornBoomer被调用的时候，都会生成startDate和birthDate两个对象，造成了空间浪费，如果改成这样效率会更好：
-
 
     class Person{
     	private Date birthDate;
@@ -102,7 +99,6 @@ isBornBoomer是用来这个人是否是1946-1964年出生的，而每次isBornBo
     	}
     }
 
-
 因此，很多时候会将一些只需要进行一次的初始化操作都放在static代码块中进行。
 
 ## 二.static关键字的误区
@@ -119,7 +115,6 @@ isBornBoomer是用来这个人是否是1946-1964年出生的，而每次isBornBo
 
 虽然对于静态方法来说没有this，那么在非静态方法中能够通过this访问静态成员变量吗？先看下面的一个例子，这段代码输出的结果是什么？
 
-
     public class Main {
     	static int value = 33;
 
@@ -133,9 +128,7 @@ isBornBoomer是用来这个人是否是1946-1964年出生的，而每次isBornBo
     	}
     }
 
-
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-
 
     33
 
@@ -154,7 +147,6 @@ View Code
 下面列举一些面试笔试中经常遇到的关于static关键字的题目，仅供参考，如有补充欢迎下方留言。
 
 1.下面这段代码的输出结果是什么？
-
 
     public class Test extends Base{
 
@@ -182,9 +174,7 @@ View Code
     	}
     }
 
-
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-
 
     base static
     test static
@@ -196,7 +186,6 @@ View Code
 至于为什么是这个结果，我们先不讨论，先来想一下这段代码具体的执行过程，在执行开始，先要寻找到main方法，因为main方法是程序的入口，但是在执行main方法之前，必须先加载Test类，而在加载Test类的时候发现Test类继承自Base类，因此会转去先加载Base类，在加载Base类的时候，发现有static块，便执行了static块。在Base类加载完成之后，便继续加载Test类，然后发现Test类中也有static块，便执行static块。在加载完所需的类之后，便开始执行main方法。在main方法中执行new Test()的时候会先调用父类的构造器，然后再调用自身的构造器。因此，便出现了上面的输出结果。
 
 2.这段代码的输出结果是什么？
-
 
     public class Test {
     	Person person = new Person("Test");
@@ -222,7 +211,6 @@ View Code
     	}
     }
 
-
     class MyClass extends Test {
     	Person person = new Person("MyClass");
     	static{
@@ -234,9 +222,7 @@ View Code
     	}
     }
 
-
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-
 
     test static
     myclass static
@@ -252,7 +238,6 @@ View Code
 
 3.这段代码的输出结果是什么？
 
-
     public class Test {
 
     	static{
@@ -267,9 +252,7 @@ View Code
     	}
     }
 
-
 ![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)![](https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif)
-
 
     test static 1
     test static 2

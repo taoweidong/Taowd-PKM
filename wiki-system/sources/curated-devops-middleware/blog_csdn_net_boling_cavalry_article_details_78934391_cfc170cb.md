@@ -33,33 +33,21 @@ fetched_at: "2026-10-05 15:29:00"
 
   * 新增registryUrl节点，内容是私有仓库地址和端口，如下：
 
-
-
     <registryUrl>192.168.119.148:5000</registryUrl>
-
 
   * 新增pushImage节点，内容如下：
 
-
-
      true
-
 
   * 修改imageName节点的内容，改为私有仓库地址和端口，再加上镜像id和TAG，如下：
 
-
-
     <imageName>192.168.119.148:5000/${project.artifactId}:${project.version}</imageName>
-
 
 执行以下命令开始构建：
 
-
     mvn -f pom_3_inner_server.xml clean package -DskipTests docker:build
 
-
 构建完毕后发现输出了报错信息，如下：
-
 
     [INFO] Building image 192.168.119.148:5000/mavendockerplugindemo:0.0.1-SNAPSHOT
     Step 1/3 : FROM java:8u111-jdk
@@ -106,11 +94,9 @@ fetched_at: "2026-10-05 15:29:00"
     [ERROR] For more information about the errors and possible solutions, please read the following articles:
     [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
 
-
 错误信息中有这么一句：Failed to push …，看起来是连不上私有仓库，登录到私有仓库的机器上去看了以下，果然，docker容器没有启动呢…
 
 执行命令docker start docker-registry将私有仓库的服务容器启动，再回到构建服务的机器上，再执行一次构建命令，这次成功了，如下：
-
 
     [INFO] Building image 192.168.119.148:5000/mavendockerplugindemo:0.0.1-SNAPSHOT
     Step 1/3 : FROM java:8u111-jdk
@@ -146,7 +132,6 @@ fetched_at: "2026-10-05 15:29:00"
     [INFO] Final Memory: 32M/88M
     [INFO] ------------------------------------------------------------------------
 
-
 在用于构建镜像的虚拟机和作为镜像仓库的虚拟机上，分别执行curl -X GET <http://192.168.119.148:5000/v2/_catalog>，查看私有仓库的镜像信息(192.168.119.148是私有仓库虚拟机的IP)，都能见到镜像mavendockerplugindemo，如下图：
 ![这里写图片描述](https://img-blog.csdn.net/20171229192059908?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYm9saW5nX2NhdmFscnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
@@ -176,7 +161,6 @@ fetched_at: "2026-10-05 15:29:00"
 
 回到虚拟机上，打开文件/opt/apache-maven-3.3.3/conf/settings.xml，找到<servers>节点，在里面添加一个server节点，内容如下：
 
-
         <server>
           <!--maven的pom中可以根据这个id找到这个server节点的配置-->
           <id>docker-aliyun</id>
@@ -190,7 +174,6 @@ fetched_at: "2026-10-05 15:29:00"
           </configuration>
         </server>
 
-
 请参照注释的提示，将您在阿里云上的账号密码都填写到对应位置；
 
 #### pom配置信息
@@ -199,55 +182,35 @@ fetched_at: "2026-10-05 15:29:00"
 
   * 阿里云镜像仓库列表页面中，我们创建的镜像仓库的地址是"[registry.cn-shenzhen.aliyuncs.com/bolingcavalry/mavendockerplugindemo](http://registry.cn-shenzhen.aliyuncs.com/bolingcavalry/mavendockerplugindemo)"，现在把这个字符串拆成三部分，将前面两部分作为两个属性放入pom文件的 节点中，属性名分别是docker.repostory和[docker.registry.name](http://docker.registry.name)，此时properties节点的内容如下：
 
-
-
-
          UTF-8
          UTF-8
         <java.version>1.8</java.version>
         <docker.repostory>registry.cn-shenzhen.aliyuncs.com</docker.repostory>
         <docker.registry.name>bolingcavalry</docker.registry.name>
 
-
-
   * 新增serverId节点，内容是之前修改的maven配置文件中，server节点的id，如下：
-
-
 
     <serverId>docker-aliyun</serverId>
 
-
   * 新增registryUrl节点，内容是私有仓库地址，如下：
-
-
 
     <registryUrl>${docker.repostory}</registryUrl>
 
-
   * 新增pushImage节点，内容如下：
-
-
 
      true
 
-
   * 修改imageName节点的内容，改为私有仓库地址和端口，再加上镜像id和TAG，如下：
 
-
-
     ${docker.repostory}/${docker.registry.name}/${project.artifactId}:${project.version}
-
 
 #### 构建并推送到阿里云镜像仓库
 
 执行以下命令开始构建：
 
-
     mvn -f pom_4_ali_server.xml clean package -DskipTests docker:build
 
-
 构建完成后的输出信息如下，表示推送成功了：
-
 
     [INFO] Building image registry.cn-shenzhen.aliyuncs.com/bolingcavalry/mavendockerplugindemo:0.0.1-SNAPSHOT
     Step 1/3 : FROM java:8u111-jdk
@@ -283,7 +246,6 @@ fetched_at: "2026-10-05 15:29:00"
     [INFO] Final Memory: 34M/83M
     [INFO] ------------------------------------------------------------------------
 
-
 #### 在阿里云网页查看
 
   1. 打开阿里云镜像仓库管理页面，如下图：
@@ -298,13 +260,9 @@ fetched_at: "2026-10-05 15:29:00"
 ![这里写图片描述](https://img-blog.csdn.net/20171229193201042?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYm9saW5nX2NhdmFscnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
   3. 执行下载镜像的命令，如下，将我们之前上传的镜像下载下来：
 
-
-
     docker pull registry.cn-shenzhen.aliyuncs.com/bolingcavalry/mavendockerplugindemo:0.0.1-SNAPSHOT
 
-
 输出信息如下，表示下载成功：
-
 
     root@docker-app:/usr/local/work/mavendockerplugindemo# docker pull registry.cn-shenzhen.aliyuncs.com/bolingcavalry/mavendockerplugindemo:0.0.1-SNAPSHOT
     0.0.1-SNAPSHOT: Pulling from bolingcavalry/mavendockerplugindemo
@@ -320,13 +278,9 @@ fetched_at: "2026-10-05 15:29:00"
     Digest: sha256:89062f267fe22df3acc5d6ca7405140162e43076aeda5f7584dbf80fcdc0c58b
     Status: Downloaded newer image for registry.cn-shenzhen.aliyuncs.com/bolingcavalry/mavendockerplugindemo:0.0.1-SNAPSHOT
 
-
   * 执行如下命令，用下载的镜像创建一个容器：
 
-
-
     docker run --name demo003 -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/bolingcavalry/mavendockerplugindemo:0.0.1-SNAPSHOT
-
 
 输出信息会提示启动成功，这时候在当前电脑上打开浏览器，输入"<http://192.168.119.155:8080/>"，可以看见web工程的controller的返回信息了，如下图：
 ![这里写图片描述](https://img-blog.csdn.net/20171229193233955?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYm9saW5nX2NhdmFscnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)

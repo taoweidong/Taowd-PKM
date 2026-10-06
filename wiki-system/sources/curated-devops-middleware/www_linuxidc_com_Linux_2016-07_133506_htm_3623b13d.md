@@ -100,7 +100,6 @@ Docker仓库用来保存我们的images，当我们创建了自己的image之后
 
 然后，在空白处输入（因为我想将以后的镜像都安装到H盘，此处可以修改你喜欢的盘符）：
 
-
     export MACHINE_STORAGE_PATH='H:\docker'
 
 [![image](../../upload/2016_07/1607250656232022.png)](../../upload/2016_07/1607250656232021.png)
@@ -123,7 +122,6 @@ Docker仓库用来保存我们的images，当我们创建了自己的image之后
 
 复制红色方框中的代码，然后修改为如下（根据自己盘符修改）：
 
-
     docker-machine -s "H:\docker" create --engine-registry-mirror=https://vf29u5xi.mirror.aliyuncs.com -d virtualbox default
 
 现在就可以在Git Bash中运行了：
@@ -144,7 +142,6 @@ Docker仓库用来保存我们的images，当我们创建了自己的image之后
 
 也可以在Git Bash中运行：
 
-
     docker-machine ls
 
 [![image](../../upload/2016_07/1607250656232038.png)](../../upload/2016_07/1607250656232037.png)
@@ -152,7 +149,6 @@ Docker仓库用来保存我们的images，当我们创建了自己的image之后
 这里面就是一个linux风格的Docker环境，提示的IP：192.168.99.100就是Docker虚拟机的IP了。
 
 这台docker machine创建后就启动了，如果下次我们再打开电脑，想要启动docker machine，可以打开Docker Quickstart Terminal或者Git Bash，然后执行下面的命令：
-
 
     docker-machine start
 
@@ -208,7 +204,6 @@ Ubuntu 15.04下安装Docker [http://www.linuxidc.com/Linux/2015-07/120444.htm](.
   * [CentOS 7下yum方式安装Docker环境](../../Linux/2019-08/160208.htm) (08月19日)
   * [CentOS 7上安装Docker 1.8](../../Linux/2018-12/155834.htm) (12/14/2018 12:03:18)
   * [使用Docker官方yum源安装指定版本](../../Linux/2018-10/154955.htm "使用Docker官方yum源安装指定版本Docker的标准操作流程") (10/22/2018 19:36:03)
-
 
 ---|---
 
@@ -266,10 +261,7 @@ https://vf29u5xi.mirror.aliyuncs.com 这个地址访问不了？
   * [FBI警告用户不应连接到公共Wifi网络](../../Linux/2019-12/161815.htm)
   * [德国法兰克福因恶意软件感染而关闭了整个IT](../../Linux/2019-12/161814.htm "德国法兰克福因恶意软件感染而关闭了整个IT网络")
 
-
-
 [Linux公社简介](https://www.linuxidc.com/aboutus.htm) \- [广告服务](https://www.linuxidc.com/adsense.htm) \- [网站地图](https://www.linuxidc.com/sitemap.aspx) \- [帮助信息](https://www.linuxidc.com/help.htm) \- [联系我们](https://www.linuxidc.com/contactus.htm)
 本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。
-
 
 Copyright © 2006-2019 [Linux公社](https://www.linuxidc.com/) All rights reserved 浙ICP备07014134号-8

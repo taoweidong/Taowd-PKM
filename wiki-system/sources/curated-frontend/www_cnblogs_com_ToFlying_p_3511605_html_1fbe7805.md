@@ -4,7 +4,7 @@ title: "关于easyui-accordion的添加以及显示隐藏菜单的使用 - Follo
 fetched_at: "2026-10-05 15:31:28"
 ---
 
-       $(function()
+$(function()
        {
              leftMenus();
        });
@@ -71,22 +71,9 @@ fetched_at: "2026-10-05 15:31:28"
           return text;
        }
 
-
-
     <body id="cc" class="easyui-layout">
 
-
-
-
-
-
-
-
-
                 <h1>欢迎您使用，报表在线查询系统</h1>
-
-
-
 
     </body>
 

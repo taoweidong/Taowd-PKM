@@ -12,15 +12,11 @@ fetched_at: "2026-10-05 15:27:58"
 
 10g：V10.02.01
 
-
-
 **解决步骤：**
 
 1、查看dmp文件的版本号
 
 ![](https://img-blog.csdn.net/20151022180627452?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
-
-
 
 2、查询导入oracle数据库的版本号
 
@@ -28,12 +24,8 @@ fetched_at: "2026-10-05 15:27:58"
 
 ![](https://img-blog.csdn.net/20151117135259524?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
 
-
-
 3、修改dmp文件的版本号
 
 ![](https://img-blog.csdn.net/20151117135519169?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
-
-
 
 4、重新执行导入sql即可完成导入工作。

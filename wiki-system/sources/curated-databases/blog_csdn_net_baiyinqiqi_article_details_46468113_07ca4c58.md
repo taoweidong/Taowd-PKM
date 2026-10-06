@@ -33,11 +33,7 @@ http://download.oracle.com/otn/linux/oracle11g/R2/linux.x64_11gR2_database_2of2.
 如果不足1G需设置oracle用户的TMP和TMPDIR环境变量。
 对数据库安装目录，需至少4.35G空间，对数据文件目录，需至少1.68G空间。
 
-
-
 内核版本最低2.6.18：uname -r
-
-
 
 依赖的包:
 
@@ -106,13 +102,9 @@ oracle hard nofile 65536
 oracle soft nproc 16384
 oracle hard nproc 16384
 
-
-
 vi /etc/pam.d/login
 session required /lib/security/pam_limits.so
 session required pam_limits.so
-
-
 
 vi /etc/profile
 
@@ -221,20 +213,15 @@ oracle用户，进入database目录执行以下命令
 
 Successfully Setup Software.
 
-
-
 root执行$ORACLE_HOME下的root.sh来建立oratab,dbhome,oraenv,coraenv文件, 如果提示则一直回车:
 su - root
 /home/oracle/product/11.2.0/db_1/root.sh
 more /etc/oratab
 
-
-
 设置oracle用户环境变量：
 
 export ORACLE_BASE=/home/oracle
 export ORACLE_SID=orabi
-
 
 export ORACLE_HOME=$ORACLE_BASE/product/11.2.0/db_1
 export TNS_ADMIN=$ORACLE_HOME/network/admin
@@ -253,11 +240,7 @@ export ORACLE_OWNER=oracle
 export SPFILE_PATH=$ORACLE_HOME/dbs
 export ORA_NLS10=$ORACLE_HOME/nls/data
 
-
-
 source /oracle/.bash_profile
-
-
 
 sqlplus /nolog 测试登录
 
@@ -294,7 +277,5 @@ SQL> alter system archive log current; (手工归档测试)
 默认安装的数据库用户检查
 SQL> set lines 256 pages 500
 SQL> select USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TABLESPACE from dba_users order by 1;
-
-
 
 参考：http://blog.sina.com.cn/s/blog_6b7ae4270101ns2v.html

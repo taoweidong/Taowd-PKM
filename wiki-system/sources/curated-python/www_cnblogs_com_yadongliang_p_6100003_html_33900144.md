@@ -37,7 +37,6 @@ touch ctest.c
 
 ![](https://images2018.cnblogs.com/blog/917633/201802/917633-20180228111004509-647978296.png)
 
-
     #include <stdio.h>
 
     int main()

@@ -14,7 +14,6 @@ fetched_at: "2026-10-05 15:31:29"
 
 页面就是用了easyui组件，比如表格的样式还有分页条等内容，组件里一些属性和方法也可以更加方便的实现功能的实现。具体可参照easyui的API。后台传过来的值也只需跟表格字段里的键值一一对应就可以了，代码中对于增加用户、删除用户等方法的实现用的是ajax方法。
 
-
     <html>
       <head>
         <base href="<%=basePath%>">
@@ -30,17 +29,11 @@ fetched_at: "2026-10-05 15:31:29"
         <link rel="stylesheet" type="text/css" href="Common/jquery-easyui-1.5/themes/icon.css">
         <link rel="stylesheet" type="text/css" href="Common/jquery-easyui-1.5/themes/default/easyui.css">
 
-
-
-
       </head>
-
 
         <body class="easyui-layout">
 
               <a href="Web/Jsp/Main2.jsp">转到角色功能</a>
-
-
 
            <table id="dg2" class="easyui-datagrid" title="用户信息" style="width:700px;height:336px"
       data-options="url:'servlet/roleServlet',fitColumns:true,pagination:true,pageList:[10]">
@@ -55,8 +48,6 @@ fetched_at: "2026-10-05 15:31:29"
             </table>
 
                 <a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="save()">保存设置</a>
-
-
 
           <table id="dg1" class="easyui-datagrid" title="用户信息" style="width:700px;height:336px"
               data-options="url:'servlet/userServlet',fitColumns:true,singleSelect:true,pagination:true,pageList:[10]">
@@ -76,9 +67,7 @@ fetched_at: "2026-10-05 15:31:29"
 
         <a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">增加用户</a>
 
-
         <!-- ++++++++++++++++++++弹出的增加用户框++++++++++++++++++++++++++++++++++++++++ -->
-
 
              <table>
                 <tr><td>用户名:<td><input name="UserName" type="text" id="username"></td></td></tr>
@@ -88,9 +77,7 @@ fetched_at: "2026-10-05 15:31:29"
                 <tr><td>备注：<td><input name="Memo" type="text" id="memo"></td></td></tr>
                 </table>
 
-
       </body>
-
 
         function formatOper(value,row,index){
 
@@ -182,7 +169,6 @@ fetched_at: "2026-10-05 15:31:29"
                       data:{"rows":JSON.stringify(rows1),"userid":userow.UserId}
                 })
 
-
            };
 
              $("#dg1").datagrid({
@@ -207,7 +193,6 @@ fetched_at: "2026-10-05 15:31:29"
                    }
              });
 
-
            $("#dg2").datagrid({
            //============勾选角色保存设置=====
                 onCheck:function(Index,rowData){
@@ -223,9 +208,6 @@ fetched_at: "2026-10-05 15:31:29"
            });
          //  var rows = $('#dg2').datagrid('getSelected');
          //   alert(rows.Title);
-
-
-
 
     </html>
 

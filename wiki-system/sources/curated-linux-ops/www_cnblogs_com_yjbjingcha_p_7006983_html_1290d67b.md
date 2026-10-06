@@ -8,7 +8,6 @@ fetched_at: "2026-10-05 15:34:44"
 
 **1.安装crontab**
 
-
     [root@CentOS ~]# yum install vixie-cron
     [root@CentOS ~]# yum install crontabs
 
@@ -16,7 +15,6 @@ vixie-cron软件包是cron的主程序；
 crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序。
 
 **2.开启crontab服务**
-
 
     service crond start //启动服务
 
@@ -35,14 +33,12 @@ chkconfig –level 35 crond on
 _另外顺带介绍下ntsysv和chkconfig命令：_
 关于ntsysv命令是类图形界面管理模式来设置开机启动，须要先安装才干够使用，yum install -y ntsysv安装好之后仅仅须要运行一个ntsysv就可以出现一个相似图像化的管理界面。
 
-
 上下键：能够在中间的方框其中，在各个服务之间移动；
 空格键：能够用来选择你所须要的服务，[*]表示开起启动；
 tab键：能够在方框、OK、Cancel之间移动；
 [F1]键：能够显示该服务的说明。
 
 关于chkconfig命令行的形式设置是否开机自启动或者查询某个服务6个开机级别的运行情况。
-
 
 设置开机自己主动启动crond服务:
 [root@CentOS ~]# chkconfig crond on
@@ -58,7 +54,6 @@ crond 0:关闭 1:关闭 2:启用 3:启用 4:启用 5:启用 6:关闭
 1)、在命令行输入: crontab -e 然后加入对应的任务，wq存盘退出。
 2)、直接编辑/etc/crontab 文件。即vi /etc/crontab，加入对应的任务。
 
-
 crontab -e配置是针对某个用户的。而编辑/etc/crontab是针对系统的任务
 查看调度任务
 crontab -l //列出当前的全部调度任务
@@ -66,7 +61,6 @@ crontab -l -u jp //列出用户jp的全部调度任务
 删除任务调度工作
 crontab -r //删除全部任务调度工作
 直接编辑 vim /etc/crontab ,默认的文件形式例如以下：
-
 
     SHELL=/bin/bash
     PATH=/sbin:/bin:/usr/sbin:/usr/bin
@@ -93,7 +87,6 @@ crontab -r //删除全部任务调度工作
 这里举几个样例，基本涵盖了常见的一些情况：
 实例1
 
-
     5      *       *           *     *     ls         指定每小时的第5分钟运行一次ls命令
     30     5       *           *     *     ls         指定每天的 5:30 运行ls命令
     30     7       8           *     *     ls         指定每月8号的7：30分运行ls命令
@@ -108,7 +101,6 @@ crontab -r //删除全部任务调度工作
     #每天4：22以root身份运行/etc/cron.daily文件夹中的全部可运行文件，run-parts參数表示。运行后面文件夹中的全部可运行文件。
 
 实例2
-
 
     #每晚的21:30 重新启动apache
     30 21 * * * /usr/local/etc/rc.d/lighttpd restart
@@ -133,7 +125,6 @@ crontab -r //删除全部任务调度工作
 
 注意
 `* *1 * * *` 命令表示是每小时之内的每一分钟都运行。
-
 
 必须指定在每一个小时的第几分钟运行。也就是说第一个*号必须改成一个数值。
 由于*号表示的就是每一分钟。

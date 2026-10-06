@@ -30,10 +30,7 @@ fetched_at: "2026-10-05 15:32:39"
 
 它们将以HTML标签的一个属性来表示：
 
-
-
     <li th:each="book : ${books}">
-
 
 ### 选择(星号)表达式
 
@@ -42,25 +39,18 @@ fetched_at: "2026-10-05 15:32:39"
 
 被指定的 object 由 th:object 属性定义：
 
-
-
       ...
        ...
       ...
-
-
 
 ### 文字国际化表达式
 
 文字国际化表达式允许我们从一个外部文件获取区域文字信息(.properties)，用 Key 索引 Value，还可以提供一组参数(可选).
 
-
     #{main.title}
     #{message.entrycreated(${entryId})}
 
-
 可以在模板文件中找到这样的表达式代码：
-
 
     <table>
       ...
@@ -68,7 +58,6 @@ fetched_at: "2026-10-05 15:32:39"
       <th th:text="#{header.address.country}">...</th>
       ...
     </table>
-
 
 ### URL 表达式
 
@@ -83,43 +72,29 @@ URL还可以设置参数：
 
 让我们看这些表达式：
 
-
     <form th:action="@{/createOrder}">
     <a href="main.html" th:href="@{/main}">
-
 
 ### 变量表达式和星号表达有什么区别吗？
 
 如果不考虑上下文的情况下，两者没有区别；星号语法评估在选定对象上表达，而不是整个上下文
 什么是选定对象？就是父标签的值，如下：
 
-
-
        Name:  Sebastian .
        Surname:  Pepper .
        Nationality:  Saturn .
-
-
 
 这是完全等价于：
 
-
-
        Name:  Sebastian .
        Surname:  Pepper .
        Nationality:  Saturn .
 
-
-
 当然，美元符号和星号语法可以混合使用：
-
-
 
     	   Name:  Sebastian .
       	   Surname:  Pepper .
            Nationality:  Saturn .
-
-
 
 ### 表达式支持的语法
 
@@ -159,9 +134,7 @@ URL还可以设置参数：
 
 所有这些特征可以被组合并嵌套：
 
-
     'User is of type ' + (${user.isAdmin()} ? 'Administrator' : (${user.type} ?: 'Unknown'))
-
 
 ## 常用th标签都有那些？
 
@@ -198,32 +171,22 @@ th:attr | 设置标签属性，多个属性可以用逗号分隔 | 比如`th:att
 
 ### 1、赋值、字符串拼接
 
-
      description
 
-
-
 字符串拼接还有另外一种简洁的写法
-
-
-
-
 
 ### 2、条件判断 If/Unless
 
 Thymeleaf中使用th:if和th:unless属性进行条件判断，下面的例子中，`<a>`标签只有在`th:if`中条件成立时才显示：
 
-
     <a th:if="${myself=='yes'}" > </i> </a>
     <a th:unless=${session.user != null} th:href="@{/login}" >Login</a>
-
 
 `th:unless` 于 `th:if` 恰好相反，只有表达式中的条件不成立，才会显示其内容。
 
 也可以使用 `(if) ? (then) : (else)`这种语法来判断显示的内容
 
 ### 3、for 循环
-
 
     <tr  th:each="collect,iterStat : ${collects}">
        <th scope="row" th:text="${collect.id}">1</th>
@@ -235,7 +198,6 @@ Thymeleaf中使用th:if和th:unless属性进行条件判断，下面的例子中
        <td th:text="${collect.description}">@mdo</td>
        <td th:text="${terStat.index}">index</td>
     </tr>
-
 
 iterStat称作状态变量，属性有：
 
@@ -252,25 +214,17 @@ iterStat称作状态变量，属性有：
 URL 在 Web 应用模板中占据着十分重要的地位，需要特别注意的是 Thymeleaf 对于 URL 的处理是通过语法 `@{...}` 来处理的。
 如果需要 Thymeleaf 对 URL 进行渲染，那么务必使用 `th:href`，`th:src` 等属性，下面是一个例子
 
-
     <!-- Will produce 'http://localhost:8080/standard/unread' (plus rewriting) -->
      <a  th:href="@{/standard/{type}(type=${type})}">view</a>
 
     <!-- Will produce '/gtvg/order/3/details' (plus rewriting) -->
     <a href="details.html" th:href="@{/order/{orderId}/details(orderId=${o.id})}">view</a>
 
-
 设置背景
-
 
      } + ');'">
 
-
 根据属性值改变背景
-
-
-
-
 
 几点说明：
 
@@ -282,8 +236,6 @@ URL 在 Web 应用模板中占据着十分重要的地位，需要特别注意�
 
 内联文本：[[...]] 内联文本的表示方式，使用时，必须先用`th:inline="text/javascript/none"`激活，`th:inline`可以在父级标签内使用，甚至作为 body 的标签。内联文本尽管比`th:text`的代码少，不利于原型显示。
 
-
-
     /*<![CDATA[*/
     ...
     var username = /*[[${sesion.user.name}]]*/ 'Sebastian';
@@ -291,23 +243,17 @@ URL 在 Web 应用模板中占据着十分重要的地位，需要特别注意�
     ...
     /*]]>*/
 
-
-
 js 附加代码：
-
 
     /*[+
     var msg = 'This is a working application';
     +]*/
 
-
 js 移除代码：
-
 
     /*[- */
     var msg = 'This is a non-working template';
     /* -]*/
-
 
 ### 6、内嵌变量
 
@@ -329,7 +275,6 @@ js 移除代码：
 
 #### dates
 
-
     /*
      * Format date with the specified pattern
      * Also works with arrays, lists or sets
@@ -349,9 +294,7 @@ js 移除代码：
      */
     ${#dates.createToday()}
 
-
 #### strings
-
 
     /*
      * Check whether a String is empty (or null). Performs a trim() operation before check
@@ -388,12 +331,9 @@ js 移除代码：
      */
     ${#strings.randomAlphanumeric(count)}
 
-
-
 ## 使用 Thymeleaf 布局
 
 Spring Boot 2.0 将布局单独提取了出来，需要单独引入依赖：thymeleaf-layout-dialect。
-
 
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -404,37 +344,28 @@ Spring Boot 2.0 将布局单独提取了出来，需要单独引入依赖：thym
         <artifactId>thymeleaf-layout-dialect</artifactId>
     </dependency>
 
-
 定义代码片段
-
 
     <footer th:fragment="copy">
     © 2019
     </footer>
 
-
 在页面任何地方引入：
-
 
     <body>
 
-
     </body>
-
 
 th:insert 和 th:replace 区别，insert 只是加载，replace 是替换。Thymeleaf 3.0 推荐使用 th:insert 替换 2.0 的 th:replace。
 
 返回的 HTML 如下：
-
 
     <body>
          © 2019
       <footer>© 2019 </footer>
     </body>
 
-
 下面是一个常用的后台页面布局，将整个页面分为头部，尾部、菜单栏、隐藏栏，点击菜单只改变 content 区域的页面
-
 
     <body class="layout-fixed">
 
@@ -446,21 +377,16 @@ th:insert 和 th:replace 区别，insert 只是加载，replace 是替换。Thym
 
     </body>
 
-
 任何页面想使用这样的布局值只需要替换中见的 content 模块即可
-
 
     <html xmlns:th="http://www.thymeleaf.org" layout:decorator="layout">
      <body>
         <section layout:fragment="content">
       ...
 
-
 也可以在引用模版的时候传参
 
-
     <head th:include="layout :: htmlhead" th:with="title='Hello'"></head>
-
 
 layout 是文件地址，如果有文件夹可以这样写`fileName/layout:htmlhead`，htmlhead 是指定义的代码片段 如`th:fragment="copy"`
 

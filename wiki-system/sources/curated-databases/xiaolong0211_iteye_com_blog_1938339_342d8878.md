@@ -132,7 +132,6 @@ xiaolong0211
 
 1、安装oracle11.2需要unixODBC和unixODBC-devel两个rpm，于是想手动安装，但发现依赖关系太多了。
 
-
     [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-2.2.11-10.el5.i386.rpm
 
     warning: unixODBC-2.2.11-10.el5.i386.rpm: Header V3 DSA signature: NOKEY, key ID e8562897
@@ -198,7 +197,6 @@ xiaolong0211
 接着想使用yum命令，于是把redhat的yum源镜像改成centos的，执行yum install unixODBC-devel后，可以正常安装。于是又在centos5.9下测试安装unixODBC和unixODBC-devel，发现在安装unixODBC时，同时下载了unixODBC-libs。
 
 最后，重新安装一个不含这两个包的redhat5.9，首先安装unixODBC-libs，然后安装unixODBC，最后安装unixODBC-devel，顺序不能错，成功。
-
 
     [root@zhaozy-oracle oracle11g]# rpm -ivh unixODBC-libs-2.2.11-10.el5.i386.rpm
 

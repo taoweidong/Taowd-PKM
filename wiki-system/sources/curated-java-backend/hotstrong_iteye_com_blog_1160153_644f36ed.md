@@ -143,7 +143,6 @@ t_user_role管理员对应权限表
 
 **建表SQL语句如下：**
 
-
     SET FOREIGN_KEY_CHECKS=0;
 
     	------------------------------
@@ -166,8 +165,6 @@ t_user_role管理员对应权限表
 
     	) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-
-
     	-- ----------------------------
 
     	-- 添加3个管理帐号
@@ -179,8 +176,6 @@ t_user_role管理员对应权限表
     	INSERT INTO `t_admin` VALUES ('4', '123456', 'test', '');
 
     	INSERT INTO `t_admin` VALUES ('5', '111111', '111111', '');
-
-
 
     	-- ----------------------------
 
@@ -202,8 +197,6 @@ t_user_role管理员对应权限表
 
     	) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
-
-
     	-- ----------------------------
 
     	-- 加入4个操作权限
@@ -217,8 +210,6 @@ t_user_role管理员对应权限表
     	INSERT INTO `t_role` VALUES ('3', 'ROLE_DELETE_FILM', '删除', '影片管理');
 
     	INSERT INTO `t_role` VALUES ('4', 'ROLE_ADD_FILM', '添加', '影片管理');
-
-
 
     	-- ----------------------------
 
@@ -236,8 +227,6 @@ t_user_role管理员对应权限表
 
     	) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
-
-
     	-- ----------------------------
 
     	-- 添加2个权限组
@@ -247,8 +236,6 @@ t_user_role管理员对应权限表
     	INSERT INTO `t_group` VALUES ('1', 'Administrator');
 
     	INSERT INTO `t_group` VALUES ('2', '影片维护');
-
-
 
     	-- ----------------------------
 
@@ -276,8 +263,6 @@ t_user_role管理员对应权限表
 
     	) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8;
 
-
-
     	-- ----------------------------
 
     	-- 加入权限组与权限的对应关系
@@ -289,8 +274,6 @@ t_user_role管理员对应权限表
     	INSERT INTO `t_group_role` VALUES ('2', '2', '2');
 
     	INSERT INTO `t_group_role` VALUES ('4', '2', '4');
-
-
 
     	-- ----------------------------
 
@@ -318,8 +301,6 @@ t_user_role管理员对应权限表
 
     	) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
-
-
     	-- ----------------------------
 
     	-- 将管理员加入权限组
@@ -329,8 +310,6 @@ t_user_role管理员对应权限表
     	INSERT INTO `t_group_user` VALUES ('1', '1', '1');
 
     	INSERT INTO `t_group_user` VALUES ('2', '4', '2');
-
-
 
     	-- ----------------------------
 
@@ -360,8 +339,6 @@ t_user_role管理员对应权限表
 
     	) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-
-
 **3.2）在项目中新增如下jar包(security框架所需jar包)：**
 
 **注意：以下jar包本文已提供下载**
@@ -380,10 +357,7 @@ com.xxx.security
 
 **3.4）在src下创建Spring配置文件 applicationContext-security.xml，内容如下：**
 
-
     <?xml version="1.0" encoding="UTF-8"?>
-
-
 
     	<beans:beans xmlns="http://www.springframework.org/schema/security"
 
@@ -395,16 +369,11 @@ com.xxx.security
 
     	                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-
-
     	<!-- 这里进行配置 -->
-
-
 
     </beans:beans>
 
 **3.5）在 web.xml中加入security配置，如下：**
-
 
     <?xml version="1.0" encoding="UTF-8"?>
 
@@ -424,8 +393,6 @@ com.xxx.security
 
     	  </welcome-file-list>
 
-
-
     	  	<context-param>
 
     			 contextConfigLocation
@@ -433,8 +400,6 @@ com.xxx.security
     			 /WEB-INF/applicationContext-*.xml,classpath*:applicationContext-*.xml
 
     		</context-param>
-
-
 
     		<!-- 配置Spring Security -->
 
@@ -453,8 +418,6 @@ com.xxx.security
     			<url-pattern>/*</url-pattern>
 
     		</filter-mapping>
-
-
 
     		<filter>
 
@@ -481,7 +444,6 @@ com.xxx.security
     	</web-app>
 
 **4、站点根路径下创建登录页面 login.jsp，代码如下：**
-
 
     <%@ page language="java" contentType="text/html; charset=UTF-8"
 
@@ -525,13 +487,7 @@ com.xxx.security
 
     		<c:out value="${SPRING_SECURITY_LAST_USERNAME}"/></c:if>' />
 
-
-
     		密码：<input type='password' name='j_password' class="txtinput" />
-
-
-
-
 
     		<input type="checkbox" name="_spring_security_remember_me" />
 
@@ -541,19 +497,13 @@ com.xxx.security
 
     		<input name="reset" type="reset" value="重置" />
 
-
-
     	</form>
-
-
 
     	<!-- 显示登录失败原因 -->
 
     	<c:if test="${not empty param.error}">
 
     		  登录失败
-
-
 
     		原因: <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />.
 
@@ -564,7 +514,6 @@ com.xxx.security
     </html>
 
 **5、站点根路径下创建注销页面 loggedout.jsp，代码如下：**
-
 
     <%@page session="false" %>
 
@@ -604,7 +553,6 @@ com.xxx.security
 
 **6、站点根路径下创建HttpSession超时提示页面 timeout.jsp，代码如下：**
 
-
     <%@page session="false" %>
 
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -633,8 +581,6 @@ com.xxx.security
 
     你的登录已经失效，请重新登录。
 
-
-
     <a href="<c:url value='/login.jsp'/>" >
 
     点击这里登录</a>
@@ -643,8 +589,6 @@ com.xxx.security
 
     </html>
 
-
-
 **7、在com.xxx.security包下创建登录验证过滤器，该过滤器可用于在管理员登录时进行 日志记录等相关操作，包括两个类：**
 
   * LoginUsernamePasswordAuthenticationFilter
@@ -652,27 +596,19 @@ com.xxx.security
 
 **7.1）LoginUsernamePasswordAuthenticationFilter代码如下：**
 
-
     package com.xxx.security;
 
     import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-
 
     public class LoginUsernamePasswordAuthenticationFilter extends
 
     		UsernamePasswordAuthenticationFilter {
 
-
-
     }
 
 **7.2）LoginSuccessHandler代码如下：**
 
-
     package com.xxx.security;
-
-
 
     import java.io.IOException;
 
@@ -688,8 +624,6 @@ com.xxx.security
 
     import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
-
-
     /**
 
      * 处理管理员登录日志
@@ -700,8 +634,6 @@ com.xxx.security
 
     public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler{
 
-
-
     	@Override
 
     	public void onAuthenticationSuccess(HttpServletRequest request,
@@ -710,32 +642,21 @@ com.xxx.security
 
     			ServletException {
 
-
-
     		UserDetails userDetails = (UserDetails)authentication.getPrincipal();
-
-
 
     		//输出登录提示信息
 
     		System.out.println("管理员 " + userDetails.getUsername() + " 登录");
 
-
-
     		super.onAuthenticationSuccess(request, response, authentication);
 
     	}
-
-
 
     }
 
 **8、在 applicationContext-security.xml中加入权限管理配置，如下：**
 
-
     <?xml version="1.0" encoding="UTF-8"?>
-
-
 
     <beans:beans xmlns="http://www.springframework.org/schema/security"
 
@@ -746,8 +667,6 @@ com.xxx.security
     	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 
                             http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
-
-
 
     	<http >
 
@@ -771,8 +690,6 @@ com.xxx.security
 
     			authentication-failure-url="/login.jsp?error=true" />
 
-
-
     		<!-- 登出操作后跳转到该页面 -->
 
     		<logout logout-success-url="/loggedout.jsp"
@@ -781,8 +698,6 @@ com.xxx.security
 
     		<remember-me />
 
-
-
     		<!-- SESSION超时后跳转到该页面 -->
 
     		<session-management invalid-session-url="/timeout.jsp">
@@ -790,8 +705,6 @@ com.xxx.security
     		</session-management>
 
     	</http>
-
-
 
     	<authentication-manager alias="authenticationManager">
 
@@ -845,8 +758,6 @@ com.xxx.security
 
     	</authentication-manager>
 
-
-
     	<!-- 自定义消息 -->
 
     	<b:bean id="messageSource"
@@ -858,8 +769,6 @@ com.xxx.security
     			value="classpath:org/springframework/security/messages" />
 
     	</b:bean>
-
-
 
     	<!-- 定制登录过滤器 -->
 
@@ -897,11 +806,7 @@ com.xxx.security
 
     	</beans:bean>
 
-
-
     </beans:beans>
-
-
 
 **9、为影片页面films.jsp定制操作权限，定制后，不同的帐号登录会看到不同的操作，**
 
@@ -916,7 +821,6 @@ films.jsp页面权限分布图：
 ![](/upload/picture/pic/97730/1f20a420-30d1-3415-9159-84dfe99a82b6.jpg)
 
 films.jsp代码如下：
-
 
     <%@ page language="java" contentType="text/html; charset=utf-8"
 
@@ -962,8 +866,6 @@ films.jsp代码如下：
 
         </security:authorize>
 
-
-
         <s:if test="filmList != null">
 
         	<table border="1" width="40%">
@@ -985,8 +887,6 @@ films.jsp代码如下：
     	    		<td><s:property value="fname" /></td>
 
     	    		<td>
-
-
 
     	    			<!-- 修改影片操作，登录帐号具备ROLE_ADMIN权限或者ROLE_UPDATE_FILM权限可以执行 -->
 

@@ -18,14 +18,11 @@ SpringBoot项目中在官方文档中说明，默认已经依赖了一些日志�
 
 配置文件具体如下：
 
-
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration debug="true">
         <!-- 项目名称 -->
 
-
         <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-
 
         <!-- 控制台输出 -->
         <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
@@ -108,7 +105,6 @@ SpringBoot项目中在官方文档中说明，默认已经依赖了一些日志�
     </configuration>
 
 2、其实至此为止你已经可以正常使用你的日志工具了，但是既然是我的模版，我需要给它添加我使用的工具类，从而方便日志的打印
-
 
     package com.linkinstars.springBootTemplate.utils;
 

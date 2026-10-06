@@ -32,7 +32,6 @@ fetched_at: "2026-10-05 15:42:41"
 
 `multiprocessing` 模块还引入了 `Pool` 对象，它提供了一种使函数能并行化执行多个输入值的便捷手段，可以将输入数据分配给不同的进程（数据并行）。 下面的例子演示了在一个模块中定义此类函数以便子进程能够成功导入该模块的通用做法。 这个数据并行的基本示例使用了 `Pool`，:
 
-
     from multiprocessing import Pool
 
     def f(x):
@@ -42,12 +41,9 @@ fetched_at: "2026-10-05 15:42:41"
         with Pool(5) as p:
             print(p.map(f, [1, 2, 3]))
 
-
 将在标准输出中打印
 
-
     [1, 4, 9]
-
 
 `multiprocessing` 模块还引入了在 [`threading`](threading.html#module-threading "threading: Thread-based parallelism.") 模块中没有对应物的 API，如 `终结`, `中断` 或 `杀掉` 正在运行的进程的能力。
 
@@ -59,7 +55,6 @@ fetched_at: "2026-10-05 15:42:41"
 
 在 `multiprocessing` 中，通过创建一个 `Process` 对象然后调用它的 `start()` 方法来产生进程。 `Process` 沿用了 [`threading.Thread`](threading.html#threading.Thread "threading.Thread") 的 API。 一个多进程的程序的简单示例如下
 
-
     from multiprocessing import Process
 
     def f(name):
@@ -70,9 +65,7 @@ fetched_at: "2026-10-05 15:42:41"
         p.start()
         p.join()
 
-
 要显示所涉及的各个进程ID，这是一个扩展示例:
-
 
     from multiprocessing import Process
     import os
@@ -92,7 +85,6 @@ fetched_at: "2026-10-05 15:42:41"
         p = Process(target=f, args=('bob',))
         p.start()
         p.join()
-
 
 关于为什么 `if __name__ == '__main__'` 部分是必需的解释，请参见 编程指导。
 
@@ -139,7 +131,6 @@ fetched_at: "2026-10-05 15:42:41"
 
 要选择一个启动方法，你应该在主模块的 `if __name__ == '__main__'` 子句中调用 `set_start_method()` 。例如:
 
-
     import multiprocessing as mp
 
     def foo(q):
@@ -153,11 +144,9 @@ fetched_at: "2026-10-05 15:42:41"
         print(q.get())
         p.join()
 
-
 在程序中 `set_start_method()` 不应该被多次调用。
 
 或者，你可以使用 `get_context()` 来获取上下文对象。上下文对象与 multiprocessing 模块具有相同的API，并允许在同一程序中使用多种启动方法。:
-
 
     import multiprocessing as mp
 
@@ -171,7 +160,6 @@ fetched_at: "2026-10-05 15:42:41"
         p.start()
         print(q.get())
         p.join()
-
 
 请注意，对象在不同上下文创建的进程间可能并不兼容。 特别是，使用 _fork_ 上下文创建的锁不能传递给使用 _spawn_ 或 _forkserver_ 启动方法启动的进程。
 
@@ -232,7 +220,6 @@ fetched_at: "2026-10-05 15:42:41"
 
 `multiprocessing` 包含来自 [`threading`](threading.html#module-threading "threading: Thread-based parallelism.") 的所有同步原语的对应物。 例如可以使用锁来确保同一时刻只有一个进程打印到标准输出:
 
-
     from multiprocessing import Process, Lock
 
     def f(l, i):
@@ -247,7 +234,6 @@ fetched_at: "2026-10-05 15:42:41"
 
         for num in range(10):
             Process(target=f, args=(lock, num)).start()
-
 
 不使用锁的情况下，来自于多进程的输出很容易产生混淆。
 
@@ -340,7 +326,6 @@ fetched_at: "2026-10-05 15:42:41"
 
 例如:
 
-
     from multiprocessing import Pool, TimeoutError
     import time
     import os
@@ -383,13 +368,11 @@ fetched_at: "2026-10-05 15:42:41"
         # 退出 'with' 代码块将停止进程池
         print("Now the pool is closed and no longer available")
 
-
 请注意，进程池的方法只能由创建它的进程使用。
 
 备注
 
 这个包中的功能要求子进程可以导入 `__main__` 模块。虽然这在 编程指导 中有描述，但还是需要提前说明一下。这意味着一些示例在交互式解释器中不起作用，比如 `multiprocessing.pool.Pool` 示例。例如:
-
 
     >>> from multiprocessing import Pool
     >>> p = Pool(5)
@@ -408,7 +391,6 @@ fetched_at: "2026-10-05 15:42:41"
     AttributeError: Can't get attribute 'f' on <module '__main__' (<class '_frozen_importlib.BuiltinImporter'>)>
     AttributeError: Can't get attribute 'f' on <module '__main__' (<class '_frozen_importlib.BuiltinImporter'>)>
 
-
 （如果尝试执行上面的代码，它会以一种半随机的方式将三个完整的堆栈内容交替输出，然后你只能以某种方式停止父进程。）
 
 ## 参考¶
@@ -424,7 +406,6 @@ Python 支持多种方式来创建和初始化进程。 全局启动方法将设
 ### `Process` 和异常¶
 
 _class _multiprocessing.Process(_group =None_, _target =None_, _name =None_, _args =()_, _kwargs ={}_, _*_ , _daemon =None_)¶
-
 
 进程对象表示在单独进程中运行的活动。 `Process` 类拥有和 [`threading.Thread`](threading.html#threading.Thread "threading.Thread") 等价的大部分方法。
 
@@ -442,7 +423,6 @@ _class _multiprocessing.Process(_group =None_, _target =None_, _name =None_, _ar
 
 以下是子进程中此类不可捕获错误的示例:
 
-
     >>> import multiprocessing as mp
     >>> def knigit():
     ...     print("Ni!")
@@ -456,13 +436,11 @@ _class _multiprocessing.Process(_group =None_, _target =None_, _name =None_, _ar
     >>> process
     <SpawnProcess name='SpawnProcess-1' pid=379473 parent=378707 stopped exitcode=1>
 
-
 参见 spawn 和 forkserver 启动方式。虽然使用 `"fork"` 启动方法时不存在此限制，但从 Python `3.14` 开始，该方法在任何平台上都不再是默认值。参见 上下文和启动方法。另请参见 [gh-132898](https://github.com/python/cpython/issues/132898)。
 
 在 3.3 版本发生变更: 增加了 _daemon_ 形参。
 
 run()¶
-
 
 表示进程活动的方法。
 
@@ -472,7 +450,6 @@ run()¶
 
 示例：
 
-
     >>> from multiprocessing import Process
     >>> p = Process(target=print, args=[1])
     >>> p.run()
@@ -481,16 +458,13 @@ run()¶
     >>> p.run()
     1
 
-
 start()¶
-
 
 启动进程活动。
 
 这个方法每个进程对象最多只能调用一次。它会将对象的 `run()` 方法安排在一个单独的进程中调用。
 
 join([_timeout_])¶
-
 
 如果可选参数 _timeout_ 是 `None` （默认值），则该方法将阻塞，直到调用 `join()` 方法的进程终止。如果 _timeout_ 是一个正数，它最多会阻塞 _timeout_ 秒。请注意，如果进程终止或方法超时，则该方法返回 `None` 。检查进程的 `exitcode` 以确定它是否终止。
 
@@ -500,20 +474,17 @@ join([_timeout_])¶
 
 name¶
 
-
 进程的名称。该名称是一个字符串，仅用于识别目的。它没有语义。可以为多个进程指定相同的名称。
 
 初始名称由构造器设定。 如果没有为构造器提供显式名称，则会构造一个形式为 'Process-N1:N2:...:Nk' 的名称，其中每个 Nk 是其父亲的第 N 个孩子。
 
 is_alive()¶
 
-
 返回进程是否还活着。
 
 粗略地说，从 `start()` 方法返回到子进程终止之前，进程对象仍处于活动状态。
 
 daemon¶
-
 
 进程的守护标志，一个布尔值。这必须在 `start()` 被调用之前设置。
 
@@ -527,11 +498,9 @@ daemon¶
 
 pid¶
 
-
 返回进程ID。在生成该进程之前，这将是 `None` 。
 
 exitcode¶
-
 
 子进程的退出代码。如果该进程尚未终止则为 `None` 。
 
@@ -540,7 +509,6 @@ exitcode¶
 如果子进程由于在 `run()` 内的未捕获异常而终止，退出代码将是 1 。 如果它是由信号 _N_ 终止的，退出代码将是负值 _-N_ 。
 
 authkey¶
-
 
 进程的身份验证密钥（字节字符串）。
 
@@ -552,7 +520,6 @@ authkey¶
 
 sentinel¶
 
-
 系统对象的数字句柄，当进程结束时将变为 "ready" 。
 
 如果你想使用 `multiprocessing.connection.wait()` 来一次等待多个事件则可以使用此值。 在其他情况下调用 `join()` 更为简单。
@@ -562,7 +529,6 @@ sentinel¶
 Added in version 3.3.
 
 interrupt()¶
-
 
 终止进程。 运行在 POSIX 上时使用 [`SIGINT`](signal.html#signal.SIGINT "signal.SIGINT") 信号。 在 Windows 平台上的行为未定义。
 
@@ -576,7 +542,6 @@ Added in version 3.14.
 
 terminate()¶
 
-
 终结进程。 在 POSIX 上这是使用 [`SIGTERM`](signal.html#signal.SIGTERM "signal.SIGTERM") 信号来完成的；在 Windows 上则会使用 `TerminateProcess()`。 请注意 exit 处理器和 finally 子句等将不会被执行。
 
 请注意，进程的后代进程将不会被终止 —— 它们将简单地变成孤立的。
@@ -587,13 +552,11 @@ terminate()¶
 
 kill()¶
 
-
 与 `terminate()` 相同但在 POSIX 上将使用 `SIGKILL` 信号。
 
 Added in version 3.7.
 
 close()¶
-
 
 关闭 `Process` 对象，释放与之关联的所有资源。如果底层进程仍在运行，则会引发 [`ValueError`](../builtins/exceptions.html#ValueError "ValueError") 。一旦 `close()` 成功返回， `Process` 对象的大多数其他方法和属性将引发 `ValueError` 。
 
@@ -602,7 +565,6 @@ Added in version 3.7.
 注意 `start()` 、 `join()` 、 `is_alive()` 、 `terminate()` 和 `exitcode` 方法只能由创建进程对象的进程调用。
 
 `Process` 一些方法的示例用法：
-
 
     >>> import multiprocessing, time, signal
     >>> mp_context = multiprocessing.get_context('spawn')
@@ -619,14 +581,11 @@ Added in version 3.7.
     >>> p.exitcode == -signal.SIGTERM
     True
 
-
 _exception _multiprocessing.ProcessError¶
-
 
 所有 `multiprocessing` 异常的基类。
 
 _exception _multiprocessing.BufferTooShort¶
-
 
 当所提供的缓冲区对象太小而无法读取消息时由 `Connection.recv_bytes_into()` 引发的异常。
 
@@ -634,11 +593,9 @@ _exception _multiprocessing.BufferTooShort¶
 
 _exception _multiprocessing.AuthenticationError¶
 
-
 出现身份验证错误时引发。
 
 _exception _multiprocessing.TimeoutError¶
-
 
 有超时的方法超时时引发。
 
@@ -684,7 +641,6 @@ _exception _multiprocessing.TimeoutError¶
 
 multiprocessing.Pipe(_duplex =True_)¶
 
-
 返回一对 `Connection` 对象 `(conn1, conn2)` ， 分别表示管道的两端。
 
 如果 _duplex_ 被置为 `True` (默认值)，那么该管道是双向的。如果 _duplex_ 被置为 `False` ，那么该管道是单向的，即 `conn1` 只能用于接收消息，而 `conn2` 仅能用于发送消息。
@@ -692,7 +648,6 @@ multiprocessing.Pipe(_duplex =True_)¶
 `send()` 方法将使用 [`pickle`](pickle.html#module-pickle "pickle: Convert Python objects to streams of bytes and back.") 来序列化对象而 `recv()` 将重新创建对象。
 
 _class _multiprocessing.Queue([_maxsize_])¶
-
 
 返回一个使用一个管道和少量锁和信号量实现的共享队列实例。当一个进程将一个对象放进队列中时，一个写入线程会启动并将对象从缓冲区写入管道中。
 
@@ -704,13 +659,11 @@ _class _multiprocessing.Queue([_maxsize_])¶
 
 qsize()¶
 
-
 返回队列的大致长度。由于多线程或者多进程的上下文，这个数字是不可靠的。
 
 请注意这可能会在未实现 `sem_getvalue()` 的平台如 macOS 上引发 [`NotImplementedError`](../builtins/exceptions.html#NotImplementedError "NotImplementedError")。
 
 empty()¶
-
 
 如果队列是空的，返回 `True` ，反之返回 `False` 。 由于多线程或多进程的环境，该状态是不可靠的。
 
@@ -718,11 +671,9 @@ empty()¶
 
 full()¶
 
-
 如果队列是满的，返回 `True` ，反之返回 `False` 。 由于多线程或多进程的环境，该状态是不可靠的。
 
 put(_obj_[, _block_[, _timeout_]])¶
-
 
 将 obj 放入队列。如果可选参数 _block_ 是 `True` (默认值) 而且 _timeout_ 是 `None` (默认值), 将会阻塞当前进程，直到有空的缓冲槽。如果 _timeout_ 是正数，将会在阻塞了最多 _timeout_ 秒之后还是没有可用的缓冲槽时抛出 [`queue.Full`](queue.html#queue.Full "queue.Full") 异常。反之 (_block_ 是 `False` 时)，仅当有可用缓冲槽时才放入对象，否则抛出 `queue.Full` 异常 (在这种情形下 _timeout_ 参数会被忽略)。
 
@@ -730,11 +681,9 @@ put(_obj_[, _block_[, _timeout_]])¶
 
 put_nowait(_obj_)¶
 
-
 相当于 `put(obj, False)`。
 
 get([_block_[, _timeout_]])¶
-
 
 从队列中取出并返回对象。如果可选参数 _block_ 是 `True` (默认值) 而且 _timeout_ 是 `None` (默认值), 将会阻塞当前进程，直到队列中出现可用的对象。如果 _timeout_ 是正数，将会在阻塞了最多 _timeout_ 秒之后还是没有可用的对象时抛出 [`queue.Empty`](queue.html#queue.Empty "queue.Empty") 异常。反之 (_block_ 是 `False` 时)，仅当有可用对象能够取出时返回，否则抛出 `queue.Empty` 异常 (在这种情形下 _timeout_ 参数会被忽略)。
 
@@ -742,13 +691,11 @@ get([_block_[, _timeout_]])¶
 
 get_nowait()¶
 
-
 相当于 `get(False)` 。
 
 `multiprocessing.Queue` 类有一些在 [`queue.Queue`](queue.html#queue.Queue "queue.Queue") 类中没有出现的方法。这些方法在大多数情形下并不是必须的。
 
 close()¶
-
 
 关闭队列：释放内部资源。
 
@@ -758,13 +705,11 @@ close()¶
 
 join_thread()¶
 
-
 等待后台线程。这个方法仅在调用了 `close()` 方法之后可用。这会阻塞当前进程，直到后台线程退出，确保所有缓冲区中的数据都被写入管道中。
 
 默认情况下，如果一个不是队列创建者的进程试图退出，它会尝试等待这个队列的后台线程。这个进程可以使用 `cancel_join_thread()` 让 `join_thread()` 方法什么都不做直接跳过。
 
 cancel_join_thread()¶
-
 
 防止 `join_thread()` 方法阻塞当前进程。具体而言，这防止进程退出时自动等待后台线程退出。详见 `join_thread()`。
 
@@ -776,13 +721,11 @@ cancel_join_thread()¶
 
 _class _multiprocessing.SimpleQueue¶
 
-
 这是一个简化的 `Queue` 类的实现，很像带锁的 `Pipe` 。
 
 实例化该类可能会设置全局启动方法。 请参阅 全局启动方法 了解详情。
 
 close()¶
-
 
 关闭队列：释放内部资源。
 
@@ -792,30 +735,25 @@ Added in version 3.9.
 
 empty()¶
 
-
 如果队列为空返回 `True` ，否则返回 `False` 。
 
 如果 SimpleQueue 已关闭则总是会引发 [`OSError`](../builtins/exceptions.html#OSError "OSError")。
 
 get()¶
 
-
 从队列中移出并返回一个对象。
 
 put(_item_)¶
 
-
 将 _item_ 放入队列。
 
 _class _multiprocessing.JoinableQueue([_maxsize_])¶
-
 
 `JoinableQueue` 类是 `Queue` 的子类，额外添加了 `task_done()` 和 `join()` 方法。
 
 实例化该类可能会设置全局启动方法。 请参阅 全局启动方法 了解详情。
 
 task_done()¶
-
 
 指出之前进入队列的任务已经完成。由队列的消费者进程使用。对于每次调用 `get()` 获取的任务，执行完成后调用 `task_done()` 告诉队列该任务已经处理完成。
 
@@ -825,7 +763,6 @@ task_done()¶
 
 join()¶
 
-
 阻塞至队列中所有的元素都被接收和处理完毕。
 
 当条目添加到队列的时候，未完成任务的计数就会增加。每当消费者进程调用 `task_done()` 表示这个条目已经被回收，该条目所有工作已经完成，未完成计数就会减少。当未完成计数降到零的时候， `join()` 阻塞被解除。
@@ -834,13 +771,11 @@ join()¶
 
 multiprocessing.active_children()¶
 
-
 返回当前进程存活的子进程的列表。
 
 调用该方法有“等待”已经结束的进程的副作用。
 
 multiprocessing.cpu_count()¶
-
 
 返回系统的CPU数量。
 
@@ -856,13 +791,11 @@ multiprocessing.cpu_count()¶
 
 multiprocessing.current_process()¶
 
-
 返回与当前进程相对应的 `Process` 对象。
 
 和 [`threading.current_thread()`](threading.html#threading.current_thread "threading.current_thread") 相同。
 
 multiprocessing.parent_process()¶
-
 
 返回父进程 `Process` 对象，和父进程调用 `current_process()` 返回的对象一样。如果一个进程已经是主进程， `parent_process` 会返回 `None`。
 
@@ -870,11 +803,9 @@ Added in version 3.8.
 
 multiprocessing.freeze_support()¶
 
-
 增加对于冻结使用 `multiprocessing` 的程序以产生可执行文件的支持。 （已针对 **py2exe** , **PyInstaller** 和 **cx_Freeze** 进行测试。）
 
 需要在 main 模块的 `if __name__ == '__main__'` 该行之后马上调用该函数。例如：
-
 
     from multiprocessing import Process, freeze_support
 
@@ -885,20 +816,17 @@ multiprocessing.freeze_support()¶
         freeze_support()
         Process(target=f).start()
 
-
 如果没有调用 `freeze_support()`，在尝试运行被冻结的可执行文件时会抛出 [`RuntimeError`](../builtins/exceptions.html#RuntimeError "RuntimeError") 异常。
 
 当启动方法不是 _spawn_ 时调用 `freeze_support()` 不会有效果。 此外，如果该模块被 Python 解释器正常运行（程序未被冻结），则 `freeze_support()` 也不会有效果。
 
 multiprocessing.get_all_start_methods()¶
 
-
 返回由受支持的启动方法组成的列表，其中第一项将为默认值。 可用的启动方法有 `'fork'`, `'spawn'` 和 `'forkserver'`。 并非所有的平台都支持所有的方法。 参见 上下文和启动方法。
 
 Added in version 3.4.
 
 multiprocessing.get_context(_method =None_)¶
-
 
 返回一个具有与 `multiprocessing` 模块相同的属性的上下文对象。
 
@@ -907,7 +835,6 @@ multiprocessing.get_context(_method =None_)¶
 Added in version 3.4.
 
 multiprocessing.get_start_method(_allow_none =False_)¶
-
 
 返回启动进程时使用的启动方法名。
 
@@ -921,12 +848,9 @@ Added in version 3.4.
 
 multiprocessing.set_executable(_executable_)¶
 
-
 设置在启动子进程时使用的 Python 解释器路径。 （默认情况下 [`sys.executable`](sys.html#sys.executable "sys.executable") 将被使用）。 嵌入式编程坐吃山空可能需要这样做
 
-
     set_executable(os.path.join(sys.exec_prefix, 'pythonw.exe'))
-
 
 以使他们可以创建子进程。
 
@@ -935,7 +859,6 @@ multiprocessing.set_executable(_executable_)¶
 在 3.11 版本发生变更: 接受一个 [path-like object](../glossary.html#term-path-like-object)。
 
 multiprocessing.set_forkserver_preload(_module_names_)¶
-
 
 为 forkserver 主进程设置一个可尝试导入的模块名称列表以使得它们已导入的状态被分叉进程所继承。 当执行操作时引发的任何 [`ImportError`](../builtins/exceptions.html#ImportError "ImportError") 会被静默地忽略。 这可被用作一种性能增强措施以避免在每个进程中的重复操作。
 
@@ -946,7 +869,6 @@ multiprocessing.set_forkserver_preload(_module_names_)¶
 Added in version 3.4.
 
 multiprocessing.set_start_method(_method_ , _force =False_)¶
-
 
 设置应当被用于启动子进程的方法。 _method_ 方法可以为 `'fork'`, `'spawn'` 或 `'forkserver'`。 如果启动方法已经设置且 _force_ 不为 `True` 则会引发 [`RuntimeError`](../builtins/exceptions.html#RuntimeError "RuntimeError")。 如果 _method_ 为 `None` 而 _force_ 为 `True` 则启动方法会被设为 `None`。 如果 _method_ 为 `None` 而 _force_ 为 `False` 则上下文会被设为默认的上下文。
 
@@ -968,9 +890,7 @@ Connection 对象允许收发可以序列化的对象或字符串。它们可以
 
 _class _multiprocessing.connection.Connection¶
 
-
 send(_obj_)¶
-
 
 将一个对象发送到连接的另一端，可以用 `recv()` 读取。
 
@@ -978,23 +898,19 @@ send(_obj_)¶
 
 recv()¶
 
-
 返回一个由另一端使用 `send()` 发送的对象。该方法会一直阻塞直到接收到对象。 如果对端关闭了连接或者没有东西可接收，将抛出 [`EOFError`](../builtins/exceptions.html#EOFError "EOFError") 异常。
 
 fileno()¶
 
-
 返回由连接对象使用的描述符或者句柄。
 
 close()¶
-
 
 关闭连接对象。
 
 当连接对象被垃圾回收时会自动调用。
 
 poll([_timeout_])¶
-
 
 返回连接对象中是否有可以读取的数据。
 
@@ -1004,13 +920,11 @@ poll([_timeout_])¶
 
 send_bytes(_buf_[, _offset_[, _size_]])¶
 
-
 从一个 [bytes-like object](../glossary.html#term-bytes-like-object) 对象中取出字节数组并作为一条完整消息发送。
 
 如果给出了 _offset_ 则将从 _buf_ 的该位置读取数据。 如果给出了 _size_ 则将从 _buf_ 读取相应的字节数。 过大的缓冲区（大约 32 MiB+，具体由 OS 决定）可能引发 [`ValueError`](../builtins/exceptions.html#ValueError "ValueError") 异常
 
 recv_bytes([_maxlength_])¶
-
 
 以字符串形式返回一条从连接对象另一端发送过来的字节数据。此方法在接收到数据前将一直阻塞。 如果连接对象被对端关闭或者没有数据可读取，将抛出 [`EOFError`](../builtins/exceptions.html#EOFError "EOFError") 异常。
 
@@ -1019,7 +933,6 @@ recv_bytes([_maxlength_])¶
 在 3.3 版本发生变更: 曾经该函数抛出 [`IOError`](../builtins/exceptions.html#IOError "IOError") ，现在这是 [`OSError`](../builtins/exceptions.html#OSError "OSError") 的别名。
 
 recv_bytes_into(_buf_[, _offset_])¶
-
 
 Read into _buf_ a complete message of byte data sent from the other end of the connection and return the number of bytes in the message. Blocks until there is something to receive. Raises [`EOFError`](../builtins/exceptions.html#EOFError "EOFError") if there is nothing left to receive and the other end was closed.
 
@@ -1032,7 +945,6 @@ _buf_ must be a writable [bytes-like object](../glossary.html#term-bytes-like-ob
 连接对象现在支持上下文管理协议 -- 参见 [Context Manager Types](../builtins/stdtypes.html#typecontextmanager)。 [`__enter__()`](../builtins/stdtypes.html#contextmanager.__enter__ "contextmanager.__enter__") 返回连接对象，而 [`__exit__()`](../builtins/stdtypes.html#contextmanager.__exit__ "contextmanager.__exit__") 将调用 `close()`。
 
 例如:
-
 
     >>> from multiprocessing import Pipe
     >>> a, b = Pipe()
@@ -1050,7 +962,6 @@ _buf_ must be a writable [bytes-like object](../glossary.html#term-bytes-like-ob
     >>> assert count == len(arr1) * arr1.itemsize
     >>> arr2
     array('i', [0, 1, 2, 3, 4, 0, 0, 0, 0, 0])
-
 
 警告
 
@@ -1070,7 +981,6 @@ _buf_ must be a writable [bytes-like object](../glossary.html#term-bytes-like-ob
 
 _class _multiprocessing.Barrier(_parties_[, _action_[, _timeout_]])¶
 
-
 类似 [`threading.Barrier`](threading.html#threading.Barrier "threading.Barrier") 的栅栏对象。
 
 实例化该类可能会设置全局启动方法。 请参阅 全局启动方法 了解详情。
@@ -1079,7 +989,6 @@ Added in version 3.3.
 
 _class _multiprocessing.BoundedSemaphore([_value_])¶
 
-
 非常类似 [`threading.BoundedSemaphore`](threading.html#threading.BoundedSemaphore "threading.BoundedSemaphore") 的有界信号量对象。
 
 实例化该类可能会设置全局启动方法。 请参阅 全局启动方法 了解详情。
@@ -1087,7 +996,6 @@ _class _multiprocessing.BoundedSemaphore([_value_])¶
 一个小小的不同在于，它的 `acquire` 方法的第一个参数名是和 `Lock.acquire()` 一样的 _block_ 。
 
 locked()¶
-
 
 返回一个指明该对象目前是否被锁定的布尔值。
 
@@ -1099,7 +1007,6 @@ Added in version 3.14.
 
 _class _multiprocessing.Condition([_lock_])¶
 
-
 条件变量： [`threading.Condition`](threading.html#threading.Condition "threading.Condition") 的别名。
 
 如果指定了 _lock_ 那么它应当是来自 `multiprocessing` 的 `Lock` 或 `RLock` 对象。
@@ -1110,13 +1017,11 @@ _class _multiprocessing.Condition([_lock_])¶
 
 _class _multiprocessing.Event¶
 
-
 A clone of [`threading.Event`](threading.html#threading.Event "threading.Event").
 
 实例化该类可能会设置全局启动方法。 请参阅 全局启动方法 了解详情。
 
 _class _multiprocessing.Lock¶
-
 
 原始锁（非递归锁）对象，类似于 [`threading.Lock`](threading.html#threading.Lock "threading.Lock") 。一旦一个进程或者线程拿到了锁，后续的任何其他进程或线程的其他请求都会被阻塞直到锁被释放。任何进程或线程都可以释放锁。除非另有说明，否则 `multiprocessing.Lock` 用于进程或者线程的概念和行为都和 `threading.Lock` 一致。
 
@@ -1128,7 +1033,6 @@ _class _multiprocessing.Lock¶
 
 acquire(_block =True_, _timeout =None_)¶
 
-
 可以阻塞或非阻塞地获得锁。
 
 如果 _block_ 参数被设为 `True` ( 默认值 ) ， 对该方法的调用在锁处于释放状态之前都会阻塞，然后将锁设置为锁住状态并返回 `True` 。需要注意的是第一个参数名与 [`threading.Lock.acquire()`](threading.html#threading.Lock.acquire "threading.Lock.acquire") 的不同。
@@ -1139,20 +1043,17 @@ acquire(_block =True_, _timeout =None_)¶
 
 release()¶
 
-
 释放锁，可以在任何进程、线程使用，并不限于锁的拥有者。
 
 当尝试释放一个没有被持有的锁时，会抛出 [`ValueError`](../builtins/exceptions.html#ValueError "ValueError") 异常，除此之外其行为与 [`threading.Lock.release()`](threading.html#threading.Lock.release "threading.Lock.release") 一样。
 
 locked()¶
 
-
 返回一个指明该对象目前是否被锁定的布尔值。
 
 Added in version 3.14.
 
 _class _multiprocessing.RLock¶
-
 
 递归锁对象: 类似于 [`threading.RLock`](threading.html#threading.RLock "threading.RLock") 。递归锁必须由持有线程、进程亲自释放。如果某个进程或者线程拿到了递归锁，这个进程或者线程可以再次拿到这个锁而不需要等待。但是这个进程或者线程的拿锁操作和释放锁操作的次数必须相同。
 
@@ -1164,7 +1065,6 @@ _class _multiprocessing.RLock¶
 
 acquire(_block =True_, _timeout =None_)¶
 
-
 可以阻塞或非阻塞地获得锁。
 
 当 _block_ 参数设置为 `True` 时，会一直阻塞直到锁处于空闲状态（没有被任何进程、线程拥有），除非当前进程或线程已经拥有了这把锁。然后当前进程/线程会持有这把锁（在锁没有其他持有者的情况下），锁内的递归等级加一，并返回 `True` . 注意， 这个函数第一个参数的行为和 [`threading.RLock.acquire()`](threading.html#threading.RLock.acquire "threading.RLock.acquire") 的实现有几个不同点，包括参数名本身。
@@ -1175,20 +1075,17 @@ _timeout_ 参数的使用方法及行为与 `Lock.acquire()` 一样。但是要�
 
 release()¶
 
-
 释放锁，使锁内的递归等级减一。如果释放后锁内的递归等级降低为0，则会重置锁的状态为释放状态（即没有被任何进程、线程持有），重置后如果有有其他进程和线程在等待这把锁，它们中的一个会获得这个锁而继续运行。如果释放后锁内的递归等级还没到达0，则这个锁仍将保持未释放状态且当前进程和线程仍然是持有者。
 
 只有当前进程或线程是锁的持有者时，才允许调用这个方法。如果当前进程或线程不是这个锁的拥有者，或者这个锁处于已释放的状态(即没有任何拥有者)，调用这个方法会抛出 [`AssertionError`](../builtins/exceptions.html#AssertionError "AssertionError") 异常。注意这里抛出的异常类型和 [`threading.RLock.release()`](threading.html#threading.RLock.release "threading.RLock.release") 中实现的行为不一样。
 
 locked()¶
 
-
 返回一个指明该对象目前是否被锁定的布尔值。
 
 Added in version 3.14.
 
 _class _multiprocessing.Semaphore([_value_])¶
-
 
 一种信号量对象: 类似于 [`threading.Semaphore`](threading.html#threading.Semaphore "threading.Semaphore").
 
@@ -1198,13 +1095,11 @@ _class _multiprocessing.Semaphore([_value_])¶
 
 get_value()¶
 
-
 返回信号的当前值。
 
 请注意这可能会在未实现 `sem_getvalue()` 的平台如 macOS 上引发 [`NotImplementedError`](../builtins/exceptions.html#NotImplementedError "NotImplementedError")。
 
 locked()¶
-
 
 返回一个指明该对象目前是否被锁定的布尔值。
 
@@ -1224,7 +1119,6 @@ Added in version 3.14.
 
 multiprocessing.Value(_typecode_or_type_ , _* args_, _lock =True_)¶
 
-
 返回一个从共享内存上创建的 [`ctypes`](ctypes.html#module-ctypes "ctypes: A foreign function library for Python.") 对象。默认情况下返回的对象实际上是经过了同步器包装过的。可以通过 `Value` 的 _value_ 属性访问这个对象本身。
 
 _typecode_or_type_ 指明了返回的对象类型: 它可能是一个 ctypes 类型或者 [`array`](array.html#module-array "array: Space efficient arrays of uniformly typed numeric values.") 模块中每个类型对应的单字符长度的字符串。 _*args_ 会透传给这个类的构造函数。
@@ -1233,21 +1127,16 @@ _typecode_or_type_ 指明了返回的对象类型: 它可能是一个 ctypes 类
 
 诸如 `+=` 这类的操作会引发独立的读操作和写操作，也就是说这类操作符并不具有原子性。所以，如果你想让递增共享变量的操作具有原子性，仅仅以这样的方式并不能达到要求:
 
-
     counter.value += 1
 
-
 共享对象内部关联的锁是递归锁(默认情况下就是)的情况下， 你可以采用这种方式
-
 
     with counter.get_lock():
         counter.value += 1
 
-
 注意 _lock_ 只能是命名参数。
 
 multiprocessing.Array(_typecode_or_type_ , _size_or_initializer_ , _*_ , _lock =True_)¶
-
 
 从共享内存中申请并返回一个具有ctypes类型的数组对象。默认情况下返回值实际上是被同步器包装过的数组对象。
 
@@ -1269,7 +1158,6 @@ Note that an array of [`ctypes.c_char`](ctypes.html#ctypes.c_char "ctypes.c_char
 
 multiprocessing.sharedctypes.RawArray(_typecode_or_type_ , _size_or_initializer_)¶
 
-
 从共享内存中申请并返回一个 ctypes 数组。
 
 _typecode_or_type_ 指明了返回的数组中的元素类型: 它可能是一个 ctypes 类型或者 [`array`](array.html#module-array "array: Space efficient arrays of uniformly typed numeric values.") 模块中使用的类型字符。 如果 _size_or_initializer_ 是一个整数，那就会当做数组的长度，并且整个数组的内存会初始化为0。否则，如果 _size_or_initializer_ 会被当成一个序列用于初始化数组中的每一个元素，并且会根据元素个数自动判断数组的长度。
@@ -1277,7 +1165,6 @@ _typecode_or_type_ 指明了返回的数组中的元素类型: 它可能是一�
 注意对元素的访问、赋值操作可能是非原子操作 - 使用 `Array()` , 从而借助其中的锁保证操作的原子性。
 
 multiprocessing.sharedctypes.RawValue(_typecode_or_type_ , _* args_)¶
-
 
 从共享内存中申请并返回一个 ctypes 对象。
 
@@ -1289,7 +1176,6 @@ _typecode_or_type_ 指明了返回的对象类型: 它可能是一个 ctypes 类
 
 multiprocessing.sharedctypes.Array(_typecode_or_type_ , _size_or_initializer_ , _*_ , _lock =True_, _ctx =None_)¶
 
-
 返回一个纯 ctypes 数组, 或者在此之上经过同步器包装过的进程安全的对象，这取决于 _lock_ 参数的值，除此之外，和 `RawArray()` 一样。
 
 如果 _lock_ 为 `True` (默认值) 则将创建一个新的锁对象用于同步对值的访问。 如果 _lock_ 为一个 `Lock` 或 `RLock` 对象则该对象将被用于同步对值的访问。 如果 _lock_ 为 `False` 则对所返回对象的访问将不会自动得到锁的保护，也就是说它将不是“进程安全的”。
@@ -1299,7 +1185,6 @@ _ctx_ 是一个上下文对象，或为 `None` (使用当前上下文)。 如果
 请注意 _lock_ 和 _ctx_ 是仅限关键字形参。
 
 multiprocessing.sharedctypes.Value(_typecode_or_type_ , _* args_, _lock =True_, _ctx =None_)¶
-
 
 返回一个纯 ctypes 对象, 或者在此之上经过同步器包装过的进程安全的对象，这取决于 _lock_ 参数的值，除此之外，和 `RawValue()` 一样。
 
@@ -1311,11 +1196,9 @@ _ctx_ 是一个上下文对象，或为 `None` (使用当前上下文)。 如果
 
 multiprocessing.sharedctypes.copy(_obj_)¶
 
-
 从共享内存中申请并返回一个 ctypes 对象，它是 ctypes 对象 _obj_ 的副本。
 
 multiprocessing.sharedctypes.synchronized(_obj_ , _lock =None_, _ctx =None_)¶
-
 
 将一个 ctypes 对象包装为进程安全的对象并返回，使用 _lock_ 同步对于它的操作。如果 _lock_ 是 `None` (默认值) ，则会自动创建一个 `multiprocessing.RLock` 对象。
 
@@ -1337,7 +1220,6 @@ MyStruct(4, 6) | RawValue(MyStruct, 4, 6) |
 (c_int * 3)(9, 2, 8) | RawArray(c_int, (9, 2, 8)) | RawArray('i', (9, 2, 8))
 
 下面是一个在子进程中修改多个ctypes对象的例子:
-
 
     from multiprocessing import Process, Lock
     from multiprocessing.sharedctypes import Value, Array
@@ -1371,15 +1253,12 @@ MyStruct(4, 6) | RawValue(MyStruct, 4, 6) |
         print(s.value)
         print([(a.x, a.y) for a in A])
 
-
 输出如下
-
 
     49
     0.1111111111111111
     HELLO WORLD
     [(3.515625, 39.0625), (33.0625, 4.0), (5.640625, 90.25)]
-
 
 ### 管理器¶
 
@@ -1387,13 +1266,11 @@ MyStruct(4, 6) | RawValue(MyStruct, 4, 6) |
 
 multiprocessing.Manager()¶
 
-
 返回一个已启动的 `SyncManager` 管理器对象，这个对象可以用于在不同进程中共享数据。返回的管理器对象对应了一个已经启动的子进程，并且拥有一系列方法可以用于创建共享对象、返回对应的代理。
 
 当管理器被垃圾回收或者父进程退出时，管理器进程会立即退出。管理器类定义在 `multiprocessing.managers` 模块:
 
 _class _multiprocessing.managers.BaseManager(_address =None_, _authkey =None_, _serializer ='pickle'_, _ctx =None_, _*_ , _shutdown_timeout =1.0_)¶
-
 
 创建一个 BaseManager 对象。
 
@@ -1413,43 +1290,34 @@ _shutdown_timeout_ 是用于等待直到 `shutdown()` 方法中的管理器所�
 
 start([_initializer_[, _initargs_]])¶
 
-
 为管理器开启一个子进程，如果 _initializer_ 不是 `None` , 子进程在启动时将会调用 `initializer(*initargs)` 。
 
 get_server()¶
 
-
 返回一个 `Server` 对象，它是管理器在后台控制的真实的服务。 `Server` 对象拥有 `serve_forever()` 方法。
-
 
     >>> from multiprocessing.managers import BaseManager
     >>> manager = BaseManager(address=('', 50000), authkey=b'abc')
     >>> server = manager.get_server()
     >>> server.serve_forever()
 
-
 `Server` 额外拥有一个 `address` 属性。
 
 connect()¶
 
-
 将本地管理器对象连接到一个远程管理器进程:
-
 
     >>> from multiprocessing.managers import BaseManager
     >>> m = BaseManager(address=('127.0.0.1', 50000), authkey=b'abc')
     >>> m.connect()
 
-
 shutdown()¶
-
 
 停止管理器的进程。这个方法只能用于已经使用 `start()` 启动的服务进程。
 
 它可以被多次调用。
 
 register(_typeid_[, _callable_[, _proxytype_[, _exposed_[, _method_to_typeid_[, _create_method_]]]]])¶
-
 
 一个 classmethod，可以将一个类型或者可调用对象注册到管理器类。
 
@@ -1469,7 +1337,6 @@ _create_method_ 指明，是否要创建一个以 _typeid_ 命名并返回一个
 
 address¶
 
-
 管理器所用的地址。
 
 在 3.3 版本发生变更: 管理器对象支持上下文管理协议 - 查看 [Context Manager Types](../builtins/stdtypes.html#typecontextmanager) 。[`__enter__()`](../builtins/stdtypes.html#contextmanager.__enter__ "contextmanager.__enter__") 启动服务进程（如果它还没有启动）并且返回管理器对象， [`__exit__()`](../builtins/stdtypes.html#contextmanager.__exit__ "contextmanager.__exit__") 会调用 `shutdown()` 。
@@ -1478,13 +1345,11 @@ address¶
 
 _class _multiprocessing.managers.SyncManager¶
 
-
 `BaseManager` 的子类，可用于进程的同步。这个类型的对象使用 `multiprocessing.Manager()` 创建。
 
 它拥有一系列方法，可以为大部分常用数据类型创建并返回 代理对象 代理，用于进程间同步。甚至包括共享列表和字典。
 
 Barrier(_parties_[, _action_[, _timeout_]])¶
-
 
 创建一个共享的 [`threading.Barrier`](threading.html#threading.Barrier "threading.Barrier") 对象并返回它的代理。
 
@@ -1492,11 +1357,9 @@ Added in version 3.3.
 
 BoundedSemaphore([_value_])¶
 
-
 创建一个共享的 [`threading.BoundedSemaphore`](threading.html#threading.BoundedSemaphore "threading.BoundedSemaphore") 对象并返回它的代理。
 
 Condition([_lock_])¶
-
 
 创建一个共享的 [`threading.Condition`](threading.html#threading.Condition "threading.Condition") 对象并返回它的代理。
 
@@ -1506,41 +1369,33 @@ Condition([_lock_])¶
 
 Event()¶
 
-
 创建一个共享的 [`threading.Event`](threading.html#threading.Event "threading.Event") 对象并返回它的代理。
 
 Lock()¶
-
 
 创建一个共享的 [`threading.Lock`](threading.html#threading.Lock "threading.Lock") 对象并返回它的代理。
 
 Namespace()¶
 
-
 创建一个共享的 `Namespace` 对象并返回它的代理。
 
 Queue([_maxsize_])¶
-
 
 创建一个共享的 [`queue.Queue`](queue.html#queue.Queue "queue.Queue") 对象并返回它的代理。
 
 RLock()¶
 
-
 创建一个共享的 [`threading.RLock`](threading.html#threading.RLock "threading.RLock") 对象并返回它的代理。
 
 Semaphore([_value_])¶
-
 
 创建一个共享的 [`threading.Semaphore`](threading.html#threading.Semaphore "threading.Semaphore") 对象并返回它的代理。
 
 Array(_typecode_ , _sequence_)¶
 
-
 创建一个数组并返回它的代理。
 
 Value(_typecode_ , _value_)¶
-
 
 创建一个具有可写 `value` 属性的对象并返回它的代理。
 
@@ -1548,19 +1403,16 @@ dict()¶
 dict(_mapping_)
 dict(_sequence_)
 
-
 创建一个共享的 [`dict`](../builtins/stdtypes.html#dict "dict") 对象并返回它的代理。
 
 list()¶
 list(_sequence_)
-
 
 创建一个共享的 [`list`](../builtins/stdtypes.html#list "list") 对象并返回它的代理。
 
 set()¶
 set(_sequence_)
 set(_mapping_)
-
 
 创建一个共享的 [`set`](../builtins/stdtypes.html#set "set") 对象并返回它的代理。
 
@@ -1570,13 +1422,11 @@ Added in version 3.14: 添加了 [`set`](../builtins/stdtypes.html#set "set") �
 
 _class _multiprocessing.managers.Namespace¶
 
-
 一个可以注册到 `SyncManager` 的类型。
 
 命名空间对象没有公共方法，但是拥有可写的属性。直接print会显示所有属性的值。
 
 值得一提的是，当对命名空间对象使用代理的时候，访问所有名称以 `'_'` 开头的属性都只是代理器上的属性，而不是命名空间对象的属性。
-
 
     >>> mp_context = multiprocessing.get_context('spawn')
     >>> manager = mp_context.Manager()
@@ -1587,11 +1437,9 @@ _class _multiprocessing.managers.Namespace¶
     >>> print(Global)
     Namespace(x=10, y='hello')
 
-
 #### 自定义管理器¶
 
 要创建一个自定义的管理器，需要新建一个 `BaseManager` 的子类，然后使用这个管理器类上的 `register()` 类方法将新类型或者可调用方法注册上去。例如:
-
 
     from multiprocessing.managers import BaseManager
 
@@ -1612,13 +1460,11 @@ _class _multiprocessing.managers.Namespace¶
             print(maths.add(4, 3))         # 打印 7
             print(maths.mul(7, 8))         # 打印 56
 
-
 #### 使用远程管理器¶
 
 可以将管理器服务运行在一台机器上，然后使用客户端从其他机器上访问。(假设它们的防火墙允许)
 
 运行下面的代码可以启动一个服务，此服务包含了一个共享队列，允许远程客户端访问:
-
 
     >>> from multiprocessing.managers import BaseManager
     >>> from queue import Queue
@@ -1629,9 +1475,7 @@ _class _multiprocessing.managers.Namespace¶
     >>> s = m.get_server()
     >>> s.serve_forever()
 
-
 远程客户端可以通过下面的方式访问服务:
-
 
     >>> from multiprocessing.managers import BaseManager
     >>> class QueueManager(BaseManager): pass
@@ -1641,9 +1485,7 @@ _class _multiprocessing.managers.Namespace¶
     >>> queue = m.get_queue()
     >>> queue.put('hello')
 
-
 也可以通过下面的方式:
-
 
     >>> from multiprocessing.managers import BaseManager
     >>> class QueueManager(BaseManager): pass
@@ -1654,9 +1496,7 @@ _class _multiprocessing.managers.Namespace¶
     >>> queue.get()
     'hello'
 
-
 本地进程也可以访问这个队列，利用上面的客户端代码通过远程方式访问:
-
 
     >>> from multiprocessing import Process, Queue
     >>> from multiprocessing.managers import BaseManager
@@ -1677,13 +1517,11 @@ _class _multiprocessing.managers.Namespace¶
     >>> s = m.get_server()
     >>> s.serve_forever()
 
-
 ### 代理对象¶
 
 代理是一个 _指向_ 其他共享对象的对象，这个对象(很可能)在另外一个进程中。共享对象也可以说是代理 _指涉_ 的对象。多个代理对象可能指向同一个指涉对象。
 
 代理对象代理了指涉对象的一系列方法调用(虽然并不是指涉对象的每个方法都有必要被代理)。通过这种方式，代理的使用方法可以和它的指涉对象一样:
-
 
     >>> mp_context = multiprocessing.get_context('spawn')
     >>> manager = mp_context.Manager()
@@ -1697,11 +1535,9 @@ _class _multiprocessing.managers.Namespace¶
     >>> l[2:5]
     [4, 9, 16]
 
-
 注意，对代理使用 [`str()`](../builtins/stdtypes.html#str "str") 函数会返回指涉对象的字符串表示，但是 [`repr()`](../builtins/functions.html#repr "repr") 却会返回代理本身的内部字符串表示。
 
 被代理的对象很重要的一点是必须可以被序列化，这样才能允许它们在进程间传递。因此，指涉对象可以包含 代理对象 。这允许管理器中列表、字典或者其他 代理对象 对象之间的嵌套。
-
 
     >>> a = manager.list()
     >>> b = manager.list()
@@ -1712,9 +1548,7 @@ _class _multiprocessing.managers.Namespace¶
     >>> print(a[0], b)
     ['hello'] ['hello']
 
-
 类似地，字典和列表代理也可以相互嵌套:
-
 
     >>> l_outer = manager.list([ manager.dict() for i in range(2) ])
     >>> d_first_inner = l_outer[0]
@@ -1727,9 +1561,7 @@ _class _multiprocessing.managers.Namespace¶
     >>> print(l_outer[1])
     {'c': 3, 'z': 26}
 
-
 如果指涉对象包含了普通 [`list`](../builtins/stdtypes.html#list "list") 或 [`dict`](../builtins/stdtypes.html#dict "dict") 对象，对这些内部可变对象的修改不会通过管理器传播，因为代理无法得知被包含的值什么时候被修改了。但是把存放在容器代理中的值本身是会通过管理器传播的（会触发代理对象中的 `__setitem__` ）从而有效修改这些对象，所以可以把修改过的值重新赋值给容器代理:
-
 
     # 创建一个代理列表并添加一个可变对象（字典）
     lproxy = manager.list()
@@ -1742,41 +1574,32 @@ _class _multiprocessing.managers.Namespace¶
     # 代理将得到改变的通知
     lproxy[0] = d
 
-
 在大多数使用情形下，这种实现方式并不比嵌套 代理对象 方便，但是依然演示了对于同步的一种控制级别。
 
 备注
 
 `multiprocessing` 中的代理类没有任何对按值比较的支持。 因此，举例来说，我们将得到：
 
-
     >>> manager.list([1,2,3]) == [1,2,3]
     False
-
 
 当需要比较值的时候，应该替换为使用指涉对象的拷贝。
 
 _class _multiprocessing.managers.BaseProxy¶
 
-
 代理对象是 `BaseProxy` 派生类的实例。
 
 _callmethod(_methodname_[, _args_[, _kwds_]])¶
-
 
 调用指涉对象的方法并返回结果。
 
 如果 `proxy` 是一个代理且其指涉的是 `obj` , 那么下面的表达式:
 
-
     proxy._callmethod(methodname, args, kwds)
-
 
 相当于求取以下表达式的值:
 
-
     getattr(obj, methodname)(*args, **kwds)
-
 
 于管理器进程。
 
@@ -1788,7 +1611,6 @@ _callmethod(_methodname_[, _args_[, _kwds_]])¶
 
 `_callmethod()` 的一个使用示例:
 
-
     >>> l = manager.list(range(10))
     >>> l._callmethod('__len__')
     10
@@ -1799,9 +1621,7 @@ _callmethod(_methodname_[, _args_[, _kwds_]])¶
     ...
     IndexError: list index out of range
 
-
 _getvalue()¶
-
 
 返回指涉对象的一份拷贝。
 
@@ -1809,11 +1629,9 @@ _getvalue()¶
 
 __repr__()¶
 
-
 返回代理对象的内部字符串表示。
 
 __str__()¶
-
 
 返回指涉对象的内部字符串表示。
 
@@ -1828,7 +1646,6 @@ __str__()¶
 可以创建一个进程池，它将使用 `Pool` 类执行提交给它的任务。
 
 _class _multiprocessing.pool.Pool([_processes_[, _initializer_[, _initargs_[, _maxtasksperchild_[, _context_]]]]])¶
-
 
 一个进程池对象，它控制可以提交作业的工作进程池。它支持带有超时和回调的异步结果，以及一个并行的 map 实现。
 
@@ -1860,11 +1677,9 @@ Worker processes within a `Pool` typically live for the complete duration of the
 
 apply(_func_[, _args_[, _kwds_]])¶
 
-
 使用 _args_ 参数以及 _kwds_ 命名参数调用 _func_ , 它会返回结果前阻塞。这种情况下，`apply_async()` 更适合并行化工作。另外 _func_ 只会在一个进程池中的一个工作进程中执行。
 
 apply_async(_func_[, _args_[, _kwds_[, _callback_[, _error_callback_]]]])¶
-
 
 `apply()` 方法的一个变种，返回一个 `AsyncResult` 对象。
 
@@ -1876,7 +1691,6 @@ apply_async(_func_[, _args_[, _kwds_[, _callback_[, _error_callback_]]]])¶
 
 map(_func_ , _iterable_[, _chunksize_])¶
 
-
 内置 [`map()`](../builtins/functions.html#map "map") 函数的并行版本 (但它只支持一个 _iterable_ 参数，对于多个可迭代对象请参阅 `starmap()`)。 它会保持阻塞直到获得结果。
 
 这个方法会将可迭代对象分割为许多块，然后提交给进程池。 可以将 _chunksize_ 设置为一个正整数来指定每个块的（近似）大小。
@@ -1884,7 +1698,6 @@ map(_func_ , _iterable_[, _chunksize_])¶
 注意对于很长的迭代对象，可能消耗很多内存。可以考虑使用 `imap()` 或 `imap_unordered()` 并且显式指定 _chunksize_ 以提升效率。
 
 map_async(_func_ , _iterable_[, _chunksize_[, _callback_[, _error_callback_]]])¶
-
 
 `map()` 方法的一个变种，返回一个 `AsyncResult` 对象。
 
@@ -1896,7 +1709,6 @@ map_async(_func_ , _iterable_[, _chunksize_[, _callback_[, _error_callback_]]])�
 
 imap(_func_ , _iterable_[, _chunksize_])¶
 
-
 一种基于迭代器的 `map()` 版本。
 
 _chunksize_ 参数的作用和 `map()` 方法的一样。对于很长的迭代器，给 _chunksize_ 设置一个很大的值会比默认值 `1` **极大** 地加快执行速度。
@@ -1905,11 +1717,9 @@ _chunksize_ 参数的作用和 `map()` 方法的一样。对于很长的迭代�
 
 imap_unordered(_func_ , _iterable_[, _chunksize_])¶
 
-
 和 `imap()` 相同，只不过通过迭代器返回的结果是任意的。（当进程池中只有一个工作进程的时候，返回结果的顺序才能认为是"有序"的）
 
 starmap(_func_ , _iterable_[, _chunksize_])¶
-
 
 和 `map()` 类似，不过 _iterable_ 中的每一项会被解包再作为函数参数。
 
@@ -1919,23 +1729,19 @@ Added in version 3.3.
 
 starmap_async(_func_ , _iterable_[, _chunksize_[, _callback_[, _error_callback_]]])¶
 
-
 相当于 `starmap()` 与 `map_async()` 的结合，迭代 _iterable_ 的每一项，解包作为 _func_ 的参数并执行，返回用于获取结果的对象。
 
 Added in version 3.3.
 
 close()¶
 
-
 阻止后续任务提交到进程池，当所有任务执行完成后，工作进程会退出。
 
 terminate()¶
 
-
 不必等待未完成的任务，立即停止工作进程。当进程池对象被垃圾回收时，会立即调用 `terminate()`。
 
 join()¶
-
 
 等待工作进程结束。调用 `join()` 前必须先调用 `close()` 或者 `terminate()` 。
 
@@ -1943,33 +1749,27 @@ join()¶
 
 _class _multiprocessing.pool.AsyncResult¶
 
-
 `Pool.apply_async()` 和 `Pool.map_async()` 返回对象所属的类。
 
 get([_timeout_])¶
-
 
 用于获取执行结果。如果 _timeout_ 不是 `None` 并且在 _timeout_ 秒内仍然没有执行完得到结果，则抛出 `multiprocessing.TimeoutError` 异常。如果远程调用发生异常，这个异常会通过 `get()` 重新抛出。
 
 wait([_timeout_])¶
 
-
 阻塞，直到返回结果，或者 _timeout_ 秒后超时。
 
 ready()¶
 
-
 返回执行状态，是否已经完成。
 
 successful()¶
-
 
 判断调用是否已经完成并且未引发异常。 如果还未获得结果则将引发 [`ValueError`](../builtins/exceptions.html#ValueError "ValueError")。
 
 在 3.7 版本发生变更: 如果没有执行完，会抛出 [`ValueError`](../builtins/exceptions.html#ValueError "ValueError") 异常而不是 [`AssertionError`](../builtins/exceptions.html#AssertionError "AssertionError") 。
 
 下面的例子演示了进程池的用法:
-
 
     from multiprocessing import Pool
     import time
@@ -1992,7 +1792,6 @@ successful()¶
             result = pool.apply_async(time.sleep, (10,))
             print(result.get(timeout=1))        # 引发 multiprocessing.TimeoutError
 
-
 ### 监听器及客户端¶
 
 通常情况下，进程间通过队列或者 `Pipe()` 返回的 `Connection` 传递消息。
@@ -2001,20 +1800,17 @@ However, the `multiprocessing.connection` module allows some extra flexibility. 
 
 multiprocessing.connection.deliver_challenge(_connection_ , _authkey_)¶
 
-
 发送一个随机生成的消息到另一端，并等待回复。
 
 如果收到的回复与使用 _authkey_ 作为键生成的信息摘要匹配成功，就会发送一个欢迎信息给管道另一端。否则抛出 `AuthenticationError` 异常。
 
 multiprocessing.connection.answer_challenge(_connection_ , _authkey_)¶
 
-
 接收一条信息，使用 _authkey_ 作为键计算信息摘要，然后将摘要发送回去。
 
 如果没有收到欢迎消息，就抛出 `AuthenticationError` 异常。
 
 multiprocessing.connection.Client(_address_[, _family_[, _authkey_]])¶
-
 
 尝试使用 _address_ 地址上的监听器建立一个连接，返回 `Connection` 。
 
@@ -2023,7 +1819,6 @@ multiprocessing.connection.Client(_address_[, _family_[, _authkey_]])¶
 如果给出了 _authkey_ 并且不为 `None`，则它应为一个字节串并且会被用作基于 HMAC 认证的密钥。 如果 _authkey_ 为 `None` 则不会执行认证。 如果认证失败则会引发 `AuthenticationError`。 参见 认证密码。
 
 _class _multiprocessing.connection.Listener([_address_[, _family_[, _backlog_[, _authkey_]]]])¶
-
 
 可以监听连接请求，是对于绑定套接字或者 Windows 命名管道的封装。
 
@@ -2041,11 +1836,9 @@ _family_ 是套接字(或者命名管道)使用的类型。它可以是以下一
 
 accept()¶
 
-
 接受一个连接并返回一个 `Connection` 对象，其连接到的监听器对象已绑定套接字或者命名管道。如果已经尝试过认证并且失败了，则会抛出 `AuthenticationError` 异常。
 
 close()¶
-
 
 关闭监听器对象上的绑定套接字或者命名管道。此函数会在监听器被垃圾回收后自动调用。不过仍然建议显式调用函数关闭。
 
@@ -2053,18 +1846,15 @@ close()¶
 
 address¶
 
-
 监听器对象使用的地址。
 
 last_accepted¶
-
 
 最后一个连接所使用的地址。如果没有的话就是 `None` 。
 
 在 3.3 版本发生变更: 监听器对象现在支持了上下文管理协议 - 见 [Context Manager Types](../builtins/stdtypes.html#typecontextmanager) 。 [`__enter__()`](../builtins/stdtypes.html#contextmanager.__enter__ "contextmanager.__enter__") 返回一个监听器对象, [`__exit__()`](../builtins/stdtypes.html#contextmanager.__exit__ "contextmanager.__exit__") 会调用 `close()` 。
 
 multiprocessing.connection.wait(_object_list_ , _timeout =None_)¶
-
 
 一直等待直到 _object_list_ 中某个对象处于就绪状态。返回 _object_list_ 中处于就绪状态的对象。如果 _timeout_ 是一个浮点型，该方法会最多阻塞这么多秒。如果 _timeout_ 是 `None` ，则会允许阻塞的事件没有限制。timeout为负数的情况下和为0的情况相同。
 
@@ -2088,7 +1878,6 @@ Added in version 3.3.
 
 下面的服务代码创建了一个使用 `'secret password'` 作为认证密码的监听器。它会等待连接然后发送一些数据给客户端:
 
-
     from multiprocessing.connection import Listener
     from array import array
 
@@ -2104,9 +1893,7 @@ Added in version 3.3.
 
             conn.send_bytes(array('i', [42, 1729]))
 
-
 下面的代码连接到服务然后从服务器上接收一些数据:
-
 
     from multiprocessing.connection import Client
     from array import array
@@ -2122,9 +1909,7 @@ Added in version 3.3.
         print(conn.recv_bytes_into(arr))    # => 8
         print(arr)                          # => array('i', [42, 1729, 0, 0, 0])
 
-
 下面的代码使用了 `wait()` ，以便在同时等待多个进程发来消息。
-
 
     from multiprocessing import Process, Pipe, current_process
     from multiprocessing.connection import wait
@@ -2157,7 +1942,6 @@ Added in version 3.3.
                 else:
                     print(msg)
 
-
 #### 地址格式¶
 
   * `'AF_INET'` 地址是 `(hostname, port)` 形式的元组类型，其中 _hostname_ 是一个字符串， _port_ 是整数。
@@ -2186,7 +1970,6 @@ This authentication protects `Listener` and `Client()` connections, which are re
 
 multiprocessing.get_logger()¶
 
-
 返回 `multiprocessing` 所使用的日志记录器。 如有必要，将会新建一个。
 
 当首次创建时日志记录器级别为 [`logging.NOTSET`](logging.html#logging.NOTSET "logging.NOTSET") 并且没有默认处理器。 发送到这个日志记录器的消息默认将不会传播到根日志记录器。
@@ -2195,11 +1978,9 @@ multiprocessing.get_logger()¶
 
 multiprocessing.log_to_stderr(_level =None_)¶
 
-
 此函数会调用 `get_logger()` 但是会在返回的 logger 上增加一个 handler，将所有输出都使用 `'[%(levelname)s/%(processName)s] %(message)s'` 的格式发送到 [`sys.stderr`](sys.html#sys.stderr "sys.stderr") 。你可以通过传递一个 `level` 参数来修改记录器的 `levelname` 。
 
 下面是一个在交互式解释器中打开日志功能的例子:
-
 
     >>> import multiprocessing, logging
     >>> logger = multiprocessing.log_to_stderr()
@@ -2214,7 +1995,6 @@ multiprocessing.log_to_stderr(_level =None_)¶
     [INFO/MainProcess] sending shutdown message to manager
     [INFO/SyncManager-...] manager exiting with exitcode 0
 
-
 要查看日志等级的完整列表，见 [`logging`](logging.html#module-logging "logging: Flexible event logging system for applications.") 模块。
 
 ### `multiprocessing.dummy` 模块¶
@@ -2224,7 +2004,6 @@ multiprocessing.log_to_stderr(_level =None_)¶
 In particular, the `Pool` function provided by `multiprocessing.dummy` returns an instance of `ThreadPool`, which is a subclass of `Pool` that supports all the same method calls but uses a pool of worker threads rather than worker processes.
 
 _class _multiprocessing.pool.ThreadPool([_processes_[, _initializer_[, _initargs_]]])¶
-
 
 一个线程池对象，用来控制可向其提交任务的工作线程池。 `ThreadPool` 实例与 `Pool` 实例是完全接口兼容的，并且它们的资源也必须被正确地管理，或者是将线程池作为上下文管理器来使用，或者是通过手动调用 `close()` 和 `terminate()`。
 
@@ -2422,7 +2201,6 @@ Join 使用队列的进程
 
 创建和使用自定义管理器、代理的示例：
 
-
     from multiprocessing import freeze_support
     from multiprocessing.managers import BaseManager, BaseProxy
     import operator
@@ -2513,9 +2291,7 @@ Join 使用队列的进程
         freeze_support()
         test()
 
-
 使用 `Pool`:
-
 
     import multiprocessing
     import time
@@ -2666,14 +2442,11 @@ Join 使用队列的进程
             print()
             print()
 
-
     if __name__ == '__main__':
         multiprocessing.freeze_support()
         test()
 
-
 一个演示如何使用队列来向一组工作进程提供任务并收集结果的例子：
-
 
     import time
     import random
@@ -2748,11 +2521,9 @@ Join 使用队列的进程
         for i in range(NUMBER_OF_PROCESSES):
             task_queue.put('STOP')
 
-
     if __name__ == '__main__':
         freeze_support()
         test()
-
 
 ### 导航
 

@@ -6,7 +6,6 @@ fetched_at: "2026-10-05 15:32:24"
 
 在开始之前，我们先把需要的jar包添加到工程里。新增Maven依赖如下：
 
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
@@ -16,7 +15,6 @@ fetched_at: "2026-10-05 15:32:24"
 
 首先我们先创建一个Aspect切面类：
 
-
     @Component
     @Aspect
     public class WebControllerAop {
@@ -25,7 +23,6 @@ fetched_at: "2026-10-05 15:32:24"
 
 指定切点：
 
-
         //匹配com.zkn.learnspringboot.web.controller包及其子包下的所有类的所有方法
         @Pointcut("execution(* com.zkn.learnspringboot.web.controller..*.*(..))")
         public void executeService(){
@@ -33,7 +30,6 @@ fetched_at: "2026-10-05 15:32:24"
         }
 
 接着我们再创建一个Controller请求处理类：
-
 
     package com.zkn.learnspringboot.web.controller;
 
@@ -52,7 +48,6 @@ fetched_at: "2026-10-05 15:32:24"
 ### 前置通知
 
 配置前置通知：
-
 
         /**
          * 前置通知，方法调用前被调用
@@ -97,7 +92,6 @@ fetched_at: "2026-10-05 15:32:24"
 
 接下来我们在Controller类里添加一个请求处理方法来测试一下前置通知：
 
-
         @RequestMapping("/testBeforeService.do")
         public String testBeforeService(String key,String value){
 
@@ -111,7 +105,6 @@ fetched_at: "2026-10-05 15:32:24"
 ### 后置返回通知
 
 配置后置返回通知的代码如下：
-
 
         /**
          * 后置返回通知
@@ -136,7 +129,6 @@ fetched_at: "2026-10-05 15:32:24"
 
 Controller里添加响应的请求处理信息来测试后置返回通知：
 
-
         @RequestMapping("/testAfterReturning.do")
         public String testAfterReturning(String key){
 
@@ -160,7 +152,6 @@ Controller里添加响应的请求处理信息来测试后置返回通知：
 
 后置异常通知的配置方式如下：
 
-
         /**
          * 后置异常通知
          *  定义一个名字，该名字用于匹配通知实现方法的一个参数名，当目标方法抛出异常返回后，将把目标方法抛出的异常传给通知方法；
@@ -180,7 +171,6 @@ Controller里添加响应的请求处理信息来测试后置返回通知：
 
 Controller里配置响应的请求处理类：
 
-
         @RequestMapping("/testAfterThrowing.do")
         public String testAfterThrowing(String key){
 
@@ -195,7 +185,6 @@ Controller里配置响应的请求处理类：
 
 后置最终通知的配置方式如下：
 
-
         /**
          * 后置最终通知（目标方法只要执行完了就会执行后置通知方法）
          * @param joinPoint
@@ -207,7 +196,6 @@ Controller里配置响应的请求处理类：
         }
 
 Controller类配置相应的请求处理类：
-
 
         @RequestMapping("/testAfter.do")
         public String testAfter(String key){
@@ -227,11 +215,9 @@ Controller类配置相应的请求处理类：
 
 ![](https://img-blog.csdn.net/20161120153553412?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
 
-
 ### 环绕通知
 
 环绕通知的配置方式如下：
-
 
         /**
          * 环绕通知：
@@ -252,7 +238,6 @@ Controller类配置相应的请求处理类：
 
 Controller对应的请求处理类如下：
 
-
         @RequestMapping("/testAroundService.do")
         public String testAroundService(String key){
 
@@ -266,7 +251,6 @@ Controller对应的请求处理类如下：
 当发送请求为:http://localhost:8001/aop/testAfter02.do?key=55553&value=855sss时，不符合环绕通知的切入规则，所以环绕通知不会 执行。
 
 完整的AOP配置代码如下：
-
 
     package com.zkn.learnspringboot.aop;
 
@@ -403,9 +387,7 @@ Controller对应的请求处理类如下：
         }
     }
 
-
 完整的Controller类代码如下:
-
 
     package com.zkn.learnspringboot.web.controller;
 

@@ -24,7 +24,6 @@ https://github.com/happyfish100/fastdfs-client-java
 
 最后在我们项目的pom中添加fastdfs-client-java的坐标信息就OK了：
 
-
     <!-- fastdfs-client -->
     <dependency>
         <groupId>org.csource</groupId>
@@ -36,7 +35,6 @@ https://github.com/happyfish100/fastdfs-client-java
 
 首先来实现文件上传，fastdfs-client-java的上传是通过传入一个byte[ ]来完成的，简单看一下源码：
 
-
     public String[] upload_file(byte[] file_buff, String file_ext_name,
                NameValuePair[] meta_list) throws IOException, MyException{
         final String group_name = null;
@@ -44,7 +42,6 @@ https://github.com/happyfish100/fastdfs-client-java
     }
 
 如上所示，暂且不再深入研究原理，此处我们知道需要一个byte[ ]类型的参数就可以了，而SpringMVC的文件上传用到的MultipartFile对象可以直接通过getBytes方法得到文件的byte[ ]，也就是CommonsMultipartFile类中的getBytes()，源码如下：
-
 
     @Override
     public byte[] getBytes() {
@@ -56,7 +53,6 @@ https://github.com/happyfish100/fastdfs-client-java
     }
 
 那么接下来我们就知道如何上传了，当然首先需要做一些简单的封装，这里把文件上传的相关属性封装在了一个接口中，需要用到文件上传的相关实体或者工具类直接实现这个接口即可：
-
 
     public interface FileManagerConfig extends Serializable {
 
@@ -75,9 +71,7 @@ https://github.com/happyfish100/fastdfs-client-java
 
 接下来定义FastDFS文件的实体类：
 
-
     package com.wl.bean;
-
 
     /**
      * <strong>类概要： FastDFS文件实体</strong>
@@ -161,7 +155,6 @@ https://github.com/happyfish100/fastdfs-client-java
 
 如上所示，包括上传所必须的file_buff和file_ext_name以及在meta_list中存放的几个文件描述属性。接下来看一下核心工具类FileManager：
 
-
     import java.io.File;
     import java.io.IOException;
 
@@ -240,7 +233,6 @@ https://github.com/happyfish100/fastdfs-client-java
 
 如上所示，在类初始化时加载fdfs_client.conf配置文件并构造tracker server和storage server，文件上传是通过`storageClient.upload_file`方法来实现的，而返回的uploadResults字符串数组正是文件名，固定两个元素，uploadResults[0]是组名（group），而uploadResults[1]就是组名后面的文件全名了，最后我们的方法中有做了部分拼接使得FileManager.upload直接可以返回完成的文件路径，下面就是我们调用上传方法的controller中的方法了：
 
-
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(@Validated User user, BindingResult br,MultipartFile attach, HttpServletRequest request)
             throws IOException, MyException {
@@ -267,7 +259,6 @@ https://github.com/happyfish100/fastdfs-client-java
 
 fastdfs-client-java提供的文件下载的api需要两个参数，分别是group_name（组名）和remote_filename（文件名），源码如下：
 
-
     /**
     * download file from storage server
     * @param group_name the group name of storage server
@@ -283,7 +274,6 @@ fastdfs-client-java提供的文件下载的api需要两个参数，分别是grou
     }
 
 所以我们仅需在这里得到group_name和remote_filename即可，因为之前我们在文件上传时候已经保存了图片的绝对路径（`user.setFilePath(filePath)`），所以在此处仅需要获取到绝对路径并进行字符串的拆分截取即可，接下来先看一下封装在FileManager中的下载方法：
-
 
     /**
      * <strong>方法概要： 文件下载</strong>
@@ -312,7 +302,6 @@ fastdfs-client-java提供的文件下载的api需要两个参数，分别是grou
     }
 
 如上所示，17行调用fastdfs-client-java提供的下载方法，下载成功后返回的是一个byte[ ]，刚好结合SpringMVC官方推荐的构造HttpEntity的方式即可实现文件下载，这个download方法我多指定了一个参数**specFileName** 目的是保证给客户端看到的下载后的文件名是通过程序来自定义的，而不是fastdfs服务器上的那一长串默认字符串，**18行指定了utf-8编码使得我们自定义的文件名支持中文，这一点很重要，否则将无法正确下载我们重命名后的包含中文的文件** 。最后在看一下controller中的下载方法：
-
 
     @RequestMapping(value = "/{username}/download", method = RequestMethod.GET)
     public ResponseEntity<byte[]> download(@PathVariable String username, Model model,HttpServletResponse response) throws IOException, MyException {

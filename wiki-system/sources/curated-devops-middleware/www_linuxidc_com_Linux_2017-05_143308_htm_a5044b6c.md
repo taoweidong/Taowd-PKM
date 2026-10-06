@@ -44,13 +44,11 @@ eclipse环境什么的不赘述，Maven环境还是要的
 
 下好之后配置环境变量，在系统变量里新建：
 
-
     变量名：M2_HOME
 
     变量值：C:\Program Files\Maven   （你的Maven目录）
 
 然后在Path变量最后插入：
-
 
     %M2_HOME%\bin
 
@@ -120,7 +118,6 @@ File--New--Other...
 
 将里面的代码全部改为下面的，保存退出
 
-
     <?xml version="1.0" encoding="UTF-8"?>
 
     <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
@@ -132,7 +129,6 @@ File--New--Other...
 接下来再编辑pom.xml文件
 
 先将junit的版本改为4.12，然后在<dependencies></dependencies>中加入以下代码，用以支持Servlet
-
 
         <dependency>
 
@@ -150,11 +146,6 @@ File--New--Other...
 
 ![复制代码](../../upload/2017_05/170502073386231.gif)
 
-
-
-
-
-
             <groupId>org.apache.maven.plugins</groupId>
 
             <artifactId>maven-compiler-plugin</artifactId>
@@ -168,10 +159,6 @@ File--New--Other...
               <target>1.8</target>
 
             </configuration>
-
-
-
-
 
             <groupId>org.apache.tomcat.maven</groupId>
 
@@ -189,10 +176,6 @@ File--New--Other...
 
             </configuration>
 
-
-
-
-
 ![复制代码](../../upload/2017_05/170502073386231.gif)
 
 ![](../../upload/2017_05/1705020733862315.png)
@@ -208,7 +191,6 @@ File--New--Other...
 编辑Tomcat目录下/conf/tomcat-users.xml
 
 在<tomcat-users></tomcat-users>标签中加入以下代码后，保存退出
-
 
     <role rolename="manager-gui"/>
 
@@ -258,7 +240,6 @@ window--Preferences--java--Installed JREs，选择jdk目录下的jre后点OK即�
   * [快速部署Tomcat项目的Shell脚本](../../Linux/2016-01/127258.htm) (01/10/2016 13:19:59)
   * [Tomcat Ubuntu 部署问题](../../Linux/2014-03/97958.htm) (03/10/2014 10:09:15)
 
-
 ---|---
 
 本文评论 [查看全部评论](../../remark.aspx?id=143308) (0)
@@ -290,10 +271,7 @@ window--Preferences--java--Installed JREs，选择jdk目录下的jre后点OK即�
   * [如何在Ubuntu 18.04上为MySQL配置SSL/TLS](../../Linux/2019-05/158789.htm)
   * [DragonFlyBSD 5.4.3 发布，各种修复](../../Linux/2019-05/158788.htm)
 
-
-
 [Linux公社简介](https://www.linuxidc.com/aboutus.htm) \- [广告服务](https://www.linuxidc.com/adsense.htm) \- [网站地图](https://www.linuxidc.com/sitemap.aspx) \- [帮助信息](https://www.linuxidc.com/help.htm) \- [联系我们](https://www.linuxidc.com/contactus.htm)
 本站（LinuxIDC）所刊载文章不代表同意其说法或描述，仅为提供更多信息，也不构成任何建议。
-
 
 Copyright © 2006-2019 [Linux公社](https://www.linuxidc.com/) All rights reserved 浙ICP备07014134号-8

@@ -18,13 +18,9 @@ fetched_at: "2026-10-05 15:32:34"
 
 ## 使用maven搭建web工程
 
-
     (略)
 
-
 ## 编写pom.xml
-
-
 
         <modelVersion>4.0.0</modelVersion>
         <groupId>org.homeway</groupId>
@@ -34,7 +30,6 @@ fetched_at: "2026-10-05 15:32:34"
         <name>activitiDemo Maven Webapp</name>
         <url>http://maven.apache.org</url>
 
-
             <spring.version>4.1.4.RELEASE</spring.version>
             <mybatis.version>3.2.8</mybatis.version>
             <mybatis-spring.version>1.2.2</mybatis-spring.version>
@@ -42,8 +37,6 @@ fetched_at: "2026-10-05 15:32:34"
             <activiti.version>5.17.0</activiti.version>
             <log4j.version>2.2</log4j.version>
             <h2database.version>1.4.187</h2database.version>
-
-
 
         <dependencies>
             <!-- JUnit -->
@@ -145,10 +138,8 @@ fetched_at: "2026-10-05 15:32:34"
             </dependency>
         </dependencies>
 
-
         <build>
             <finalName>activitiDemo</finalName>
-
 
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -158,13 +149,9 @@ fetched_at: "2026-10-05 15:32:34"
                         <target>1.7</target>
                     </configuration>
 
-
         </build>
 
-
-
 ## 编写web.xml
-
 
     <web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
@@ -214,11 +201,9 @@ fetched_at: "2026-10-05 15:32:34"
 
     </web-app>
 
-
 ## 编写spring相关的配置文件
 
 ### applicationContext-spring.xml
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -241,9 +226,6 @@ fetched_at: "2026-10-05 15:32:34"
 
         <bean id="dataSource"
             class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-
-
-
 
         </bean>
 
@@ -272,9 +254,7 @@ fetched_at: "2026-10-05 15:32:34"
 
     </beans>
 
-
 ### applicationContext-activiti.xml
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -286,10 +266,6 @@ fetched_at: "2026-10-05 15:32:34"
             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
         <bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
-
-
-
-
 
         </bean>
         <bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
@@ -310,9 +286,7 @@ fetched_at: "2026-10-05 15:32:34"
 
     </beans>
 
-
 ### applicationContext-mybatis.xml
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -325,20 +299,15 @@ fetched_at: "2026-10-05 15:32:34"
 
         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 
-
-
         </bean>
 
         <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-
 
         </bean>
 
     </beans>
 
-
 ### spring-mvc.xml
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -358,9 +327,7 @@ fetched_at: "2026-10-05 15:32:34"
 
     </beans>
 
-
 ### mybatis-config.xml
-
 
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE configuration
@@ -372,15 +339,12 @@ fetched_at: "2026-10-05 15:32:34"
         </settings>
     </configuration>
 
-
 ### db.properties
-
 
     db.driver=org.h2.Driver
     db.url=jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
     db.username=sa
     db.password=
-
 
 项目结构
 
@@ -388,15 +352,11 @@ demo.webapp.png
 
 ## 使用activiti designer绘制流程图
 
-
     Eclipse安装activiti designer
     help >> install new sofeware >> add
     name: Activiti BPMN 2.0 designer , location:  http://activiti.org/designer/update/
 
-
 demo.process.test.png
-
-
 
         <startEvent id="startevent1" name="Start" activiti:initiator="firstPerson"></startEvent>
         <userTask id="usertask1" name="Step 1" activiti:assignee="kermit"></userTask>
@@ -414,13 +374,9 @@ demo.process.test.png
         <sequenceFlow id="flow5" sourceRef="boundarytimer1" targetRef="usertask3"></sequenceFlow>
         <sequenceFlow id="flow6" sourceRef="usertask3" targetRef="endevent1"></sequenceFlow>
 
-
-
 ## 使用junit测试
 
-
     package org.homeway.activiti.demo.test;
-
 
     import java.util.List;
 
@@ -511,7 +467,6 @@ demo.process.test.png
                 System.out.println(task.getName() + " : " + task.getAssignee());
                 taskService.claim(task.getId(), "kermit");
             }
-
 
             HistoricProcessInstance hpInstance =
                     historyService.createHistoricProcessInstanceQuery()

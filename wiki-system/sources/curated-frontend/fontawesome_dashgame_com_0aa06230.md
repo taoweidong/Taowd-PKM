@@ -7738,7 +7738,6 @@ wheelchair-alt
 
          <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-
 __当新版本发布时，BootstrapCDN需要一点时间来同步到最新版本。稍安勿躁 :)
 
   2. 参考示例，然后开始使用Font Awesome吧!
@@ -7752,7 +7751,6 @@ __当新版本发布时，BootstrapCDN需要一点时间来同步到最新版本
 
          <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-
   3. 参考示例，然后开始使用Font Awesome吧!
 
 ## 简单方式之二：[LESS Ruby Gem](https://github.com/FortAwesome/font-awesome-less)
@@ -7763,16 +7761,13 @@ __当新版本发布时，BootstrapCDN需要一点时间来同步到最新版本
 
          gem 'font-awesome-less'
 
-
   2. 然后执行：
 
          $ bundle
 
-
   3. 或者自行安装：
 
          $ gem install font-awesome-less
-
 
 ## 简单方式之三：[SASS Ruby Gem](https://github.com/FortAwesome/font-awesome-sass)
 
@@ -7782,16 +7777,13 @@ __当新版本发布时，BootstrapCDN需要一点时间来同步到最新版本
 
          gem 'font-awesome-sass'
 
-
   2. 然后执行：
 
          $ bundle
 
-
   3. 或者自行安装：
 
          $ gem install font-awesome-sass
-
 
 ## 进阶方式：自定义 LESS 或 SASS
 
@@ -7801,7 +7793,6 @@ __当新版本发布时，BootstrapCDN需要一点时间来同步到最新版本
   2. 打开 `font-awesome/less/variables.less` 文件或 `font-awesome/scss/_variables.scss`文件 ，然后修改 `@fa-font-path` 或 `$fa-font-path` 为您的字体目录。
 
          @fa-font-path:   "../font";
-
 
 __字体路径是相对于编译的CSS目录。
 
@@ -7818,9 +7809,7 @@ __字体路径是相对于编译的CSS目录。
 
 您可以将Font Awesome图标使用在几乎任何地方，只需要使用CSS前缀 `fa` ，再加上图标名称。 Font Awesome是为使用内联元素而设计的。我们通常更喜欢使用 `<i>` ，因为它更简洁。 但实际上使用 ` ` 才能更加语义化。
 
-
     <i class="fa fa-camera-retro"></i> fa-camera-retro
-
 
   * __如果您修改了图标容器的字体大小，图标大小会随之改变。同样的变化也会发生在颜色、阴影等其它任何CSS支持的效果上。
 
@@ -7838,13 +7827,11 @@ __字体路径是相对于编译的CSS目录。
 
 使用 `fa-lg` (33%递增)、`fa-2x`、 `fa-3x`、`fa-4x`，或者 `fa-5x` 类 来放大图标。
 
-
     <i class="fa fa-camera-retro fa-lg"></i> fa-lg
     <i class="fa fa-camera-retro fa-2x"></i> fa-2x
     <i class="fa fa-camera-retro fa-3x"></i> fa-3x
     <i class="fa fa-camera-retro fa-4x"></i> fa-4x
     <i class="fa fa-camera-retro fa-5x"></i> fa-5x
-
 
   * __如果图标的底部和顶部被截断了，您需要增加行高来解决此问题。
 
@@ -7854,14 +7841,10 @@ __字体路径是相对于编译的CSS目录。
 
 使用 `fa-fw` 可以将图标设置为一个固定宽度。主要用于不同宽度图标无法对齐的情况。 尤其在列表或导航时起到重要作用。
 
-
-
       <a class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>  Home</a>
       <a class="list-group-item" href="#"><i class="fa fa-book fa-fw"></i>  Library</a>
       <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw"></i>  Applications</a>
       <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw"></i>  Settings</a>
-
-
 
 ## 用于列表
 
@@ -7872,7 +7855,6 @@ __字体路径是相对于编译的CSS目录。
 
 使用 `fa-ul` 和 `fa-li` 便可以简单的将无序列表的默认符号替换掉。
 
-
     <ul class="fa-ul">
       <li><i class="fa-li fa fa-check-square"></i>List icons</li>
       <li><i class="fa-li fa fa-check-square"></i>can be used</li>
@@ -7880,19 +7862,16 @@ __字体路径是相对于编译的CSS目录。
       <li><i class="fa-li fa fa-square"></i>in lists</li>
     </ul>
 
-
 ## 边框与对齐
 
  __…tomorrow we will run faster, stretch out our arms farther… And then one fine morning— So we beat on, boats against the current, borne back ceaselessly into the past.
 
 使用 `fa-border` 以及 `pull-right` 或 `pull-left` 可以轻易构造出引用的特殊效果。
 
-
     <i class="fa fa-quote-left fa-3x pull-left fa-border"></i>
     ...tomorrow we will run faster, stretch out our arms farther...
     And then one fine morning— So we beat on, boats against the
     current, borne back ceaselessly into the past.
-
 
 ## 动画
 
@@ -7900,13 +7879,11 @@ __字体路径是相对于编译的CSS目录。
 
 使用`fa-spin` 类来使任意图标旋转，现在您还可以使用 `fa-pulse` 来使其进行8方位旋转。尤其适合 `fa-spinner`、`fa-refresh` 和 `fa-cog` 。
 
-
     <i class="fa fa-spinner fa-spin"></i>
                             <i class="fa fa-circle-o-notch fa-spin"></i>
                             <i class="fa fa-refresh fa-spin"></i>
                             <i class="fa fa-cog fa-spin"></i>
                             <i class="fa fa-spinner fa-pulse"></i>
-
 
 __CSS3动画不支持IE8-IE9。
 
@@ -7921,14 +7898,12 @@ __CSS3动画不支持IE8-IE9。
 
 使用 `fa-rotate-*` 和 `fa-flip-*` 类可以对图标进行任意旋转和翻转。
 
-
     <i class="fa fa-shield"></i> normal
     <i class="fa fa-shield fa-rotate-90"></i> fa-rotate-90
     <i class="fa fa-shield fa-rotate-180"></i> fa-rotate-180
     <i class="fa fa-shield fa-rotate-270"></i> fa-rotate-270
     <i class="fa fa-shield fa-flip-horizontal"></i> fa-flip-horizontal
     <i class="fa fa-shield fa-flip-vertical"></i> icon-flip-vertical
-
 
 ## 组合使用
 
@@ -7938,8 +7913,6 @@ __CSS3动画不支持IE8-IE9。
  ____ fa-ban on fa-camera
 
 如果想要将多个图标组合起来，使用 `fa-stack` 类作为父容器， `fa-stack-1x` 作为正常比例的图标， `fa-stack-2x` 作为大一些的图标。还可以使用 `fa-inverse` 类来切换图标颜色。您可以在父容器中 通过添加 大图标 类来控制整体大小。
-
-
 
       <i class="fa fa-square-o fa-stack-2x"></i>
       <i class="fa fa-twitter fa-stack-1x"></i>
@@ -7960,7 +7933,6 @@ __CSS3动画不支持IE8-IE9。
       <i class="fa fa-ban fa-stack-2x text-danger"></i>
 
     fa-ban on fa-camera
-
 
 ## Bootstrap 3 示例
 
@@ -7984,7 +7956,6 @@ __
 
 Font Awesome 完全兼容 [Bootstrap](https://bootstrap.dashgame.com) 的所有组件。
 
-
     <a class="btn btn-danger" href="#">
       <i class="fa fa-trash-o fa-lg"></i> Delete</a>
     <a class="btn btn-default btn-sm" href="#">
@@ -7993,22 +7964,16 @@ Font Awesome 完全兼容 [Bootstrap](https://bootstrap.dashgame.com) 的所有�
     <a class="btn btn-lg btn-success" href="#">
       <i class="fa fa-flag fa-2x pull-left"></i> Font Awesome Version 4.7.0</a>
 
-
       <a class="btn btn-default" href="#"><i class="fa fa-align-left"></i></a>
       <a class="btn btn-default" href="#"><i class="fa fa-align-center"></i></a>
       <a class="btn btn-default" href="#"><i class="fa fa-align-right"></i></a>
       <a class="btn btn-default" href="#"><i class="fa fa-align-justify"></i></a>
 
-
-
        <i class="fa fa-envelope-o fa-fw"></i>
       <input class="form-control" type="text" placeholder="Email address">
 
-
        <i class="fa fa-key fa-fw"></i>
       <input class="form-control" type="password" placeholder="Password">
-
-
 
       <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
       <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
@@ -8020,8 +7985,6 @@ Font Awesome 完全兼容 [Bootstrap](https://bootstrap.dashgame.com) 的所有�
         <li class="divider"></li>
         <li><a href="#"><i class="i"></i> Make admin</a></li>
       </ul>
-
-
 
 ## 自定义CSS
 

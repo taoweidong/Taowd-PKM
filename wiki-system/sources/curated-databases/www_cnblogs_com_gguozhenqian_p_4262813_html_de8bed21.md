@@ -20,9 +20,7 @@ fetched_at: "2026-10-05 15:27:44"
 下载地址：[Oracle.ManagedDataAccess.zip](https://files.cnblogs.com/files/gguozhenqian/Oracle.ManagedDataAccess.zip)
 下载后，将Oracle.ManagedDataAccess.dll放到自己的项目中，然后引用
 
-
   2. 直接调用（connString 改为自己的连接字符串）
-
 
          using Oracle.ManagedDataAccess.Client;
 
@@ -41,8 +39,6 @@ fetched_at: "2026-10-05 15:27:44"
                          return ex.ToString();
                      }
                  }
-
-
 
 就是这么简单！！！
 

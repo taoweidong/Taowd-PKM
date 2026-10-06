@@ -224,8 +224,6 @@ Java代码 ![收藏代码](http://aguu125.iteye.com/images/icon_star.png)
   29.
   30. </bean>
 
-
-
 2.PropertiesEncryptFactoryBean（加密类）
 
 Java代码 ![收藏代码](http://aguu125.iteye.com/images/icon_star.png)
@@ -275,8 +273,6 @@ Java代码 ![收藏代码](http://aguu125.iteye.com/images/icon_star.png)
   54. return newString.toString();
   55. }
   56.   57. }
-
-
 
 ComboPooledDataSource的properties属性可被注入user,password
 只有user，password两个属性是可配置，其他属性不存也不是取自properties（具体可看C3P0源码）

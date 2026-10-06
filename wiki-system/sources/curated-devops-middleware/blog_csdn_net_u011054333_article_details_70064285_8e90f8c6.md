@@ -33,7 +33,6 @@ fetched_at: "2026-10-05 15:29:03"
 
 在下载Docker之前，我们需要先配置一下加速器。由于Docker的服务器在国外，所以下载镜像的速度不太理想。国内因此有了很多加速服务，其中最好用的还是阿里云的。我们打开[Docker 镜像服务](http://dev.aliyun.com/search.html)，登录账号之后，获取自己创加速器地址。然后使用`docker-machine`创建一个新的虚拟机并使用加速器来加速。
 
-
     docker-machine create --engine-registry-mirror=https://XXX.mirror.aliyuncs.com -d hyperv default
 
 当然如果你有自己的代理的话，也可以直接在Docker设置中设置代理。

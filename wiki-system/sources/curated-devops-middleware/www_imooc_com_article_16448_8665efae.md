@@ -42,15 +42,11 @@ __
   * kernel 3.10+
 **1.检查内核版本，返回的值大于3.10即可。**
 
-
-
     $ uname -r
-
 
 **2\. 使用 sudo 或 root 权限的用户登入终端。**
 
 **3\. 卸载旧版本(如果安装过旧版本的话)**
-
 
     $ yum remove docker \
                  docker-client \
@@ -61,9 +57,7 @@ __
                  docker-logrotate \
                  docker-engine
 
-
 **4\. 安装需要的软件包**
-
 
     #yum-util提供yum-config-manager功能
     #另外两个是devicemapper驱动依赖的
@@ -71,25 +65,19 @@ __
       device-mapper-persistent-data \
       lvm2
 
-
 **5\. 设置yum源**
-
 
     $ yum-config-manager \
         --add-repo \
         https://download.docker.com/linux/centos/docker-ce.repo
 
-
 **6\. 安装docker**
 
 _**6.1. 安装最新版本**_
 
-
     $ yum install -y docker-ce
 
-
 _**6.2. 安装指定版本**_
-
 
     #查询版本列表
     $ yum list docker-ce --showduplicates | sort -r
@@ -105,15 +93,11 @@ _**6.2. 安装指定版本**_
     #指定版本安装(这里的例子是安装上面列表中的第二个)
     $ yum install -y docker-ce-17.09.0.ce
 
-
 **7\. 启动docker**
-
 
     $ systemctl start docker.service
 
-
 **8\. 验证安装是否成功(有client和service两部分表示docker安装启动都成功了)**
-
 
     $ docker version
     Client:
@@ -132,7 +116,6 @@ _**6.2. 安装指定版本**_
      Built:        Tue Sep 26 22:42:49 2017
      OS/Arch:      linux/amd64
      Experimental: false
-
 
 # What’s Next?
 

@@ -8,11 +8,7 @@ Oracle静默安装文件 db_install.rsp 详解
 
 （ 转自：<http://blog.chinaunix.net/uid-23886490-id-3565908.html> ）
 
-
-
 相关阅读：《 [ 静默安装Oracle](http://blog.csdn.net/iw1210/article/details/10277145) 》
-
-
 
 附录A：db_install.rsp 文件详解
 

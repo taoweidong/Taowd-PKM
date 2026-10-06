@@ -190,14 +190,11 @@ For the new implementations, **we should favor the**** _Deque_****interface and 
 
 Let’s start by creating an empty instance of _Stack_ , by using the default, no-argument constructor:
 
-
     @Test
 
     public void whenStackIsCreated_thenItHasSizeZero() {
 
         Stack<Integer> intStack = new Stack<>();
-
-
 
         assertEquals(0, intStack.size());
 
@@ -215,7 +212,6 @@ However, synchronization isn’t always needed, in such cases, it’s advised to
 
 Let’s start by adding an element to the top of the _Stack_ , with the _push()_ method – which also returns the element that was added:
 
-
     @Test
 
     public void whenElementIsPushed_thenStackSizeIsIncreased() {
@@ -223,8 +219,6 @@ Let’s start by adding an element to the top of the _Stack_ , with the _push()_
         Stack<Integer> intStack = new Stack<>();
 
         intStack.push(1);
-
-
 
         assertEquals(1, intStack.size());
 
@@ -234,7 +228,6 @@ Using _push()_ method has the same effect as using _addElement().**T**_**he only
 
 We can also add multiple elements at once:
 
-
     @Test
 
     public void whenMultipleElementsArePushed_thenStackSizeIsIncreased() {
@@ -243,11 +236,7 @@ We can also add multiple elements at once:
 
         List<Integer> intList = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
 
-
-
         boolean result = intStack.addAll(intList);
-
-
 
         assertTrue(result);
 
@@ -259,7 +248,6 @@ We can also add multiple elements at once:
 
 Next, let’s have a look at how to get and remove the last element in a _Stack_ :
 
-
     @Test
 
     public void whenElementIsPoppedFromStack_thenElementIsRemovedAndSizeChanges() {
@@ -268,11 +256,7 @@ Next, let’s have a look at how to get and remove the last element in a _Stack_
 
         intStack.push(5);
 
-
-
         Integer element = intStack.pop();
-
-
 
         assertEquals(Integer.valueOf(5), element);
 
@@ -282,7 +266,6 @@ Next, let’s have a look at how to get and remove the last element in a _Stack_
 
 We can also get the last element of the S _tack_ without removing it:
 
-
     @Test
 
     public void whenElementIsPeeked_thenElementIsNotRemovedAndSizeDoesNotChange() {
@@ -291,11 +274,7 @@ We can also get the last element of the S _tack_ without removing it:
 
         intStack.push(5);
 
-
-
         Integer element = intStack.peek();
-
-
 
         assertEquals(Integer.valueOf(5), element);
 
@@ -311,7 +290,6 @@ We can also get the last element of the S _tack_ without removing it:
 
 _Stack_ allows us to search for an element __ and get its distance from the top:
 
-
     @Test
 
     public void whenElementIsOnStack_thenSearchReturnsItsDistanceFromTheTop() {
@@ -321,8 +299,6 @@ _Stack_ allows us to search for an element __ and get its distance from the top:
         intStack.push(5);
 
         intStack.push(8);
-
-
 
         assertEquals(2, intStack.search(5));
 
@@ -336,7 +312,6 @@ If the object is not found, _search()_ will return -1.
 
 To get an index of an element on the S _tack,_ we can also use the _indexOf()_ and _lastIndexOf()_ methods:
 
-
     @Test
 
     public void whenElementIsOnStack_thenIndexOfReturnsItsIndex() {
@@ -345,18 +320,13 @@ To get an index of an element on the S _tack,_ we can also use the _indexOf()_ a
 
         intStack.push(5);
 
-
-
         int indexOf = intStack.indexOf(5);
-
-
 
         assertEquals(0, indexOf);
 
     }
 
 The**_lastIndexOf()_ will always find the index of the element that’s closest to the top of the stack**. This works very similarly to _search()_ – with the important difference that it returns the index, instead of the distance from the top:
-
 
     @Test
 
@@ -370,11 +340,7 @@ The**_lastIndexOf()_ will always find the index of the element that’s closest 
 
         intStack.push(5);
 
-
-
         int lastIndexOf = intStack.lastIndexOf(5);
-
-
 
         assertEquals(2, lastIndexOf);
 
@@ -388,7 +354,6 @@ Apart from the _pop()_ operation, used both for removing and retrieving elements
 
 We can use the _removeElement()_ method to remove the first occurrence of the given element:
 
-
     @Test
 
     public void whenRemoveElementIsInvoked_thenElementIsRemoved() {
@@ -399,18 +364,13 @@ We can use the _removeElement()_ method to remove the first occurrence of the gi
 
         intStack.push(5);
 
-
-
         intStack.removeElement(5);
-
-
 
         assertEquals(1, intStack.size());
 
     }
 
 We can also use the _removeElementAt()_ to delete elements under a specified index in the _Stack:_
-
 
         @Test
 
@@ -422,11 +382,7 @@ We can also use the _removeElementAt()_ to delete elements under a specified ind
 
             intStack.push(7);
 
-
-
             intStack.removeElementAt(1);
-
-
 
             assertEquals(-1, intStack.search(7));
 
@@ -435,7 +391,6 @@ We can also use the _removeElementAt()_ to delete elements under a specified ind
 ### **7.2. Removing Multiple Elements**
 
 Let’s have a quick look at how to remove multiple elements from a _Stack_ using the _removeAll()_ API – which will take a _Collection_ as an argument and remove all matching elements from the _Stack_ :
-
 
     @Test
 
@@ -449,11 +404,7 @@ Let’s have a quick look at how to remove multiple elements from a _Stack_ usin
 
         intStack.add(500);
 
-
-
         intStack.removeAll(intList);
-
-
 
         assertEquals(1, intStack.size());
 
@@ -462,7 +413,6 @@ Let’s have a quick look at how to remove multiple elements from a _Stack_ usin
     }
 
 It’s also possible to **remove all elements from the _Stack_ using the _clear()_ or _removeAllElements()_ methods**; both of those methods work the same:
-
 
     @Test
 
@@ -474,11 +424,7 @@ It’s also possible to **remove all elements from the _Stack_ using the _clear(
 
         intStack.push(7);
 
-
-
         intStack.removeAllElements();
-
-
 
         assertTrue(intStack.isEmpty());
 
@@ -487,7 +433,6 @@ It’s also possible to **remove all elements from the _Stack_ using the _clear(
 ### **7.3. Removing Elements Using Filter**
 
 We can also use a condition for removing elements from the _Stack._ Let’s see how to do this using the _removeIf_ _()_ , with a filter expression as an argument:
-
 
     @Test
 
@@ -499,11 +444,7 @@ We can also use a condition for removing elements from the _Stack._ Let’s see 
 
         intStack.addAll(intList);
 
-
-
         intStack.removeIf(element -> element < 6);
-
-
 
         assertEquals(2, intStack.size());
 
@@ -512,7 +453,6 @@ We can also use a condition for removing elements from the _Stack._ Let’s see 
 ## **8\. Iterate Over a Stack**
 
 _Stack_ allows us to use both an _Iterator_ and a _ListIterator._ The main difference is that the first one allows us to traverse _Stack_ in one direction and second allows us to do this in both directions:
-
 
     @Test
 
@@ -524,11 +464,7 @@ _Stack_ allows us to use both an _Iterator_ and a _ListIterator._ The main diffe
 
         intStack.addAll(intList);
 
-
-
         ListIterator<Integer> it = intStack.listIterator();
-
-
 
         Stack<Integer> result = new Stack<>();
 
@@ -537,8 +473,6 @@ _Stack_ allows us to use both an _Iterator_ and a _ListIterator._ The main diffe
             result.push(it.next());
 
         }
-
-
 
         assertThat(result, equalTo(intStack));
 
@@ -550,7 +484,6 @@ All _Iterators_ returned by _Stack_ are fail-fast.
 
 _Stack_ is a collection, which means we can use it with Java 8 _Streams_ API. **Using _Stream_ with the _Stack_ is similar to using it with any other _Collection:_**
 
-
     @Test
 
     public void whenStackIsFiltered_allElementsNotSatisfyingFilterConditionAreDiscarded() {
@@ -561,8 +494,6 @@ _Stack_ is a collection, which means we can use it with Java 8 _Streams_ API. **
 
         intStack.addAll(inputIntList);
 
-
-
         List<Integer> filtered = intStack
 
           .stream()
@@ -570,8 +501,6 @@ _Stack_ is a collection, which means we can use it with Java 8 _Streams_ API. **
           .filter(element -> element <= 3)
 
           .collect(Collectors.toList());
-
-
 
         assertEquals(3, filtered.size());
 

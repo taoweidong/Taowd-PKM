@@ -70,14 +70,11 @@ mvn eclipse:eclipse 将项目转化为Eclipse项目
 </repository>
 </repositories>
 
-
 mvn deploy:deploy-file -DgroupId=com -DartifactId=client -Dversion=0.1.0 -Dpackaging=jar -Dfile=d:\client-0.1.0.jar -DrepositoryId=maven-repository-inner -Durl=ftp://xxxxxxx/opt/maven/repository/
-
 
 发布第三方Jar到本地库中：
 
 mvn install:install-file -DgroupId=com -DartifactId=client -Dversion=0.1.0 -Dpackaging=jar -Dfile=d:\client-0.1.0.jar
-
 
 -DdownloadSources=true
 

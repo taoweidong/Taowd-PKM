@@ -152,14 +152,11 @@ s:进程当前的状态，包括：s(sleeping),R(runing)等
 /var/log/atop：atop日志文件，默认是每天0点开始会产生当天的一个日志文件，然后可以通过atop -r file 查看信息，但是没有找到自动播放的的功能，只能通过输入b显示一个指定的时间的信息，可以写个循环来实现
 /usr/bin/atop：atop命令目录
 
-
     atop -r atop_20160510 -b 13:00 -e 17:00
-
 
 atop产生的日志文件信息是10分钟一个采样周期进行记录，可以通过修改/etc/atop/atop.daily文件进行修改。
 
 **atop的其它参数：**
-
 
     Usage: atop [-flags] [interval [samples]]
             or

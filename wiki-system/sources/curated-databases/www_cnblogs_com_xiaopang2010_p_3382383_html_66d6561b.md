@@ -36,57 +36,39 @@ fetched_at: "2026-10-05 15:27:34"
 
 VS新建一个项目，引用Oracle.ManagedDataAccess.dll，开始随意码几行烂熟的入门级代码…，可以看到，正如Orale自己描述的，跟以前的API差别很小，所不同的就是命名空间换成了using Oracle.ManagedDataAccess.Client;
 
-
        1:              OracleConnection con = new OracleConnection();
-
 
        2:              con.ConnectionString = "user id=his3;password=his3;data source=192.168.1.237/ORCL";
 
-
        3:              con.Open();
-
 
        4:
 
-
        5:              OracleCommand cmd = new OracleCommand();
-
 
        6:              cmd.CommandType = System.Data.CommandType.Text;
 
-
        7:              cmd.CommandText = "select * from gy_yonghuxx";
-
 
        8:              cmd.Connection = con;
 
-
        9:
-
 
       10:              OracleDataAdapter da = new OracleDataAdapter();
 
-
       11:              da.SelectCommand = cmd;
-
 
       12:              DataSet ds = new DataSet();
 
-
       13:              da.Fill(ds);
-
 
       14:
 
-
       15:              con.Close();
-
 
       16:              da.Dispose();
 
-
       17:              cmd.Dispose();
-
 
       18:              con.Dispose();
 
@@ -96,35 +78,24 @@ a、tns alias："user id=scott;password=tiger;data source=sales";在此具体的
 
 b、Connect Descriptor:该种方式就是将tns配置的一段拿出来写进去，相比c的有点在于可配置项全面
 
-
       "user id=scott;password=tiger;data source=" +
          "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
          "(HOST=sales-server)(PORT=1521))(CONNECT_DATA="+
          "(SERVICE_NAME=sales.us.acme.com)))"
 
-
      c、Easy Connect Naming Method：PROTOCOL等一些选项好像就没地方配置了
-
 
       "user id=scott;password=tiger;data source=//sales-server:1521/sales.us.acme.com"
 
-
-
-
 # Entity Framework重构
-
 
        对于已经开始或准备使用Entity Framework的项目（目前版本还不支持Code First），如果熟悉ADO.NET替换起来其实也很简单，共有三点需要注意
 
-
      1、配置文件里的连接字符串中provider=Oracle.DataAccess.Client;替换为provider=Oracle.ManagedDataAccess.Client;provider
-
 
      2、对应实体文件edmx中的Provider="Oracle.DataAccess.Client"也替换为Provider="Oracle.ManagedDataAccess.Client"
 
-
      3、如果对数据类型映射做过配置（Oracle默认的类型映射有点坑爹），需要将下图红线下面的加上去
-
 
     [![image](https://images0.cnblogs.com/blog/78254/201310/22143811-cac097d9cdc3478dbf86e10d8a8ec759.png)](https://images0.cnblogs.com/blog/78254/201310/22143811-dfb05c94b98440408995ac805861a5b5.png)
 

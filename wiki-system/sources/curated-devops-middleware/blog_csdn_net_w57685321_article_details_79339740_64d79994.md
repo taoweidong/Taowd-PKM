@@ -72,7 +72,6 @@ fetched_at: "2026-10-05 15:29:02"
 
 **需要注意的是，如果在centOS7上搭建的docker，这个远程连接应该这样配置**
 
-
     ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock
 
 ![这里写图片描述](https://img-blog.csdn.net/20180220140821610?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdzU3Njg1MzIx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
@@ -176,8 +175,6 @@ Spring boot项目打包成docker image
 没有这款插件也不要紧
 使用一个mvn plugin，可以构建docker image，前提是要安装docker环境
 
-
-
        <groupId>com.spotify</groupId>
        <artifactId>docker-maven-plugin</artifactId>
        <version>0.4.13</version>
@@ -197,8 +194,6 @@ Spring boot项目打包成docker image
              </resource>
           </resources>
        </configuration>
-
-
 
 在win7环境下的配置，需要指定ip（因为是虚拟机）
 云服务器类似

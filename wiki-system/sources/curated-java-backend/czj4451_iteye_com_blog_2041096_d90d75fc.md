@@ -150,29 +150,15 @@ b. 下载kafka
 
 也可以直接在linux终端下载：
 
-
-
-
     wget -q http://apache.fayea.com/apache-mirror/kafka/0.8.1/kafka_2.8.0-0.8.1.tgz
 
-
-
-
-
 c. 解压
-
-
-
 
     tar -xzvf kafka_2.8.0-0.8.1.tgz
 
     rm kafka_2.8.0-0.8.1.tgz
 
     cd kafka_2.8.0-0.8.1
-
-
-
-
 
 目录：
 
@@ -184,24 +170,11 @@ c. 解压
 d. 修改配置
 Kafka默认开启JVM压缩指针，但只是在64位的HotSpot VM受支持，如果安装了32位的HotSpot VM，需要修改**/bin/kafka-run-class.sh** 文件
 
-
-
-
     vi bin/kafka-run-class.sh
-
-
-
-
 
 找到如下行：
 
-
-
-
     KAFKA_JVM_PERFORMANCE_OPTS="-server -XX:+UseCompressedOops -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSScavengeBeforeRemark -XX:+DisableExplicitGC -Djava.awt.headless=true"
-
-
-
 
 去除-XX:+UseCompressedOops参数
 
@@ -209,72 +182,33 @@ Kafka默认开启JVM压缩指针，但只是在64位的HotSpot VM受支持，如
 
 启动Zookeeper server：
 
-
-
-
     bin/zookeeper-server-start.sh config/zookeeper.properties &
-
-
-
 
 &是为了能退出命令行
 
 启动Kafka server:
 
-
-
-
     bin/kafka-server-start.sh config/server.properties &
-
-
-
-
 
 停止Kafka server
 
-
-
-
     bin/kafka-server-stop.sh
-
-
-
-
 
 停止Zookeeper server:
 
-
-
-
     bin/zookeeper-server-stop.sh
-
-
-
-
 
 4\. 单机连通性测试
 
 运行producer：
 
-
-
-
     bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
-
-
-
 
 早版本的Kafka，--broker-list localhost:9092需改为--zookeeper localhost:2181
 
 运行consumer：
 
-
-
-
     bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
-
-
-
 
 在producer端输入字符串并回车，查看consumer端是否显示。
 
@@ -285,39 +219,18 @@ Consumer放在服务器server2上，ip地址为192.168.1.12。
 
 分别运行server1的producer和server2的consumer，
 
-
-
-
     bin/kafka-console-producer.sh --broker-list 192.168.1.10:9092 --topic test
 
-
-
-
-
-
-
-
-
     bin/kafka-console-consumer.sh --zookeeper 192.168.1.10:2181 --topic test --from-beginning
-
-
-
-
 
 在producer的console端输入字符串，consumer报Connection refused错误：
 ![](http://dl2.iteye.com/upload/attachment/0096/3069/ba84c4c1-1e82-3123-bcd1-510da765a9ea.png)
 
 broker, producer和consumer都注册到zookeeper上，producer和consumer的参数明确指定。问题出在broker的配置文件server.properties上：
 
-
-
-
     # Hostname the broker will bind to. If not set, the server will bind to all interfaces
 
     #host.name=localhost
-
-
-
 
 host名称没有指定，就是127.0.0.1，consumer去broker拿数据就有问题。设置为192.168.1.10，重启服务就好了。
 

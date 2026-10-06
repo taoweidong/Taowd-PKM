@@ -127,7 +127,6 @@ insert into 目标表y select * from x where log_id>'3049' -- 复制数据
 注意：要示目标表y必须事先创建好
 如insert into bs_log2 select * from bs_log where log_id>'3049'
 
-
 3.B.x中个别字段转移到B.y的相同字段
 \--如果两个表结构一样
 insert into table_name_new select * from table_name_old
@@ -141,10 +140,8 @@ create table 用户名.表名 as select * from 用户名.表名 where 1=2
 5完全复制表(包括创建表和复制表中的记录)
 create table test as select * from bs_log --bs_log是被复制表
 
-
 6 将多个表数据插入一个表中
 insert into 目标表test(字段1。。。字段n) (select 字段1.。。。。字段n) from 表 union all select 字段1.....字段n from 表
-
 
 =====================================================
 oracle和mssql中复制表的比较
@@ -236,8 +233,6 @@ set echo off;
 Set pages 999;
 
 set long 90000;
-
-
 
 spool get_single.sql
 

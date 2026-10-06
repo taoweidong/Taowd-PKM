@@ -12,7 +12,6 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
 ![这里写图片描述](https://img-blog.csdn.net/20151128174251466)
 示例代码：
 
-
     package com.demo.ztree.entity;
 
     public class ZtreeNode {
@@ -115,7 +114,6 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
             this.isParent = isParent;
         }
 
-
         public Integer getState() {
             return state;
         }
@@ -133,14 +131,11 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
         }
     }
 
-
-
 其中，id、pid、isparent必须，其他的根据需求添加
 3.在action中给ZtreeNode属性取值，根据业务，在数据库中取相应值，这里我就直接生成一些值：
 这里根据取值过程，分为2中方式：
 (1).一次性取值，传到页面：
 示例代码：
-
 
     public String showTree() {
             for(int i=-1;i<100000;i++){
@@ -169,7 +164,6 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
 
 (2).异步取值返回页面：
 示例代码：
-
 
     public String getTree() {
             return SUCCESS;
@@ -212,15 +206,12 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
 (1).一次性取值，传到页面：
 示例代码：
 
-
     <!doctype html>
     <html>
     <head>
     <meta charset="utf-8">
     <title>ztree</title>
     <link href="${request.contextPath}/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css">
-
-
 
          var zNodes = ${listTree};
         var setting = {
@@ -238,12 +229,10 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
             $.fn.zTree.init($("#treeDemo"), setting, zNodes);
         });
 
-
     </head>
     <body>
 
             <ul id="treeDemo" class="ztree"></ul>
-
 
     <body >
     </html>
@@ -251,15 +240,12 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
 (2).异步取值返回页面：
 示例代码：
 
-
     <!doctype html>
     <html>
     <head>
     <meta charset="utf-8">
     <title>ztree</title>
     <link href="${request.contextPath}/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css">
-
-
 
     var setting = {
                 view: {
@@ -347,18 +333,15 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
         aObj.append(editStr);
     }
 
-
     </head>
     <body>
 
             <ul id="treeDemo" class="ztree"></ul>
 
-
     <body >
     </html>
 
 5.struts.xml配置：
-
 
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE struts PUBLIC
@@ -376,7 +359,6 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
                 <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
             </interceptors>
 
-
             <action name="showTree" class="com.demo.ztree.action.HelloAction"
                 method="showTree">
                 <result name="success" type="freemarker">/hello.ftl</result>
@@ -391,7 +373,6 @@ ztree的官网上demo已经很详细，最近项目有用到树桩结构，自�
                           json
                  </result>
             </action>
-
 
     </struts>
 

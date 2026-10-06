@@ -90,7 +90,6 @@ MAVEN中还有一个重要的配置就是数据仓库的路径配置，我们找
 
 如果indexjsp 提示有错误需要在pom.xml中导入 javaee-api.jar
 
-
     <dependency>
                 <groupId>javax</groupId>
                 <artifactId>javaee-api</artifactId>

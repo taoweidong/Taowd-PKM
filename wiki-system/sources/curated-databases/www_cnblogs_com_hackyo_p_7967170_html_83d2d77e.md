@@ -6,18 +6,15 @@ fetched_at: "2026-10-05 15:29:16"
 
 首先更新系统
 
-
     yum -y update
 
 1.安装Mongodb
 
 编辑Mongodb安装源
 
-
     vim /etc/yum.repos.d/mongodb-org-3.6.repo
 
 编辑内容如下：
-
 
     [mongodb-org-3.6]
     name=MongoDB Repository
@@ -27,7 +24,6 @@ fetched_at: "2026-10-05 15:29:16"
     gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 
 安装
-
 
     yum install -y mongodb-org
 
@@ -39,11 +35,9 @@ fetched_at: "2026-10-05 15:29:16"
 
 2.2.（推荐）关闭transparent_hugepage
 
-
     vim /etc/rc.local
 
 在最后添加以下代码，重启系统生效
-
 
     if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
       echo never > /sys/kernel/mm/transparent_hugepage/enabled
@@ -54,7 +48,6 @@ fetched_at: "2026-10-05 15:29:16"
 
 2.3修改mongodb配置文件
 
-
     vim /etc/mongod.conf
 
 修改内容为如下配置
@@ -62,7 +55,6 @@ fetched_at: "2026-10-05 15:29:16"
 其中端口被修改为21111（随意），并且允许远程访问，不允许则修改bandIp为：127.0.0.1
 
 已经启用了用户身份验证，并关闭了javascript
-
 
     systemLog:
       destination: file
@@ -88,7 +80,6 @@ fetched_at: "2026-10-05 15:29:16"
 
 保存后重启系统
 
-
     reboot
 
 3.运行
@@ -97,11 +88,9 @@ fetched_at: "2026-10-05 15:29:16"
 
 这种方式会自动使用/etc/mongod.conf配置文件
 
-
     service mongod start
 
 新建管理员用户
-
 
     mongo --port 21111
     > use admin
@@ -110,16 +99,13 @@ fetched_at: "2026-10-05 15:29:16"
 
 新建普通用户
 
-
     > use test
     > db.createUser({user:"test",pwd:"123456",roles:[{role:"readWrite",db:"test"}]})
 
 退出
 
-
     exit
 
 停止
-
 
     mongod -f /etc/mongod.conf --shutdown

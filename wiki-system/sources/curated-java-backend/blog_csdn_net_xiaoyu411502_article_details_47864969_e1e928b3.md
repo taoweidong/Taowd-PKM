@@ -18,7 +18,6 @@ fetched_at: "2026-10-05 15:32:22"
 
 `pom.xml`
 
-
     <?xml version="1.0" encoding="UTF-8"?>
 
       <modelVersion>4.0.0</modelVersion>
@@ -31,17 +30,13 @@ fetched_at: "2026-10-05 15:32:22"
       <name>spring-web-demo</name>
       <description>Demo project for Spring WebMvc</description>
 
-
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.2.5.RELEASE</version>
         <relativePath/>
 
-
-
          UTF-8
         <java.version>1.8</java.version>
-
 
       <dependencies>
         <dependency>
@@ -52,18 +47,12 @@ fetched_at: "2026-10-05 15:32:22"
 
       <build>
 
-
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
 
-
       </build>
 
-
-
-
 接下来创建`src/main/java/Application.java`:
-
 
     import org.springframework.boot.SpringApplication;
     import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -98,7 +87,6 @@ fetched_at: "2026-10-05 15:32:22"
 
 ####  匹配多个URL
 
-
     @RestController
     public class Application {
 
@@ -114,7 +102,6 @@ fetched_at: "2026-10-05 15:32:22"
     }
 
 `@RequestMapping`可以注解`@Controller`类：
-
 
     @RestController
     @RequestMapping("/classPath")
@@ -135,7 +122,6 @@ fetched_at: "2026-10-05 15:32:22"
 
 在Web应用中URL通常不是一成不变的，例如微博两个不同用户的个人主页对应两个不同的URL:`http://weibo.com/user1`，`http://weibo.com/user2`。我们不可能对于每一个用户都编写一个被`@RequestMapping`注解的方法来处理其请求，Spring MVC提供了一套机制来处理这种情况：
 
-
     @RequestMapping("/users/{username}")
     public String userProfile(@PathVariable("username") String username) {
         return String.format("user %s", username);
@@ -151,7 +137,6 @@ fetched_at: "2026-10-05 15:32:22"
 ####  支持HTTP方法
 
 对于HTTP请求除了其URL，还需要注意它的方法（Method）。例如我们在浏览器中访问一个页面通常是GET方法，而表单的提交一般是POST方法。`@Controller`中的方法同样需要对其进行区分：
-
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginGet() {
@@ -169,7 +154,6 @@ fetched_at: "2026-10-05 15:32:22"
 
 一种很直观的方法是在处理请求的方法中，直接返回HTML代码，但是这样做的问题在于——一个复杂的页面HTML代码往往也非常复杂，并且嵌入在Java代码中十分不利于维护。更好的做法是将页面的HTML代码写在模板文件中，渲染后再返回给用户。为了能够进行模板渲染，需要将`@RestController`改成`@Controller`：
 
-
     import org.springframework.ui.Model;
 
     @Controller
@@ -184,14 +168,12 @@ fetched_at: "2026-10-05 15:32:22"
 
 在上述例子中，返回值`"hello"`并非直接将字符串返回给浏览器，而是寻找名字为`hello`的模板进行渲染，我们使用[Thymeleaf](http://www.thymeleaf.org/)模板引擎进行模板渲染，需要引入依赖：
 
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
 
 接下来需要在默认的模板文件夹`src/main/resources/templates/`目录下添加一个模板文件`hello.html`：
-
 
     <!DOCTYPE HTML>
     <html xmlns:th="http://www.thymeleaf.org">

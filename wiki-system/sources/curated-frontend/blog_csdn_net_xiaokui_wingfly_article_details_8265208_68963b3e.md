@@ -27,7 +27,6 @@ Tree的几种开源组件：
 
 **（2）定义一个基本权限类：Competence.java**
 
-
     public class Competence {
     	private int id; // 编号
     	private int pId;	// 父节点
@@ -35,16 +34,11 @@ Tree的几种开源组件：
     	private String name;	// 节点名称
     	private int open;	// 是否打开
 
-
-
     	// 此处省略 get,set方法
-
 
     ｝
 
-
 **（3）创建BaseDao.java联接数据库**
-
 
     package com.demo.test;
 
@@ -112,8 +106,6 @@ Tree的几种开源组件：
     	}
     }
 
-
-
        <strong>（4） 创建测试的类 Test.java </strong>   package com.demo.test;
 
     import java.sql.Connection;
@@ -180,10 +172,7 @@ Tree的几种开源组件：
     	}
     }
 
-
-
 **（4） 创建加载zTree 树的html或jsp页面 asyncLoad.html**
-
 
     <!DOCTYPE html>
     <HTML>
@@ -193,8 +182,6 @@ Tree的几种开源组件：
     <link rel="stylesheet" href="../css/demo.css" type="text/css">
     <!-- 必须文件 zTreeStyle.css、jquery.ztree.core-x.js、jquery-x.min.js -->
     <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" type="text/css">
-
-
 
     	var setting = {
     		async : {
@@ -254,9 +241,7 @@ Tree的几种开源组件：
     </BODY>
     </HTML>
 
-
 **（5） 创建一个接收的Servlet，本测试使用jsp代替 loadData.jsp**
-
 
     <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
     <%@ page import="com.demo.test.*" %>
@@ -269,16 +254,13 @@ Tree的几种开源组件：
     		out.print(json);
     %>
 
-
 **注：json数据最终会被拼接成array的形式，如下结果：雷同即可显示**
-
 
     [{id:100,pId:0,name:"父节点",isParent:1,open:1},{id:101,pId:100,name:"叶子节点—1",isParent:1},{id:102,pId:100,name:"叶子节点—2",isParent:1},{id:103,pId:100,name:"叶子节点—3",isParent:1},{id:104,pId:0,name:"NB的父节点",isParent:1,open:1},{id:105,pId:104,name:"叶子节点2—1",isParent:1},{id:106,pId:104,name:"叶子节点2—2",isParent:1},{id:107,pId:104,name:"叶子节点2—3"},{id:108,pId:0,name:"郁闷的父节点",isParent:1},{id:109,pId:108,name:"叶子节点3—1"},{id:110,pId:108,name:"叶子节点3—2"},{id:111,pId:108,name:"叶子节点3—3"},{id:112,pId:101,name:"秘书"},{id:113,pId:101,name:"行政"},{id:114,pId:102,name:"助理"},{id:115,pId:102,name:"保安"},{id:116,pId:103,name:"销售"},{id:117,pId:103,name:"前台"},{id:118,pId:103,name:"主管"},{id:119,pId:105,name:"卫生"},{id:120,pId:106,name:"人事"}]
 
 **效果如图**
 
 ![](https://img-my.csdn.net/uploads/201211/29/1354178695_6895.png)
-
 
 这里的小测试使用了子父节点同时加载完毕效果，加载完毕后，单击父节点不会再次访问数据库，会从缓存中加载。所以这里使用的**open** 属性有效果，如果是单击父节点，加载子节点再次访问数据库的方式，open可能无效。
 

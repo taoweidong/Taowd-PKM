@@ -6,8 +6,6 @@ fetched_at: "2026-10-05 15:27:51"
 
 一、禁止所有的外键约束
 
-
-
 在pl/sql developer下执行如下语句：
 SELECT 'ALTER TABLE ' || table_name || ' disable CONSTRAINT ' || constraint_name || ';' FROM user_constraints where CONSTRAINT_TYPE = 'R';
 把查询出来的结果拷出来在pl/sql developer时执行。
@@ -22,11 +20,7 @@ SQL> spool off
 5\. 重新用相应的用户登录sqlplus，执行如下命令
 SQL> @/home/oracle/constraint.sql
 
-
-
 二、用delete或truncate删除所有表的内容
-
-
 
 SELECT 'DELETE FROM '|| table_name || ';' FROM USER_TABLES
 ORDER BY TABLE_NAME;
@@ -35,11 +29,7 @@ SELECT 'TRUNCATE TABLE '|| table_name || ';' FROM USER_TABLES
 ORDER BY TABLE_NAME;
 用第一步类似的方法操作。要注意的一点是，若表的数据有触发器相关联，只能用truncate语句，不过truncate语句不能回滚，所以时要注意
 
-
-
 三、把已经禁止的外键打开
-
-
 
 SELECT 'ALTER TABLE ' || table_name || ' enable CONSTRAINT ' || constraint_name || ';' FROM user_constraints where CONSTRAINT_TYPE = 'R';
 
