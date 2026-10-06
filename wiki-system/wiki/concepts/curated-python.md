@@ -56,7 +56,7 @@ source: "[[topics/browser-bookmarks]]"
 
 ## 网络精选（高质量博客 · 2026-10-06 增补）
 
-> 从全网检索并下载 12 篇仍在线的高质量博客（覆盖 asyncio 异步、装饰器/元编程、类型注解、性能/内存、Web 框架），本地镜像见 [[wiki-system/sources/curated-python]]。
+> 从全网检索并下载 10 篇仍在线的高质量博客（覆盖 asyncio 异步、装饰器/元编程、类型注解、性能/内存、Web 框架），本地镜像见 [[wiki-system/sources/curated-python]]。
 
 ### 摘要
 
@@ -74,11 +74,9 @@ source: "[[topics/browser-bookmarks]]"
 | asyncio | Asynchronous Programming in Python: From asyncio Basics to Production Patterns | [[wiki-system/sources/curated-python/pythoneo_com_asynchronous-programming-in-python_47b8a151.md\|异步编程：从基础到生产模式]] |
 | asyncio | Python Concurrency: Python asyncio — 47-Second Freeze | [[wiki-system/sources/curated-python/thecodeforge_io_python_python-asyncio-deep-dive_4484d51c.md\|asyncio 深入：47 秒冻结事故]] |
 | asyncio | Complete Guide to Python Asyncio | [[wiki-system/sources/curated-python/stackpractices_com_guides_complete-guide-python-asyncio_a18ffec6.md\|Python Asyncio 完全指南]] |
-| 装饰器 | Python Decorators: Complete Guide with Real-World Examples (2026) | [[wiki-system/sources/curated-python/techoral_com_python_python-decorators-guide_html_8bf4ca45.md\|装饰器完全指南]] |
 | 装饰器 | Mastering Advanced Decorator Patterns | [[wiki-system/sources/curated-python/course4all_com_python_py-decorators-mastery_04ec5c28.md\|进阶装饰器模式]] |
 | 类型注解 | typing — 对类型提示的支持（Python 3.13.16 文档） | [[wiki-system/sources/curated-python/docs_python_org_zh-cn_3_13_library_typing_html_bfa847f7.md\|typing 官方文档]] |
 | 类型注解 | Getting started — mypy 2.4.0 documentation | [[wiki-system/sources/curated-python/mypy_readthedocs_io_en_stable_getting_started_html_d8253346.md\|mypy 入门]] |
-| 性能/内存 | Python Memory Optimization: Slots, Generators and Profiling | [[wiki-system/sources/curated-python/techoral_com_python_memory-optimization_html_9a767b5a.md\|内存优化：slots 与生成器]] |
 | 性能/内存 | Python Performance Profiling: Find Bottlenecks and Optimize Slow Code | [[wiki-system/sources/curated-python/www_worldprogramming_org_posts_python-performance-profiling-find-bottlenecks-and-optimize-slow-_a2243bc5.md\|性能剖析：定位瓶颈]] |
 | 性能/内存 | How do I profile memory usage in Python? | [[wiki-system/sources/curated-python/codemia_io_knowledge-hub_path_how_do_i_profile_memory_usage_in_python_fbf99248.md\|内存分析方法]] |
 | Web 框架 | FastAPI Backend Patterns: DI, Error Handling, and Async | [[wiki-system/sources/curated-python/openllm_wavise_com_blog_fastapi-backend-patterns_cfd3556e.md\|FastAPI 后端模式]] |
@@ -96,4 +94,4 @@ source: "[[topics/browser-bookmarks]]"
 ## 变更记录
 
 - 2026-10-05：Ingest「Python」主题 21 条，按子类别归类（分类知识页）。
-- 2026-10-06：网络检索并下载 12 篇仍在线的高质量博客至 sources/curated-python/，新增「网络精选」合成知识段。
+- 2026-10-06：网络检索并下载 10 篇仍在线的高质量博客至 sources/curated-python/，新增「网络精选」合成知识段（原 12 篇中 2 篇 techoral.com 仅抓到目录为 JS 渲染空壳，已剔除）。
