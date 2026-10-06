@@ -2,7 +2,7 @@
 type: concept
 tags: [wiki, 收藏夹Ingest, linux, 运维]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 source: "[[topics/browser-bookmarks]]"
 ---
 
@@ -121,6 +121,32 @@ source: "[[topics/browser-bookmarks]]"
 - [【Linux】](http://blog.csdn.net/xiaoguaihai/article/category/1360686)
 - [自由软件库](http://download.chinaunix.net/)
 
+## 网络精选（高质量博客 · 2026-10-06 增补）
+
+> 从全网检索并下载的仍在线高质量博客离线镜像，按子方向归类，作为本主题的实践补充（镜像存于 `wiki-system/sources/curated-linux-ops/`）。
+
+### 摘要
+
+- **Shell / 文本处理**：`sed` 负责行级替换/删除，`awk` 负责字段级聚合与统计，二者配合 `grep` 构成日志分析与配置管理核心流水线（如统计 nginx 访问状态码、提取失败 SSH 登录 IP、批量改配置）。
+- **网络排障**：`tcpdump` / `ss` / `iptables` 是生产网络事故的主力；系统化流程为 链路 → IP/路由 → 防火墙规则 → 监听端口 → DNS → 抓包，且防火墙规则须 `iptables-save` 持久化、改动前保留带外访问避免自锁。
+- **内核调优**：高并发服务器需从网络栈（`tcp_max_syn_backlog` / `somaxconn` / `ip_local_port_range`）、文件描述符（`fs.file-max` + `nofile`）、内存（`vm.swappiness` / `dirty_ratio`）三维度调参，并以 `/etc/sysctl.d/*.conf` 持久化 + 验证脚本核对。
+- **systemd 服务管理**：用声明式 unit 文件管理 daemon，关键是区分 `enable`（开机）与 `start`（当前）、`Restart=on-failure` 自恢复、`journalctl -u` 查日志、drop-in 覆盖与 `systemd-analyze` 分析启动性能。
+- **性能剖析**：`perf` 配合 Brendan Gregg 火焰图（`perf record -F 99 -g` → `stackcollapse-perf.pl` → `flamegraph.pl`）定位 CPU 热点；另可 `perf stat` 看硬件计数器、off-CPU 分析阻塞。
+
+### 博客清单
+
+| 主题 | 博客标题 | 本地镜像 |
+| --- | --- | --- |
+| Shell / 文本处理 | sed and awk Complete Guide: Text Processing for DevOps — CloudNinjas | [[wiki-system/sources/curated-linux-ops/cloudninjas_ca_tutorials_sed-and-awk-complete-guide-text-processing-for-devops_04b9b53d.md\|sed/awk 文本处理指南(CloudNinjas)]] |
+| 网络排障 | Linux Networking for DevOps: Mastering iptables and DNS - Sesame Disk | [[wiki-system/sources/curated-linux-ops/sesamedisk_com_288a643f.md\|iptables/DNS 网络排障(Sesame Disk)]] |
+| 网络命令 | Linux 网络命令详解：从基础到高级应用指南 — geek-blogs.com | [[wiki-system/sources/curated-linux-ops/geek-blogs_com_blog_linux-network-commands_e874b2fd.md\|Linux 网络命令详解(geek-blogs)]] |
+| 内核调优 | Linux 服务器内核调优实战：从系统瓶颈到高性能运行的参数优化路径 | [[wiki-system/sources/curated-linux-ops/openeuler_csdn_net_6a39fab9662f9a54cb82ecf1_html_4deb0e0e.md\|内核调优实战(openEuler)]] |
+| 服务管理 | systemd Deep Dive: Linux Service Management | [[wiki-system/sources/curated-linux-ops/calmops_com_operating-systems_systemd-deep-dive_da6b2821.md\|systemd 深度解析(Calmops)]] |
+| 服务管理 | systemd and Linux Services Explained: Managing Background Processes | [[wiki-system/sources/curated-linux-ops/www_devfieldguide_com_blog_systemd-linux-services-explained_c4e2e77a.md\|systemd 服务管理(DevFieldGuide)]] |
+| 性能剖析 | Linux perf: CPU Profiling, Tracing, and Flame Graphs | [[wiki-system/sources/curated-linux-ops/blog_hashhackers_com_blog_linux-perf-profiling_ccabab19.md\|perf 与火焰图(Hash Hackers)]] |
+| 性能剖析 | perf Profiling Advanced - Linux Kernel Internals | [[wiki-system/sources/curated-linux-ops/kernel-internals_org_tracing_perf-profiling_123c0f1a.md\|perf 高级剖析(Kernel Internals)]] |
+| 安全 | Implementing SELinux | [[wiki-system/sources/curated-linux-ops/swiftorial_com_tutorials_operating_systems_linux_security_implementing_selinux_0c904c2d.md\|SELinux 配置入门(Swiftorial)]] |
+
 ## 关联
 
 - 来源索引：[[topics/browser-bookmarks]]（Linux 与运维 主题共 90 条）
@@ -134,3 +160,4 @@ source: "[[topics/browser-bookmarks]]"
 ## 变更记录
 
 - 2026-10-05：Ingest「Linux 与运维」主题 90 条，按子类别归类（分类知识页）。
+- 2026-10-06：网络检索并下载 9 篇仍在线的高质量博客至 sources/curated-linux-ops/，新增「网络精选」合成知识段。

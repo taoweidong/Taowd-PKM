@@ -2,7 +2,7 @@
 type: concept
 tags: [wiki, 优质博客, 学习资源, 微服务, 算法, 前端工程化, 收藏夹Ingest]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 source: "[[topics/browser-bookmarks]]"
 ---
 
@@ -122,6 +122,32 @@ source: "[[topics/browser-bookmarks]]"
 - [Hadoop 快速入门](http://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html) — 官方中文
 - [Quick Guide to Java Stack | Baeldung](http://www.baeldung.com/java-stack) — Java/Spring 高质量教程站
 
+## 网络精选（高质量博客 · 2026-10-06 增补）
+
+> 从全网检索并下载的 9 篇仍在线高质量博客（质量工程 / 技术实践方向），本地镜像见 [[wiki-system/sources/curated-quality-blogs/]]。覆盖代码重构、单元测试/TDD、Code Review、CI/CD 质量门禁、技术债管理 5 个子方向。
+
+### 摘要
+
+- **重构（Refactoring）**：重构只优化代码内部结构、不改变外部行为；落地前先有测试保护，小步增量进行，用 Extract Method、Rename、Simplify Conditional 等手法消除重复 / 长函数 / 复杂条件等代码坏味道（code smell）。
+- **单元测试与 TDD**：单元测试只验证最小单元、隔离网络 / DB 等外部依赖（mock/stub），测"公开的对外行为"而非实现细节；TDD 红-绿-重构循环让重构安全可控；覆盖率是发现盲点的信号，不是追求百分比的 KPI。
+- **Code Review**：评代码不评人、用提问代替命令、明确区分 blocking 与非 blocking（用 Nit 标记）；PR 越小越好（建议 <300 行），先审测试再审实现，用 checklist 覆盖功能 / 设计 / 可读性 / 测试 / 安全 / 性能。
+- **CI/CD 质量门禁**：在流水线中设质量门（如 SonarQube），新代码的覆盖率 / 可靠性 / 安全 / 可维护性不达标即阻断合并；采用 Clean as You Code 原则，只盯新增代码而非历史全量。
+- **技术债（Technical Debt）**：以"金融债务"隐喻理解——利息 = 修改代码的额外成本；高频改动区对坏味道零容忍、稳定区可暂留；渐进式偿还优于大爆炸式重写。
+
+### 精选清单
+
+| 主题 | 博客标题 | 本地镜像 |
+| --- | --- | --- |
+| 重构/整洁代码 | Refactoring 重构指南（Confluent） | [[wiki-system/sources/curated-quality-blogs/master_www_confluent_io_learn_refactoring_ea60bb2c.md\|Refactoring 重构指南]] |
+| 单元测试/TDD | TDD 原则与实践（VirtuosoQA） | [[wiki-system/sources/curated-quality-blogs/virtuosoqa_com_post_test-driven-development_5321108d.md\|TDD 原则与实践]] |
+| 单元测试/TDD | 单元测试最佳实践（CodeGuru） | [[wiki-system/sources/curated-quality-blogs/codeguru_app_from-zero-to-test-driven-unit-testing-best-practices-for-rel_e8f889e9.md\|单元测试最佳实践]] |
+| Code Review | Code Review 完全指南（StackPractices） | [[wiki-system/sources/curated-quality-blogs/stackpractices_com_guides_complete-guide-code-review-best-practices_8c898d74.md\|Code Review 完全指南]] |
+| Code Review | 现代团队 Code Review 实践（GitProductivity） | [[wiki-system/sources/curated-quality-blogs/www_gitproductivity_com_blog_code-review-best-practices_835127a6.md\|现代团队 Code Review 实践]] |
+| 静态分析/质量门禁 | CI/CD 质量门禁（SonarQube） | [[wiki-system/sources/curated-quality-blogs/www_sonarsource_com_learn_integrating-quality-gates-ci-cd-pipeline_85048170.md\|CI-CD 质量门禁]] |
+| 软件工程方法论/技术债 | 技术债瓶颈（Martin Fowler） | [[wiki-system/sources/curated-quality-blogs/martinfowler_com_articles_bottlenecks-of-scaleups_01-tech-debt_html_561f0b0e.md\|技术债瓶颈]] |
+| 软件工程方法论/技术债 | 技术债隐喻（Martin Fowler） | [[wiki-system/sources/curated-quality-blogs/martinfowler_com_bliki_TechnicalDebt_html_3f61a4b8.md\|技术债隐喻]] |
+| CI/CD 工程实践 | CI 可复现性（Earthly） | [[wiki-system/sources/curated-quality-blogs/earthly_dev_blog_achieving-repeatability_8ae853f4.md\|CI 可复现性]] |
+
 ## 关联
 
 - 来源索引：[[topics/browser-bookmarks]]（优质博客主题共 47 条，本页为精选归类）
@@ -136,3 +162,4 @@ source: "[[topics/browser-bookmarks]]"
 ## 变更记录
 
 - 2026-10-05：第 2 批 Ingest「优质博客」主题 47 条。抓取 9 篇核心文章（微服务×2、算法×3、Python工程化、Vue权限、Docker、Zookeeper）并提炼要点；3 篇抓取失败（简书权限页 / daocloud fetch error / keepalived 403）已标注待补。
+- 2026-10-06：网络检索并下载 9 篇仍在线的高质量博客至 sources/curated-quality-blogs/，新增「网络精选」合成知识段。

@@ -2,7 +2,7 @@
 type: topic
 tags: [wiki, bookmarks, 收藏夹, 知识归类]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 source: "[[wiki-system]]"
 ---
 
@@ -760,6 +760,30 @@ source: "[[wiki-system]]"
 - | 40 个超棒的免费 Bootstrap HTML5 网站模板 - 开源中国 — https://www.oschina.net/news/59924/free-bootstrap-templates
 - | 工作台 · 语雀 — https://www.yuque.com/dashboard
 
+## 网络精选（高质量博客 · 2026-10-06 增补）
+
+> 本节为全网检索后下载的「仍在线」高质量博客本地镜像，作为上方收藏夹分类索引的外部优质补充。原始网页经抓取、转 Markdown、落盘至 `wiki-system/sources/browser-bookmarks/<slug>.md`。
+
+### 摘要
+
+综合 6 篇高质量博客，提炼本主题 4 条要点：
+
+1. **书签管理工具没有万能解，按用途选**：Raindrop.io 胜在视觉化与全文搜索；TabMark / xBrowserSync 走隐私/本地优先路线；Pinboard 极简可靠；Pocket / Instapaper 专注「稍后读」；Toby / Notion 适合团队与 PKM 集成。大库（1000+）优先 Raindrop Pro，隐私优先本地优先方案。
+2. **书签是个人知识管理（PKM）的采集层基础**：用 PARA 框架（Projects / Areas / Resources / Archives）归类；捕获要快、每周归档、每月清理；书签负责「采集与检索」，笔记工具（Obsidian / Notion）负责「综合与创造」，二者分工而非互相替代。
+3. **程序员收藏站点应「少而精、各司其职」**：文档查 MDN / GitHub Docs / DevDocs；排错看 Stack Overflow / dev.to；行业动态盯 Hacker News；学习路线用 roadmap.sh / freeCodeCamp / GeeksforGeeks；前端原型上 CodePen。不需要 20 个站常驻，每个站只干一件事。
+4. **维护习惯决定系统生死**：建 Inbox 收集夹 + 每周 10 分钟归档 + 每月 15 分钟清理（删死链 / 去重 / 归档旧项目）；避免文件夹嵌套超过 3 层、单书签标签不超过 5 个，先跑起来比追求完美结构更重要。
+
+### 下载清单
+
+| 主题 | 博客标题 | 本地镜像 |
+| --- | --- | --- |
+| 书签管理工具 | Best Bookmark Managers: Tags, Sync, Teams & Large Libraries（TabMark） | [[wiki-system/sources/browser-bookmarks/tabmark_dev_blog_best-bookmark-managers_dc122cce\|Best Bookmark Managers（TabMark）]] |
+| 书签管理工具 | Best Bookmark Managers: 7 Options Compared（Bookmash） | [[wiki-system/sources/browser-bookmarks/bookma_sh_best-bookmark-managers_7d54de28\|Best Bookmark Managers：7 款对比（Bookmash）]] |
+| 程序员收藏站点 | The best websites for programmers in 2026（daily.dev） | [[wiki-system/sources/browser-bookmarks/www_daily_dev_blog_best-websites-for-programmers-2026_d6083126\|程序员必收藏的网站 2026（daily.dev）]] |
+| 程序员收藏站点 | Best Websites To Bookmark Right Away if You're a Programmer（Technotification） | [[wiki-system/sources/browser-bookmarks/www_technotification_com_2022_12_best-websites-to-bookmark-right-away-if-youre-a-programmer_htm_6312724c\|程序员应立刻收藏的网站（Technotification）]] |
+| 开源资源导航 | Top GitHub Repositories Every Programmer Should Know（AiTechWorlds） | [[wiki-system/sources/browser-bookmarks/www_aitechworlds_com_category_skills-career_learning-resources_github-repos-every-programme_6c2e8107\|程序员必知的 GitHub 仓库（AiTechWorlds）]] |
+| 个人知识管理 | Personal Knowledge Management with Bookmarks: Complete Guide（TabMark） | [[wiki-system/sources/browser-bookmarks/tabmark_dev_blog_pkm-bookmarks_5691bfa6\|用书签做个人知识管理（TabMark）]] |
+
 ## 关联
 
 - 父系统: [[wiki-system]] · 规则: [[SCHEMA]]
@@ -773,3 +797,4 @@ source: "[[wiki-system]]"
 ## 变更记录
 
 - 2026-10-05: 初始化分类索引，收录 661 篇知识文章 + 73 条工具链接，按 13 个主题归类。
+- 2026-10-06：网络检索并下载 6 篇仍在线的高质量博客至 sources/browser-bookmarks/，新增「网络精选」合成知识段。

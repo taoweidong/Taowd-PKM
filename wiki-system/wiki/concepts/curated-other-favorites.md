@@ -2,7 +2,7 @@
 type: concept
 tags: [wiki, 收藏夹Ingest, 杂项, 综合收藏]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 source: "[[topics/browser-bookmarks]]"
 ---
 
@@ -92,6 +92,33 @@ source: "[[topics/browser-bookmarks]]"
 - [简介 - Document](https://bndong.github.io/Cnblogs-Theme-SimpleMemory/v2/#/)
 - [陕西省城镇职工养老保险网上个人查询系统](http://117.36.52.39/sxlssLogin.do)
 
+## 网络精选（高质量博客 · 2026-10-06 增补）
+
+> 以下为 2026-10-06 从全网检索并下载到本地的「仍在线」高质量博客镜像，覆盖程序员学习方法、效率工具、职业发展、技术写作、通用计算机科学五个子方向。
+
+### 摘要
+
+1. **学习方法**：编程核心不是记忆语法，而是培养"程序员思维"与问题拆解能力；相比盲目追逐新框架，按"语言 → 数据结构与算法 → 操作系统/网络/数据库"的系统路线图打底更可持续（参考 zerotomastery「Top 10」与 guvi「CS Fundamentals」）。
+2. **效率工具**：资深工程师每天约 8 个互相衔接的工具即可覆盖全部工作流，关键是减少上下文切换、用日历保护 2–3 小时深度专注块，自动化应在基础流程稳定后再引入（daily.dev）；个人知识管理用 Obsidian 等本地优先工具做"第二大脑"，重连接而非堆收藏（serey「Tech-Savvy Self」）。
+3. **职业发展**：从 Junior 到 Senior 的关键是从"完成任务"转向"主动担责与可见的影响力"；突破 Senior 天花板要从写功能转向技术领导力——写文档、带人、识别无人认领的高杠杆系统性问题，把自己从瓶颈变成团队放大器（daniellawal / rubel / 掘金「大厂路径」）。
+4. **技术写作**：把文档当产品——标题清晰、开篇说明目标、用标题/列表/代码块结构化、代码先行解释在后、注明版本与原始链接；技术写作是复利技能，放大个人与团队影响力（掘金「文档即产品」/ 腾讯云 / ONES）。
+5. **通用计算机科学**：框架会过时，但 CS 基础（数据结构与算法、操作系统、网络、数据库、OOP、系统设计）是穿越技术周期的安全网；按"语言 → DSA → 数学 → OS → 网络 → 数据库"顺序打底，遇性能/故障再深挖（guvi）。
+
+### 精选列表
+
+| 子方向 | 博客标题 | 本地镜像 |
+|---|---|---|
+| 学习方法/软技能 | Top 10 Articles For Programmers From 2024 | [[wiki-system/sources/curated-other-favorites/www_zerotomastery_io_blog_top-10-articles-for-programmers-from-2024_54069190.md\|Top 10 Articles For Programmers]] |
+| 效率工具/PKM | The Tech-Savvy Self: Optimizing Personal Development and Productivity in the Digital Era | [[wiki-system/sources/curated-other-favorites/serey_io_authors_joshbam_bjyc9kj29m-q8mefxccz5-jslo4tuz9r_e5d62f1e.md\|The Tech-Savvy Self]] |
+| 效率工具 | The Developer Productivity Stack in 2026 | [[wiki-system/sources/curated-other-favorites/daily_dev_blog_developer-productivity-stack-2026_2661106e.md\|Developer Productivity Stack 2026]] |
+| 职业发展 | From Junior to Senior: Navigating Your Software Engineering Career Path | [[wiki-system/sources/curated-other-favorites/daniellawal_com_blog_junior-to-senior-engineering-career_b193011d.md\|From Junior to Senior]] |
+| 职业发展 | Software engineering career growth: Breaking the Seniority Plateau | [[wiki-system/sources/curated-other-favorites/rubel_dev_blog_software-engineering-career-growth-breaking-the-seniority-plateau_662d6b0e.md\|Breaking the Seniority Plateau]] |
+| 职业发展 | 大厂软件工程师职业发展路径 | [[wiki-system/sources/curated-other-favorites/juejin_cn_post_7611494020921507881_babc75a2.md\|大厂软件工程师职业发展路径]] |
+| 技术写作 | 文档即产品！工程师必看的写作密码 | [[wiki-system/sources/curated-other-favorites/juejin_cn_post_7495635442055430153_45688dd7.md\|文档即产品]] |
+| 通用计算机科学 | CS Fundamentals: 7 Reasons They Beat Chasing Frameworks | [[wiki-system/sources/curated-other-favorites/www_guvi_in_blog_why-cs-fundamentals-matter-most_e2dd59f6.md\|CS Fundamentals]] |
+| 技术写作 | 如何做好一份技术文档：超详细攻略 | [[wiki-system/sources/curated-other-favorites/cloud_tencent_com_developer_article_2529523_adb86ca6.md\|如何做好一份技术文档]] |
+| 技术写作 | 如何撰写高质量的技术文档？ | [[wiki-system/sources/curated-other-favorites/ones_cn_blog_articles_how-to-write-high-quality-technical-documentation-2_88cbb2b7.md\|如何撰写高质量的技术文档]] |
+
 ## 关联
 
 - 来源索引：[[topics/browser-bookmarks]]（其他收藏 主题共 59 条）
@@ -105,3 +132,4 @@ source: "[[topics/browser-bookmarks]]"
 ## 变更记录
 
 - 2026-10-05：Ingest「其他收藏」主题 59 条，按子类别归类（分类知识页）。
+- 2026-10-06：网络检索并下载 10 篇仍在线的高质量博客至 sources/curated-other-favorites/，新增「网络精选」合成知识段。

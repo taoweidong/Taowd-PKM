@@ -2,7 +2,7 @@
 type: concept
 tags: [wiki, 收藏夹Ingest, 前端, vue, javascript]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 source: "[[topics/browser-bookmarks]]"
 ---
 
@@ -114,6 +114,34 @@ source: "[[topics/browser-bookmarks]]"
 - [ssm-demo系统主页](http://ssm-demo.hanshuai.xin/main.jsp)
 - [企业中心](https://i.fkw.com/portal.jsp#appId=marketing)
 
+## 网络精选（高质量博客 · 2026-10-06 增补）
+
+> 本节由 LLM Wiki 维护助手从全网检索并下载「仍在线」的 11 篇高质量博客（本地离线镜像见下方表格），覆盖 JavaScript/TypeScript/React/Vue/CSS/构建工具等子方向，作为「收藏夹 Ingest」书签之外的深度补充。
+
+### 摘要
+
+- **React 渲染引擎（Fiber 架构）**：React 16+ 以 Fiber 链表结构替代递归栈式协调器，把渲染拆成可中断、可暂停的工作单元；区分「render 阶段（纯计算、可中断）」与「commit 阶段（同步应用 DOM、不可中断）」，配合优先级 lane 与 time slicing 实现并发渲染、Suspense、自动批处理。性能要点：`React.memo` 跳过未变子树、稳定 key 避免重建、用 `startTransition` 标记低优先级更新。
+- **Vue 3 响应式系统**：基于 ES6 `Proxy` + `Reflect`，`get` 拦截时 `track` 收集依赖、`set`/`deleteProperty` 时 `trigger` 触发更新；依赖关系用 `WeakMap<target, Map<key, Set<effect>>>` 三层结构存储；`ref` 包装原始值、`computed` 为懒执行 + 缓存的 effect。相比 Vue 2 的 `defineProperty`，可监听新增/删除属性、数组索引与 `Map`/`Set`。
+- **TypeScript 高级类型（类型体操）**：以条件类型（`T extends U ? X : Y`）、`infer` 提取子类型、映射类型（`keyof` + `as` 重映射）、模板字面量类型为核心；可手写 `Partial`/`Required`/`Readonly`/`Pick`/`Omit`/`Record`/`Awaited` 等工具类型，配合联合分布与递归实现复杂类型计算。
+- **现代 CSS 布局**：CSS Grid（二维布局、`auto-fit`/`auto-fill` 响应式、`Subgrid`、`grid-template-areas`）与 Flexbox（一维对齐，`gap` 已全浏览器支持）分工明确；`Container Queries`、`:has()`、`View Transitions API` 等新特性让纯 CSS 即可实现原需 JS 的效果；动画优先用 `transform`/`opacity` 等合成层属性以保证流畅。
+- **前端构建工具（Vite vs Webpack）**：Webpack 采用「打包优先」——开发时递归构建完整依赖图并打包，冷启动/HMR 随规模线性变慢；Vite 利用浏览器原生 ESM，开发时不打包、按需编译（`esbuild` 即时转译），冷启动与热更新近乎瞬时，生产构建复用 Rollup（tree-shaking 更优）。新项目优先 Vite，大型遗留/特殊定制仍可用 Webpack。
+
+### 文章清单
+
+| 主题 | 博客标题 | 本地镜像 |
+| --- | --- | --- |
+| TypeScript | TypeScript 官方文档：Advanced Types | [[wiki-system/sources/curated-frontend/typescriptlang_org_docs_handbook_advanced-types_html_987fbde3.md\|TypeScript 官方文档：Advanced Types]] |
+| TypeScript | TypeScript Advanced Types 速查 | [[wiki-system/sources/curated-frontend/usefulcheatsheets_com_technology_typescript_typescript-advanced-types_9fdceabe.md\|TypeScript Advanced Types 速查]] |
+| React | React Fiber 架构与协调内部机制 | [[wiki-system/sources/curated-frontend/devwithtools_org_blog_react-fiber-architecture_5a4c6716.md\|React Fiber 架构与协调内部机制]] |
+| React | React Fiber 深度解析：现代 React 的引擎 | [[wiki-system/sources/curated-frontend/codewithseb_com_blog_deep-dive-into-react-fiber-the-engine-behind-modern-react_06f020cd.md\|React Fiber 深度解析：现代 React 的引擎]] |
+| React | Reconciliation 算法深潜：Fiber 与渲染/提交阶段 | [[wiki-system/sources/curated-frontend/rubel_dev_blog_deep-dive-into-the-reconciliation-algorithm-fiber-and-phases_f0820235.md\|Reconciliation 算法深潜：Fiber 与渲染/提交阶段]] |
+| Vue | Vue 3 响应式系统原理与 reactive/ref/computed 模拟实现 | [[wiki-system/sources/curated-frontend/heibaimeng_com_post_287_f69bf70b.md\|Vue 3 响应式系统原理与 reactive/ref/computed 模拟实现]] |
+| Vue | Vue3 响应式原理深度解析：Proxy 与依赖收集 | [[wiki-system/sources/curated-frontend/cloud_tencent_com_developer_article_2600752_a5a3ad8a.md\|Vue3 响应式原理深度解析：Proxy 与依赖收集]] |
+| CSS | 现代 CSS 布局技术完全掌握 | [[wiki-system/sources/curated-frontend/web-reference_org_en_articles_modern-css-layout-techniques_d396cbc3.md\|现代 CSS 布局技术完全掌握]] |
+| CSS | 如何为 CSS Grid 添加动画 | [[wiki-system/sources/curated-frontend/www_geeksforgeeks_org_how-to-animate-css-grid_e75c68d6.md\|如何为 CSS Grid 添加动画]] |
+| 构建工具 | Webpack 与 Vite 构建差异与性能边界 | [[wiki-system/sources/curated-frontend/developer_aliyun_com_article_1688615_54d6b43d.md\|Webpack 与 Vite 构建差异与性能边界]] |
+| 构建工具 | Vite 与 Webpack 详细对比 | [[wiki-system/sources/curated-frontend/cloud_tencent_com_developer_article_2595855_7969f4ed.md\|Vite 与 Webpack 详细对比]] |
+
 ## 关联
 
 - 来源索引：[[topics/browser-bookmarks]]（前端开发 主题共 70 条）
@@ -127,3 +155,4 @@ source: "[[topics/browser-bookmarks]]"
 ## 变更记录
 
 - 2026-10-05：Ingest「前端开发」主题 70 条，按子类别归类（分类知识页）。
+- 2026-10-06：网络检索并下载 11 篇仍在线的高质量博客至 sources/curated-frontend/，新增「网络精选」合成知识段。

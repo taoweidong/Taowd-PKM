@@ -2,7 +2,7 @@
 type: concept
 tags: [wiki, 收藏夹Ingest, devops, 中间件, 持续集成]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 source: "[[topics/browser-bookmarks]]"
 ---
 
@@ -110,6 +110,35 @@ source: "[[topics/browser-bookmarks]]"
 - [本地host管理工具](https://github.com/oldj/SwitchHosts/releases)
 - [让开发自动化: 用 Eclipse 插件提高代码质量](https://www.ibm.com/developerworks/cn/java/j-ap01117/?S_TACT=105AGX52&S_CMP=techcsdn)
 
+## 网络精选（高质量博客 · 2026-10-06 增补）
+
+> 从全网检索仍在线（200/可抓取）的高质量博客，抓取正文转为本地 Markdown 镜像，落盘至 `wiki-system/sources/curated-devops-middleware/`。以下为合成知识段，覆盖 Docker、Kubernetes、Nginx、消息队列、Prometheus、CI/CD 等子方向。
+
+### 摘要
+
+- **Docker：容器是"带边界的进程"而非轻量 VM**，共享宿主内核（隔离更弱，故生产务必非 root）。多阶段构建把"编译镜像"与"运行镜像"分离，配合 `alpine`/`slim` 基础镜像、分层缓存（先拷 `package.json` 再拷源码）、`USER` 非 root、`.dockerignore`，可显著减小镜像体积并降低攻击面；Docker Compose 适合本地开发体验，生产弹性（自愈/扩缩容）应交给 Kubernetes/ECS。
+- **Kubernetes：Pod 的"一生"由声明式控制循环驱动**。`kubectl apply` 只是把 JSON POST 给 `kube-apiserver`，`etcd` 记录期望态，scheduler 经"过滤(Predicates)＋打分(Priorities)"选节点，kubelet 再经 CRI/CNI/CSI 拉起容器；只有 Readiness Probe 通过、EndpointSlice 更新后流量才进入，系统持续把"实际态"对齐"期望态"。
+- **Nginx 反向代理**：核心指令是 `proxy_pass`（在 `location`/`upstream` 内），并用 `proxy_set_header` 透传 `Host`、`X-Real-IP`、`X-Forwarded-For`、`X-Forwarded-Proto` 等真实客户端信息；TLS 终止、超时（`proxy_*_timeout`）与 upstream 健康检查是生产标配。
+- **消息队列选型**：RabbitMQ 是通用消息代理，基于 Exchange+Queue 智能路由（Direct/Topic/Fanout/Headers），低延迟、路由灵活；Kafka 是分布式流平台，Topic→Partition 顺序日志、磁盘顺序写、消费者按 offset 拉取，超高通量且可回放——前者适合业务消息，后者适合日志/事件流。
+- **Prometheus 与 CI/CD**：Prometheus 采用 Pull 模型，定时 scrape 目标的 `/metrics`（OpenMetrics 文本格式），Exporter 把系统/中间件指标翻译后暴露；数据模型是"指标名＋标签"的时间序列，四类指标 Counter/Gauge/Histogram/Summary，**高基数是最大坑**；Alertmanager 负责去重/分组/静默/路由。CI/CD 则应"构建一次、按不可变标签(commit SHA)跨环境晋升"，安全左移（镜像扫描/SBOM/签名），以 GitOps(ArgoCD) 为唯一部署路径，配合 Canary/Blue-Green 渐进式交付与自动回滚。
+
+### 精选博客清单
+
+| 主题 | 博客标题 | 本地镜像 |
+| --- | --- | --- |
+| Docker | Docker 生产级最佳实践：多阶段构建与安全基线 | [[wiki-system/sources/curated-devops-middleware/arfin_dev_blog_docker-mastery-production-systems_3fb68413.md\|Docker 生产级最佳实践]] |
+| Docker | Dockerfile 实战教学与效能优化 | [[wiki-system/sources/curated-devops-middleware/www_taki_com_tw_blog_dockerfile-best-practices_ffb7a4ea.md\|Dockerfile 实战教学]] |
+| Docker | Docker 底层原理：镜像分层与容器隔离 | [[wiki-system/sources/curated-devops-middleware/blog_csdn_net_weixin_33483304_article_details_165382187_52c8d35a.md\|Docker 底层原理]] |
+| Kubernetes | K8s Pod 的一生：从 apply 到流量毫秒级全流程 | [[wiki-system/sources/curated-devops-middleware/devopsinside_com_the-life-of-a-kubernetes-pod-millisecond-by-millisecond_139391cf.md\|K8s Pod 的一生]] |
+| Kubernetes | K8s 工作原理：Pod、调度与调和循环 | [[wiki-system/sources/curated-devops-middleware/letsbuildsolutions_com_blog_devops_how-kubernetes-works-pods-scheduling-and-the-reconciliatio_b258d2dd.md\|K8s 工作原理]] |
+| Nginx | NGINX 官方：反向代理配置 | [[wiki-system/sources/curated-devops-middleware/docs_nginx_com_nginx_admin-guide_web-server_reverse-proxy_d8d613bf.md\|NGINX 反向代理]] |
+| 消息队列 | AWS：Kafka 与 RabbitMQ 的区别 | [[wiki-system/sources/curated-devops-middleware/aws_amazon_com_compare_the-difference-between-rabbitmq-and-kafka_4ebbd44b.md\|Kafka vs RabbitMQ]] |
+| Prometheus | Prometheus 监控：从入门到精通（正确姿势） | [[wiki-system/sources/curated-devops-middleware/www_dash0_com_guides_prometheus-monitoring_43309364.md\|Prometheus 监控指南]] |
+| Prometheus | Prometheus 官方：快速上手 | [[wiki-system/sources/curated-devops-middleware/prometheus_io_docs_tutorials_getting_started_c24b1543.md\|Prometheus 快速上手]] |
+| CI/CD | CI/CD 流水线指南 | [[wiki-system/sources/curated-devops-middleware/stackpractices_com_guides_cicd-pipeline-guide_11323f41.md\|CI/CD 流水线指南]] |
+| CI/CD | CI/CD 最佳实践（Modern DevOps 2026） | [[wiki-system/sources/curated-devops-middleware/calmops_com_devops_cicd-pipeline-best-practices-modern-devops_f519c6fc.md\|CI/CD 最佳实践]] |
+| CI/CD | CI/CD 工作流：从代码到生产的自动化路径 | [[wiki-system/sources/curated-devops-middleware/itacademy_com_ua_en_articles_2026-04-08_what-is-ci-cd-pipelines_d6ba377a.md\|CI/CD 工作流]] |
+
 ## 关联
 
 - 来源索引：[[topics/browser-bookmarks]]（DevOps 与中间件 主题共 76 条）
@@ -123,3 +152,4 @@ source: "[[topics/browser-bookmarks]]"
 ## 变更记录
 
 - 2026-10-05：Ingest「DevOps 与中间件」主题 76 条，按子类别归类（分类知识页）。
+- 2026-10-06：网络检索并下载 12 篇仍在线的高质量博客至 sources/curated-devops-middleware/，新增「网络精选」合成知识段。

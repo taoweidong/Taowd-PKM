@@ -2,7 +2,7 @@
 type: concept
 tags: [wiki, 收藏夹Ingest, java, 后端框架, spring]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 source: "[[topics/browser-bookmarks]]"
 ---
 
@@ -94,6 +94,38 @@ source: "[[topics/browser-bookmarks]]"
 - [林祥纤 - ITeye技术网站](http://412887952-qq-com.iteye.com/)
 - [让开发自动化: 用 Eclipse 插件提高代码质量](https://www.ibm.com/developerworks/cn/java/j-ap01117/?S_TACT=105AGX52&S_CMP=techcsdn)
 
+## 网络精选（高质量博客 · 2026-10-06 增补）
+
+> 从全网检索并下载仍在线（HTTP 200 / text-html）的高质量博客原文，转 Markdown 落盘至 `wiki-system/sources/curated-java-backend/`。以下为合成知识段，覆盖 JVM/GC 调优、Java 并发与 JMM、Spring 循环依赖、MyBatis 原理、微服务选型、现代 Java 新特性等子方向。
+
+### 摘要
+
+- **JVM/GC 调优**：先测量再调优（measure → 改一处 → 再测量）。默认用 G1，延迟敏感且 GC 停顿已成为 p99 瓶颈时切 ZGC；容器环境务必按百分比（如 `-XX:MaxRAMPercentage`）设置堆并为非堆内存（Metaspace、线程栈、Netty 直接缓冲）预留空间，否则 `-Xmx` 等于容器上限会触发 OOMKill。GC 日志近乎零成本应常开，用 JFR / async-profiler 定位真实瓶颈。
+- **并发与 JMM**：可见性与有序性由 happens-before 规则保证；`synchronized` 既是互斥锁也是内存屏障（进入失效本地缓存、退出刷写），`ReentrantLock` 额外提供 `tryLock`/超时/公平锁/多条件；`volatile` 写读建立 happens-before，是无锁可见性的基石。
+- **Spring 循环依赖**：通过三级缓存（singletonObjects / earlySingletonObjects / singletonFactories）配合提前曝光解决单例循环引用；三级缓存存 `ObjectFactory`（而非直接存引用）的关键价值，是在发生循环依赖时能让 AOP 提前生成代理对象，保证注入的是「最终形态」而非原始对象，正常路径 AOP 仍推迟到初始化完成后。
+- **MyBatis 原理**：三层架构（接口层 / 核心处理层 / 基础支撑层）；Mapper 接口经 JDK 动态代理（MapperProxy）生成实现，SQL 执行链为 Executor → StatementHandler → ParameterHandler / ResultSetHandler；一级缓存（SqlSession 级，默认开）与二级缓存（Mapper 级，需手动开）；插件可拦截这四大组件实现分页、鉴权、日志等扩展。
+- **微服务选型与现代 Java**：Dubbo 走高性能 RPC（TCP 长连接 + 二进制协议，内部高频低延迟调用更优），Spring Cloud 走 HTTP 全家桶治理（网关 / 配置中心 / 熔断降级），二者正共同向云原生演进；Java 8+ 用 Lambda / Stream / Optional 声明式处理数据，var / 文本块 / 模式匹配（Java 16+）显著提升表达力与可读性。
+
+### 网络精选清单
+
+| 主题 | 博客标题 | 本地镜像 |
+| --- | --- | --- |
+| JVM/GC 调优 | Java Garbage Collection: In-Depth Guide | [[wiki-system/sources/curated-java-backend/techoral_com_java_java-garbage-collection_html_43c3cc8b\|Java GC 深度指南]] |
+| JVM/GC 调优 | JVM Tuning Guide: G1 vs ZGC, GC Logging, JFR | [[wiki-system/sources/curated-java-backend/javaagentic_com_learn_devops-production_jvm-performance-tuning_78dedd15\|JVM 性能调优实战]] |
+| JVM/GC 调优 | JVM 内存模型深度拆解：从运行时数据区到 GC 调优 | [[wiki-system/sources/curated-java-backend/blog_csdn_net_alex_goden_article_details_162381791_f40f2a89\|JVM 内存模型与 GC 调优]] |
+| Java 并发 / JMM | Java Memory Model Explained: happens-before | [[wiki-system/sources/curated-java-backend/javaagentic_com_learn_concurrency-interview_synchronization-java-memory-model_18834436\|JMM 与内存一致性]] |
+| Java 并发 / JMM | synchronized, Locks and the Java Memory Model | [[wiki-system/sources/curated-java-backend/javaagentic_com_learn_concurrency-interview_synchronization-java-memory-model_18834436\|synchronized 与 JMM]] |
+| Java 并发 / JMM | Java并发编程实战指南核心原理与高性能优化 | [[wiki-system/sources/curated-java-backend/blog_csdn_net_ujfmylrg_article_details_153957896_a274e992\|Java 并发编程核心原理]] |
+| Spring 原理 | Spring Bean 循环依赖 | [[wiki-system/sources/curated-java-backend/springdoc_cn_spring-bean-circular-dependencies_726d7ab4\|Spring Bean 循环依赖]] |
+| Spring 原理 | 深入解析Spring框架底层原理：循环依赖三级缓存与AOP代理冲突 | [[wiki-system/sources/curated-java-backend/developer_cloud_tencent_com_article_2560566_741ecb70\|Spring 三级缓存与 AOP]] |
+| Spring 原理 | Spring三级缓存：循环依赖的优雅解决之道 | [[wiki-system/sources/curated-java-backend/www_cnblogs_com_wgwyanfs_p_20159999_4abea805\|Spring 三级缓存实战]] |
+| MyBatis | MyBatis 源码深度解析：从 Spring Boot 实战到底层原理 | [[wiki-system/sources/curated-java-backend/www_cnblogs_com_gccbuaa_p_19287413_0cc69a1d\|MyBatis 源码解析]] |
+| MyBatis | MyBatis 原理详解及实践应用 | [[wiki-system/sources/curated-java-backend/juejin_cn_post_7554318621717643291_6754cb54\|MyBatis 原理与实践]] |
+| MyBatis | 扒光MyBatis内部运行机制：从SQL执行到源码底层 | [[wiki-system/sources/curated-java-backend/cloud_tencent_com_developer_article_2654533_ef2931f6\|MyBatis 内部运行机制]] |
+| 微服务选型 | Spring Cloud vs Dubbo：微服务架构选型深度对比 | [[wiki-system/sources/curated-java-backend/cloud_tencent_com_developer_article_2595521_63eaa1bc\|Spring Cloud vs Dubbo]] |
+| 微服务选型 | Dubbo深度解析：高性能RPC框架如何重塑微服务架构 | [[wiki-system/sources/curated-java-backend/www_cnblogs_com_yangykaifa_p_19494960_03bb47fd\|Dubbo 深度解析]] |
+| 现代 Java | Modern Java Features（Java 8 到 21） | [[wiki-system/sources/curated-java-backend/resources_devweekends_com_courses_java-crash-course_modern-java_7d8c362c\|Modern Java 新特性]] |
+
 ## 关联
 
 - 来源索引：[[topics/browser-bookmarks]]（Java 后端框架 主题共 57 条）
@@ -107,3 +139,4 @@ source: "[[topics/browser-bookmarks]]"
 ## 变更记录
 
 - 2026-10-05：Ingest「Java 后端框架」主题 57 条，按子类别归类（分类知识页）。
+- 2026-10-06：网络检索并下载 14 篇仍在线的高质量博客至 sources/curated-java-backend/，新增「网络精选」合成知识段。
