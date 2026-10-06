@@ -2,7 +2,7 @@
 type: concept
 tags: [wiki, 收藏夹Ingest, 数据库, sql, oracle, mysql]
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-06
 source: "[[topics/browser-bookmarks]]"
 ---
 
@@ -147,6 +147,33 @@ source: "[[topics/browser-bookmarks]]"
 - [ORA-28000: the account is locked-的解决办法 - 世道 - 博客园](http://www.cnblogs.com/jianqiang2010/archive/2011/09/01/2162574.html)
 - [blog.csdn.net/lbake/article/details/39076925](http://blog.csdn.net/lbake/article/details/39076925)
 
+## 网络精选（高质量博客 · 2026-10-06 增补）
+
+> 在「收藏夹 Ingest」书签目录之外，额外从全网检索并下载 **10 篇仍在线的高质量博客**（离线镜像见 `wiki-system/sources/curated-databases/`），按主题提炼要点如下。下列条目均链接到本地离线副本，断网亦可研读。
+
+### 摘要
+
+- **MySQL 索引与慢 SQL 优化**：索引底层为 B+Tree（数据在叶子节点、双向链表支持范围查询）；联合索引遵循「最左前缀」+「等值列在前、范围列在后」；`EXPLAIN` 的 `type` 至少要到 `range`、力争 `ref`，警惕 `Using filesort`/`Using temporary`；索引失效高频场景＝对索引列用函数、`LIKE '%x'` 前置模糊、`OR` 连接非索引列、隐式类型转换。覆盖索引可避免回表。
+- **Redis 缓存三大杀手**：穿透（查不存在的数据）→ 布隆过滤器 / 空值缓存；击穿（热点 key 失效瞬间高并发打 DB）→ 互斥锁(SETNX) / 逻辑过期(永不过期+异步刷新)；雪崩（大量 key 同时过期）→ TTL 加随机抖动、多级缓存(Caffeine+Redis)、集群高可用。
+- **PostgreSQL vs MySQL 选型**：PG 对象-关系型、JSONB 可索引、GIN/GiST/BRIN 索引、严格 ACID、适合复杂分析/地理(PostGIS)/金融；MySQL 读多写少简单查询更快、生态与复制成熟、适合 Web/CMS/电商。两者可「多语言持久化」按服务各取所长。
+- **分库分表（ShardingSphere）**：单表超 500 万 / 10GB 性能拐点；中间件做 SQL 解析→路由（分片键 + 分片算法）→ 多库多表执行与结果归并；ShardingSphere-JDBC 基于 JDBC 零侵入、支持读写分离/分布式事务/数据加密；跨库 JOIN/聚合会变慢，设计时需规避。
+- **事务 / ACID / MVCC**：原子性靠 undo log、持久性靠 redo log(WAL)、隔离性靠 MVCC；SQL 四级隔离（读未提交→读已提交→可重复读→串行化）权衡一致性与并发；MySQL InnoDB 的 RR 通过固定快照 + Next-Key Lock 彻底解决幻读；MVCC 读写不阻塞，是 RC/RR 的核心。
+
+### 引用来源（本地离线镜像）
+
+| 主题 | 博客 | 本地镜像 |
+|---|---|---|
+| MySQL 索引/Explain/慢SQL | 阿里云开发者社区《索引核心：Explain 执行计划解读、慢 SQL 优化全流程》 | [[wiki-system/sources/curated-databases/developer_aliyun_com_article_1733816_652dd421\|MySQL 索引核心]] |
+| MySQL 索引最佳实践 | GeeksforGeeks《MySQL Indexing Best Practices》 | [[wiki-system/sources/curated-databases/www_geeksforgeeks_org_mysql-indexing-best-practices_697dc04d\|MySQL 索引最佳实践]] |
+| MySQL 性能调优总览 | Hostxpeed《MySQL Performance Optimization: Complete Guide 2026》 | [[wiki-system/sources/curated-databases/hostxpeed_com_blog-post_5d090700\|MySQL 性能调优总览]] |
+| Redis 缓存穿透/击穿/雪崩 | 腾讯云开发者社区《Redis 缓存问题终极解决方案》 | [[wiki-system/sources/curated-databases/cloud_tencent_com_developer_article_2594941_6c2e7d3c\|Redis 缓存三大杀手]] |
+| PostgreSQL vs MySQL 选型 | SqlCheat《The Complete 2025 Comparison Guide》 | [[wiki-system/sources/curated-databases/sqlcheat_com_blog_postgresql-vs-mysql-2025-comparison_6cfaf8a4\|PG vs MySQL 选型]] |
+| PostgreSQL vs MySQL 深度对比 | 主机技术分享《为你的新项目选择正确的开源数据库》 | [[wiki-system/sources/curated-databases/www_hostol_com_archives_2450_e07cedda\|PG vs MySQL 深度对比]] |
+| 分库分表 / ShardingSphere | Apache ShardingSphere 官方 Blog（ICDE 2022） | [[wiki-system/sources/curated-databases/shardingsphere_apache_org_blog_en_material_2022_04_06_a_holistic_pluggable_platform_for_data_sha_b1ffbb71\|ShardingSphere 架构]] |
+| ACID / 隔离级别 / MVCC | 中培伟业《数据库 ACID 特性与并发控制详解》 | [[wiki-system/sources/curated-databases/m_zpedu_com_it_db_40413_html_90fad781\|ACID 与并发控制]] |
+| 事务 / ACID / 并发控制 | TRAE《数据库一致性保障：事务、ACID 与并发控制详解》 | [[wiki-system/sources/curated-databases/www_trae_cn_article_3133514754_cdecfc8e\|事务与一致性保障]] |
+| MySQL 事务与 MVCC 深析 | CSDN《【MySQL硬核天花板】事务与 MVCC 深析》 | [[wiki-system/sources/curated-databases/blog_csdn_net_2401_86195313_article_details_161394904_da0909bd\|MySQL 事务与 MVCC]] |
+
 ## 关联
 
 - 来源索引：[[topics/browser-bookmarks]]（数据库 主题共 102 条）
@@ -160,3 +187,4 @@ source: "[[topics/browser-bookmarks]]"
 ## 变更记录
 
 - 2026-10-05：Ingest「数据库」主题 102 条，按子类别归类（分类知识页）。
+- 2026-10-06：网络检索并下载 10 篇仍在线的高质量数据库博客至 `sources/curated-databases/`，新增「网络精选」合成知识段（索引/性能/Redis 缓存/PG vs MySQL 选型/分库分表/事务 MVCC）。
