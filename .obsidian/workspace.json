@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e5c14ea4fcbf6454",
+        "id": "c628cdae72b7b5b8",
         "type": "tabs",
         "children": [
           {
-            "id": "789b46f6900c42c6",
+            "id": "aecc2d3875b96d01",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -215,8 +215,13 @@
       "periodic-notes:Open this week": false
     }
   },
-  "active": "3af1964ff7e62804",
+  "active": "aecc2d3875b96d01",
   "lastOpenFiles": [
+    "wiki-system/sources/curated-databases/blog_csdn_net_snowfox326043_article_details_7463271_d68bdd42.md",
+    "wiki-system/sources/curated-databases/blog_csdn_net_lzghxjt_article_details_42366625_6a00fbed.md",
+    "wiki-system/sources/curated-databases/blog_csdn_net_rosekin_article_details_39298255_20d0b766.md",
+    "wiki-system/sources/curated-databases/blog_csdn_net_baiyinqiqi_article_details_46468113_07ca4c58.md",
+    "wiki-system/sources/curated-databases/blog_csdn_net_alangmei_article_details_18310381_7939fca1.md",
     "wiki-system/sources/curated-android/www_open-open_com_lib_view_open1377581482589_html_72e73e4c.md",
     "wiki-system/sources/curated-android/www_2cto_com_kf_201407_321688_html_a7186107.md",
     "wiki-system/sources/curated-android/txlong-onz_iteye_com_blog_870650_5890c42b.md",
@@ -239,11 +244,6 @@
     "90-待整理与临时笔记/白板/测试白板创建后归档到指定目录.canvas",
     "40-AI技术/自然语言处理-BERT模型详解.md",
     "40-AI技术/深度学习-PyTorch入门.md",
-    "40-AI技术/机器学习-机器学习基础入门总结.md",
-    "40-AI技术/40-AI技术.md",
-    "20-技术积累/HTML-CSS布局技巧.md",
-    "20-技术积累/Go语言入门.md",
-    "20-技术积累/Dockerfile编写指南.md",
     "99-附件/favorites_2026_10_5.html",
     "未命名",
     "Clippings",
