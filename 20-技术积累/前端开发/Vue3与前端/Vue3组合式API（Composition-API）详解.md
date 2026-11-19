@@ -74,7 +74,7 @@ source:
 **1. 环境准备。**
 
 ```bash
-# 官方脚手架要求 Node.js ^22.18.0 || >=24.12.0，先核对版本
+# 需 Node.js 20.19+ / 22.12+（Vite 8 要求），先核对版本
 node -v
 npm create vue@latest          # 交互式创建 Vite + Vue3 项目（可选 TypeScript）
 npm install

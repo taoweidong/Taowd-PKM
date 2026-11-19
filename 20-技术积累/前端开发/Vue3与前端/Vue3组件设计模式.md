@@ -76,7 +76,7 @@ source: 网络资料整理
 **步骤 0：环境准备**
 
 ```bash
-node -v          # Vue 官方要求 Node.js ^22.18.0 || >=24.12.0
+node -v          # 需 Node.js 20.19+ / 22.12+（Vite 8 要求）
 npm create vue@latest   # 交互式创建 Vite + Vue3 项目
 npm install && npm run dev
 ```

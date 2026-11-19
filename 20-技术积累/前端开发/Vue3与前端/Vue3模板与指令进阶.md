@@ -104,7 +104,7 @@ Vapor 中 `value` 为响应式 getter，适合用 `watchEffect` 建立响应式�
 **1. 环境准备**：核对 Node 版本后创建项目。
 
 ```bash
-node -v          # Vue 官方快速上手要求 Node ^22.18.0 || >=24.12.0
+node -v          # 需 Node.js 20.19+ / 22.12+（Vite 8 要求）
 npm create vue@latest
 npm install
 npm run dev      # 默认 http://localhost:5173

@@ -73,7 +73,7 @@ Vue3 用 **Proxy** 替代了 Vue2 的 `Object.defineProperty`，因此可以监�
 **1. 确认环境与脚手架。**
 
 ```bash
-node -v   # Vue 官方快速上手要求 Node.js ^22.18.0 || >=24.12.0
+node -v   # 需 Node.js 20.19+ / 22.12+（Vite 8 要求）
 npm create vue@latest
 npm install
 npm run dev

@@ -86,7 +86,7 @@ pip install "tensorrt-llm"
 ### 4.2 用 vLLM 部署服务
 
 ```bash
-vllm serve Qwen/Qwen3.5-397B-A17B \
+vllm serve Qwen/Qwen3.5 \
   --tensor-parallel-size 4 \
   --max-model-len 32768 \
   --gpu-memory-utilization 0.90 \
@@ -100,7 +100,7 @@ vllm serve Qwen/Qwen3.5-397B-A17B \
 
 ```bash
 python -m sglang.launch_server \
-  --model-path Qwen/Qwen3.5-397B-A17B \
+  --model-path Qwen/Qwen3.5 \
   --tp-size 4 \
   --context-length 32768 \
   --mem-fraction-static 0.90
@@ -111,7 +111,7 @@ python -m sglang.launch_server \
 ```bash
 # TensorRT-LLM 需先按官方流程构建 engine，再用 trtllm-serve 启动
 trtllm-serve \
-  --model Qwen/Qwen3.5-397B-A17B \
+  --model Qwen/Qwen3.5 \
   --tp-size 4 \
   --kv_cache_config v2 \
   --host 0.0.0.0 --port 8000
@@ -133,7 +133,7 @@ for name, base_url in [
 ]:
     client = OpenAI(base_url=base_url, api_key="EMPTY")
     resp = client.chat.completions.create(
-        model="Qwen/Qwen3.5-397B-A17B",
+        model="Qwen/Qwen3.5",
         messages=[{"role": "user", "content": "用一句话介绍推理引擎"}],
         temperature=0.2,
     )
@@ -153,7 +153,7 @@ def bench(prompt: str, rounds: int = 20) -> None:
     for _ in range(rounds):
         start = time.perf_counter()
         stream = client.chat.completions.create(
-            model="Qwen/Qwen3.5-397B-A17B",
+            model="Qwen/Qwen3.5",
             messages=[{"role": "user", "content": prompt}],
             stream=True,
         )
