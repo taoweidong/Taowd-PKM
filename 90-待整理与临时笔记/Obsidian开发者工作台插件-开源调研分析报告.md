@@ -11,7 +11,7 @@ status: 调研完成-待立项
 # Obsidian 开发者个人工作台插件 — 开源调研分析报告
 
 > [!abstract] 一句话结论
-> 「最近**编辑**(mtime) × 标签聚合 × 常驻侧边栏 × 开发者科技风」四者合一的原生插件**目前市场空缺**：最强竞品 Hearth 是通用卡片网格，唯一贴近的 dashboard-navigator 已归档下架。自研有明确差异化空间，且官方公开 API 足以支撑核心功能，无需依赖 Dataview。
+> 深挖 11 个首页/仪表盘类插件后确认：**无一提供常驻侧边栏工作台**（Hearth 的侧边栏诉求 #492 仍是 feature request）。「最近编辑 × 标签共现导航 × 常驻侧边栏」组合是市场空缺。但注意：Hearth 已内置 Terminal(htop) 设计语言、StartPage 已实现 mtime 混排——差异化不能只押"科技风"或"最近编辑"单点，要押**组合与垂直场景**。视觉上应融入 Style Settings 事实标准生态，而非对抗。
 
 **产品目标**：面向软件开发人员的个人工作台。快捷查看近期编辑文件、标签聚合等；界面炫酷、科技风、内容一目了然。
 
@@ -66,11 +66,11 @@ status: 调研完成-待立项
 
 **做**：开发者的「知识驾驶舱」——
 
-- **最近编辑 ≠ 最近打开**：以 `mtime` 为第一排序维度（竞品普遍按打开记录），还原"我刚才在写什么"；
-- **标签 × 时间交叉过滤**：点标签即过滤最近编辑列表，这是 dashboard-navigator 下架后的空白；
-- **常驻侧边栏 + 主区大屏双形态**：侧边栏速览，主区沉浸式仪表盘；
+- **常驻侧边栏 + 主区大屏双形态**：11 个竞品全部只有主区形态，这是最硬的差异化（侧边栏天然绕开"抢占新标签"事故雷区）；
+- **标签共现导航**：dashboard-navigator 的独门功能（主标签→次级标签，Shift AND / Ctrl 排除），随其下架而绝迹，Bases 也替代不了；
+- **最近编辑 ≠ 最近打开**：以 `mtime` 为第一排序维度。注意 StartPage 已做 mtime+访问时间混排，此点须与标签交叉过滤绑定才有区分度；
 - **开发者工具链钩子**（后期可选）：git 状态、任务聚合、Tag Wrangler 事件、命令 launcher；
-- **科技风视觉识别**：竞品全是通用卡片风，视觉本身就是差异化（见第四节）。
+- **科技风视觉识别**：Hearth 已有 Terminal(htop) 设计，纯"终端风"不再是独占卖点；我们的视觉押注是「驾驶舱遥测」整体信息设计（状态条+编辑脉冲+等宽数据列），且通过 Style Settings 生态分发皮肤预设（见 4.7）。
 
 ---
 
@@ -160,26 +160,111 @@ status: 调研完成-待立项
 - ❌ 全大写 eyebrow、中点 meta 串、每行 hover 浮起 → ✅ 数据用等宽字体承载，动效只响应动作；
 - ✅ 大胆只花在一处：**编辑脉冲 sparkline**，其余安静克制。
 
+### 4.7 生态融入策略（主题调研后的修正）
+
+社区事实标准已核实：**Style Settings**（2.6k★，286 万下载）是外观定制基建，Border/AnuPpuccin 等主流主题的功能几乎全由它驱动。工作台皮肤的正确做法：
+
+1. **默认皮肤只消费官方 CSS 变量**（`--background-primary`、`--interactive-accent`、`--font-monospace` 等），选择器限定在自己视图容器类下 → 自动适配用户明暗主题，不污染全局；
+2. **「驾驶舱」科技风作为 class-toggle 预设叠加**，而非强制外观；全部视觉参数（强调色、密度、霓虹开关、动效开关）在自带 `styles.css` 里用 `/* @settings */` YAML 声明，onload 时触发 `parse-style-settings` → 用户在 Style Settings 面板里直接调；
+3. 借鉴 **Minimal Theme Settings** 的"皮肤预设下拉 + 热键循环切换"，比裸 CSS 变量面板更一目了然；
+4. 沉浸模式复用 **Hider** 公开的 `.hider-*` body 类契约，不自造隐藏逻辑；
+5. 文件图标参考 Iconize 机制但**不硬依赖**（该插件已宣布停止维护）。
+
 ---
 
-## 五、风险与边界
+## 五、首页类插件深度对比（第二轮深挖）
+
+### 5.1 功能点对比矩阵
+
+| 项目 | 最近打开 | 最近编辑mtime | 标签聚合 | 搜索 | 固定收藏 | 任务聚合 | 常驻侧边栏 | 主区视图 | 移动端 | 自定义布局 | 零依赖 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Homepage | ✗ | ✗ | ✗ | ✗ | 部分(pin标签) | ✗ | ✗ | ✓(开笔记) | ✓ | ✗(内容自理) | ✓ |
+| Home tab | ✓ | ✗ | ✗ | ✓(名+类型) | ✓(starred已失效) | ✗ | ✗ | ✓ | 部分 | ✗ | ✓ |
+| new-tab-default-page | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓(开笔记) | ✓ | ✗ | ✓ |
+| **Hearth** | ✓ | 部分(热力图) | 部分(#搜索无面板) | ✓(全文+FM+命令) | ✓ | ✓(Kanban写回) | **✗** | ✓ | ✓ | ✓(自由网格) | ✓ |
+| **StartPage** | ✓ | **✓(混排)** | ✗ | ✓(模糊) | ✓(pin+拖拽) | ✗ | **✗** | ✓ | ✓ | 部分 | ✓ |
+| Harbor Tab | ✓ | ✗ | ✗ | ✓(名+标题跳转) | ✓(bookmarks) | ✗ | ✗ | ✓ | ✓ | 部分 | ✓ |
+| Home Launcher | ✓ | ✗ | 部分 | ✓(全文+Omnisearch可选) | ✓ | ✗ | ✗ | ✓ | ✓ | 部分 | ✓ |
+| Dashboards(mcaleer) | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓(代码块) | ✓ | ✓(12列网格) | ✗ |
+| **dashboard-navigator** | ✓ | ✓(分列) | **✓(共现导航)** | ✓(高级语法) | ✓ | ✗ | **✗** | ✓ | ✓ | 部分 | ✓ |
+| Panda-995 模板 | ✗ | ✓ | ✓(标签云) | ✗ | ✗ | ✗ | ✗ | ✓(笔记) | ✓ | ✗ | ✗(需Dataview) |
+
+**关键空位：全表"常驻侧边栏"一列皆 ✗。**
+
+### 5.2 经典之所以经典
+
+- **Homepage**（743★）：把"启动打开什么"一件事做到极致且零侵入——不造视图、不锁内容，与任何内容方案正交组合，成为所有仪表盘教程的默认底座；
+- **Home tab**（377★）：第一个把"浏览器新标签页"心智（搜索框+收藏网格）完整搬进 Obsidian，键盘流交互树立品类 UX 标杆，停更后由官方授权的 Harbor Tab 续命；
+- **Hearth**（242★，日更）：卡片自由网格 + 40 种卡 + 26 集成自动探测 + 移动端宽度阈值重排，一站式吃掉三类场景，是当前品类天花板；已有 Classic/Material3/Terminal(htop) 三套设计语言。
+
+### 5.3 最值得抄的 5 个功能点
+
+1. **StartPage 的 mtime+访问时间混排** + 相对时间每分钟刷新 + 事件驱动智能刷新（防抖、判断是否需刷新）——直接命中核心需求且移动端已验证；
+2. **dashboard-navigator 的标签共现导航**（主标签→次级标签，Shift AND / Ctrl 排除，按频率排序）——全品类独一份，260★ 的立身之本；
+3. **Hearth 的宽度阈值重排**（按实测宽度而非平台判断）——常驻侧边栏天然窄，此机制原样复用；
+4. **Harbor 的标题级搜索跳转** + Home Launcher 的"结果自解释"（H1/命中段落/摘录）；
+5. **pin 体系多入口**（右键+文件树菜单+拖拽排序）且**一键导入核心 Bookmarks**——不自建收藏孤岛。
+
+### 5.4 最该避开的 3 个坑（竞品 issues 实证）
+
+1. **抢占新标签/启动时机是事故高发区**：Home tab 与 Surfing 互斥；Homepage 的 openWhenEmpty 标志卡死 + 裸 catch 静默失败 + 移动端闪烁（#149/#142/#134）。→ 侧边栏形态天然绕开；主区视图的替换行为必须可关、失败显式报错并复位状态；
+2. **实时刷新的性能与状态陷阱**：Hearth 的 Pet 卡 DOM 重建内存泄漏（#479）、卡内编辑触发整板刷新（#475）、侧栏伸缩闪烁（#462）、启动时设置不生效（#439）。→ 细粒度局部更新 + 防抖、编辑态冻结刷新、设置加载完成后再首渲；
+3. **单人宽功能面 + 官方蚕食 = 死亡螺旋**：dashboard-navigator 作者自述倦怠 + 担忧 Bases 覆盖定位，两度归档终下架（issue #20）；Home tab 因核心 Starred→Bookmarks 变更无人修而收藏失效。→ 功能面收敛在开发者垂直场景，收藏直接读核心 Bookmarks API，对第三方插件 API 做防御性探测（Homepage #152 同款教训）。
+
+---
+
+## 六、主题/外观生态调研（第二轮）
+
+### 6.1 外观定制类经典插件
+
+| 项目 | 许可证 | 热度 | 状态 | 核心功能点 | 优点 | 缺点/局限 |
+|------|--------|------|------|-----------|------|-----------|
+| [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) | GPL-3.0 | 2.6k★/286万下载 | 转入 community-archive，低频维护 | CSS 内 `@settings` YAML 声明设置项；class-toggle/变量滑杆/双色 themed-color；扫描 themes/snippets/plugins 三目录 | **事实标准**，插件注册零成本（styles.css + 触发事件） | GPL 勿抄代码；已有 Style Tuner 等兼容替代品分流 |
+| [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) | MIT | 826★/190万下载 | 活跃 | 14 种配色预设、热键循环切换、焦点模式 | "主题+配套设置插件"模式范本，预设下拉比裸变量面板直观 | 绑定 Minimal 主题 |
+| [Hider](https://github.com/kepano/obsidian-hider) | MIT | 592★ | 活跃 | body 类开关隐藏 ribbon/标签栏/状态栏；公开 `.hider-*` 类契约 | 沉浸模式可直接复用契约 | 功能单一 |
+| [Iconize](https://github.com/FlorianWoelki/obsidian-iconize) | MIT | 1.4k★/231万下载 | **已宣布停止维护** | 图标包+自定义 SVG+规则匹配+frontmatter | 文件图标机制成熟 | 不宜硬依赖 |
+| [Banners](https://github.com/noatpad/obsidian-banners) | — | 36万下载 | 低频 | 头图存 frontmatter、拖拽定位 | 数据与视图分离的范本 | 与工作台关联弱 |
+
+### 6.2 科技风/开发者向主题
+
+| 主题 | 数据 | 要点 |
+|------|------|------|
+| [Minimal](https://github.com/kepano/obsidian-minimal) | MIT 5.7k★ 活跃 | 极简+多配色，生态最完整 |
+| [Border](https://github.com/Akifyss/obsidian-border) | MIT 2.5k★ 活跃 | 卡片化 UI；**预设以 Style Settings 导入代码分发——皮肤即配置** |
+| [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) | GPL 3.5k★ **停更** | Catppuccin 调色板；README 明言"无 Style Settings 只剩一小半功力" |
+| [Blue Topaz](https://github.com/PKM-er/Blue-Topaz_Obsidian-css) | MIT 1.7k★ 活跃 | 中文社区经典，TIPS 示例库教学 |
+| [Terminal](https://github.com/zcysxy/Obsidian-Terminal-Theme) | MIT 98★ 仅深色 | 最贴开发者风：单色绿+Fira Code、`$` 提示符、vim-airline 状态栏；**缺点：不优化插件 UI** |
+| [Cybertron](https://github.com/nickmilo/Cybertron) | **无许可证** 137★ | Synthwave 霓虹；不宜复用代码 |
+
+> [!tip] 结论
+> 赛博/终端风主题存在但小众且多停更；主流高星主题证明"炫酷"靠**霓虹强调色 + 分区层次 + 等宽字体点缀**，而非全局单色。这与我们 4.2 的双 accent 方案互相印证。Terminal 主题"不优化插件 UI"的缺口，正是工作台自带科技风皮肤的价值。
+
+---
+
+## 七、风险与边界
 
 | 风险 | 应对 |
 |------|------|
-| Hearth 日更迭代，可能补齐开发者功能 | 差异化押在"编辑维度 × 标签交叉 × 科技风识别"，保持小快灵 |
+| Hearth 日更迭代，可能补齐侧边栏与开发者功能 | 差异化押"侧边栏 + 标签共现 + 开发者垂直场景"组合，保持小快灵 |
+| 官方 Bases 蚕食仪表盘定位（dashboard-navigator 死因之一） | 押 Bases 不做的能力：常驻侧边栏、标签共现导航、任务写回、工具链钩子 |
 | undocumented API 随版本失效 | 核心只走公开 API；增强功能带降级 |
-| GPL 代码传染（Recent Files、Workspaces Plus） | 只学范式不抄代码；可借鉴代码限 MIT/ISC/Apache（dashboard-navigator、tagfolder、tag-wrangler） |
-| 大库性能（本库数千笔记、60% 空占位） | mtime 排序 + 增量索引 + LIMIT；排除规则（如排除 `80-日记` 可选） |
+| GPL 代码传染（Recent Files、Style Settings、Workspaces Plus） | 只学范式不抄代码；可借鉴代码限 MIT/ISC/Apache（dashboard-navigator、tagfolder、tag-wrangler、StartPage） |
+| 大库性能（本库数千笔记、60% 空占位） | mtime 排序 + 增量索引 + LIMIT；细粒度局部刷新 + 防抖（Hearth #475/#479 教训） |
+| 抢占新标签/启动时机事故 | 侧边栏为主形态；主区替换可关、失败显式报错（Homepage #149 教训） |
+| 第三方插件 API 变更即崩（Hearth Git 卡 #464） | 集成层防御性探测 + 优雅降级，核心功能零硬依赖 |
 | Dataview 生态迁移期（Bases/Datacore） | 不依赖任何查询引擎，天然免疫 |
 
-## 六、下一步
+## 八、下一步
+
+设计方案已成稿：[[Obsidian开发者工作台插件-设计方案]]（汇聚各开源插件核心功能点，F1-F12 均标注来源与优先级）。
 
 1. 确认立项与插件名（暂名 **DevDeck / 开发驾驶舱**）；
-2. M1 范围评审：最近编辑 + 标签聚合侧边栏 + 科技风皮肤；
+2. M1 范围评审：最近编辑（mtime 混排）+ 标签共现导航 + 常驻侧边栏 + 科技风皮肤（Style Settings `@settings` 接入）；
 3. 需要时再出技术选型评估（原生 DOM vs Svelte vs React：Obsidian 社区三种范式并存，属独立决策点）。
 
 ## 附：主要来源
 
 - [Hearth](https://github.com/ondreu/Hearth) · [dashboard-navigator](https://github.com/drbap/dashboard-navigator-for-obsidian)（[下架记录](https://www.moritzjung.dev/obsidian-stats/plugins/dashboard-navigator/)）· [Homepage](https://github.com/mirnovov/obsidian-homepage) · [Home tab](https://github.com/olrenso/obsidian-home-tab) · [StartPage](https://github.com/kuzzh/obsidian-startpage) · [Dashboard++](https://github.com/TfTHacker/DashboardPlusPlus)
 - [Recent Files](https://github.com/tgrosinger/recent-files-obsidian) · [Tag Wrangler](https://github.com/pjeby/tag-wrangler) · [Dataview](https://github.com/blacksmithgu/obsidian-dataview) · [Projects 停更公告](https://forum.obsidian.md/t/development-for-projects-plugin-needed/101089) · [obsidian-git](https://github.com/Vinzent03/obsidian-git) · [obsidian-tasks](https://github.com/obsidian-tasks-group/obsidian-tasks) · [checklist](https://github.com/delashum/obsidian-checklist-plugin) · [tagfolder](https://github.com/vrtmrz/obsidian-tagfolder)
-- [obsidian-api（官方 d.ts）](https://github.com/obsidianmd/obsidian-api) · [Dashboard DIY 论坛方案](https://forum.obsidian.md/t/dashboard-a-simple-organization-and-navigation-method-for-obsidian-vaults/33197) · [Dataview 替代栈讨论](https://medium.com/@lennart-dde/obsidian-is-changing-the-new-plugin-stack-replacing-dataview-8084da60db2e)
+- [obsidian-api（官方 d.ts）](https://github.com/obsidianmd/obsidian-api) · [官方 CSS 变量参考](https://docs.obsidian.md/Reference/CSS+variables/CSS+variables) · [Dashboard DIY 论坛方案](https://forum.obsidian.md/t/dashboard-a-simple-organization-and-navigation-method-for-obsidian-vaults/33197) · [Dataview 替代栈讨论](https://medium.com/@lennart-dde/obsidian-is-changing-the-new-plugin-stack-replacing-dataview-8084da60db2e)
+- 第二轮深挖：[dashboard-navigator 归档原因 issue #20](https://github.com/drbap/dashboard-navigator-for-obsidian/issues/20) · [Hearth issues](https://github.com/ondreu/Hearth/issues) · [Homepage issues](https://github.com/mirnovov/obsidian-homepage/issues) · [Home tab fork 授权 #65](https://github.com/olrenso/obsidian-home-tab/issues/65) · [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) · [Minimal Theme Settings](https://github.com/kepano/obsidian-minimal-settings) · [Hider](https://github.com/kepano/obsidian-hider) · [Iconize](https://github.com/FlorianWoelki/obsidian-iconize) · [Terminal 主题](https://github.com/zcysxy/Obsidian-Terminal-Theme) · [Border](https://github.com/Akifyss/obsidian-border) · [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) · [Blue Topaz](https://github.com/PKM-er/Blue-Topaz_Obsidian-css)
